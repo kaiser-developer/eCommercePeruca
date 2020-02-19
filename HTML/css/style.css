@@ -1,0 +1,19 @@
+#exemplo {
+    opacity: 0.75;
+    width: 400px;
+}
+
+.logo {
+    width: 100%;
+    height: 20vh;
+    background-color: white;
+}
+
+body {
+    background-color: black;
+}
+
+.navbar {
+    position: absolute;
+    top: 100px;
+}
