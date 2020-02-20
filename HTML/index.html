@@ -8,46 +8,91 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <title>Wig's House</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="logo">
-                <img id="exemplo" class="img-responsive" src="img/Sem título.png" alt="logo" title="Wig's House">
+
+        <!-- Imagem do Logo -->
+        <div class="row container">
+            <div class="col-xs-12">
+                <div class="logo">
+                    <img id="exemplo" class="img-responsive" src="img/Sem título.png" alt="logo" title="Wig's House">
+                </div>
             </div>
         </div>
-        
-        <a href="#"><img class="login" src="img/images.png" alt="login"></a>
-        <a href="#"><img class="carrinho" src="img/2543411.png" alt="carrinho"></a>
 
-        <ul class="nav justify-content-end col-xs-12">
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Lisos</button>
-            </li>
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Cacheados</button>
-            </li>
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Crespos</button>
-            </li>
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Ondulados</button>
-            </li>
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Fios Naturais</button>
-            </li>
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Ruivos</button>
-            </li>
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Loiros</button>
-            </li>
-            <li class="nav-item">
-                <button class="botao btn btn-basic nav-link" href="#">Cosplay</button>
-            </li>
-        </ul>
+
+        <!-- Imagens de Login/Carrinho -->
+        <div class="row container-fluid">
+            <div class="col-xs-6">
+                <a href="#">
+                    <img class="login" src="img/images.png" alt="login">
+                </a>
+            </div>
+            <div class="col-xs-6">
+                <a href="#">
+                    <img class="carrinho" src="img/2543411.png" alt="carrinho">
+                </a>
+            </div>
+        </div>
+
+        <!-- Navbar do site em telas grandes -->
+        <div id="navbar" class="row container-fluid">
+            <ul class="nav justify-content-end col-xs-12">
+                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                    <button class="botao btn btn-basic nav-link" href="#">Lisos</button>
+                </li>
+                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                    <button class="botao btn btn-basic nav-link" href="#">Cacheados</button>
+                </li>
+                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                    <button class="botao btn btn-basic nav-link" href="#">Crespos</button>
+                </li>
+                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                    <button class="botao btn btn-basic nav-link" href="#">Ondulados</button>
+                </li>
+                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                    <button class="botao btn btn-basic nav-link" href="#">Naturais</button>
+                </li>
+                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                    <button class="botao btn btn-basic nav-link" href="#">Cosplay</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Navbar que só aparece em modo responsivo -->
+    <div id="navbarR" class="row container-fluid">
+        <nav id="menu" class="navbar navbar-expand-md bg-light navbar-light">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav col-md-12 col-xs-12">
+                    <li class="nav-item col-lg-2 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Lisos</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Cacheados</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Crespos</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Ondulados</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Naturais</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Cosplay</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
 
