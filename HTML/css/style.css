@@ -44,6 +44,16 @@ body {
 #navbarR {
     display: none;
 }
+#demo {
+    border: 1px solid;
+}
+
+footer {
+    position: relative;
+    bottom: 10px;
+    background-color: grey;
+    padding: 25px;
+}
 
 
 
@@ -74,6 +84,7 @@ body {
     display: grid;
     width: 100%;
     border: 1px solid;
+    top: 7vh;
     
 }
 #menu {
@@ -84,6 +95,9 @@ body {
     height: 20vh;
     background-color: white;
     position: relative;
+}
+.demo {
+    width: 90vw;
 }
 
 
@@ -96,9 +110,13 @@ body {
     }
     #navbarR {
         display: grid;
-        width: 100%;
+        width: 100vw;
         border: 1px solid;
         position: relative;
         top: 7vh;
+    }
+
+    .demo {
+        width: 90vw;
     }
 }
