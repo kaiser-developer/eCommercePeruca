@@ -1,0 +1,1 @@
+let inputSenha = document.getElementById('password');
