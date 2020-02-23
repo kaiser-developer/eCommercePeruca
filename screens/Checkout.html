@@ -1,214 +1,167 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/wig.jpg">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <title>Checkout - RD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-            <a class="navbar-brand text-light"><img src="../screens/images/logo.png" width="160px"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#"> <span class="sr-only">(Página atual)</span></a>
-                    <a class="nav-item nav-link" href="#"></a>
-                    <a class="nav-item nav-link" href="#"></a>
-                    <a class="nav-item nav-link disabled" href="#"></a>
-                </div>
+        <nav class="navbar navbar-dark" style="background-color: #d1d1d1;">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="LogoPrincipal" width="125px">
+            </a>
+            <div class="continuar-cp">
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-info" type="submit">Continuar comprando</button>
+                </form>
             </div>
-
-            </nav>
+        </nav>
     </header>
     <main class="container">
-        <form id="formulario Checkout" class="row mt-4">
-
-            <div class="col-md-4">
-                <header class="p-3 mb-2 bg-info text-light">
-                    Dados pessoais
+        <form class="row dados center" id="checkout" method="POST">
+            <div class="col-md-6">
+                <header class="card-header bg-info">
+                    <img src="images/caixa-de-correio.png" alt="" srcset="" width="25" height="25">
+                    <t class="p-4 font-weight">Dados de Entrega</t>
                 </header>
-                <div class="p-2">
+                <div class="border border-top-0 mt-2 p-4">
                     <div class="form-group">
-                        <label for="nomeUsuário">Nome completo</label>
-                        <input class="form-control" type="text" name="nomeUsuario" placeholder="Digite nome completo">
-                    </div>
-                    <div class="form-group">
-                        <label for="cpfUsuario">CPF</label>
-                        <input id="CPFuser" class="form-control" type="text" name="cpfUsuario"
-                            placeholder="Digite seu CPF">
+                        <label for="cep">CEP:</label>
+                        <input type="hidden" id="cep-valido" value="false">
+                        <input class="form-control" type="text" name="cpf" placeholder="Digite seu CEP..." id="cep">
                     </div>
                     <div class="form-group">
-                        <label for="telusuario">Seu Telefone</label>
-                        <input id="telUser" class="form-control" type="text" name="telusuario"
-                            placeholder="(00) 0 0000-0000">
+                        <label for="endereco">Endereço:</label>
+                        <input class="form-control" type="text" name="endereco" placeholder="Endereço..."
+                            id="endereco" disabled>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Endereço de email</label>
-                        <input id="emailUser" type="email" class="form-control" id="exampleFormControlInput1"
-                            placeholder="nome@exemplo.com">
+                        <label for="numero-res">Numero:</label>
+                        <input class="form-control" type="number" name="numero-res" placeholder="Digite o numero..."
+                            id="numero-res">
                     </div>
                     <div class="form-group">
-                        <label for="InputPassword1">Senha</label>
-                        <input id="password" type="password" class="form-control" id="exampleInputPassword1"
-                            placeholder="**********">
+                        <label for="complemento">Complemento:</label>
+                        <input class="form-control" type="text" name="complemento"
+                            placeholder="Digite um complemento..." id="complemento">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Confirme a Senha</label>
-                        <input id="confirmeSenha" type="password" class="form-control" id="exampleInputPassword1"
-                            placeholder="**********">
+                        <label for="bairro">Bairro:</label>
+                        <input class="form-control" type="text" name="bairro" placeholder="Bairro..."
+                            id="bairro" disabled>
                     </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-                <header class="p-3 mb-2 bg-info text-light">
-                    Entrega
-                </header>
-                <div class="form-group">
-                    <label for="validacaoCEP">CEP</label>
-                    <input id="validacaoCEP" type="text" class="form-control" id="validacaoCEP" placeholder="00000-000"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="validationTooltip03">Endereço</label>
-                    <input id="endereco" type="text" class="form-control" id="validationTooltip03"
-                        placeholder="Digite seu endereço" required>
-                </div>
-
-                <div class="form-row p-2">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Numero">
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="cidade">Cidade:</label>
+                            <input class="form-control" type="text" name="cidade" placeholder="Cidade..." id="cidade" disabled>
+                        </div>
+                        <div class="col-6">
+                            <label for="sel-estado">Estado:</label>
+                            <select class="form-control" name="estado" id="sel-estado" disabled>
+                                <option value="" selected>Estado</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Complemento">
+                    <div class="form-group">
+                        <label for="forma-envio">Forma de envio:</label>
+                        <select class="form-control" name="forma-envio" id="sel-forma-envio">
+                            <option value="" disabled selected>Forma de envio</option>
+                            <option value="50">Rapida - R$ 50,00</option>
+                            <option value="20">Normal - R$ 20,00</option>
+                        </select>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="validationTooltip03">Bairro</label>
-                    <input type="text" class="form-control" id="bairro" placeholder="Bairro" required>
-                </div>
-
-                <div class="form-row p-2">
-                    <div class="col">
-                        <input id="nomeCidade" type="text" class="form-control" placeholder="Cidade">
-                    </div>
-                    <select class="">
-                        <label for="estadousuario"></label>
-
-                        <option value="cidadeusuario" disabled selected name="estadoUsuario">Estado</option>
-                        <option value="SP">São paulo</option>
-                        <option value="BA">Bahia</option>
-                        <option value="ES">Espirito Santo</option>
-                        <option value="RJ">Rio de janeiro</option>
-
-                    </select>
-                </div>
-                <div class="form-row p-2">
-                    <label for="formasenvio"></label>
-                    <select class="form-control">
-                        <option value="formas envio" disabled selected name="formas envio">formas de envio:</option>
-                        <option value="Normal">Frete Normal R$19,99</option>
-                        <option value="Rapido">Frete Rápido R$ 39,99</option>
-
-                    </select>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <header class="p-3 mb-2 bg-info text-light">
-                    Pagamento
-
+            <div class="col-md-6">
+                <header class="card-header bg-info">
+                    <img src="images/doacao.svg" alt="" srcset="" width="25" height="25">
+                    <t class="p-4 font-weight">Dados de Pagamento</t>
                 </header>
-
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Lista de Compras:</label>
-                    
+                <div class="border mt-2 p-4">
+                    <table class="table table-striped">
+                        <thead class="">
+                            <tr>
+                                <th scope="col">Produtos</th>
+                                <th scope="col">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Peruca 1</th>
+                                <td>R$ 40,00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Peruca 2</th>
+                                <td>R$ 100,00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Peruca 3</th>
+                                <td>R$ 50,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="p-2">Total R$ </h5>
                 </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-info">Total da Compra: R$00,00</button>
-                </div>
-
-                <div class="form-group">
-                    <label for="cartaousuario">Número do Cartão</label>
-                    <input id="cartaoVali" class="form-control" type="text" name="cartaousuarioo"
-                        placeholder="Digite N° cartão">
-                </div>
-                <div class="form-row p-2">
-                    <div class="col">
-                        <label for="dataValidade">Data Validade</label>
-                        <input type="text" class="form-control" placeholder="00/00">
+                <div class="border border-top-0 mt-2 p-4">
+                    <div class="form-group">
+                        <label for="numero-cartao">Numero do cartão:</label>
+                        <input class="form-control" type="text" name="numero-cartao"
+                            placeholder="Digite o numero do cartão..." id="numero-cartao">
                     </div>
-                    <div class="form-group" id="col">
-                        <label for="CodSegurança">CVV</label>
-                        <input type="text" class="form-control" placeholder="CVV">
+                    <div class="form-group row">
+                        <div class="col-9">
+                            <label for="data-validade">Data validade:</label>
+                            <input class="form-control" type="month" class="datepicker" name="data-validade" 
+                                id="data-validade">
+                        </div>
+                        <div class="col-3">
+                            <label for="cod-cartao">CVV:</label>
+                            <input class="form-control" type="text" name="cod-cartao" placeholder="..." id="cod-cartao">
+                        </div>
                     </div>
-
-                    <div class="form-row p-2">
-                        <label for="nomeTitular">Nome Titular</label>
-                        <input class="form-control" type="text" name="nomeUsuario" placeholder="Nome Titular">
+                    <div class="form-group">
+                        <label for="nome-titular">Nome titular:</label>
+                        <input class="form-control" type="text" name="nome-titular"
+                            placeholder="nome titular" id="nome-titular">
                     </div>
-
-                    <div class="form-row p-2">
-                        <label for="cpfCliente">CPF Titular</label>
-                        <input id="cpfCliente" class="form-control" type="text" name="cpfCliente"
-                            placeholder="CPF Titular">
+                    <div class="form-group">
+                        <label for="input-cpf">CPF do titular:</label>
+                        <input class="form-control" type="text" name="input-cpf"
+                            placeholder="Digite o CPF do titular..." id="input-cpf">
                     </div>
-
-                    <a class="btn" href="#">
-                        <button type="button" class="btn btn-success" data-toggle="modal"
-                            data-target="#compraFinalizada"> Finalizar Compra</button>
-
-
-                    </a>
-
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-success" id="btn-finalizar">Finalizar compra</button>
+                    </div>
                 </div>
             </div>
-
         </form>
     </main>
-    <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-finalizar">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Compra realizada</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Compra realizada com sucesso!</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-info">Receber NF via e-mail</button>
-                </div>
+            <div class="modal-content" id="inserir-modal">
             </div>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="js/validarCpf.js"></script>
+    <script src="js/inserirHtml.js"></script>
+    <script src="js/checkout.js"></script>
 </body>
 
 </html>

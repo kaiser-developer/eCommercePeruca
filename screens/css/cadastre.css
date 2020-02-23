@@ -13,7 +13,7 @@ body{
 }
 #LogoPrincipal{
     align-items: center;
-      margin-top: 40px;
+      margin-top: 5px;
       margin-left: 80px;
 
 }
@@ -25,18 +25,18 @@ body{
     cursor: pointer;
 }
 #form-signin{
+    margin-left: 200px;
+    color: grey;
     align-items: center;
-    margin-left: 120px;
 }
 #fotoFixa{
     background-image: url(/screens/images/tentativa2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     width:600px;
-    height:655px;
+    height:650px;
 }
 .checkbox{
-
 color: grey;
 text-align: center;
 }

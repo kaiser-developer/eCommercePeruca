@@ -1,94 +1,64 @@
-let inputCPF = document.getElementById('CPFuser');
-let confirmeS = document.getElementById('confirmeSenha');
-let inputSenha = document.getElementById('password');
-let validacao = document.getElementById('cpfCliente');
-let inputcep = document.getElementById('validacaoCEP');
-let inputEndereco = document.getElementById('endereco');
-let inputBairro = document.getElementById('bairro');
-let inputCidade = document.getElementById('nomeCidade');
-let inputCartao = document.getElementById('cartaoVali');
+let inputSenha = document.getElementById('input-senha');
+ let inputConfirm = document.getElementById('input-confirme-senha');
+ let inputEmail = document.getElementById('input-email');
+ let inputNome = document.getElementById('input-nome');
+ let inputTelefone = document.getElementById('input-numero');
+ let inputSenhasIguais = document.getElementById('senhas-iguais');
+ let btnCadastrar = document.getElementById('btn-cadastrar');
 
-//validação CPF
-inputCPF.addEventListener("keyup", (event) => {
-    //para usar o contrario colocar o sinal de ! assim só aceitará letras e não numeros.
-    if (isNaN(inputCPF.value)) {
-        inputCPF.value = inputCPF.value.substring(0, (inputCPF.value.length - 1))
-        console.log("É uma String")
-    }
-    if (inputCPF.value.length >= 11)
-        inputCPF.value = inputCPF.value.substring(0, 11)
-
-
-})
-// Validação de senhas. Sempre criar as variaveis e atribuir os valores.
-confirmeS.addEventListener("keyup", (e) => {
-    if (confirmeS.value != inputSenha.value) {
-        confirmeS.setAttribute("class", "form-control is-invalid")
-
+inputConfirm.addEventListener("keyup", (e) => {
+    if (inputConfirm.value != inputSenha.value) {
+        inputSenhasIguais.value = false;
+        inputConfirm.setAttribute("class", "form-control is-invalid");
     } else {
-        confirmeS.setAttribute("class", "form-control is-valid")
+        inputConfirm.setAttribute("class", "form-control is-valid");
+        inputSenhasIguais.value = true;
     }
-
 })
 
-// validação CPF titular do cartão.
-validacao.addEventListener("keyup", (event) => {
-    if (isNaN(validacao.value)) {
-        validacao.value = validacao.value.substring(0, (validacao.value.length - 1))
-        console.log("É uma String")
+// Função que acessa o evento do teclado para permitir somente letras e espaço(" ") no nome
+inputNome.onkeypress = (evt) => {
+    let evento = evt || window.event;
+    let key = evento.keyCode || evento.which;
+    key = String.fromCharCode(key);
+    //let regex = /^[0-9.,]+$/;
+    let regex = /^[a-z A-Z]+$/;
+    if (!regex.test(key) || inputNome.value.length == 35) {
+        evento.returnValue = false;
+        if (evento.preventDefault) evento.preventDefault();
     }
-    if (validacao.value.length >= 11){
-    validacao.value = validacao.value.substring(0, 11);
-
-    }
-
-}) 
-
-// validação CEP
-
-//função que avisa a busca pelo cep
-function buscarCep(cep){
-  fetch(`https://viacep.com.br/ws/${cep}/json`)
-  .then(Response => Response.json())
-  .then(dados =>{
-      if(dados.erro){
-          return inputcep.setAttribute("class", "form-control is-invalid")
-      }
-      inputcep.setAttribute("class", "form-control is-valid")
-      inputEndereco.value = dados.logradouro
-      inputBairro.value = dados.bairro
-      inputCidade.value = dados.localidade
-
-  })
-
 }
 
-inputcep.addEventListener("keyup", (event) => {
-    if (isNaN(inputcep.value)) {
-        inputcep.value = inputcep.value.substring(0, (inputcep.value.length - 1))
-        console.log("É uma String")
+inputTelefone.onkeypress = (evt) => {
+    let evento = evt || window.event;
+    let key = evento.keyCode || evento.which;
+    key = String.fromCharCode(key);
+    //var regex = /^[0-9.,]+$/;
+    let regex = /^[0-9]+$/;
+    let tamanho = inputTelefone.value.length;
+    if (!regex.test(key) || tamanho == 15) {
+        evento.returnValue = false;
+        if (evento.preventDefault) evento.preventDefault();
     }
-    if (inputcep.value.length >= 8){
-        inputcep.value = inputcep.value.substring(0,8);
-        buscarCep(inputcep.value)
-        Alert("Procurando CEP")
+    if (tamanho == 0) {
+        inputTelefone.value += "(";
     }
-
-}) 
-
-// validação cartao de credito
-inputCartao.addEventListener("keyup", (event) => {
-    if (isNaN(inputCartao.value)) {
-        inputCartao.value = inputCartao.value.substring(0, (inputCartao.value.length - 1))
-        console.log("É uma String")
+    if(tamanho == 3){
+        inputTelefone.value += ") ";
     }
-    if (inputCartao.value.length >= 11){
-    inputCartao.value = inputCartao.value.substring(0, 11);
-
+    if (tamanho == 9) {
+        inputTelefone.value += "-";
     }
+    if(inputTelefone.value.length == 14){
+        inputTelefone.value = inputTelefone.value.substring(0, 9) + inputTelefone.value[10] + "-" + inputTelefone.value.substring(11);
+    }
+}
 
-}) 
- 
-
-
-
+btnCadastrar.onclick = () => {
+    if(inputSenhasIguais.value == "true" && inputNome.value.length > 12 && inputEmail.value.length > 18 &&
+        cpfValido() && inputTelefone.value.length > 13 && inputSenha >= 8 ){
+            console.log("Cadatro realizado com sucesso!");
+    }else{
+        console.log("Não foi possivel realizar o cadastro!");
+    }
+}
