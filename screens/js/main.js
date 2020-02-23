@@ -1,4 +1,4 @@
- let inputSenha = document.getElementById('Senha');
+ let inputSenha = document.getElementById('senha');
  let inputConfirm = document.getElementById('confirmeSenha')
 
 inputConfirm.addEventListener("keyup", (e) => {
