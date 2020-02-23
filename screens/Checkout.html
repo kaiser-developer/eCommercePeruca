@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/wig.jpg">
     <title>Checkout</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -13,88 +14,22 @@
 
 <body>
     <header>
-        <main class="container-fluid">
-
-            <!-- Imagem do Logo -->
-            <div class="row container">
-                <div class="col-xs-12">
-                    <div class="logo">
-                        <img id="exemplo" class="img-responsive" src="images/logo.png" alt="logo" title="Wig's House"
-                            width="200px">
-                        <div id="navbar" class="row container-fluid">
-                            <ul class="nav justify-content-end col-xs-12">
-                                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
-                                    <button class="botao btn btn-basic nav-link" href="#"></button>
-                                </li>
-                                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
-                                    <button class="botao btn btn-basic nav-link" href="#"></button>
-                                </li>
-                                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
-                                    <button class="botao btn btn-basic nav-link" href="#"></button>
-                                </li>
-                                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
-                                    <button class="botao btn btn-basic nav-link" href="#"></button>
-                                </li>
-                                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
-                                    <button class="botao btn btn-basic nav-link" href="#"></button>
-                                </li>
-                                <li class="nav-item col-lg-2 col-md-3 col-xs-12">
-                                    <button class="botao btn btn-basic nav-link" href="#"></button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+            <a class="navbar-brand text-light"><img src="../screens/images/logo.png" width="160px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#"> <span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-item nav-link" href="#"></a>
+                    <a class="nav-item nav-link" href="#"></a>
+                    <a class="nav-item nav-link disabled" href="#"></a>
                 </div>
             </div>
 
-
-            <!-- Imagens de Login/Carrinho -->
-            <div class="row container-fluid">
-                <div class="col-xs-6">
-                    <a href="#">
-                        <img class="login" src="img/images.png" alt="login">
-                    </a>
-                </div>
-                <div class="col-xs-6">
-                    <a href="#">
-                        <img class="carrinho" src="img/2543411.png" alt="carrinho">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Navbar que só aparece em modo responsivo -->
-            <div id="navbarR" class="row container-fluid">
-                <nav id="menu" class="navbar navbar-expand-md bg-light navbar-light">
-                    <a class="navbar-brand" href="#">Menu</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#collapsibleNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                        <ul class="navbar-nav col-md-12 col-xs-12">
-                            <li class="nav-item col-lg-2 col-xs-12">
-                                <button class="botao btn btn-basic nav-link" href="#"></button>
-                            </li>
-                            <li class="nav-item col-lg-2 col-xs-12">
-                                <button class="botao btn btn-basic nav-link" href="#"></button>
-                            </li>
-                            <li class="nav-item col-lg-2 col-xs-12">
-                                <button class="botao btn btn-basic nav-link" href="#"></button>
-                            </li>
-                            <li class="nav-item col-lg-2 col-xs-12">
-                                <button class="botao btn btn-basic nav-link" href="#"></button>
-                            </li>
-                            <li class="nav-item col-lg-2 col-xs-12">
-                                <button class="botao btn btn-basic nav-link" href="#"></button>
-                            </li>
-                            <li class="nav-item col-lg-2 col-xs-12">
-                                <button class="botao btn btn-basic nav-link" href="#"></button>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-
+            </nav>
     </header>
     <main class="container">
         <form id="formulario Checkout" class="row mt-4">
@@ -200,7 +135,7 @@
 
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Lista de Compras:</label>
-
+                    
                 </div>
                 <div class="form-group">
                     <button type="button" class="btn btn-info">Total da Compra: R$00,00</button>
