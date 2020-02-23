@@ -7,21 +7,17 @@ inputCpf.onkeypress = (evt) => {
     let key = evento.keyCode || evento.which;
     key = String.fromCharCode(key);
     //var regex = /^[0-9.,]+$/;
-    var regex = /^[0-9.]+$/;
-    if (!regex.test(key)) {
-        evento.returnValue = false;
-        if (evento.preventDefault) evento.preventDefault();
-    }
-    let tamanho = input.value.length;
-    if (tamanho == 14) {
+    var regex = /^[0-9]+$/;
+    let tamanho = inputCpf.value.length;
+    if (!regex.test(key) || tamanho == 14) {
         evento.returnValue = false;
         if (evento.preventDefault) evento.preventDefault();
     }
     if (tamanho == 3 || tamanho == 7) {
-        input.value += ".";
+        inputCpf.value += ".";
     }
     if (tamanho == 11) {
-        input.value += "-";
+        inputCpf.value += "-";
     }
 }
 
@@ -46,7 +42,7 @@ const cpfValido = () => {
     soma = 0;
     if (cpf == "00000000000") return false;
 
-    for (var i = 1; i <= 9; i++) soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
+    for (let i = 1; i <= 9; i++) soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
     resto = (soma * 10) % 11;
 
     if ((resto == 10) || (resto == 11)) resto = 0;
