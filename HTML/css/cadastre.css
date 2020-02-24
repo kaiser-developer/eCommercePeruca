@@ -9,12 +9,15 @@ body{
 .container{
     display: inline-block;
     text-align: center;
+
        
 }
 #LogoPrincipal{
     align-items: center;
     margin-top: 40px;
     margin-left: 80px;
+    width: 30vw;
+    height: 15vh;
 
 }
 .button{
