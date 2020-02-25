@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/produtos.css" rel="stylesheet">
+    <link href="img/logoicon.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main class="container-fluid">
+
+        <header>
+            <!-- Imagem do Logo -->
+            <div class="row container">
+                <div class="col-xs-12">
+                    <div class="logo">
+                        <img id="exemplo" class="img-responsive" src="img/Sem título.png" alt="logo"
+                            title="Wig's House">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Imagens de Login/Carrinho -->
+            <div class="row container-fluid">
+                <div class="col-xs-6">
+                    <a href="#">
+                        <img class="login" src="img/images.png" alt="login">
+                        <p id="login" class="caption">Login</p>
+                    </a>
+                </div>
+                <div class="col-xs-6">
+                    <a href="#">
+                        <img class="carrinho" src="img/carrinho-de-compras.png" alt="carrinho">
+                        <p id="carrinho" class="caption">Carrinho</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navbar do site em telas grandes -->
+            <div id="navbar" class="row container-fluid">
+                <ul class="nav justify-content-end col-xs-12">
+                    <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Lisos</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Cacheados</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Crespos</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Ondulados</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Naturais</button>
+                    </li>
+                    <li class="nav-item col-lg-2 col-md-3 col-xs-12">
+                        <button class="botao btn btn-basic nav-link" href="#">Cosplay</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Navbar que só aparece em modo responsivo -->
+            <div id="navbarR" class="row container-fluid">
+                <nav id="menu" class="navbar navbar-expand-md bg-light navbar-light">
+                    <a class="navbar-brand" href="#">Menu</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav col-md-12 col-xs-12">
+                            <li class="nav-item col-lg-2 col-xs-12">
+                                <button class="botao btn btn-basic nav-link" href="#">Lisos</button>
+                            </li>
+                            <li class="nav-item col-lg-2 col-xs-12">
+                                <button class="botao btn btn-basic nav-link" href="#">Cacheados</button>
+                            </li>
+                            <li class="nav-item col-lg-2 col-xs-12">
+                                <button class="botao btn btn-basic nav-link" href="#">Crespos</button>
+                            </li>
+                            <li class="nav-item col-lg-2 col-xs-12">
+                                <button class="botao btn btn-basic nav-link" href="#">Ondulados</button>
+                            </li>
+                            <li class="nav-item col-lg-2 col-xs-12">
+                                <button class="botao btn btn-basic nav-link" href="#">Naturais</button>
+                            </li>
+                            <li class="nav-item col-lg-2 col-xs-12">
+                                <button class="botao btn btn-basic nav-link" href="#">Cosplay</button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container-fluid">
+            <div class="row mt-4 bg-secondary text-light justify-content-center">
+                <strong class="secao">
+                    Conheça nossos produtos :
+                </strong></div>
+        </div>
+
+        <!-- Cards em telas grandes -->
+        <section id="telaGrande">
+            <div id="produtosTela" class="container">
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secao">
+                        Cabelos lisos :
+                    </strong></div>
+            </div>
+
+            <div id="lisos" class="container">
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 justify-content-end">
+                    <div class="p-8">
+                        <button id="mais" type="submit" class="btn btn-secondary">Ver Todos</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secao">
+                        Cabelos cacheados :
+                    </strong></div>
+            </div>
+
+            <div id="cacheados" class="container">
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 justify-content-end">
+                    <div class="p-8">
+                        <button id="mais" type="submit" class="btn btn-secondary">Ver Todos</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secao">
+                        Cabelos crespos :
+                    </strong></div>
+            </div>
+
+            <div id="crespos" class="container">
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 justify-content-end">
+                    <div class="p-8">
+                        <button id="mais" type="submit" class="btn btn-secondary">Ver Todos</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secao">
+                        Cabelos Ondulados :
+                    </strong></div>
+            </div>
+
+            <div id="ondulados" class="container">
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 justify-content-end">
+                    <div class="p-8">
+                        <button id="mais" type="submit" class="btn btn-secondary">Ver Todos</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secao">
+                        Nossos produtos com fios naturais :
+                    </strong></div>
+            </div>
+
+            <div id="natural" class="container">
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 justify-content-end">
+                    <div class="p-8">
+                        <button id="mais" type="submit" class="btn btn-secondary">Ver Todos</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secao">
+                        Confira nossa seção cosplay :
+                    </strong></div>
+            </div>
+
+            <div id="cosplay" class="container">
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 justify-content-end">
+                    <div class="p-8">
+                        <button id="mais" type="submit" class="btn btn-secondary">Ver Todos</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards em telas pequenas -->
+        <section id="mobile">
+
+            <div id="produtosMobile" class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="p-8">
+                    <button id="maisMob" type="submit" class="btn btn-secondary">Ver Todos</button>
+                </div>
+            </div>
+
+
+        <div class="container-fluid">
+            <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secaoMob">
+                        Cabelos lisos :
+                    </strong></div>
+            </div>
+
+            <div id="produtosMobile" class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="p-8">
+                    <button id="maisMob" type="submit" class="btn btn-secondary">Ver Todos</button>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secaoMob">
+                        Cabelos cacheados:
+                    </strong></div>
+            </div>
+
+            <div id="produtosMobile" class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="p-8">
+                    <button id="maisMob" type="submit" class="btn btn-secondary">Ver Todos</button>
+                </div>
+            </div>
+
+        <div class="container-fluid">
+            <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secaoMob">
+                        Cabelos crespos:
+                    </strong></div>
+            </div>
+
+            <div id="produtosMobile" class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="p-8">
+                    <button id="maisMob" type="submit" class="btn btn-secondary">Ver Todos</button>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secaoMob">
+                        Cabelos ondulados :
+                    </strong></div>
+            </div>
+
+            <div id="produtosMobile" class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="p-8">
+                    <button id="maisMob" type="submit" class="btn btn-secondary">Ver Todos</button>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secaoMob">
+                        Nossos produtos com fios naturais:
+                    </strong></div>
+            </div>
+
+            <div id="produtosMobile" class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="p-8">
+                    <button id="maisMob" type="submit" class="btn btn-secondary">Ver Todos</button>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row mt-4 bg-secondary text-light justify-content-center">
+                    <strong class="secaoMob">
+                        Confira nossa seção cosplay :
+                    </strong></div>
+            </div>
+
+            <div id="produtosMobile" class="container-fluid">
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Sem título.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">Peruca ...</h4>
+                                <p class="card-text">Descrição Resumida</p>
+                                <a href="#" class="btn btn-secondary">Ver Produto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="p-8">
+                    <button id="maisMob" type="submit" class="btn btn-secondary">Ver Todos</button>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+
+    <footer class="bg-secondary text-light">
+        <div class="container-fluid">
+            <div class="row text-center col-12">
+                <strong>Wig's House --- Todos os direitos reservados .</strong>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
