@@ -38,6 +38,9 @@ body{
     width:50vw;
     height:95vh;
 }
+input {
+    margin: 5px;
+}
 
 
 @media only screen and (max-width: 800px) {
