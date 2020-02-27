@@ -21,15 +21,6 @@ CREATE TABLE `funcionarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `endereco` (
-	`id` int NOT NULL AUTO_INCREMENT,
-	`rua` varchar(45) NOT NULL,
-	`bairro` varchar(45) NOT NULL,
-	`cidade` varchar(45) NOT NULL,
-	`cep` varchar(45) NOT NULL,    
-	`clientes_id` int(11) NOT NULL,  
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-CREATE TABLE `bairros` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `rua` VARCHAR(45) NOT NULL,
   `bairro` VARCHAR(45) NOT NULL,
@@ -48,20 +39,20 @@ CREATE TABLE `bairros` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `status` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `tipo_pgto` (
-  `ind` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
-  `parcelas` int(11) NOT NULL,
-  PRIMARY KEY (`ind`)
+  `parcelas` int NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `produtos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `cor` varchar(70) NOT NULL,
   `tamanho` varchar(45) NOT NULL,
   `categoria` varchar(45) NOT NULL,
