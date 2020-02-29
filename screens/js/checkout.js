@@ -88,6 +88,8 @@ inputCep.onkeyup = () => {
     }
 }
 
+
+
 // Função que acessa o evento do teclado para permitir somente numeros no Cartao
 inputCartao.onkeypress = (evt) => {
     let evento = evt || window.event;

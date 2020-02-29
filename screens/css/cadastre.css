@@ -9,12 +9,14 @@ body{
 .container{
     display: inline-block;
     text-align: center;
-       
 }
+
 #LogoPrincipal{
-    align-items: center;
-      margin-top: 5px;
-      margin-left: 80px;
+    align-items: flex-end;
+    margin-top: 40px;
+    margin-left: 130px;
+    width: 30vw;
+    height: 15vh;
 
 }
 .button{
@@ -25,18 +27,25 @@ body{
     cursor: pointer;
 }
 #form-signin{
-    margin-left: 200px;
-    color: grey;
     align-items: center;
+    margin-left: 120px;
 }
 #fotoFixa{
     background-image: url(/screens/images/tentativa2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width:600px;
-    height:650px;
+    width:50vw;
+    height:95vh;
 }
-.checkbox{
-color: grey;
-text-align: center;
+input {
+    margin: 5px;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+    #fotoFixa {
+        width: 100vw;
+        height: 50vh;
+    }
 }

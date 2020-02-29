@@ -5,30 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Checkout - RD</title>
+    <title>Wig's House - Carrinho</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/checkout.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-dark" style="background-color: #d1d1d1;">
+        <nav class="navbar navbar-light bg-info">
             <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="LogoPrincipal" width="125px">
+                <img src="images/logo.png" alt="LogoPrincipal" width="150px">
             </a>
             <div class="continuar-cp">
-                <form class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-info" type="submit">Continuar comprando</button>
-                </form>
+                <div>
+                    <a href="produtos.html"><button class="btn btn-outline-secondary" type="submit">Continuar comprando</button></a>
+                </div>
             </div>
         </nav>
     </header>
     <main class="container">
         <form class="row dados center" id="checkout" method="POST">
             <div class="col-md-6">
-                <header class="card-header bg-info">
+                <header class="card-header bg-info text-light">
                     <img src="images/caixa-de-correio.png" alt="" srcset="" width="25" height="25">
-                    <t class="p-4 font-weight">Dados de Entrega</t>
+                    <t class="p-4 font-weight-bolder">Dados de Entrega</t>
                 </header>
                 <div class="border border-top-0 mt-2 p-4">
                     <div class="form-group">
@@ -79,9 +79,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <header class="card-header bg-info">
+                <header class="card-header bg-info text-light">
                     <img src="images/doacao.svg" alt="" srcset="" width="25" height="25">
-                    <t class="p-4 font-weight">Dados de Pagamento</t>
+                    <t class="p-4 font-weight-bolder">Dados de Pagamento</t>
                 </header>
                 <div class="border mt-2 p-4">
                     <table class="table table-striped">
@@ -128,7 +128,7 @@
                     <div class="form-group">
                         <label for="nome-titular">Nome titular:</label>
                         <input class="form-control" type="text" name="nome-titular"
-                            placeholder="nome titular" id="nome-titular">
+                            placeholder="Digite um complemento..." id="nome-titular">
                     </div>
                     <div class="form-group">
                         <label for="input-cpf">CPF do titular:</label>
@@ -136,12 +136,26 @@
                             placeholder="Digite o CPF do titular..." id="input-cpf">
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-success" id="btn-finalizar">Finalizar compra</button>
+                        <button type="button" class="btn btn-success btn-block" id="btn-finalizar">Finalizar compra</button>
                     </div>
                 </div>
             </div>
         </form>
     </main>
+
+
+    <footer class="bg-secondary text-light">
+        <div class="container-fluid">
+            <div class="row justify-content-center p-2 col-12">
+                <strong>Wig's House --- Todos os direitos reservados .</strong>
+            </div>
+        </div>
+        <div class="row justify-content-center col-12">
+            <a href="contato.html" class="text-light m-3">Contato</a>
+            <a href="cadastre.html" class="text-light m-3">Cadastrar</a>
+        </div>
+    </footer>
+
 
     <div class="modal" tabindex="-1" role="dialog" id="modal-finalizar">
         <div class="modal-dialog" role="document">
