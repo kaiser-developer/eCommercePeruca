@@ -75,7 +75,6 @@ footer {
     padding: 25px;
     margin-top: 10px;
     width: 100%;
-
 }
 
 .card {
@@ -100,6 +99,11 @@ footer {
     display: flex;
     justify-content: center;
 }
+
+#foot {
+    margin-left: 20px;
+}
+
 
 
 
