@@ -1,6 +1,8 @@
 create database loja_peruca;
 
-CREATE TABLE `clientes` (
+use loja_peruca;
+
+CREATE TABLE `cliente` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `cpf` varchar(12) NOT NULL,
@@ -11,7 +13,7 @@ CREATE TABLE `clientes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `funcionarios` (
+CREATE TABLE `funcionario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   `cargo` varchar(100) NOT NULL,
@@ -20,6 +22,13 @@ CREATE TABLE `funcionarios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `fornecedor`(
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `cnpj` VARCHAR(15) NOT NULL,
+  `nome` VARCHAR(60) NOT NULL,
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE `endereco` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `rua` VARCHAR(45) NOT NULL,
@@ -27,15 +36,13 @@ CREATE TABLE `endereco` (
   `cidade` VARCHAR(45) NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `cep` VARCHAR(45) NOT NULL,
-  `clientes_id` INT,
-  `fornecedores_id` INT,
+  `cliente_id` INT,
+  `fornecedor_id` INT,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_endereco_clientes1`
-    FOREIGN KEY (`clientes_id`)
-    REFERENCES `loja_peruca`.`clientes` (`id`),
-  CONSTRAINT `fk_endereco_fornecedores1`
-    FOREIGN KEY (`fornecedores_id`)
-    REFERENCES `loja_peruca`.`fornecedores` (`id`)
+    FOREIGN KEY (`cliente_id`)
+    REFERENCES `loja_peruca`.`cliente` (`id`),
+    FOREIGN KEY (`fornecedor_id`)
+    REFERENCES `loja_peruca`.`fornecedor` (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `status` (
@@ -51,7 +58,7 @@ CREATE TABLE `tipo_pgto` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `produtos` (
+CREATE TABLE `produto` (
   `id` int NOT NULL AUTO_INCREMENT,
   `cor` varchar(70) NOT NULL,
   `tamanho` varchar(45) NOT NULL,
@@ -61,3 +68,53 @@ CREATE TABLE `produtos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `estoque`(
+  `id_produto` INT NOT NULL,
+  `saldo` INT NOT NULL,
+  FOREIGN KEY (id_produto) REFERENCES `loja_peruca`.`produto` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `nota_fiscal`(
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `data_emissao` DATETIME NOT NULL,
+  `id_pedido` INT,
+  `id_entrada` INT,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (id_pedido) REFERENCES `loja_peruca`.`pedidos_vendas` (`cod_pedido`),
+  FOREIGN KEY (id_entrada) REFERENCES `loja_peruca`.`pedidos_compras` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `pedidos_vendas` (
+  `cod_pedido` INT NOT NULL AUTO_INCREMENT,
+  `valor_total` DOUBLE(9,2) NOT NULL,
+  `status_pedido` VARCHAR(45) NOT NULL,
+  `cliente_pesssoa_id` INT NOT NULL,
+  `nota_fiscal_id` INT NOT NULL,
+  `pagamento_id` INT NOT NULL,
+  `status_id` INT NOT NULL,
+  PRIMARY KEY (`cod_pedido`),
+  FOREIGN KEY (cliente_pesssoa_id) REFERENCES `loja_peruca`.`cliente` (`id`),
+  FOREIGN KEY (nota_fiscal_id) REFERENCES `loja_peruca`.`nota_fiscal` (`id`),
+  FOREIGN KEY (pagamento_id) REFERENCES `loja_peruca`.`tipo_pgto` (`id`),
+  FOREIGN KEY (status_id) REFERENCES `loja_peruca`.`status` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `pedidos_compras`(
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nota_fiscal_id` INT NOT NULL,
+  `fornecedor_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (nota_fiscal_id) REFERENCES `loja_peruca`.`nota_fiscal` (`id`),
+  FOREIGN KEY (fornecedor_id) REFERENCES `loja_peruca`.`fornecedor` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `itens_pedido`(
+  `produto_id` INT NOT NULL,
+  `qtd_produto` INT NOT NULL,
+  `cod_pedidos_vendas` INT,
+  `cod_pedidos_compras` INT,
+  FOREIGN KEY (produto_id) REFERENCES `loja_peruca`.`produto` (`id`),
+  FOREIGN KEY (cod_pedidos_vendas) REFERENCES `loja_peruca`.`pedidos_vendas` (`cod_pedido`),
+  FOREIGN KEY (cod_pedidos_compras) REFERENCES `loja_peruca`.`pedidos_compras` (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
