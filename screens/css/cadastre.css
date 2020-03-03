@@ -9,12 +9,14 @@ body{
 .container{
     display: inline-block;
     text-align: center;
-       
 }
+
 #LogoPrincipal{
-    align-items: center;
+    align-items: flex-end;
     margin-top: 40px;
-    margin-left: 80px;
+    margin-left: 130px;
+    width: 30vw;
+    height: 15vh;
 
 }
 .button{
@@ -35,8 +37,8 @@ body{
     width:50vw;
     height:95vh;
 }
-label {
-    padding: 2px;
+input {
+    margin: 5px;
 }
 
 
