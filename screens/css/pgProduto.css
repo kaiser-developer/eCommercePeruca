@@ -1,3 +1,6 @@
+body {
+    display: flex;
+}
 .login,
 .carrinho {
     position: absolute;
@@ -46,6 +49,59 @@
     display: none;
 }
 
+#fotoFixa{
+    position: relative;
+    justify-content: start;
+    margin-top: 50px;
+    height: 700px;
+    width: 500px;
+   
+}
+.Rota{
+color: grey;
+margin-top: 20px;
+
+}
+
+#tituloProduto,
+#descProduto {
+    color: grey;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+   font-size: 20px;
+   
+   
+}
+ .texto{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+
+
+ #precoDe {
+     font-size: 20px;
+     text-align: center;
+     text-decoration: line-through;
+ }
+
+ #precoPor {
+     font-size: 40px;
+     text-align: center;
+ }
+
+ .carousel-control-prev:hover,
+ .carousel-control-next:hover {
+     background-color: rgb(161, 157, 157);
+     opacity: 0.1;
+ }
+
+ #divFrete {
+     border-left: 1px solid rgb(189, 187, 187);
+ }
+
+
 @media only screen and (max-width: 768px) {
     .login,
 .carrinho {
@@ -55,10 +111,6 @@
     top: 5vh;
     right: 10px;
 }
-#fotoFixa{
-    background-image: url(/screens/images/tentativa2.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width:50vw;
-    height:95vh;
+
+
 }
