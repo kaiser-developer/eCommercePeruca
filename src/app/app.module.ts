@@ -11,11 +11,10 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
     AppComponent,
     FooterComponent,
     CadastroComponent,
-
   ],
   imports: [
     BrowserModule,
-    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
