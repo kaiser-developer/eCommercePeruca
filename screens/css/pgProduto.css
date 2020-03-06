@@ -42,7 +42,8 @@ body {
     justify-content: center;
     background-color: rgb(219, 214, 214);
     box-shadow: black 1px 2px 3px; 
-    width: 100vw;
+    width: 95vw;
+
 }
 
 #navbarR {
@@ -101,13 +102,6 @@ margin-top: 20px;
      border-left: 1px solid rgb(189, 187, 187);
  }
 
- footer {
-    position: relative;
-    bottom: 0px;
-    padding: 25px;
-    margin-top: 10px;
-    width: 100%;
-}
 
 @media only screen and (max-width: 768px) {
     .login,
