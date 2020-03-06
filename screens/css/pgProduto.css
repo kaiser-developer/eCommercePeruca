@@ -101,6 +101,13 @@ margin-top: 20px;
      border-left: 1px solid rgb(189, 187, 187);
  }
 
+ footer {
+    position: relative;
+    bottom: 0px;
+    padding: 25px;
+    margin-top: 10px;
+    width: 100%;
+}
 
 @media only screen and (max-width: 768px) {
     .login,
