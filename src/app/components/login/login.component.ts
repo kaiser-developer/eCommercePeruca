@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    console.log(this.formLogin.controls);
+    if (this.formLogin.status != "INVALID") {
+      console.log(this.formLogin.controls);
+    }
+    alert()
   }
 }
