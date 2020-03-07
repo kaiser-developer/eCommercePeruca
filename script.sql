@@ -38,11 +38,7 @@ CREATE TABLE `endereco` (
   `cep` VARCHAR(45) NOT NULL,
   `cliente_id` INT,
   `fornecedor_id` INT,
-  PRIMARY KEY (`id`),
-    FOREIGN KEY (`cliente_id`)
-    REFERENCES `loja_peruca`.`cliente` (`id`),
-    FOREIGN KEY (`fornecedor_id`)
-    REFERENCES `loja_peruca`.`fornecedor` (`id`)
+  PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `status` (
@@ -70,8 +66,7 @@ CREATE TABLE `produto` (
 
 CREATE TABLE `estoque`(
   `id_produto` INT NOT NULL,
-  `saldo` INT NOT NULL,
-  FOREIGN KEY (id_produto) REFERENCES `loja_peruca`.`produto` (`id`)
+  `saldo` INT NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `nota_fiscal`(
@@ -79,9 +74,7 @@ CREATE TABLE `nota_fiscal`(
   `data_emissao` DATETIME NOT NULL,
   `id_pedido` INT,
   `id_entrada` INT,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (id_pedido) REFERENCES `loja_peruca`.`pedidos_vendas` (`cod_pedido`),
-  FOREIGN KEY (id_entrada) REFERENCES `loja_peruca`.`pedidos_compras` (`id`)
+  PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `pedidos_vendas` (
@@ -92,20 +85,14 @@ CREATE TABLE `pedidos_vendas` (
   `nota_fiscal_id` INT NOT NULL,
   `pagamento_id` INT NOT NULL,
   `status_id` INT NOT NULL,
-  PRIMARY KEY (`cod_pedido`),
-  FOREIGN KEY (cliente_pesssoa_id) REFERENCES `loja_peruca`.`cliente` (`id`),
-  FOREIGN KEY (nota_fiscal_id) REFERENCES `loja_peruca`.`nota_fiscal` (`id`),
-  FOREIGN KEY (pagamento_id) REFERENCES `loja_peruca`.`tipo_pgto` (`id`),
-  FOREIGN KEY (status_id) REFERENCES `loja_peruca`.`status` (`id`)
+  PRIMARY KEY (`cod_pedido`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `pedidos_compras`(
   `id` INT NOT NULL AUTO_INCREMENT,
   `nota_fiscal_id` INT NOT NULL,
   `fornecedor_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (nota_fiscal_id) REFERENCES `loja_peruca`.`nota_fiscal` (`id`),
-  FOREIGN KEY (fornecedor_id) REFERENCES `loja_peruca`.`fornecedor` (`id`)
+  PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -113,8 +100,54 @@ CREATE TABLE `itens_pedido`(
   `produto_id` INT NOT NULL,
   `qtd_produto` INT NOT NULL,
   `cod_pedidos_vendas` INT,
-  `cod_pedidos_compras` INT,
-  FOREIGN KEY (produto_id) REFERENCES `loja_peruca`.`produto` (`id`),
-  FOREIGN KEY (cod_pedidos_vendas) REFERENCES `loja_peruca`.`pedidos_vendas` (`cod_pedido`),
-  FOREIGN KEY (cod_pedidos_compras) REFERENCES `loja_peruca`.`pedidos_compras` (`id`)
+  `cod_pedidos_compras` INT
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- -------------------------------------FOREIGN KEYS-------------------------------------
+ALTER TABLE `endereco`
+ADD FOREIGN KEY (`cliente_id`) REFERENCES `loja_peruca`.`cliente` (`id`);
+
+ALTER TABLE `endereco`
+ADD FOREIGN KEY (`fornecedor_id`) REFERENCES `loja_peruca`.`fornecedor` (`id`);
+
+
+ALTER TABLE `estoque`
+ADD FOREIGN KEY (id_produto) REFERENCES `loja_peruca`.`produto` (`id`);
+
+
+ALTER TABLE `nota_fiscal`
+ADD FOREIGN KEY (id_pedido) REFERENCES `loja_peruca`.`pedidos_vendas` (`cod_pedido`);
+  
+ALTER TABLE `nota_fiscal`
+ADD FOREIGN KEY (id_entrada) REFERENCES `loja_peruca`.`pedidos_compras` (`id`);
+
+
+ALTER TABLE `pedidos_vendas`
+ADD FOREIGN KEY (cliente_pesssoa_id) REFERENCES `loja_peruca`.`cliente` (`id`);
+
+ALTER TABLE `pedidos_vendas`
+ADD FOREIGN KEY (nota_fiscal_id) REFERENCES `loja_peruca`.`nota_fiscal` (`id`);
+
+ALTER TABLE `pedidos_vendas`
+ADD FOREIGN KEY (pagamento_id) REFERENCES `loja_peruca`.`tipo_pgto` (`id`);
+
+ALTER TABLE `pedidos_vendas`
+ADD FOREIGN KEY (status_id) REFERENCES `loja_peruca`.`status` (`id`);
+
+
+ALTER TABLE `pedidos_compras`
+ADD FOREIGN KEY (nota_fiscal_id) REFERENCES `loja_peruca`.`nota_fiscal` (`id`);
+
+ALTER TABLE `pedidos_compras`
+ADD FOREIGN KEY (fornecedor_id) REFERENCES `loja_peruca`.`fornecedor` (`id`);
+
+
+ALTER TABLE `itens_pedido`
+ADD FOREIGN KEY (produto_id) REFERENCES `loja_peruca`.`produto` (`id`);
+  
+ALTER TABLE `itens_pedido`
+ADD FOREIGN KEY (cod_pedidos_vendas) REFERENCES `loja_peruca`.`pedidos_vendas` (`cod_pedido`);
+
+ALTER TABLE `itens_pedido`
+ADD FOREIGN KEY (cod_pedidos_compras) REFERENCES `loja_peruca`.`pedidos_compras` (`id`);
