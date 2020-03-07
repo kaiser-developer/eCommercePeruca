@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormBuilder } from "@angular/forms";
 import { Cliente } from '../cadastro/shared/cliente';
 
 
@@ -12,20 +12,21 @@ import { Cliente } from '../cadastro/shared/cliente';
 export class CadastroComponent implements OnInit {
   formCliente: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
   ngOnInit(): void {
     this.createForm(new Cliente());
 
   }
   createForm(cliente: Cliente) {
-    this.formCliente = new FormGroup({
-      nome: new FormControl(cliente.nome),
-      cpf: new FormControl(cliente.cpf),
-      tel: new FormControl(cliente.tel),
-      email: new FormControl(cliente.email),
-      senha: new FormControl(cliente.senha)
+    this.formCliente = this.formBuilder.group({
+      nome: [(cliente.nome)],
+      cpf: [(cliente.cpf)],
+      tel: [(cliente.tel)],
+      email: [(cliente.email)],
+      senha: [(cliente.senha)]
     })
   }
+
   onSubmit() {
 
     console.log(this.formCliente.value);
@@ -43,13 +44,24 @@ export class CadastroComponent implements OnInit {
       if (evento.preventDefault) evento.preventDefault();
     }
   }
-  validacaoTelefone(event: any) {
+  validacaoCpf(event: any) {
+    let evento = event;
+    let key = evento.keyCode || evento.which;
+    key = String.fromCharCode(key);
+    let regex = /^[0-9]+$/;
+    let tamanho = this.formCliente.value.cpf.length;
+    if (!regex.test(key) || tamanho == 11) {
+      evento.returnValue = false;
+      if (evento.preventDefault) evento.preventDefault();
+    }  
+  }
+   validacaoTelefone(event: any) {
     let evento = event;
     let key = evento.keyCode || evento.which;
     key = String.fromCharCode(key);
     let regex = /^[0-9]+$/;
     let tamanho = this.formCliente.value.tel.length;
-    if (!regex.test(key) || tamanho == 15) {
+    if (!regex.test(key) || tamanho == 11) {
       evento.returnValue = false;
       if (evento.preventDefault) evento.preventDefault();
     }
@@ -66,17 +78,9 @@ export class CadastroComponent implements OnInit {
       this.formCliente.value.tel = this.formCliente.value.tel.substring(0, 9) + this.formCliente.value.tel[10] + '-' + this.formCliente.value.tel.substring(11);
     }
   }
- 
-  
 
-//   inputConfirm.addEventListener("keyup", (e) => {
-//     if (inputConfirm.value != inputSenha.value) {
-//         inputSenhasIguais.value = false;
-//         inputConfirm.setAttribute("class", "form-control is-invalid");
-//     } else {
-//         inputConfirm.setAttribute("class", "form-control is-valid");
-//         inputSenhasIguais.value = true;
-//     }
-// })
 }
+
+
+
 
