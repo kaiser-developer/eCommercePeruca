@@ -30,12 +30,15 @@
                 <form id="form-signin" (ngSubmit)="login()" [formGroup]="formLogin">
                     <img class="mb-4" src="#" alt="" width="40" height="30">
                     <h1 class="h3 mb-3 font-weight-normal">Faça seu login</h1>
+
                     <label for="inputEmail">Endereço de email:</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Seu email" required
-                        autofocus="" formControlName="email">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Seu email" required minlength="15"
+                        autofocus="" formControlName="email" (keypress)="digitandoEmail($event)">
+
                     <label for="inputPassword">Senha:</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required minlength="8"
                         formControlName="password">
+
                     <div class="checkbox mb-3">
                         <label>
                             <input type="checkbox" value="remember-me"> Lembre de mim

@@ -20,11 +20,15 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  digitandoEmail(evento: any) {
+
+    console.log("teste")
+
+  }
+
 
   login() {
-    if (this.formLogin.status != "INVALID") {
-      console.log(this.formLogin.controls);
-    }
-    alert()
+
+    this.formLogin.status != "INVALID" ? console.log(this.formLogin.controls) : alert("campos Invalidos");
   }
 }
