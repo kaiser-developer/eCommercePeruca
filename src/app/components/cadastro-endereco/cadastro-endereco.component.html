@@ -1,11 +1,11 @@
 <form class="border border-top-0 mt-2 p-4" [formGroup]="formEndereco">
     <div class="form-group">
         <label>Destinatario:</label>
-        <input class="form-control" placeholder="Digite o nome do destinatario..." formControlName="destinatario">
+        <input class="form-control" placeholder="Digite o nome do destinatario..." (keypress)="permitirLetras($event)" maxlength="35" formControlName="destinatario">
     </div>
     <div class="form-group">
         <label>CEP:</label>
-        <input class="form-control" placeholder="Digite seu CEP..." formControlName="cep">
+        <input class="form-control" placeholder="Digite seu CEP..." (keypress)="validarCep($event)" (keyup)="preencherEndereco()" formControlName="cep" maxlength="8">
     </div>
     <div class="form-group">
         <label>Logradouro:</label>
@@ -22,19 +22,18 @@
     </div>
     <div class="form-group">
         <label>Bairro:</label>
-        <input class="form-control" type="text" placeholder="Bairro..." formControlName="bairro">
+        <input class="form-control" type="text" placeholder="Bairro..." formControlName="bairro" maxlength="30">
     </div>
     <div class="form-group row">
         <div class="col-6">
             <label>Cidade:</label>
-            <input class="form-control" type="text" placeholder="Cidade..." formControlName="cidade">
+            <input class="form-control" (keypress)=permitirLetras($event) type="text" placeholder="Cidade..." formControlName="localidade">
         </div>
         <div class="col-6">
             <label>Estado:</label>
-            <select class="form-control" name="estado" formControlName="estado">
-                <option value="" selected>Estado</option>
-                <option value="SP" >SP</option>
-                <option value="RJ" >RJ</option>
+            <select class="form-control" name="estado" formControlName="uf">
+                <option value="" selected disabled>Estado</option>
+                <option *ngFor="let estado of estados" [value]="estado.sigla" >{{estado.nome}}</option>
             </select>
         </div>
     </div>

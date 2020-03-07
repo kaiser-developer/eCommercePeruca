@@ -3,8 +3,8 @@ export class Endereco {
                 public logradouro: string,
                 public numero: number,
                 public bairro: string,
-                public cidade: string,
-                public estado: string,
-                public destinatario: string,
+                public localidade: string,
+                public uf: string,
+                public destinatario?: string,
                 public complemento: string = null){}
 }

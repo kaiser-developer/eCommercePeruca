@@ -22,8 +22,9 @@ export class CheckoutComponent implements OnInit {
       new Endereco("12345678", "teste5", 10, "teste5", "teste5", "teste5", "Gabriel"),
       new Endereco("12345678", "teste6", 10, "teste6", "teste6", "teste6", "Michelle")
     )
-    this.enderecoPrincipal = this.enderecos[0];
-    console.log(this.enderecoPrincipal)
+    if(this.enderecos.length > 0){
+      this.enderecoPrincipal = this.enderecos[0];
+    }
   }
 
   ngOnInit(): void {
@@ -34,7 +35,16 @@ export class CheckoutComponent implements OnInit {
   }
 
   cadastrarEndereco(endereco: Endereco){
+    if(endereco.bairro.replace(/\ /g, '').length < 10 || endereco.cep.replace(/\ /g, '').length != 8 ||
+      endereco.destinatario.replace(/\ /g, '').length < 10 || endereco.localidade.replace(/\ /g, '').length < 10 ||
+      (endereco.numero == 0 || endereco.numero == undefined) || endereco.logradouro.replace(/\ /g, '').length < 6 ||
+      endereco.uf == ""){
+                return alert("Dados não preenchidos corretamente");
+    }    
     this.enderecos.push(endereco);
+    if(this.enderecos.length == 1){
+      this.enderecoPrincipal = this.enderecos[0]
+    }
     this.modalRef.hide();
   }
 
