@@ -1,0 +1,30 @@
+<body>
+    <header>
+        <app-nav-checkout></app-nav-checkout>
+    </header>
+    <main class="container">
+        <form class="row dados center" id="checkout" method="POST">
+            <div class="col-md-6">
+                <app-endereco [endereco]="enderecoPrincipal"></app-endereco>
+                <button class="btn btn-success" (click)="abrirModal(ender)">Cadastrar novo endereço</button>
+                <ng-template #ender>
+                    <app-endereco *ngFor="let item of enderecos" [endereco]="item"></app-endereco>
+                </ng-template>
+            </div>
+            <div class="col-md-6">
+                <app-dados-pagamento (botaoFinalizarClicado)="abrirModal(template)"></app-dados-pagamento>
+            </div>
+        </form>
+    </main>
+</body>
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Cadastrar endereço</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <app-cadastro-endereco></app-cadastro-endereco>
+</ng-template>
+
+<app-footer></app-footer>
