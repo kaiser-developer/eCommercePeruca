@@ -43,7 +43,7 @@ label {
 @media only screen and (max-width: 800px) {
 
     #fotoFixa {
-        width: 100vw;
+        width: 100vh;
         height: 50vh;
     }
 }
