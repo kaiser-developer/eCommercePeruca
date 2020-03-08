@@ -1,60 +1,27 @@
-<header class="card-header bg-info text-light">
-    <img src="../../../../assets/images/doacao.svg" alt="" srcset="" width="25" height="25">
-    <b class="p-4 font-weight-bolder">Dados de Pagamento</b>
-</header>
-<div class="border mt-2 p-4">
-    <table class="table table-striped">
-        <thead class="">
-            <tr>
-                <th scope="col">Produtos</th>
-                <th scope="col">Preço</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Peruca 1</th>
-                <td>R$ 40,00</td>
-            </tr>
-            <tr>
-                <th scope="row">Peruca 2</th>
-                <td>R$ 100,00</td>
-            </tr>
-            <tr>
-                <th scope="row">Peruca 3</th>
-                <td>R$ 50,00</td>
-            </tr>
-        </tbody>
-    </table>
-    <h5 class="p-2">Total R$ </h5>
-</div>
-<div class="border border-top-0 mt-2 p-4">
+<form class="border border-top-0 mt-2 p-4" [formGroup]="formPagamento">
     <div class="form-group">
-        <label for="numero-cartao">Numero do cartão:</label>
-        <input class="form-control" type="text" name="numero-cartao"
-            placeholder="Digite o numero do cartão..." id="numero-cartao">
+        <label>Numero do cartão:</label>
+        <input class="form-control" type="text" placeholder="Digite o numero do cartão..." (keypress)="permitirNumeros($event)" maxlength="16" formControlName="numeroCartao">
     </div>
     <div class="form-group row">
         <div class="col-9">
-            <label for="data-validade">Data validade:</label>
-            <input class="form-control" type="month" class="datepicker" name="data-validade" 
-                id="data-validade">
+            <label>Data validade:</label>
+            <input class="form-control" type="month" [min]="data" formControlName="dataValidade">
         </div>
         <div class="col-3">
-            <label for="cod-cartao">CVV:</label>
-            <input class="form-control" type="text" name="cod-cartao" placeholder="..." id="cod-cartao">
+            <label>CVV:</label>
+            <input class="form-control" type="text" placeholder="..." (keypress)="permitirNumeros($event)" maxlength="3" formControlName="cvv">
         </div>
     </div>
     <div class="form-group">
-        <label for="nome-titular">Nome titular:</label>
-        <input class="form-control" type="text" name="nome-titular"
-            placeholder="Digite um complemento..." id="nome-titular">
+        <label>Nome titular:</label>
+        <input class="form-control" type="text" placeholder="Digite um complemento..." maxlength="20" (keypress)="permitirLetras($event)" formControlName="nomeTitular">
     </div>
     <div class="form-group">
-        <label for="input-cpf">CPF do titular:</label>
-        <input class="form-control" type="text" name="input-cpf"
-            placeholder="Digite o CPF do titular..." id="input-cpf">
+        <label>CPF do titular:</label>
+        <input class="form-control" type="text" placeholder="Digite o CPF do titular..." (keypress)="permitirNumeros($event)" maxlength="11" formControlName="cpf">
     </div>
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-success btn-block" id="btn-finalizar" (click)="botaoFinalizarClicado.emit()">Finalizar compra</button>
+        <button type="button" class="btn btn-success btn-block" id="btn-finalizar" (click)="botaoFinalizarClicado.emit(validarPagamento())">Finalizar compra</button>
     </div>
-</div>
+</form>

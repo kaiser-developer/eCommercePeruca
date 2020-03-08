@@ -16,6 +16,15 @@ import { ModalEnderecoComponent } from './component/modal-endereco/modal-enderec
 import { NavCheckoutComponent } from './component/checkout/nav-checkout/nav-checkout.component';
 import { CadastroEnderecoComponent } from './component/cadastro-endereco/cadastro-endereco.component';
 import { EnderecoComponent } from './component/endereco/endereco.component';
+import { FormaEnvioComponent } from './component/checkout/forma-envio/forma-envio.component';
+import { CarrinhoComponent } from './component/checkout/carrinho/carrinho.component';
+import { StorageService } from './services/storage.service';
+import { HttpClientModule } from '@angular/common/http';
+import { QuemSomosComponent } from './component/quem-somos/quem-somos.component';
+import { ProdutosGeralComponent } from './component/produtos-geral/produtos-geral.component';
+
+
+
 
 
 @NgModule({
@@ -31,7 +40,11 @@ import { EnderecoComponent } from './component/endereco/endereco.component';
     ModalEnderecoComponent,
     NavCheckoutComponent,
     CadastroEnderecoComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    FormaEnvioComponent,
+    CarrinhoComponent,
+    QuemSomosComponent,
+    ProdutosGeralComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +53,10 @@ import { EnderecoComponent } from './component/endereco/endereco.component';
     ReactiveFormsModule,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    StorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

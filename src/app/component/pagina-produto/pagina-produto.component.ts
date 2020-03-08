@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validacoes } from 'src/app/model/validacoes';
 
 @Component({
   selector: 'app-pagina-produto',
@@ -7,24 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaProdutoComponent implements OnInit {
 
-
-frete = document.getElementById('frete');
-
-  constructor() { }
+  validacoes: Validacoes;
 
 
+  constructor() { 
+    this.validacoes = new Validacoes()
+  }
+ 
+  permitirNumeros(evento: any){
+    this.validacoes.cancelarLetras(evento);
+  }
   
-
-//   numero.addEventListener('keyup', (event) => {
-//     if (isNaN(numero.value)) {
-//         numero.value = numero.value.substring(0, (numero.value.length - 1));
-//     }
-
-//     if (numero.value.length >= 5) {
-//         numero.value = numero.value.substring(0, 5)
-//     }
-// })
-
   ngOnInit(): void {
   }
 
