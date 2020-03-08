@@ -24,11 +24,20 @@ export class Validacoes {
     }
 
     verificarEndereco(endereco) {
-        if (endereco.bairro.replace(/\ /g, '').length < 10 || endereco.cep.replace(/\ /g, '').length != 8 ||
+        if (endereco.bairro.replace(/\ /g, '').length < 10 || endereco.cep.length != 8 ||
             endereco.destinatario.replace(/\ /g, '').length < 10 || endereco.localidade.replace(/\ /g, '').length < 10 ||
             (endereco.numero == 0 || endereco.numero == undefined) || endereco.logradouro.replace(/\ /g, '').length < 6 ||
             endereco.uf == "") {
             return true;
+        }
+        return false;
+    }
+
+    verificarDadosPagamento(dadosPagamento) {
+        if (dadosPagamento.numeroCartao.length == 16 && (dadosPagamento.dataValidade != null &&
+            dadosPagamento.dataValidade.length != 0) && dadosPagamento.cvv.length == 3 &&
+            dadosPagamento.nomeTitular.replace(/\ /g, '').length > 8 && this.validarCpf(dadosPagamento.cpf)){
+                return true;
         }
         return false;
     }

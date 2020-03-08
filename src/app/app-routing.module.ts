@@ -7,8 +7,7 @@ import { CheckoutComponent } from "./components/checkout/checkout.component";
 const routes: Routes = [
   { path: '', redirectTo: 'checkout', pathMatch: 'full'},
   { path: 'checkout', component: CheckoutComponent},
-  { path: 'footer', component: FooterComponent },
-  { path: '**', redirectTo: 'checkout'}
+  { path: 'footer', component: FooterComponent }
 ];
 
 @NgModule({

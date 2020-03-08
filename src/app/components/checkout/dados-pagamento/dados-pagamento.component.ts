@@ -30,6 +30,7 @@ export class DadosPagamentoComponent implements OnInit {
     this.validacoes = new Validacoes();
     this.data = `${this.dataAtual.getFullYear()}-`;
     this.data += this.dataAtual.getMonth() < 9 ? `0${(this.dataAtual.getMonth() + 1)}` : `${(this.dataAtual.getMonth() + 1)}`
+    this.formPagamento = this.createForm(new DadosPagamento("", "", "", "", ""))
   }
 
   ngOnInit(): void {
@@ -41,5 +42,9 @@ export class DadosPagamentoComponent implements OnInit {
 
   permitirLetras(evento: any){
     this.validacoes.cancelarNumeros(evento)
+  }
+
+  validarPagamento(): boolean{
+    return this.validacoes.verificarDadosPagamento(this.formPagamento.value);
   }
 }

@@ -14,14 +14,19 @@
                 <button class="btn btn-success" (click)="abrirModal(novoEndereco)">Cadastrar novo endereço</button>
             </div>
             <a class="btn btn-primary text-light mt-2" (click)="abrirModal(listaEnderecos)">Alterar endereço</a>
-            <app-forma-envio></app-forma-envio>
+            <app-forma-envio (enviarFormaDeEnvio)="receberFormaDeEnvio($event)"></app-forma-envio>
+            <div class="card-header bg-info text-light">
+                <img src="../../../../assets/images/varejo.svg" alt="" srcset="" width="25" height="25">
+                <b class="p-4 font-weight-bolder">Carrinho</b>
+            </div>
+            <app-carrinho></app-carrinho>
         </div>
         <div class="col-md-6">
             <div class="card-header bg-info text-light">
                 <img src="../../../../assets/images/doacao.svg" alt="" srcset="" width="25" height="25">
                 <b class="p-4 font-weight-bolder">Dados de Pagamento</b>
             </div>
-            <app-dados-pagamento></app-dados-pagamento>
+            <app-dados-pagamento (botaoFinalizarClicado)="finalizarCompra($event)"></app-dados-pagamento>
         </div>
     </form>
 </main>

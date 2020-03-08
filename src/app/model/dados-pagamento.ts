@@ -1,7 +1,9 @@
 export class DadosPagamento {
-    numeroCartao: string;
-    dataValidade: string;
-    cvv: string;
-    nomeTitular: string;
-    cpf: string;
+    constructor(
+        public numeroCartao: string,
+        public dataValidade: string,
+        public cvv: string,
+        public nomeTitular: string,
+        public cpf: string,
+    ) {}
 }
