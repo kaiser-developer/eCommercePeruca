@@ -5,6 +5,7 @@ import { Validacoes } from 'src/app/model/validacoes';
 import { StorageService } from 'src/app/services/storage.service';
 import { Carrinho } from 'src/app/model/carrinho';
 import { Produtos } from 'src/app/model/Produtos';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
 
 @Component({
   selector: 'app-checkout',
@@ -19,8 +20,9 @@ export class CheckoutComponent implements OnInit {
   enderecoPrincipal: Endereco = null;
   validacoes: Validacoes;
   formaEnvio: number = 0;
+  dados: Produtos[] = [];
 
-  constructor(private modalService: BsModalService, private storage: StorageService) { 
+  constructor(private modalService: BsModalService, private storage: StorageService, private http: RequisicoesService) { 
     this.enderecos.push(
       new Endereco("06810060", "Rua Piloto", 109, "Jardim Castilho", "Embu", "SP", "Cesar"),
       new Endereco("13308133", "Rua Maua", 22, "Cidade Nova I", "Itu", "SP", "Vitor"),
@@ -33,11 +35,15 @@ export class CheckoutComponent implements OnInit {
     }
     let carrinho: Carrinho[] = [];
     carrinho.push(
-      new Carrinho(new Produtos("Peruca 1", 33.33), 2),
-      new Carrinho(new Produtos("Peruca 2", 66.66), 2),
-      new Carrinho(new Produtos("Peruca 3", 99.99), 2)
+      new Carrinho(new Produtos(1, "Peruca 1", 33.33, ""), 2),
+      new Carrinho(new Produtos(2, "Peruca 2", 66.66, ""), 2),
+      new Carrinho(new Produtos(3, "Peruca 3", 99.99, ""), 2)
     )
     this.storage.salvarCarrinho(carrinho);
+    
+    this.http.getProdutos().subscribe(produtos => 
+      console.log(produtos)  
+    );
   }
 
   ngOnInit(): void {

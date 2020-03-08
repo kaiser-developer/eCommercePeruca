@@ -14,7 +14,6 @@ import { CadastroEnderecoComponent } from './components/cadastro-endereco/cadast
 import { EnderecoComponent } from './components/checkout/endereco/endereco.component';
 import { FormaEnvioComponent } from './components/checkout/forma-envio/forma-envio.component';
 import { CarrinhoComponent } from './components/checkout/carrinho/carrinho.component';
-import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -33,12 +32,10 @@ import { StorageService } from './services/storage.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ModalModule.forRoot()
   ],
-  providers: [
-    HttpClientModule,
-    StorageService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

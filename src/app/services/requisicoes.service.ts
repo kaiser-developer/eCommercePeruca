@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Endereco } from '../model/endereco';
 import { Uf } from '../model/uf';
+import { Produtos } from '../model/Produtos';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,12 @@ export class RequisicoesService {
           dados => dados
       )
     )
+  }
+
+  getProdutos(){
+    let url = this.http.get<Produtos[]>("http://localhost:3000/produto");
+    return url.pipe(map(
+      valores => valores
+    ));
   }
 }
