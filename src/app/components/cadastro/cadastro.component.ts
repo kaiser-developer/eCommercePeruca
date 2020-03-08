@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, FormArray, Form, FormControl } from "@angular/forms";
 import { Cliente } from '../cadastro/shared/cliente';
+import { Validacoes } from 'src/app/modelo/validacoes';
 
 
 
@@ -11,28 +12,25 @@ import { Cliente } from '../cadastro/shared/cliente';
 })
 export class CadastroComponent implements OnInit {
   formCliente: FormGroup;
-
+  
   constructor(private formBuilder: FormBuilder) { }
-  ngOnInit(): void {
-    this.createForm(new Cliente());
-
-  }
-  createForm(cliente: Cliente) {
+  ngOnInit(){ 
     this.formCliente = this.formBuilder.group({
-      nome: [(cliente.nome)],
-      cpf: [(cliente.cpf)],
-      tel: [(cliente.tel)],
-      email: [(cliente.email)],
-      senha: [(cliente.senha)]
-    })
+      nome: [null, [Validators.required]],
+      cpf: [null, [Validators.required]],
+      tel: [null, [Validators.required]],
+      email: [null, [Validators.required]],
+      senha: [null, [Validators.required, Validators.minLength(5)]],
+      confirmarSenha: [null, [Validacoes.equalsTo('senha ')]]
+      //confirmarSenha: [(cliente.confirmarSenha), Validators.required]
+    });
   }
-
+  
   onSubmit() {
 
     console.log(this.formCliente.value);
     this.formCliente.reset(new Cliente());
   }
-
   validacaoNome(event: any) {
     let evento = event;
     let key = evento.keyCode || evento.which;
@@ -55,7 +53,7 @@ export class CadastroComponent implements OnInit {
       if (evento.preventDefault) evento.preventDefault();
     }  
   }
-   validacaoTelefone(event: any) {
+  validacaoTelefone(event: any) {
     let evento = event;
     let key = evento.keyCode || evento.which;
     key = String.fromCharCode(key);
@@ -78,7 +76,7 @@ export class CadastroComponent implements OnInit {
       this.formCliente.value.tel = this.formCliente.value.tel.substring(0, 9) + this.formCliente.value.tel[10] + '-' + this.formCliente.value.tel.substring(11);
     }
   }
-
+  
 }
 
 
