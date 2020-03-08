@@ -69,7 +69,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   finalizarCompra(dadosPagamento){
-    if(this.enderecoPrincipal != null && dadosPagamento && this.formaEnvio != 0){
+    if(this.enderecoPrincipal != null && dadosPagamento && this.formaEnvio != 0 && this.storage.recuperarCarrinho.length != 0){
       console.log("Compra finalizada");
     }else{
       console.log("Preencha todos os dados corretamente")

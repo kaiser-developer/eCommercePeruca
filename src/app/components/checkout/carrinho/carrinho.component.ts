@@ -31,6 +31,7 @@ export class CarrinhoComponent implements OnInit {
     }
     
     this.total += valor * item.produto.valor;
+    this.storage.salvarCarrinho(this.carrinho);
   }
 
 }
