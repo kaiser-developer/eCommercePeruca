@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, TemplateRef  } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Endereco } from 'src/app/model/endereco';
+import { Validacoes } from 'src/app/model/validacoes';
 
 @Component({
   selector: 'app-checkout',
@@ -13,6 +14,7 @@ export class CheckoutComponent implements OnInit {
   modalRef: BsModalRef;
   enderecos: Endereco[] = [];
   enderecoPrincipal: Endereco;
+  validacoes: Validacoes;
 
   constructor(private modalService: BsModalService) { 
     this.enderecos.push(
@@ -35,11 +37,8 @@ export class CheckoutComponent implements OnInit {
   }
 
   cadastrarEndereco(endereco: Endereco){
-    if(endereco.bairro.replace(/\ /g, '').length < 10 || endereco.cep.replace(/\ /g, '').length != 8 ||
-      endereco.destinatario.replace(/\ /g, '').length < 10 || endereco.localidade.replace(/\ /g, '').length < 10 ||
-      (endereco.numero == 0 || endereco.numero == undefined) || endereco.logradouro.replace(/\ /g, '').length < 6 ||
-      endereco.uf == ""){
-                return alert("Dados não preenchidos corretamente");
+    if(this.validacoes.verificarEndereco(Endereco)){
+      return alert("Dados não preenchidos corretamente");
     }    
     this.enderecos.push(endereco);
     if(this.enderecos.length == 1){
