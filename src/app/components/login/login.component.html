@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col">
+            <img id="fotoFixa" src="../../../assets/images/tentativa2.jpg" alt="Imagem principal">
+        </div>
+        <div class="col">
+            <div id="login">
+            </div>
+            <header id="LogoPrincipal">
+                <a href="home.html"><img src="../../../assets/images/logo.png" alt="LogoPrincipal" width="400px"></a>
+            </header>
+            <form id="form-signin" (ngSubmit)="login()" [formGroup]="formLogin">
+                <img class="mb-4" src="#" alt="" width="40" height="30">
+                <h1 class="h3 mb-3 font-weight-normal">Faça seu login</h1>
+
+                <label for="inputEmail">Endereço de email:</label>
+                <input type="email" class="form-control" placeholder="Seu email" required minlength="15" autofocus=""
+                    formControlName="email">
+
+                <label for="inputPassword">Senha:</label>
+                <input type="password" class="form-control" placeholder="Senha" required minlength="8"
+                    formControlName="password">
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Lembre de mim
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
+
+                <div>
+                    <a routerLink="/home" id="cadastro">Não é cadastrado ? Cadastre-se agora !</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
