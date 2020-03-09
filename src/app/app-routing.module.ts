@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from "@angular/router";
-import { FooterComponent } from "./components/footer/footer.component";
+import { LoginComponent } from './components/login/login.component'
 import { CheckoutComponent } from "./components/checkout/checkout.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'checkout', pathMatch: 'full'},
   { path: 'checkout', component: CheckoutComponent},
-  { path: 'footer', component: FooterComponent }
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
