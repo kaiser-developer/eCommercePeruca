@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-pagina-produto',
   templateUrl: './pagina-produto.component.html',
@@ -11,9 +12,12 @@ export class PaginaProdutoComponent implements OnInit {
 
 
   constructor() { 
-
+    
   }
-
+ 
+  permitirNumeros(evento: any){
+    
+  }
   
   ngOnInit(): void {
   }
