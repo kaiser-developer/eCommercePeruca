@@ -1,0 +1,25 @@
+<div class="border mt-2 p-2 mb-2">
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Qtd</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of carrinho">
+                <th scope="row">{{item.produto.nome}}</th>
+                <td>R$ {{item.produto.valor}}</td>
+                <td>
+                    <button class="produto" (click)="atualizarQuantidade(1, item)">+</button>
+                    {{item.quantidade}}
+                    <button class="produto" (click)="atualizarQuantidade(-1, item)">-</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex flex-row-reverse">
+        <h5 class="p-2">Subtotal R$ {{total.toFixed(2)}}</h5>
+    </div>
+</div>
