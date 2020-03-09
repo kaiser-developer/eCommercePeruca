@@ -7,10 +7,14 @@
 }
 
 header {
+<<<<<<< HEAD
     box-shadow: black 1px 2px 10px;
 <<<<<<< HEAD
 }
 =======
+=======
+    box-shadow: black 1px 2px 3px;
+>>>>>>> 3fd780da9dc40e1259e852aef1808957dadc2797
 }
 
 footer {
