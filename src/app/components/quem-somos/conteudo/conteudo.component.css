@@ -1,0 +1,11 @@
+#tituloApresentacao{
+      display: flex;
+      position: relative;
+      justify-content: center;
+      margin: 10px;
+  }
+
+  #cards {
+     display: flex;
+     justify-content: center;
+  }

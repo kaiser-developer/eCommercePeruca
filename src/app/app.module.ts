@@ -17,6 +17,12 @@ import { EnderecoComponent } from './components/checkout/endereco/endereco.compo
 import { FormaEnvioComponent } from './components/checkout/forma-envio/forma-envio.component';
 import { CarrinhoComponent } from './components/checkout/carrinho/carrinho.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
+import { ModalComponent } from './components/quem-somos/modal/modal.component';
+import { NavbarComponent } from './components/quem-somos/navbar/navbar.component';
+import { DescricaoComponent } from './components/quem-somos/descricao/descricao.component';
+import { SobreComponent } from './components/quem-somos/sobre/sobre.component';
+import { ConteudoComponent } from './components/quem-somos/conteudo/conteudo.component';
 
 
 @NgModule({
@@ -31,7 +37,13 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
     EnderecoComponent,
     FormaEnvioComponent,
     CarrinhoComponent,
-    CadastroComponent
+    CadastroComponent,
+    QuemSomosComponent,
+    ModalComponent,
+    NavbarComponent,
+    DescricaoComponent,
+    SobreComponent,
+    ConteudoComponent
   ],
   imports: [
     BrowserModule,
