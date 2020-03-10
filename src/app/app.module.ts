@@ -5,6 +5,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { HomeComponent } from './components/home/home.component';
+
+
 
 
 @NgModule({
@@ -12,6 +15,8 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
     AppComponent,
     FooterComponent,
     CadastroComponent,
+    HomeComponent,
+       
 
   ],
   imports: [
