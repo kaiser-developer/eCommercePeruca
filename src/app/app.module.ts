@@ -23,6 +23,9 @@ import { NavbarComponent } from './components/quem-somos/navbar/navbar.component
 import { DescricaoComponent } from './components/quem-somos/descricao/descricao.component';
 import { SobreComponent } from './components/quem-somos/sobre/sobre.component';
 import { ConteudoComponent } from './components/quem-somos/conteudo/conteudo.component';
+import { PaginaProdutoComponent } from './components/pagina-produto/pagina-produto.component';
+import { LogoComponent } from './components/pagina-produto/logo/logo.component';
+import { CarrosselComponent } from './components/pagina-produto/carrossel/carrossel.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { ConteudoComponent } from './components/quem-somos/conteudo/conteudo.com
     NavbarComponent,
     DescricaoComponent,
     SobreComponent,
-    ConteudoComponent
+    ConteudoComponent,
+    PaginaProdutoComponent,
+    LogoComponent,
+    CarrosselComponent
   ],
   imports: [
     BrowserModule,
