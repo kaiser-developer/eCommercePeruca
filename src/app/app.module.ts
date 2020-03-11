@@ -17,11 +17,7 @@ import { EnderecoComponent } from './components/checkout/endereco/endereco.compo
 import { FormaEnvioComponent } from './components/checkout/forma-envio/forma-envio.component';
 import { CarrinhoComponent } from './components/checkout/carrinho/carrinho.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { ProdutoComponent } from './components/produto/produto.component';
-import { PaginaDoProdutoComponent } from './components/pagina-do-produto/pagina-do-produto.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CarouselImagensProdutoComponent } from './components/pagina-do-produto/carousel-imagens-produto/carousel-imagens-produto.component';
-import { DescricaoProdutoComponent } from './components/pagina-do-produto/descricao-produto/descricao-produto.component';
 
 
 @NgModule({
@@ -37,11 +33,7 @@ import { DescricaoProdutoComponent } from './components/pagina-do-produto/descri
     FormaEnvioComponent,
     CarrinhoComponent,
     CadastroComponent,
-    ProdutoComponent,
-    PaginaDoProdutoComponent,
     HeaderComponent,
-    CarouselImagensProdutoComponent,
-    DescricaoProdutoComponent,
   ],
   imports: [
     BrowserModule,
