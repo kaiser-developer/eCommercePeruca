@@ -20,7 +20,7 @@ grupoAtivo: Grupo = null;
 
   listarGrupo(grupo: Grupo) {
     console.log(grupo);
-    this.grupo = grupo.cod;
+    this.grupo = grupo.codigo;
     
   }
   ngOnInit(): void {

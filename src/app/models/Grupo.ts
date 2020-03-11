@@ -1,3 +1,3 @@
 export class Grupo {
-    constructor(public cod:number, public nome:string) {}
+    constructor(public codigo:number, public descricao:string) {}
 }
