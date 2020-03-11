@@ -27,6 +27,7 @@ import { PaginaProdutoComponent } from './components/pagina-produto/pagina-produ
 import { LogoComponent } from './components/pagina-produto/logo/logo.component';
 import { CarrosselComponent } from './components/pagina-produto/carrossel/carrossel.component';
 import { NavProdutoComponent } from './components/pagina-produto/nav-produto/nav-produto.component';
+import {ComprarComponent } from './components/pagina-produto/comprar/comprar.component'
 
 
 
@@ -52,7 +53,8 @@ import { NavProdutoComponent } from './components/pagina-produto/nav-produto/nav
     PaginaProdutoComponent,
     LogoComponent,
     CarrosselComponent,
-    NavProdutoComponent
+    NavProdutoComponent,
+    ComprarComponent
   ],
   imports: [
     BrowserModule,

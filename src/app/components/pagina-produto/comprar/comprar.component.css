@@ -1,0 +1,9 @@
+#descricaoProduto{
+    text-align: center;
+    color: grey;
+}
+#card-comprar{
+    display: flex;
+    align-items: center;
+
+}
