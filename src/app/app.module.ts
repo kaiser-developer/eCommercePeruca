@@ -26,6 +26,8 @@ import { ConteudoComponent } from './components/quem-somos/conteudo/conteudo.com
 import { PaginaProdutoComponent } from './components/pagina-produto/pagina-produto.component';
 import { LogoComponent } from './components/pagina-produto/logo/logo.component';
 import { CarrosselComponent } from './components/pagina-produto/carrossel/carrossel.component';
+import { NavProdutoComponent } from './components/pagina-produto/nav-produto/nav-produto.component';
+
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { CarrosselComponent } from './components/pagina-produto/carrossel/carros
     ConteudoComponent,
     PaginaProdutoComponent,
     LogoComponent,
-    CarrosselComponent
+    CarrosselComponent,
+    NavProdutoComponent
   ],
   imports: [
     BrowserModule,
