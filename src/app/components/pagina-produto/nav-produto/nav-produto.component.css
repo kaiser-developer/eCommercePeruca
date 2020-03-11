@@ -1,5 +1,41 @@
-#navbar-produto{
-    position: relative;
-    display: flex;
-    justify-content: center;
+#buscar {
+    margin-top: 0.5vw;
+    width: 30vw;
+}
+
+#btn-buscar {
+    margin-top: 0.5vw !important;
+}
+
+nav.row{
+    margin: 0;
+}
+
+.acessar {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+    #buscar {
+        width: 50vw !important;
+    }
+
+    .carrinho-login {
+        position: absolute;
+    }
+
+    #div-pesquisa {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 285px){
+    .carrinho-login {
+        position: relative;
+    }
+}
+
+.nav-header{
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.336) 0px 1px 2px;
 }
