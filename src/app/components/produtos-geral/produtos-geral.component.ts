@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Grupo } from 'src/app/models/Grupo';
+import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
 @Component({
   selector: 'app-produtos-geral',
@@ -7,8 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosGeralComponent implements OnInit {
 
-  constructor() { }
 
+  grupo: number = 0;
+  @ViewChild("lista") lista: ListaProdutosComponent;
+  constructor() { }
+  
+
+
+grupoAtivo: Grupo = null;
+
+  listarGrupo(grupo: Grupo) {
+    console.log(grupo);
+    this.grupo = grupo.cod;
+    
+  }
   ngOnInit(): void {
   }
 

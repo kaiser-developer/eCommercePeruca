@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validacoes } from 'src/app/model/validacoes';
+// import { Validacoes } from 'src/app/model/validacoes';
 
 @Component({
   selector: 'app-pagina-produto',
@@ -8,16 +8,16 @@ import { Validacoes } from 'src/app/model/validacoes';
 })
 export class PaginaProdutoComponent implements OnInit {
 
-  validacoes: Validacoes;
+  //validacoes: Validacoes;
 
 
   constructor() { 
-    this.validacoes = new Validacoes()
+    // this.validacoes = new Validacoes()
   }
  
-  permitirNumeros(evento: any){
-    this.validacoes.cancelarLetras(evento);
-  }
+ // permitirNumeros(evento: any){
+  //  this.validacoes.cancelarLetras(evento);
+// }
   
   ngOnInit(): void {
   }
