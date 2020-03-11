@@ -20,7 +20,10 @@ export class CheckoutComponent implements OnInit {
   enderecoPrincipal: Endereco = null;
   validacoes: Validacoes;
   formaEnvio: number = 0;
+  total: number = 0;
   dados: Produtos[] = [];
+  dadosDePagamento: boolean = false;
+  formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' } 
 
   constructor(private modalService: BsModalService, private storage: StorageService, private http: RequisicoesService) { 
     this.enderecos.push(
@@ -55,7 +58,6 @@ export class CheckoutComponent implements OnInit {
 
   receberFormaDeEnvio(envio){
     this.formaEnvio = envio;
-    console.log(this.formaEnvio);
   }
 
   cadastrarEndereco(endereco: Endereco){
@@ -74,11 +76,18 @@ export class CheckoutComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  finalizarCompra(dadosPagamento){
-    if(this.enderecoPrincipal != null && dadosPagamento && this.formaEnvio != 0 && this.storage.recuperarCarrinho.length != 0){
+  validarCampos(){
+    if(this.enderecoPrincipal != null && this.formaEnvio != 0 && this.storage.recuperarCarrinho().length != 0){
+      this.dadosDePagamento = true
+    }
+  }
+
+  finalizarCompra(valido){
+    if(valido){
       console.log("Compra finalizada");
     }else{
-      console.log("Preencha todos os dados corretamente")
+      console.log("Preencha todos os dados corretamente");
+      this.dadosDePagamento = false;
     }
   }
 }

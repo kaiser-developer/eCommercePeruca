@@ -9,7 +9,7 @@
                 <img src="../../../../assets/images/caixa-de-correio.png" alt="" srcset="" width="25" height="25">
                 <b class="p-4 font-weight-bolder">Dados de Entrega</b>
             </div>
-            <app-endereco *ngIf="enderecos.length != 0" [endereco]="enderecos[0]"></app-endereco>
+            <app-endereco *ngIf="enderecos.length != 0" [endereco]="enderecoPrincipal"></app-endereco>
             <div *ngIf="enderecos.length == 0" class="text-center mt-2 mb-3">
                 <button class="btn btn-success" (click)="abrirModal(novoEndereco)">Cadastrar novo endereço</button>
             </div>
@@ -21,14 +21,23 @@
                 <img src="../../../../assets/images/doacao.svg" alt="" srcset="" width="25" height="25">
                 <b class="p-4 font-weight-bolder">Dados de Pagamento</b>
             </div>
-            <app-dados-pagamento (botaoFinalizarClicado)="finalizarCompra($event)"></app-dados-pagamento>
+            <app-dados-pagamento [validarDadosPagamento]="dadosDePagamento" (botaoFinalizarClicado)="finalizarCompra($event)"></app-dados-pagamento>
         </div>
         <div class="col-md-4">
             <div class="card-header bg-info text-light">
                 <img src="../../../../assets/images/varejo.svg" alt="" srcset="" width="25" height="25">
-                <b class="p-4 font-weight-bolder">Carrinho</b>
+                <b class="p-4 font-weight-bolder">Resumo da compra</b>
             </div>
             <app-carrinho></app-carrinho>
+            <hr>
+            <div>
+                Total {{total.toLocaleString('pt-BR', formato)}}
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-success btn-block" id="btn-finalizar"
+                    (click)="validarCampos()">Finalizar compra</button>
+            </div>
         </div>
     </form>
 </main>
