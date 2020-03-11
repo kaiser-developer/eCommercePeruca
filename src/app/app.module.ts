@@ -16,6 +16,10 @@ import { ProdutosGeralComponent } from './components/produtos-geral/produtos-ger
 import { GruposComponent } from './components/produtos-geral/grupos/grupos.component';
 import { ListaProdutosComponent } from './components/produtos-geral/lista-produtos/lista-produtos.component';
 import { ProdutoComponent } from './components/produtos-geral/produto/produto.component';
+import { CarrosselComponent } from './components/home/carrossel/carrossel.component';
+import { InstitucionalComponent } from './components/home/institucional/institucional.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MaisVendidosComponent } from './components/home/mais-vendidos/mais-vendidos.component';
 
 
 
@@ -34,7 +38,11 @@ import { ProdutoComponent } from './components/produtos-geral/produto/produto.co
     MyFilterPipe,
     GruposComponent,
     ListaProdutosComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    CarrosselComponent,
+    InstitucionalComponent,
+    HeaderComponent,
+    MaisVendidosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+#desc {
+    font-size: 2em;
+    text-emphasis: weight;
+    background-color: rgb(218, 216, 216);
+}
+.card{
+    box-shadow: 1px 2px 4px rgb(197, 193, 193);
+}
+
+#todos {
+    display: flex;
+    margin-top: 4px;
+}
+button {
+    width: 45%;
+}

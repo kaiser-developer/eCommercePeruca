@@ -1,0 +1,10 @@
+#demo, #carro1 {
+    width: 100vw;
+    margin-bottom: 10px;
+    
+}
+
+#demo {
+    display: flex;
+    align-items: center;
+}
