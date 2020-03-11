@@ -19,6 +19,9 @@ import { CarrinhoComponent } from './components/checkout/carrinho/carrinho.compo
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ProdutoComponent } from './components/produto/produto.component';
 import { PaginaDoProdutoComponent } from './components/pagina-do-produto/pagina-do-produto.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CarouselImagensProdutoComponent } from './components/pagina-do-produto/carousel-imagens-produto/carousel-imagens-produto.component';
+import { DescricaoProdutoComponent } from './components/pagina-do-produto/descricao-produto/descricao-produto.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { PaginaDoProdutoComponent } from './components/pagina-do-produto/pagina-
     CarrinhoComponent,
     CadastroComponent,
     ProdutoComponent,
-    PaginaDoProdutoComponent
+    PaginaDoProdutoComponent,
+    HeaderComponent,
+    CarouselImagensProdutoComponent,
+    DescricaoProdutoComponent,
   ],
   imports: [
     BrowserModule,
