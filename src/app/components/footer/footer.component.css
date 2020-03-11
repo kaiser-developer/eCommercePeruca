@@ -7,6 +7,9 @@ footer {
     width: 100%;
     border: 1px solid;
 }
+#conteudoFooter {
+    display: flex;
+}
 
 @media only screen and (max-width: 450px) {
 

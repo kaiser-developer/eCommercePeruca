@@ -5,6 +5,7 @@
 }
 .card{
     box-shadow: 1px 2px 4px rgb(197, 193, 193);
+    background-color: rgb(219, 217, 217);
 }
 
 #todos {
@@ -13,4 +14,11 @@
 }
 button {
     width: 45%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #ultimoCard {
+    display: none;
+    }
 }
