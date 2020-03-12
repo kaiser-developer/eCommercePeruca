@@ -1,3 +1,6 @@
+import { Endereco } from './endereco';
+import { Cliente } from './cliente';
+
 export class Validacoes {
     cancelarLetras(event: any) {
         let evento = event;
@@ -23,7 +26,7 @@ export class Validacoes {
         }
     }
 
-    verificarEndereco(endereco) {
+    verificarEndereco(endereco: Endereco) {
         if (endereco.bairro.replace(/\ /g, '').length < 10 || endereco.cep.length != 8 ||
             endereco.destinatario.replace(/\ /g, '').length < 10 || endereco.localidade.replace(/\ /g, '').length < 10 ||
             (endereco.numero == 0 || endereco.numero == undefined) || endereco.logradouro.replace(/\ /g, '').length < 6 ||
@@ -61,5 +64,21 @@ export class Validacoes {
         if ((resto == 10) || (resto == 11)) resto = 0;
         if (resto != parseInt(cpf.substring(10, 11))) return false;
         return true;
+    }
+
+    validarSenha(senha: string){
+        if(senha.length > 8 && /\d/.test(senha) && /[a-z]/.test(senha)){
+            return true;
+        }
+        return false;
+    }
+
+    verificarDadosCliente(cliente: Cliente){
+        if(this.validarCpf(cliente.cpf) && cliente.email.replace(/\ /g, '').length > 12 &&
+        cliente.nome.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
+        cliente.tel.length > 9){
+            return true;
+        }
+        return false;
     }
 }

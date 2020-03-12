@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { FooterComponent } from './components/footer/footer.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DadosPagamentoComponent } from './components/checkout/dados-pagamento/dados-pagamento.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -22,7 +21,6 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     LoginComponent,
     CheckoutComponent,
     DadosPagamentoComponent,

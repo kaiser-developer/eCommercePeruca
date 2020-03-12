@@ -10,12 +10,13 @@ import { Carrinho } from 'src/app/model/carrinho';
 export class CarrinhoComponent implements OnInit {
 
   carrinho: Carrinho[];
-  total: number = 0;
+  subTotal: number = 0;
+  formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' };
 
   constructor(private storage: StorageService) { 
     this.carrinho = this.storage.recuperarCarrinho();
     this.carrinho.forEach(item => {
-      this.total += item.quantidade * item.produto.valor;
+      this.subTotal += item.quantidade * item.produto.valor;
     })
   }
 
@@ -30,7 +31,7 @@ export class CarrinhoComponent implements OnInit {
         produto != item)
     }
     
-    this.total += valor * item.produto.valor;
+    this.subTotal += valor * item.produto.valor;
     this.storage.salvarCarrinho(this.carrinho);
   }
 
