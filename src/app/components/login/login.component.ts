@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { Login } from "../../model/login";
-import { RequisicoesService } from 'src/app/services/requisicoes.service';
-import { Router } from '@angular/router';
-import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -13,25 +10,28 @@ import { StorageService } from 'src/app/services/storage.service';
 
 export class LoginComponent implements OnInit {
 
+  user: Login = new Login("gabriel@gmail.com", "12345678");
   formLogin;
   email: string;
-  senha: string;
-  storage: StorageService = new StorageService();
+  password: string;
 
-  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.formLogin = this.fb.group({
       email: [this.email],
-      senha: [this.senha]
+      password: [this.password]
     });
   }
 
   login() {
+
     if (this.formLogin.status != "INVALID") {
 
-      if (this.requisicoes.getCliente(this.formLogin.value.email, this.formLogin.value.senha)) {
-        this.route.navigate(["/home"])
+      if (this.formLogin.value.email == this.user.email && this.formLogin.value.password == this.user.senha) {
+
+        alert("Efetuado login!");
+
       } else {
         alert("Usuario não cadastrado!");
       }

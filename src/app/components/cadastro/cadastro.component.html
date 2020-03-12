@@ -1,13 +1,13 @@
     <section class="container-fluid">
         <div class="row ">
             <div class="col">
-                <img id="fotoFixa" src="../../../assets/images/tentativa2.jpg" alt="Imagem principal">
+                <img id="fotoFixa" src="../../../assets/images/imagem-show.jpg" alt="Imagem principal">
             </div>
             <div class="col">
                 <div id="Cadastre-se">
                 </div>
                 <div id="LogoPrincipal">
-                    <a href="home.html"><img src="../../../assets/images/logo.png" alt="LogoPrincipal"
+                    <a href="home.html"><img src="../../../assets/images/logoWig.png" alt="LogoPrincipal"
                             width="300px"></a>
                 </div>
                 <div id="Titulo" class="p-2">
@@ -16,17 +16,19 @@
                     </h1>
                 </div>
                 <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
-                    <input type="text" class="form-control" (keypress)="permitirLetras($event)" formControlName="nome" placeholder="Seu nome Completo" required  maxlength="35">
-                    <input type="text" class="form-control" (keypress)="permitirNumeros($event)" formControlName="cpf" placeholder="Seu CPF"
-                        required >
-                    <input type="text" class="form-control" (keypress)="permitirNumeros($event)"
-                        formControlName="tel" placeholder="Seu telefone" required >
-                    <input type="email" class="form-control" formControlName="email"
-                        placeholder="Seu email" required >
-                    <input type="password" class="form-control"
+                    <input type="text" id="input-nome" class="form-control" (keypress)="permitirLetras($event)"
+                        formControlName="nome" placeholder="Seu nome Completo" required="" autofocus="" maxlength="35">
+                    <input type="text" id="input-cpf" class="form-control" (keypress)="validacaoCpf($event)" formControlName="cpf" placeholder="Seu CPF"
+                        required autofocus="">
+                    <input type="text" id="input-numero" class="form-control" (keypress)="permitirNumeros($event)"
+                        formControlName="tel" placeholder="Seu telefone" required autofocus="">
+                    <input type="email" id="input-email" class="form-control" formControlName="email"
+                        placeholder="Seu email" required autofocus="">
+                    <input type="password" id="input-senha" class="form-control"
                         formControlName="senha" placeholder="Senha" required>
-                    <input type="password" class="form-control"
-                     placeholder="Confirme sua senha" required formControlName="segundaSenha">
+                    <input type="password" id="input-confirme-senha" class="form-control"
+                     placeholder="Confirme sua senha" required>
+                    <input type="hidden" value="false" id="senhas-iguais">
                     <div class="checkbox mb-3">
                         <label>
                             <input type="checkbox" value="termos" required> Eu aceito os termos de uso.
@@ -37,5 +39,3 @@
             </div>
         </div>
     </section>
-
-<app-footer></app-footer>

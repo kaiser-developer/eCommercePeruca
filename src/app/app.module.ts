@@ -17,6 +17,8 @@ import { EnderecoComponent } from './components/checkout/endereco/endereco.compo
 import { FormaEnvioComponent } from './components/checkout/forma-envio/forma-envio.component';
 import { CarrinhoComponent } from './components/checkout/carrinho/carrinho.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
     EnderecoComponent,
     FormaEnvioComponent,
     CarrinhoComponent,
-    CadastroComponent
+    CadastroComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

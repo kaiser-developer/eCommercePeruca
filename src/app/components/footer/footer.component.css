@@ -1,0 +1,46 @@
+footer {
+    width: 100%;
+    display: inline-block;
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.336) 0px -1px 5px ;
+    background-color:#e9ecef;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul a{
+    text-decoration: none;
+    color: black;
+}
+
+.LogoRS{
+    width: 30px;
+    height: 30px;
+
+}
+
+@media only screen and (min-width: 451px){
+    .li-map::after{
+        padding: 0 3px;
+        content: "-";
+    }    
+}
+
+
+@media only screen and (max-width: 767px){
+    .LogoRS{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .li-map::after{
+        padding: 0 3px;
+        /* content: "-"; */
+    }
+    
+}

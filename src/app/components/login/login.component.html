@@ -1,14 +1,15 @@
 <div class="container-fluid">
     <div class="row ">
         <div class="col">
-            <img id="fotoFixa" src="../../../assets/images/tentativa2.jpg" alt="Imagem principal">
+            <img id="fotoFixa" src="../../../assets/images/imagem-show.jpg" alt="Imagem principal">
         </div>
         <div class="col">
             <div id="login">
             </div>
             <header id="LogoPrincipal">
-                <a href="home.html"><img src="../../../assets/images/logo.png" alt="LogoPrincipal" width="400px"></a>
+                <a href="home.html"><img src="../../../assets/images/logoWig.png" alt="LogoPrincipal" width="350px"></a>
             </header>
+           
             <form id="form-signin" (ngSubmit)="login()" [formGroup]="formLogin">
                 <img class="mb-4" src="#" alt="" width="40" height="30">
                 <h1 class="h3 mb-3 font-weight-normal">Faça seu login</h1>
@@ -19,7 +20,7 @@
 
                 <label for="inputPassword">Senha:</label>
                 <input type="password" class="form-control" placeholder="Senha" required minlength="8"
-                    formControlName="senha">
+                    formControlName="password">
 
                 <div class="checkbox mb-3">
                     <label>
@@ -29,7 +30,7 @@
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
 
                 <div>
-                    <a routerLink="/cadastre-se" id="cadastro">Não é cadastrado ? Cadastre-se agora !</a>
+                    <a routerLink="/cadastre" id="cadastro">Não é cadastrado ? Cadastre-se agora !</a>
                 </div>
             </form>
         </div>
