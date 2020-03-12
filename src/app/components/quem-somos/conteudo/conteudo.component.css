@@ -2,10 +2,12 @@
       display: flex;
       position: relative;
       justify-content: center;
-      margin: 10px;
+      margin: 10px, 10px,10px,10px;
   }
 
   #cards {
+     margin: 20px;
+     padding: 10px;
      display: flex;
-     justify-content: center;
+     justify-content: space-between;
   }

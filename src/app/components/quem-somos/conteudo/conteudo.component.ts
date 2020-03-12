@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contribuidor } from 'src/app/model/contribuidor';
 
+
 @Component({
   selector: 'app-conteudo',
   templateUrl: './conteudo.component.html',
@@ -20,6 +21,7 @@ export class ConteudoComponent implements OnInit {
     )
   }
 
+ 
   ngOnInit(): void {
   }
 
