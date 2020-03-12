@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Grupo } from 'src/app/models/Grupo';
+import { Grupo } from 'src/app/model/Grupo';
 import { HttpService } from 'src/app/services/http.service';
 
 
