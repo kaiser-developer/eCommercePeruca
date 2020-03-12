@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <app-grupos class="mt-1" (grupoClicado)="listarGrupo($event)"></app-grupos>
+        <app-lista-produtos [grupoAtivo]="grupo"></app-lista-produtos>   
+    </div>
+</div>
+    <app-footer></app-footer>

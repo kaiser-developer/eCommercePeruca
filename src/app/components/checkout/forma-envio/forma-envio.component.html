@@ -2,7 +2,8 @@
     <label>Forma de envio:</label>
     <select class="form-control" name="forma-envio" (click)="enviarFormaDeEnvio.emit(formaDeEnvio)" [(ngModel)]="formaDeEnvio">
         <option value="0" disabled selected>Forma de envio</option>
-        <option value="1">Rapida - R$ 50,00</option>
-        <option value="2">Normal - R$ 20,00</option>
+        <option [ngValue]="10">Econômica - R$ 10,00 - receber em até 15 dias</option>
+        <option [ngValue]="20">Normal - R$ 20,00 - receber em até 7 dias</option>
+        <option [ngValue]="30">Rápida - R$ 30,00 - receber em até 3 dias</option>
     </select>
 </div>

@@ -8,7 +8,6 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { FooterComponent } from './components/footer/footer.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DadosPagamentoComponent } from './components/checkout/dados-pagamento/dados-pagamento.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -18,12 +17,13 @@ import { EnderecoComponent } from './components/checkout/endereco/endereco.compo
 import { FormaEnvioComponent } from './components/checkout/forma-envio/forma-envio.component';
 import { CarrinhoComponent } from './components/checkout/carrinho/carrinho.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     LoginComponent,
     ContatoComponent,
     CheckoutComponent,
@@ -33,7 +33,9 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
     EnderecoComponent,
     FormaEnvioComponent,
     CarrinhoComponent,
-    CadastroComponent
+    CadastroComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

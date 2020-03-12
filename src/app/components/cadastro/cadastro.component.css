@@ -28,13 +28,15 @@ body{
 }
 #form-signin{
     align-items: center;
-    margin-left: 120px;
+    padding: 10px;
+   
 }
 #fotoFixa{
     background-image: url(/screens/images/tentativa2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width:50vw;
+    margin: 10px;
+    width:40vw;
     height:95vh;
 }
 input {
