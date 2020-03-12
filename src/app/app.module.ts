@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ContatoComponent } from './components/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -22,6 +23,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
   declarations: [
     AppComponent,
     LoginComponent,
+    ContatoComponent,
     CheckoutComponent,
     DadosPagamentoComponent,
     NavCheckoutComponent,
