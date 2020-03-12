@@ -18,7 +18,29 @@ ul a{
     color: black;
 }
 
-.li-map::after{
-    padding: 0 3px;
-    content: "-";
+.LogoRS{
+    width: 30px;
+    height: 30px;
+
+}
+
+@media only screen and (min-width: 451px){
+    .li-map::after{
+        padding: 0 3px;
+        content: "-";
+    }    
+}
+
+
+@media only screen and (max-width: 767px){
+    .LogoRS{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .li-map::after{
+        padding: 0 3px;
+        /* content: "-"; */
+    }
+    
 }
