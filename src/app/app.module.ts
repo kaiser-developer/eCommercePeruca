@@ -36,7 +36,7 @@ import { HeaderComponent } from './components/header/header.component';
     CadastroComponent,
     FooterComponent,
     HeaderComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

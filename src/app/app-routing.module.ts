@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
   { path: 'login', component: LoginComponent },
   { path: 'cadastre-se', component: CadastroComponent},
-  { path: 'contato', component: ContatoComponent }
+  { path: 'contato', component: ContatoComponent },
 ];
 
 @NgModule({
