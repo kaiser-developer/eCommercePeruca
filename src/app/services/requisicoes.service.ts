@@ -4,6 +4,10 @@ import { map } from "rxjs/operators";
 import { Endereco } from '../model/endereco';
 import { Uf } from '../model/uf';
 import { Produtos } from '../model/Produtos';
+import { Cliente } from '../model/cliente';
+import { StorageService } from './storage.service';
+
+const storage: StorageService = new StorageService();
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +40,15 @@ export class RequisicoesService {
     return url.pipe(map(
       valores => valores
     ));
+  }
+
+  getCliente(email: String, senha: String){
+    if(email == "gabriel@gmail.com" && senha == "12345678"){
+      let cliente: Cliente = new Cliente("César", "37647904825", "11948128589", "asa.cesar@gmail.com");
+      storage.salvarUsuario(cliente);
+      return true;
+    }else{
+      return false;
+    }
   }
 }

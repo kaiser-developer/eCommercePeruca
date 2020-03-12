@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { Cliente } from 'src/app/model/cliente';
 import { Validacoes } from 'src/app/model/validacoes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -13,23 +14,26 @@ export class CadastroComponent implements OnInit {
   validacoes: Validacoes = new Validacoes();
 
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private route: Router) { }
   ngOnInit(){ this.createForm(new Cliente());}
   
     createForm(cliente: Cliente){
     this.formCliente = this.formBuilder.group({
-      nome: [cliente.nome],
-      cpf: [cliente.nome],
-      tel: [cliente.nome],
-      email: [cliente.nome],
-      senha: [cliente.nome],
+      nome: [cliente.nome] = '',
+      cpf: [cliente.cpf] = '',
+      tel: [cliente.tel] = '',
+      email: [cliente.email] = '',
+      senha: [cliente.senha] = '',
       segundaSenha: ''
     });
   }
   
   onSubmit() {
-    console.log(this.formCliente.value);
-    this.verificarSenhasIguais();
+    if(this.verificarSenhasIguais() && this.validacoes.verificarDadosCliente(this.formCliente.value)){
+      this.route.navigate(["/checkout"])
+    }else{
+      alert("Não foi possivel efetuar o cadastro, verifique os dados e tente novamente.");
+    }
   }
   permitirNumeros(evento: any){
     this.validacoes.cancelarLetras(evento);
@@ -41,11 +45,11 @@ export class CadastroComponent implements OnInit {
   
   verificarSenhasIguais(){
     if (this.formCliente.value.segundaSenha == this.formCliente.value.senha) {
-      console.log("senhas iguais");
+      return true;
+    }else if(this.formCliente.value.senha){
+      alert("Confirme a senha, senhas não coincidem");
     }
-    else{
-      console.log("Senhas erradas")
-    }
+    return false;
   }
 }
 

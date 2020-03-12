@@ -1,11 +1,12 @@
 import { Component, OnInit, TemplateRef  } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService, ModalBackdropComponent } from 'ngx-bootstrap/modal';
 import { Endereco } from 'src/app/model/endereco';
 import { Validacoes } from 'src/app/model/validacoes';
 import { StorageService } from 'src/app/services/storage.service';
 import { Carrinho } from 'src/app/model/carrinho';
 import { Produtos } from 'src/app/model/Produtos';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { CadastrosService } from 'src/app/services/cadastros.service';
 
 @Component({
   selector: 'app-checkout',
@@ -18,12 +19,13 @@ export class CheckoutComponent implements OnInit {
   modalRef: BsModalRef;
   enderecos: Endereco[] = [];
   enderecoPrincipal: Endereco = null;
-  validacoes: Validacoes;
+  validacoes: Validacoes = new Validacoes();
   formaEnvio: number = 0;
   total: number = 0;
   dados: Produtos[] = [];
   dadosDePagamento: boolean = false;
-  formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' } 
+  formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' };
+  cadastrosServices: CadastrosService = new CadastrosService();
 
   constructor(private modalService: BsModalService, private storage: StorageService, private http: RequisicoesService) { 
     this.enderecos.push(
@@ -43,10 +45,10 @@ export class CheckoutComponent implements OnInit {
       new Carrinho(new Produtos(3, "Peruca 3", 99.99, ""), 2)
     )
     this.storage.salvarCarrinho(carrinho);
-    
-    this.http.getProdutos().subscribe(produtos => 
-      console.log(produtos)  
-    );
+
+    this.storage.recuperarCarrinho().forEach(item => {
+      this.total += (item.produto.valor * item.quantidade);
+    });
   }
 
   ngOnInit(): void {
@@ -57,16 +59,18 @@ export class CheckoutComponent implements OnInit {
   }
 
   receberFormaDeEnvio(envio){
-    this.formaEnvio = envio;
+    if(envio != this.formaEnvio){
+      this.total -= this.formaEnvio;
+      this.formaEnvio = envio;      
+      this.total += this.formaEnvio;
+    }
   }
 
   cadastrarEndereco(endereco: Endereco){
-    if(this.validacoes.verificarEndereco(Endereco)){
-      return alert("Dados não preenchidos corretamente");
-    }    
-    this.enderecos.push(endereco);
-    if(this.enderecos.length == 1){
-      this.enderecoPrincipal = this.enderecos[0]
+    if(this.validacoes.verificarEndereco(endereco)){
+      alert("Dados não preenchidos corretamente");
+    }else{
+      this.cadastrosServices.cadastrarEndereco(endereco);
     }
     this.modalRef.hide();
   }
@@ -76,18 +80,20 @@ export class CheckoutComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  validarCampos(){
+  validarCampos(template: TemplateRef<any>){
     if(this.enderecoPrincipal != null && this.formaEnvio != 0 && this.storage.recuperarCarrinho().length != 0){
       this.dadosDePagamento = true
+    }else {
+      this.abrirModal(template)
     }
   }
 
-  finalizarCompra(valido){
+  finalizarCompra(valido, template: TemplateRef<any>){
     if(valido){
-      console.log("Compra finalizada");
+      this.cadastrosServices.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio)
     }else{
-      console.log("Preencha todos os dados corretamente");
       this.dadosDePagamento = false;
+      this.abrirModal(template);
     }
   }
 }
