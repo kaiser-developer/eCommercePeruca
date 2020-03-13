@@ -1,8 +1,8 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Grupo } from '../models/Grupo';
+import { Grupo } from '../model/Grupo';
 import { map } from "rxjs/operators";
-import { Produto } from '../models/Produto';
+import { Produto } from '../model/Produto';
 
 const URL : string = "https://localhost:8080/ecommerce/"
 

@@ -17,6 +17,8 @@ import { CarrosselComponent } from './components/home/carrossel/carrossel.compon
 import { InstitucionalComponent } from './components/home/institucional/institucional.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaisVendidosComponent } from './components/home/mais-vendidos/mais-vendidos.component';
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
+import { CardComponent } from './components/carrinho/card/card.component';
 
 
 
@@ -36,7 +38,9 @@ import { MaisVendidosComponent } from './components/home/mais-vendidos/mais-vend
     CarrosselComponent,
     InstitucionalComponent,
     HeaderComponent,
-    MaisVendidosComponent
+    MaisVendidosComponent,
+    CarrinhoComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
