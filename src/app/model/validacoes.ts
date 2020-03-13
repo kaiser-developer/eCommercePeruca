@@ -75,8 +75,8 @@ export class Validacoes {
 
     verificarDadosCliente(cliente: Cliente){
         if(this.validarCpf(cliente.cpf) && cliente.email.replace(/\ /g, '').length > 12 &&
-        cliente.nome.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
-        cliente.tel.length > 9){
+        cliente.nomeCompleto.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
+        cliente.telefone.length > 9){
             return true;
         }
         return false;

@@ -1,8 +1,10 @@
 export class Cliente {
-   constructor(public nome?: string,
+   constructor(
+   public nomeCompleto?: string,
    public cpf?: string,
-   public tel?: string,
+   public telefone?: string,
    public email?: string,
-   public senha?: string){}
+   public senha?: string,
+   public codCliente: number = null){}
    
 }

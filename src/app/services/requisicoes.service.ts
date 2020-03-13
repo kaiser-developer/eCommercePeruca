@@ -51,4 +51,12 @@ export class RequisicoesService {
       return false;
     }
   }
+
+  
+
+  public cadastrarUsuario(cliente: Cliente){
+    this.http.post<any>("http://localhost:8080/criar-cliente", cliente).subscribe(
+      data => console.log(data)
+    )
+  }
 }

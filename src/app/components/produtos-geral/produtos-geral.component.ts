@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Grupo } from 'src/app/models/Grupo';
+import { Grupo } from 'src/app/model/grupo';
 import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
 @Component({
