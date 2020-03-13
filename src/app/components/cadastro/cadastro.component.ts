@@ -21,9 +21,9 @@ export class CadastroComponent implements OnInit {
   
     createForm(cliente: Cliente){
     this.formCliente = this.formBuilder.group({
-      nome: [cliente.nomeCompleto],
+      nomeCompleto: [cliente.nomeCompleto],
       cpf: [cliente.cpf],
-      tel: [cliente.telefone],
+      telefone: [cliente.telefone],
       email: [cliente.email],
       senha: [cliente.senha],
       segundaSenha: ''

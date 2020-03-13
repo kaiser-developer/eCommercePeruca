@@ -16,11 +16,11 @@
                     </h1>
                 </div>
                 <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
-                    <input type="text" class="form-control" (keypress)="permitirLetras($event)" formControlName="nome" placeholder="Seu nome Completo" required  maxlength="35">
+                    <input type="text" class="form-control" (keypress)="permitirLetras($event)" formControlName="nomeCompleto" placeholder="Seu nome Completo" required  maxlength="35">
                     <input type="text" class="form-control" (keypress)="permitirNumeros($event)" formControlName="cpf" placeholder="Seu CPF"
                         required >
                     <input type="text" class="form-control" (keypress)="permitirNumeros($event)"
-                        formControlName="tel" placeholder="Seu telefone" required >
+                        formControlName="telefone" placeholder="Seu telefone" required >
                     <input type="email" class="form-control" formControlName="email"
                         placeholder="Seu email" required >
                     <input type="password" class="form-control"
