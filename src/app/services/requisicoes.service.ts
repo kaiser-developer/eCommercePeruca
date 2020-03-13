@@ -6,6 +6,8 @@ import { Uf } from '../model/uf';
 import { Produtos } from '../model/Produtos';
 import { Cliente } from '../model/cliente';
 import { StorageService } from './storage.service';
+import { Login } from '../model/login';
+import { truncate } from 'fs';
 
 const storage: StorageService = new StorageService();
 
@@ -62,5 +64,20 @@ export class RequisicoesService {
         }
       }
     )
+  }
+
+  public realizarLogin(login: Login){
+    this.http.post<any>("http://localhost:8080/login-cliente", [login.email, login.senha]).subscribe(
+      data => {
+        if(data != null){
+          storage.salvarUsuario(data);
+        }        
+      }
+    )
+    if(storage.recuperarUsuario() != null){
+      return true;
+    }else{
+      return false;
+    }
   }
 }
