@@ -16,7 +16,7 @@ export class CarrinhoComponent implements OnInit {
   constructor(private storage: StorageService) { 
     this.carrinho = this.storage.recuperarCarrinho();
     this.carrinho.forEach(item => {
-      this.subTotal += item.quantidade * item.produto.valor;
+      this.subTotal += item.quantidade * item.produto.valorProduto;
     })
   }
 
@@ -31,7 +31,7 @@ export class CarrinhoComponent implements OnInit {
         produto != item)
     }
     
-    this.subTotal += valor * item.produto.valor;
+    this.subTotal += valor * item.produto.valorProduto;
     this.storage.salvarCarrinho(this.carrinho);
   }
 

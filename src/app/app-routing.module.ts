@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'cadastre-se', component: CadastroComponent},
   { path: 'contato', component: ContatoComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
-  { path: 'produto/tst', component: PaginaProdutoComponent},
+  { path: 'produto/:id', component: PaginaProdutoComponent},
   { path: 'home', component: HomeComponent}
 ];
 

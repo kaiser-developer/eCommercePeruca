@@ -1,22 +1,19 @@
-<div id="card-comprar"  class="mt-4 mr-4">
+<div id="card-comprar" class="mt-4 mr-4">
     <div id="form-signin">
         <div id="descricaoProduto" class="row">
-            <h1>Peruca Longa Ondulada Loiro Acizentado</h1>
+            <h1>{{produto.descricao}}</h1>
         </div>
         <hr>
-        <div id="Produto" class="row">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas exercitationem perferendis
-            ipsa eligendi iusto blanditiis odit sint, omnis hic nesciunt ipsum eos delectus eum, quasi
-            alias quibusdam, optio sit obcaecati.
+        <div id="Produto" class="row text-justify">
+            Na Wig's house você encontra as melhores perucas, qualidade em cabelo, textura.
+            Todos os nossos produtos são devidamente testados e qualificados.
+        
+            <p class="font-weight-bold">Categoria: {{produto.categoria.descricao}}</p>
         </div>
-
         <div class="container d-flex flex-row">
             <div class="row d-block">
                 <div class="texto">
-                    <em id="precoDe" class="p-4 text-muted"> De : R$ 299,00</em>
-                </div>
-                <div class="texto">
-                    <strong id="precoPor" class="p-4">Por: R$ 199,00</strong>
+                    <strong id="precoPor" class="p-4">Preço: R${{produto.valorProduto}}</strong>
                 </div>
             </div>
         </div>
@@ -27,7 +24,7 @@
                 <div class="row">
                     <div class="col-6">
                         <label for="qnt">Quantidade :</label>
-                        <input type="number" class="form-control" name="qnt" id="qnt" placeholder="Quantidade" />
+                        <input type="number" class="form-control" min="0" name="qnt" id="qnt" placeholder="Quantidade" />
                     </div>
                     <div id='divFrete' class="col-6">
                         <label for="frete">Frete :</label>
@@ -36,8 +33,8 @@
                     </div>
                 </div>
             </div>
-            
-                    <button class="btn btn-lg btn-success btn-block" type="submit">Comprar</button>
+
+            <button class="btn btn-lg btn-success btn-block" type="submit">Comprar</button>
         </form>
     </div>
 </div>

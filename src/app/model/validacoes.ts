@@ -1,5 +1,6 @@
 import { Endereco } from './endereco';
 import { Cliente } from './cliente';
+import { Alertas } from './alertas';
 
 export class Validacoes {
     cancelarLetras(event: any) {
@@ -75,10 +76,20 @@ export class Validacoes {
 
     verificarDadosCliente(cliente: Cliente){
         if(this.validarCpf(cliente.cpf) && cliente.email.replace(/\ /g, '').length > 12 &&
-        cliente.nomeCompleto.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
+        cliente.nome.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
         cliente.telefone.length > 9){
             return true;
         }
+
+        if(!this.validarCpf(cliente.cpf)){
+            alert("O cpf digitado é invalido!")
+        }
+
+        let alerta = new Alertas();
+        alerta.alertaEmail(cliente.email);
+        alerta.alertaNome(cliente.nome);
+        alerta.alertaSenha(cliente.senha);
+        alerta.alertaTelefone(cliente.telefone);
         return false;
     }
 }

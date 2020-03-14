@@ -16,7 +16,7 @@
                     </h1>
                 </div>
                 <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
-                    <input type="text" class="form-control" (keypress)="permitirLetras($event)" formControlName="nomeCompleto" placeholder="Seu nome Completo" required  maxlength="35">
+                    <input type="text" class="form-control" (keypress)="permitirLetras($event)" formControlName="nome" placeholder="Seu nome Completo" required  maxlength="35">
                     <input type="text" class="form-control" (keypress)="permitirNumeros($event)" formControlName="cpf" placeholder="Seu CPF"
                         required >
                     <input type="text" class="form-control" (keypress)="permitirNumeros($event)"

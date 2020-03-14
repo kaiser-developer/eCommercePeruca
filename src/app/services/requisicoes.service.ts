@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Endereco } from '../model/endereco';
 import { Uf } from '../model/uf';
-import { Produtos } from '../model/Produtos';
+import { Produto } from '../model/produto';
 import { Cliente } from '../model/cliente';
 import { StorageService } from './storage.service';
 import { Login } from '../model/login';
@@ -38,46 +38,23 @@ export class RequisicoesService {
   }
 
   getProdutos(){
-    let url = this.http.get<Produtos[]>("http://localhost:3000/produto");
+    let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produto");
     return url.pipe(map(
       valores => valores
     ));
   }
 
-  getCliente(email: String, senha: String){
-    if(email == "gabriel@gmail.com" && senha == "12345678"){
-      let cliente: Cliente = new Cliente("César", "37647904825", "11948128589", "asa.cesar@gmail.com");
-      storage.salvarUsuario(cliente);
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  
-
-  public cadastrarUsuario(cliente: Cliente){
-    this.http.post<any>("http://localhost:8080/criar-cliente", cliente).subscribe(
-      data => {
-        if(data != null){
-          storage.salvarUsuario(data);
-        }
-      }
-    )
-  }
-
   public realizarLogin(login: Login){
-    this.http.post<any>("http://localhost:8080/login-cliente", [login.email, login.senha]).subscribe(
-      data => {
-        if(data != null){
-          storage.salvarUsuario(data);
-        }        
-      }
-    )
-    if(storage.recuperarUsuario() != null){
-      return true;
-    }else{
-      return false;
-    }
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/login-cliente", [login.email, login.senha]);
+    return url.pipe(map(
+      dados => dados
+    ));
+  }
+
+  public buscarProduto(id){
+    let url = this.http.get<Produto>("http://localhost:8080/ecommerce/buscar-produto/" + id)
+    return url.pipe(map(
+      produto => produto
+    ))
   }
 }
