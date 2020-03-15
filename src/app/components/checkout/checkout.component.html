@@ -6,7 +6,7 @@
     <form class="row dados center" id="checkout" method="POST">
         <div class="col-md-4">
             <div class="card-header bg-info text-light">
-                <img src="../../../../assets/images/caixa-de-correio.png" alt="" srcset="" width="25" height="25">
+                <img src="../../../../assets/images/caixa-de-correio.png" alt="caixa-de-correio" width="25" height="25">
                 <b class="p-4 font-weight-bolder">Dados de Entrega</b>
             </div>
             <app-endereco *ngIf="enderecos.length != 0" [endereco]="enderecoPrincipal"></app-endereco>
@@ -21,7 +21,8 @@
                 <img src="../../../../assets/images/doacao.svg" alt="" srcset="" width="25" height="25">
                 <b class="p-4 font-weight-bolder">Dados de Pagamento</b>
             </div>
-            <app-dados-pagamento [validarDadosPagamento]="dadosDePagamento" (botaoFinalizarClicado)="finalizarCompra($event, modalDadosIncorretos)"></app-dados-pagamento>
+            <app-dados-pagamento [validarDadosPagamento]="dadosDePagamento"
+                (botaoFinalizarClicado)="finalizarCompra($event, modalDadosIncorretos)"></app-dados-pagamento>
         </div>
         <div class="col-md-4">
             <div class="card-header bg-info text-light">
@@ -62,16 +63,16 @@
 
 <ng-template #modalDadosIncorretos>
     <div class="modal-header">
-      <h4 class="modal-title pull-left">Dados não preenchidos corretamente</h4>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">&times;</span>
-      </button>
+        <h4 class="modal-title pull-left">Dados não preenchidos corretamente</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
         <p>Verifique se todos os campos estão corretos.</p>
         <p>Preenha todos os dados corretamente para finalizar a compra.</p>
     </div>
-  </ng-template>
+</ng-template>
 
 <div class="footer">
     <app-footer></app-footer>
