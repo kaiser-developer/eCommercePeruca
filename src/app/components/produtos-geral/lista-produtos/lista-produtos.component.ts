@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpService } from 'src/app/services/http.service';
-import { Produto } from 'src/app/models/Produto';
+import { Produto } from 'src/app/model/produto';
+import { Categoria } from 'src/app/model/categoria';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-lista-produtos',
@@ -17,30 +20,26 @@ export class ListaProdutosComponent implements OnInit {
     codGrupo : this.grupoAtivo
   }
 
-  public produtos: Produto[] = []
-  public exibirCategoria: Produto[] = []
-  constructor(private http:HttpService) {
-    this.http.getProduto().subscribe(
-      (data) => { 
-        this.produtos = data
-        this.exibirCategoria = data
-      }
-    )
-  
-  
-  }
+    produtosVisiveis: Produto[] = [];
 
-  ativarGrupo(codGrupo:number) {
-    if (codGrupo == 0) {
-      this.exibirCategoria = this.produtos
-    } else {
-      this.exibirCategoria = this.produtos.filter(x => x._codGrupo == codGrupo)
+    constructor(private requisicoes: RequisicoesService, private route: Router) { 
+      this.requisicoes.getProdutos().subscribe(
+        data => {
+          for(let i =0; i < this.produtosVisiveis.length; i++){
+            this.produtosVisiveis.push(data[i]);
+          }
+        }
+      )
     }
-  }
   
-  ngOnInit(): void {
+    ngOnInit(): void {
+    }
+  
+    abrirPaginaProduto(id: number){
+      this.route.navigate(['produto/' + id]);
+    }
+  
   }
 
-}
 
 

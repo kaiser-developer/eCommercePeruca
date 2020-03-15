@@ -1,0 +1,11 @@
+#carrossel{
+    align-items: center;
+}
+
+#fotoFixa {
+    margin-top: 23px;
+    margin-bottom: 23px;
+    margin-left: 10px;
+    width: 500px;
+    height: 600px;
+}

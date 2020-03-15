@@ -1,0 +1,23 @@
+<div class="border mt-2 p-2 mb-2">
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Qtd</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of carrinho">
+                <th scope="row">{{item.produto.nome}}</th>
+                <th>R$ {{item.produto.valorProduto}}</th>
+                <th>
+                    {{item.quantidade}}
+                </th>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex flex-row-reverse">
+        <h5 class="p-2">Subtotal {{subTotal.toLocaleString('pt-BR', formato)}}</h5>
+    </div>
+</div>

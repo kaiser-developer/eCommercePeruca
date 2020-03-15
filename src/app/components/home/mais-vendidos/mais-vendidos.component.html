@@ -5,63 +5,24 @@
 </section>
 
 <div class="container-fluid d-flex">
-    <div class="d-inline col-3 mt-2">
-        <div class="card" style="width: 19vw; height: 340px;">
-            <img src="../../../../assets/images/logo.png" class="img-thumbnail" width="365px">
+    <div *ngFor="let produto of produtosVisiveis" class="d-inline col-3 mt-2">
+        <div class="card" style="width: 19vw; height: 400px;">
+            <div class="text-center">
+                <img [src]="produto.imagens[0].local" class="img-thumbnail" width="230px">
+            </div>
             <div class="card-body">
-                <h5>nome</h5>
-                <p class="card-text"> id | grupo <br>
-                R$ 100.00 <br> 
-            </p>
-            <a href="#" class="btn btn-dark">Comprar</a>
+                
+                <h5>{{produto.descricao}}</h5>
+                <p class="card-text"> {{produto.categoria.descricao}} <br>
+                    {{produto.valorProduto}} <br>
+                </p>
+                <a (click)="abrirPaginaProduto(produto.codProduto)" class="btn btn-dark text-white">Comprar</a>
             </div>
         </div>
     </div>
-
-    <div class="d-inline col-3 mt-2">
-        <div class="card" style="width: 19vw; height: 340px;">
-            <img src="../../../../assets/images/logo.png" class="img-thumbnail" width="365px">
-            <div class="card-body">
-                <h5>nome</h5>
-                <p class="card-text"> id | grupo <br>
-                R$ 100.00 <br> 
-            </p>
-            <a href="#" class="btn btn-dark">Comprar</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="d-inline col-3 mt-2">
-        <div class="card" style="width: 19vw; height: 340px;">
-            <img src="../../../../assets/images/logo.png" class="img-thumbnail" width="365px">
-            <div class="card-body">
-                <h5>nome</h5>
-                <p class="card-text"> id | grupo <br>
-                R$ 100.00 <br> 
-            </p>
-            <a href="#" class="btn btn-dark">Comprar</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="ultimoCard" class="d-inline col-3 mt-2">
-        <div class="card" style="width: 19vw; height: 340px;">
-            <img src="../../../../assets/images/logo.png" class="img-thumbnail" width="365px">
-            <div class="card-body">
-                <h5>nome</h5>
-                <p class="card-text"> id | grupo <br>
-                R$ 100.00 <br> 
-            </p>
-            <a href="#" class="btn btn-dark">Comprar</a>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
 <div id="todos" class="col-12 mt-3 justify-content-center">
-    <button routerLink="/produtosgeral" class="btn btn-dark btn-block">
+    <button routerLink="/produtos" class="btn btn-dark btn-block">
         Ver Todos
     </button>
 </div>
-

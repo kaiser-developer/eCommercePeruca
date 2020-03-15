@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { Validacoes } from 'src/app/model/validacoes';
+import { ActivatedRoute } from '@angular/router';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Produto } from 'src/app/model/produto';
 
 @Component({
   selector: 'app-pagina-produto',
@@ -8,18 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaProdutoComponent implements OnInit {
 
-  //validacoes: Validacoes;
+  id;
 
-
-  constructor() { 
-    // this.validacoes = new Validacoes()
+  constructor(private route: ActivatedRoute) { 
   }
- 
- // permitirNumeros(evento: any){
-  //  this.validacoes.cancelarLetras(evento);
-// }
-  
+
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }
