@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpService } from 'src/app/services/http.service';
-import { Produto } from 'src/app/models/Produto';
+import { Produto } from 'src/app/model/produto';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -19,13 +18,7 @@ export class ListaProdutosComponent implements OnInit {
 
   public produtos: Produto[] = []
   public exibirCategoria: Produto[] = []
-  constructor(private http:HttpService) {
-    this.http.getProduto().subscribe(
-      (data) => { 
-        this.produtos = data
-        this.exibirCategoria = data
-      }
-    )
+  constructor() {
   
   
   }

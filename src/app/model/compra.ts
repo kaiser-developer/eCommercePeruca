@@ -1,9 +1,9 @@
-import { Produtos } from './produtos';
+import { Produto } from './produto';
 import { DadosPagamento } from './dados-pagamento';
 
 export interface Compra {
     codEndereco: number;
     formaDeEnvio: number;
-    listaDeProdutos: Produtos;
+    listaDeProdutos: Produto[];
     dadosPagamento: DadosPagamento;
 }

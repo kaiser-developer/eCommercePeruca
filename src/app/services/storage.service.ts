@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Carrinho } from '../model/carrinho';
-import { Produtos } from '../model/Produtos';
+import { Produto } from '../model/produto';
 import { Cliente } from '../model/cliente';
 
 @Injectable({
@@ -22,7 +22,20 @@ export class StorageService {
     localStorage.setItem('cliente', JSON.stringify(cliente));
   }
 
+  nomeCliente():string{
+    let cliente = this.recuperarUsuario();
+
+    if(cliente != null){
+      return cliente.nome;
+    }
+    return "";
+  }
+
   recuperarUsuario(){
     return JSON.parse(localStorage.getItem('cliente'));
+  }
+
+  removerUsuario(){
+    localStorage.removeItem('cliente');
   }
 }

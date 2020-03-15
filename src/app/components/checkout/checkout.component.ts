@@ -4,7 +4,7 @@ import { Endereco } from 'src/app/model/endereco';
 import { Validacoes } from 'src/app/model/validacoes';
 import { StorageService } from 'src/app/services/storage.service';
 import { Carrinho } from 'src/app/model/carrinho';
-import { Produtos } from 'src/app/model/Produtos';
+import { Produto } from 'src/app/model/produto';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 
@@ -22,12 +22,10 @@ export class CheckoutComponent implements OnInit {
   validacoes: Validacoes = new Validacoes();
   formaEnvio: number = 0;
   total: number = 0;
-  dados: Produtos[] = [];
   dadosDePagamento: boolean = false;
   formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' };
-  cadastrosServices: CadastrosService = new CadastrosService();
 
-  constructor(private modalService: BsModalService, private storage: StorageService, private http: RequisicoesService) { 
+  constructor(private modalService: BsModalService, private storage: StorageService, private cadastros: CadastrosService) { 
     this.enderecos.push(
       new Endereco("06810060", "Rua Piloto", 109, "Jardim Castilho", "Embu", "SP", "Cesar"),
       new Endereco("13308133", "Rua Maua", 22, "Cidade Nova I", "Itu", "SP", "Vitor"),
@@ -38,13 +36,6 @@ export class CheckoutComponent implements OnInit {
     if(this.enderecos.length > 0){
       this.enderecoPrincipal = this.enderecos[0];
     }
-    let carrinho: Carrinho[] = [];
-    carrinho.push(
-      new Carrinho(new Produtos(1, "Peruca 1", 33.33, ""), 2),
-      new Carrinho(new Produtos(2, "Peruca 2", 66.66, ""), 2),
-      new Carrinho(new Produtos(3, "Peruca 3", 99.99, ""), 2)
-    )
-    this.storage.salvarCarrinho(carrinho);
 
     this.storage.recuperarCarrinho().forEach(item => {
       this.total += (item.produto.valor * item.quantidade);
@@ -70,7 +61,7 @@ export class CheckoutComponent implements OnInit {
     if(this.validacoes.verificarEndereco(endereco)){
       alert("Dados não preenchidos corretamente");
     }else{
-      this.cadastrosServices.cadastrarEndereco(endereco);
+      this.cadastros.cadastrarEndereco(endereco);
     }
     this.modalRef.hide();
   }
@@ -90,7 +81,7 @@ export class CheckoutComponent implements OnInit {
 
   finalizarCompra(valido, template: TemplateRef<any>){
     if(valido){
-      this.cadastrosServices.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio)
+      this.cadastros.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio)
     }else{
       this.dadosDePagamento = false;
       this.abrirModal(template);

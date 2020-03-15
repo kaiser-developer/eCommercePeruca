@@ -17,28 +17,38 @@
 
 
     <div class="d-flex justify-content-between align-items-center col-md-4 carrinho-login">
-        
-            <div class="acessar" data-display="static" aria-haspopup="true" routerLink="/checkout" aria-expanded="false">
-                <img src="../../../assets/images/carrinho-de-compras.png" width="20px">
-                Acessar carrinho
-            </div>
-            <div class="acessar dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true"
-                aria-expanded="false">
-                <img src="../../../assets/images/conta.svg" width="20px">
 
-                Acessar conta
-            </div>
-            <div class="dropdown-menu dropdown-menu-right">
+        <div class="acessar" data-display="static" aria-haspopup="true" routerLink="/checkout" aria-expanded="false">
+            <img src="../../../assets/images/carrinho-de-compras.png" width="20px">
+            Acessar carrinho
+        </div>
+        <div class="acessar dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="../../../assets/images/conta.svg" width="20px">
+
+            Acessar conta
+        </div>
+        <div class="dropdown-menu dropdown-menu-right">
+            <div [ngClass]="logado ? 'aparecer': 'esconder'">
                 <form class="px-4 py-3">
+                    <div class="text-center">
+                        <img src="../../../assets/images/man.svg" width="100px">
+                        <p>{{nome}}</p>
+                    </div>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="deslogarCliente()">Sair</a>
+            </div>
+            <div [ngClass]="!logado ? 'aparecer': 'esconder'">
+                <form class="px-4 py-3 " (ngSubmit)="login()" [formGroup]="formLogin">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Endereço de email:</label>
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                        <input type="email" class="form-control" formControlName="email"
                             placeholder="email@exemplo.com">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Senha:</label>
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword1"
-                            placeholder="Senha">
+                        <input type="password" class="form-control" placeholder="Senha" formControlName="senha">
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -48,11 +58,13 @@
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-dark">Entrar</button>
                 </form>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/cadastre-se">Não é cadastrado ? Cadastre-se agora</a>
+                <div class="pointer">
+                    <a class="dropdown-item" routerLink="/cadastre-se">Não é cadastrado ? Cadastre-se agora</a>
+                </div>
             </div>
         </div>
-
+    </div>
 </nav>

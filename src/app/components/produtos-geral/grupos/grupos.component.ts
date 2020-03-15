@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Grupo } from 'src/app/model/Grupo';
-import { HttpService } from 'src/app/services/http.service';
 
 
 @Component({
@@ -14,14 +13,8 @@ export class GruposComponent implements OnInit {
 
   public grupos: Grupo[] = [];
   @Output() grupoClicado = new EventEmitter();
-  constructor(private http:HttpService) {
+  constructor() {
 
-
-    this.http.getGrupo().subscribe(
-      (data) => { 
-        this.grupos = [this.grupoTotal,...data];
-      }
-    )
   }
 
 
