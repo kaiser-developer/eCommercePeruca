@@ -46,6 +46,7 @@ export class RequisicoesService {
 
   public realizarLogin(login: Login){
     let url = this.http.post<any>("http://localhost:8080/ecommerce/login-cliente", [login.email, login.senha]);
+    console.log(login);
     return url.pipe(map(
       dados => dados
     ));

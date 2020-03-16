@@ -9,15 +9,20 @@ import { Carrinho } from 'src/app/model/carrinho';
 })
 export class CarrinhoComponent implements OnInit {
 
-  carrinho: Carrinho[];
+  carrinho: Carrinho[] = [];
   subTotal: number = 0;
   formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' };
 
   constructor(private storage: StorageService) { 
     this.carrinho = this.storage.recuperarCarrinho();
-    this.carrinho.forEach(item => {
-      this.subTotal += item.quantidade * item.produto.valorProduto;
-    })
+    if(this.carrinho != null){
+      this.carrinho.forEach(item => {
+        this.subTotal += item.quantidade * item.produto.valorProduto;
+      })
+    }else{
+      this.carrinho = [];
+    }
+    
   }
 
   ngOnInit(): void {

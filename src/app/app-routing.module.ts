@@ -8,6 +8,7 @@ import { ContatoComponent } from "./components/contato/contato.component";
 import { QuemSomosComponent } from "./components/quem-somos/quem-somos.component";
 import { PaginaProdutoComponent } from "./components/pagina-produto/pagina-produto.component";
 import { HomeComponent } from './components/home/home.component';
+import { PaginaCarrinhoComponent } from "./components/pagina-carrinho/pagina-carrinho.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: 'produto/:id', component: PaginaProdutoComponent},
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent},
+  { path: 'carrinho', component: PaginaCarrinhoComponent }
 ];
 
 @NgModule({
