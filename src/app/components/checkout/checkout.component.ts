@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class CheckoutComponent implements OnInit {
 
   modalRef: BsModalRef;
-  enderecos: Endereco[] = [];
+  enderecos;
   enderecoPrincipal: Endereco = null;
   validacoes: Validacoes = new Validacoes();
   formaEnvio: number = 0;
@@ -28,7 +28,7 @@ export class CheckoutComponent implements OnInit {
   carrinho: Carrinho[];
   user;
 
-  constructor(private modalService: BsModalService, private storage: StorageService, private cadastros: CadastrosService, private route: Router) {
+  constructor(private requisicoes: RequisicoesService, private modalService: BsModalService, private storage: StorageService, private cadastros: CadastrosService, private route: Router) {
 
     this.carrinho = this.storage.recuperarCarrinho();
     this.user = this.storage.recuperarUsuario();
@@ -36,12 +36,18 @@ export class CheckoutComponent implements OnInit {
       this.carrinho.forEach(item => {
         this.total += (item.produto.valorProduto * item.quantidade);
 
-        this.enderecos = this.user.enderecos;
-        if (this.enderecos.length > 0) {
-          this.enderecoPrincipal = this.enderecos[0];
-        }
+        this.requisicoes.buscarEndereco(this.user.codCliente).subscribe(
+          dados => {
+            this.enderecos = dados
+
+            if (this.enderecos.length > 0) {
+              this.enderecoPrincipal = this.enderecos[0];
+            }
+          }
+        );
       });
     } else {
+      this.enderecos = [];
       this.route.navigate(["/home"])
     }
 
@@ -66,7 +72,9 @@ export class CheckoutComponent implements OnInit {
     if (this.validacoes.verificarEndereco(endereco)) {
       alert("Dados não preenchidos corretamente");
     } else {
-      this.cadastros.cadastrarEndereco(endereco);
+      this.cadastros.cadastrarEndereco(endereco, this.storage.recuperarUsuario().codCliente).subscribe(
+        dados => this.enderecos.push(dados)
+      )
     }
     this.modalRef.hide();
   }
@@ -87,7 +95,12 @@ export class CheckoutComponent implements OnInit {
   finalizarCompra(valido, template: TemplateRef<any>) {
     if (valido) {
       this.cadastros.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio, this.total).subscribe(
-        dados => console.log(dados)
+        dados => {
+          if (dados != null) {
+            this.storage.removerCarrinho();
+            this.route.navigate(['/finalizar-compra'])
+          }
+        }
       )
     } else {
       this.dadosDePagamento = false;

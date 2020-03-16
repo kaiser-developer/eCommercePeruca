@@ -45,6 +45,7 @@ export class HeaderComponent implements OnInit {
           if(data != null){
             this.storage.salvarUsuario(data);
             this.verificar();
+            alert("Login efetuado com sucesso")
             this.formLogin.reset();
             this.formLogin.value.senha = "";
           }else{
@@ -59,6 +60,8 @@ export class HeaderComponent implements OnInit {
 
   deslogarCliente() {
     this.storage.removerUsuario();
+    this.storage.removerCarrinho();
     this.logado = false;
+    this.route.navigate(['/login']);
   }
 }

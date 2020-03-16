@@ -3,7 +3,7 @@
     "vlFrete": 25,
     "dsFormaPagto": "Credito",
     "codEndereco": 1,
-    "codCliente": 1,
+    "codCliente": 2,
     "itensPedido": [
         {
             "codProduto": 2,

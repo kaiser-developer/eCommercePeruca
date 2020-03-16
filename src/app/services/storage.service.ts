@@ -38,4 +38,8 @@ export class StorageService {
   removerUsuario(){
     localStorage.removeItem('cliente');
   }
+
+  removerCarrinho(){
+    localStorage.removeItem('carrinho');
+  }
 }

@@ -58,4 +58,11 @@ export class RequisicoesService {
       produto => produto
     ))
   }
+
+  public buscarEndereco(id){
+    let url = this.http.get<any>("http://localhost:8080/ecommerce/enderecos/" + id)
+    return url.pipe(map(
+      enderecos => enderecos
+    ))
+  }
 }

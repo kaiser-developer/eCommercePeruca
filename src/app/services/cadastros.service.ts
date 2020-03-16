@@ -10,6 +10,22 @@ import { Carrinho } from '../model/carrinho';
 
 const storage: StorageService = new StorageService();
 
+const enderecoBanco = (endereco, codCliente) =>{
+  console.log(endereco);
+  return {
+    "destinatario": endereco.destinatario,
+    "lougradouro": endereco.logradouro,
+    "numero": endereco.numero,
+    "bairro": endereco.bairro,
+    "complemento": endereco.complemento,
+    "cidade": endereco.localidade,
+    "estado": endereco.uf,
+    "cep": endereco.cep,
+    "codCliente":codCliente
+  }
+    
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -42,8 +58,11 @@ export class CadastrosService {
     ))
   }
 
-  public cadastrarEndereco(endereco: Endereco){
-    console.log(endereco);
+  public cadastrarEndereco(endereco: Endereco, codCliente){
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-endereco", enderecoBanco(endereco, codCliente));
+    return url.pipe(map(
+      dados => dados
+    ))
   }
 
   public cadastrarUsuario(cliente: Cliente){

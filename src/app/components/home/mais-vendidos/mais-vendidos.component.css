@@ -6,6 +6,8 @@
 .card{
     box-shadow: 1px 2px 4px rgb(197, 193, 193);
     background-color: rgb(219, 217, 217);
+    width: 19vw;
+    height: 400px;
 }
 
 #todos {
@@ -21,4 +23,9 @@ button {
     #ultimoCard {
     display: none;
     }
+}
+
+.imagem-produto{
+    height:17vw;
+    width: 18.5vw;
 }
