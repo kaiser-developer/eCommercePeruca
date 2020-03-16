@@ -32,7 +32,10 @@
             <div [ngClass]="logado ? 'aparecer': 'esconder'">
                 <form class="px-4 py-3">
                     <div class="text-center">
-                        <img src="../../../assets/images/man.svg" width="100px">
+                        <img *ngIf="nome != 'Michelle Santana'" src="../../../assets/images/login_perfil.png"
+                            width="100px">
+                        <img *ngIf="nome == 'Michelle Santana'" src="../../../assets/images/woman.png" width="100px">
+
                         <p>{{nome}}</p>
                     </div>
                 </form>

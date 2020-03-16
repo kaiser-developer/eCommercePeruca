@@ -24,7 +24,7 @@
 
 
 button {
-    position: absolute;
-    right: 25%;
-    bottom: 47%
+    margin-top: 10vh;
+    margin-bottom: -8vh;
+    text-align: center;
 }

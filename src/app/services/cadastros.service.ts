@@ -23,7 +23,6 @@ const enderecoBanco = (endereco, codCliente) =>{
     "cep": endereco.cep,
     "codCliente":codCliente
   }
-    
 }
 
 @Injectable({
