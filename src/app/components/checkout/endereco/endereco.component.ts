@@ -10,7 +10,7 @@ import { EventEmitter } from 'protractor';
 })
 export class EnderecoComponent implements OnInit {
 
-  @Input() endereco: Endereco;
+  @Input() endereco;
 
   constructor() {
   }
