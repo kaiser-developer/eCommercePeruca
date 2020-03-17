@@ -13,26 +13,26 @@ export class CarrinhoComponent implements OnInit {
   subTotal: number = 0;
   formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' };
 
-  constructor(private storage: StorageService) { 
-    this.carrinho = this.storage.recuperarCarrinho();
-    this.carrinho.forEach(item => {
-      this.subTotal += item.quantidade * item.produto.valorProduto;
-    })
-  }
+  // constructor(private storage: StorageService) { 
+  //   this.carrinho = this.storage.recuperarCarrinho();
+  //   this.carrinho.forEach(item => {
+  //     this.subTotal += item.quantidade * item.produto.valorProduto;
+  //   })
+  // }
 
   ngOnInit(): void {
   }
 
-  atualizarQuantidade(valor:number, item: Carrinho){
-    if(item.quantidade > 1 || valor > 0){
-      item.quantidade += valor;
-    }else{
-      this.carrinho = this.carrinho.filter(produto => 
-        produto != item)
-    }
+  // atualizarQuantidade(valor:number, item: Carrinho){
+  //   if(item.quantidade > 1 || valor > 0){
+  //     item.quantidade += valor;
+  //   }else{
+  //     this.carrinho = this.carrinho.filter(produto => 
+  //       produto != item)
+  //   }
     
-    this.subTotal += valor * item.produto.valorProduto;
-    this.storage.salvarCarrinho(this.carrinho);
-  }
+  //   this.subTotal += valor * item.produto.valorProduto;
+  //   this.storage.salvarCarrinho(this.carrinho);
+  // }
 
 }
