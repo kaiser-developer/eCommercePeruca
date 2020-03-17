@@ -1,9 +1,10 @@
-import { Produto } from './produto';
-import { DadosPagamento } from './dados-pagamento';
+import { Item } from './Item';
 
-export interface Compra {
+export class Compra {
     codEndereco: number;
-    formaDeEnvio: number;
-    listaDeProdutos: Produto[];
-    dadosPagamento: DadosPagamento;
+    vlFrete: number;
+    vlPedido: number;
+    dsFormaPagto: string;
+    codCliente: number;
+    itensPedido: Item[];
 }

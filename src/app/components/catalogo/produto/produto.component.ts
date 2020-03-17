@@ -4,18 +4,18 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-produtos',
-  templateUrl: './produtos.component.html',
-  styleUrls: ['./produtos.component.css']
+  selector: 'app-produto',
+  templateUrl: './produto.component.html',
+  styleUrls: ['./produto.component.css']
 })
-export class ProdutosComponent implements OnInit {
+export class ProdutoComponent implements OnInit {
 
   produtosVisiveis: Produto[] = [];
 
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
     this.requisicoes.getProdutos().subscribe(
       data => {
-        for(let i =0; i < 20; i++){
+        for(let i =0; i < 4; i++){
           this.produtosVisiveis.push(data[i]);
         }
       }

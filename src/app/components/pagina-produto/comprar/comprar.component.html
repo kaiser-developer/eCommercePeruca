@@ -24,17 +24,12 @@
                 <div class="row">
                     <div class="col-6">
                         <label for="qnt">Quantidade :</label>
-                        <input type="number" class="form-control" min="0" name="qnt" id="qnt" placeholder="Quantidade" />
-                    </div>
-                    <div id='divFrete' class="col-6">
-                        <label for="frete">Frete :</label>
-                        <input type="text" class="form-control" name="frete" id="frete"
-                            placeholder="Digite seu cep :" />
+                        <input #qtdProduto value=1 type="number" class="form-control" min="1" max="6" name="qnt" id="qnt" placeholder="Quantidade" />
                     </div>
                 </div>
             </div>
 
-            <button class="btn btn-lg btn-success btn-block" type="submit">Comprar</button>
+            <button class="btn btn-lg btn-success btn-block" type="submit" (click)="adicionarNoCarrinho(qtdProduto.value)">Comprar</button>
         </form>
     </div>
 </div>

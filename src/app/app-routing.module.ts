@@ -8,6 +8,8 @@ import { ContatoComponent } from "./components/contato/contato.component";
 import { QuemSomosComponent } from "./components/quem-somos/quem-somos.component";
 import { PaginaProdutoComponent } from "./components/pagina-produto/pagina-produto.component";
 import { HomeComponent } from './components/home/home.component';
+import { PaginaCarrinhoComponent } from "./components/pagina-carrinho/pagina-carrinho.component";
+import { CompraFinalizadaComponent } from "./components/compra-finalizada/compra-finalizada.component";
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: 'produto/:id', component: PaginaProdutoComponent},
   { path: 'home', component: HomeComponent},
+  { path: 'carrinho', component: PaginaCarrinhoComponent },
+  { path: 'finalizar-compra', component: CompraFinalizadaComponent},
   { path: 'catalogo', component: CatalogoComponent}
 ];
 

@@ -6,10 +6,6 @@
     text-transform: uppercase;
 }
 
-header {
-    box-shadow: black 1px 2px 10px;
-}
-
 .lista-enderecos {
     position: relative;
     width: 100%;
@@ -17,4 +13,7 @@ header {
     top: 10px;
     overflow-y: auto;
     cursor: pointer;
+}
+.totalCheckout{
+    font-size: 30px;
 }

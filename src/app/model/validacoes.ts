@@ -28,12 +28,7 @@ export class Validacoes {
     }
 
     verificarEndereco(endereco: Endereco) {
-        if (endereco.bairro.replace(/\ /g, '').length < 10 || endereco.cep.length != 8 ||
-            endereco.destinatario.replace(/\ /g, '').length < 10 || endereco.localidade.replace(/\ /g, '').length < 10 ||
-            (endereco.numero == 0 || endereco.numero == undefined) || endereco.logradouro.replace(/\ /g, '').length < 6 ||
-            endereco.uf == "") {
-            return true;
-        }
+        
         return false;
     }
 
