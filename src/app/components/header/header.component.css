@@ -17,6 +17,10 @@ nav.row{
 }
 
 @media only screen and (max-width: 767px) {
+    nav {
+        display: block;
+    }
+
     #buscar {
         width: 50vw !important;
     }
