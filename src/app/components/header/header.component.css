@@ -52,3 +52,7 @@ nav.row{
 .pointer{
     cursor: pointer;
 }
+
+.icon-header{
+    width: 7vh;
+}
