@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl,  } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { FormGroup, FormControl, } from '@angular/forms';
 import { DadosPagamento } from 'src/app/model/dados-pagamento';
 import { Validacoes } from 'src/app/model/validacoes';
 
@@ -8,9 +8,11 @@ import { Validacoes } from 'src/app/model/validacoes';
   templateUrl: './dados-pagamento.component.html',
   styleUrls: ['./dados-pagamento.component.css']
 })
-export class DadosPagamentoComponent implements OnInit {
+export class DadosPagamentoComponent implements OnChanges {
 
   @Output() botaoFinalizarClicado = new EventEmitter();
+  @Input() validarDadosPagamento: boolean;
+
   dataAtual: Date = new Date();
   data: string;
   formPagamento: FormGroup;
@@ -36,15 +38,25 @@ export class DadosPagamentoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  permitirNumeros(evento: any){
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['validarDadosPagamento'].currentValue) {
+      if (this.validarPagamento()) {
+        this.botaoFinalizarClicado.emit(true);
+      }else{
+        this.botaoFinalizarClicado.emit(false);
+      }
+    }
+  }
+
+  permitirNumeros(evento: any) {
     this.validacoes.cancelarLetras(evento);
   }
 
-  permitirLetras(evento: any){
+  permitirLetras(evento: any) {
     this.validacoes.cancelarNumeros(evento)
   }
 
-  validarPagamento(): boolean{
+  validarPagamento(): boolean {
     return this.validacoes.verificarDadosPagamento(this.formPagamento.value);
   }
 }

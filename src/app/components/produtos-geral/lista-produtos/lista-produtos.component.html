@@ -1,0 +1,5 @@
+<div class="d-flex">
+    <div *ngFor="let item of produtos | produtosFiltro:grupoAtivo">
+        <app-produto [produto]="item"></app-produto>
+    </div>
+</div>

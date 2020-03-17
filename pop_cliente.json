@@ -1,0 +1,41 @@
+[
+    {
+        "nomeCompleto": "Daniel",
+        "email": "daniroddra1999@gmail.com",
+        "cpf":"303.321.498-33",
+        "telefone":"11978553309",
+        "senha":"daniel123"
+    }
+    ,
+    {
+        "nome": "Gabriel",
+        "email": "gabrielmaziero@gmail.com",
+        "cpf":"576.432.848-43",
+        "telefone":"11944403030",
+        "senha":"gabriel123"
+    }
+    ,
+    {
+        "nome": "Vitor",
+        "email": "vitorturmac@gmail.com",
+        "cpf":"384.317.488.03",
+        "telefone":"11978650043",
+        "senha":"vitor123"
+    }
+    ,
+    {
+        "nome": "Michelle",
+        "email": "michelle.raiadrogasil@gmail.com",
+        "cpf":"784.456.998-22",
+        "telefone":"11945590877",
+        "senha":"michelle123"
+    }
+    ,
+    {
+        "nome": "Cesar",
+        "email": "asa.cesar@gmail.com",
+        "cpf":"588.677.238-92",
+        "telefone":"11942221925",
+        "senha":"cesar123"
+    }
+]

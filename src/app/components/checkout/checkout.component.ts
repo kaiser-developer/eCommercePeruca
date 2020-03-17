@@ -1,11 +1,13 @@
-import { Component, OnInit, TemplateRef  } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { BsModalRef, BsModalService, ModalBackdropComponent } from 'ngx-bootstrap/modal';
 import { Endereco } from 'src/app/model/endereco';
 import { Validacoes } from 'src/app/model/validacoes';
 import { StorageService } from 'src/app/services/storage.service';
 import { Carrinho } from 'src/app/model/carrinho';
-import { Produtos } from 'src/app/model/Produtos';
+import { Produto } from 'src/app/model/produto';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { CadastrosService } from 'src/app/services/cadastros.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -16,69 +18,93 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
 export class CheckoutComponent implements OnInit {
 
   modalRef: BsModalRef;
-  enderecos: Endereco[] = [];
+  enderecos;
   enderecoPrincipal: Endereco = null;
-  validacoes: Validacoes;
+  validacoes: Validacoes = new Validacoes();
   formaEnvio: number = 0;
-  dados: Produtos[] = [];
+  total: number = 0;
+  dadosDePagamento: boolean = false;
+  formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
+  carrinho: Carrinho[];
+  user;
 
-  constructor(private modalService: BsModalService, private storage: StorageService, private http: RequisicoesService) { 
-    this.enderecos.push(
-      new Endereco("06810060", "Rua Piloto", 109, "Jardim Castilho", "Embu", "SP", "Cesar"),
-      new Endereco("13308133", "Rua Maua", 22, "Cidade Nova I", "Itu", "SP", "Vitor"),
-      new Endereco("12345678", "teste4", 10, "teste4", "teste4", "teste4", "Daniel"),
-      new Endereco("12345678", "teste5", 10, "teste5", "teste5", "teste5", "Gabriel"),
-      new Endereco("12345678", "teste6", 10, "teste6", "teste6", "teste6", "Michelle")
-    )
-    if(this.enderecos.length > 0){
-      this.enderecoPrincipal = this.enderecos[0];
+  constructor(private requisicoes: RequisicoesService, private modalService: BsModalService, private storage: StorageService, private cadastros: CadastrosService, private route: Router) {
+
+    this.carrinho = this.storage.recuperarCarrinho();
+    this.user = this.storage.recuperarUsuario();
+    if (this.carrinho != null && this.carrinho.length != 0 && this.user != null) {
+      this.carrinho.forEach(item => {
+        this.total += (item.produto.valorProduto * item.quantidade);
+
+        this.requisicoes.buscarEndereco(this.user.codCliente).subscribe(
+          dados => {
+            this.enderecos = dados
+
+            if (this.enderecos.length > 0) {
+              this.enderecoPrincipal = this.enderecos[0];
+            }
+          }
+        );
+      });
+    } else {
+      this.enderecos = [];
+      this.route.navigate(["/home"])
     }
-    let carrinho: Carrinho[] = [];
-    carrinho.push(
-      new Carrinho(new Produtos(1, "Peruca 1", 33.33, ""), 2),
-      new Carrinho(new Produtos(2, "Peruca 2", 66.66, ""), 2),
-      new Carrinho(new Produtos(3, "Peruca 3", 99.99, ""), 2)
-    )
-    this.storage.salvarCarrinho(carrinho);
-    
-    this.http.getProdutos().subscribe(produtos => 
-      console.log(produtos)  
-    );
+
   }
 
   ngOnInit(): void {
   }
 
-  abrirModal(template: TemplateRef<any>){
+  abrirModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template)
   }
 
-  receberFormaDeEnvio(envio){
-    this.formaEnvio = envio;
-    console.log(this.formaEnvio);
+  receberFormaDeEnvio(envio) {
+    if (envio != this.formaEnvio) {
+      this.total -= this.formaEnvio;
+      this.formaEnvio = envio;
+      this.total += this.formaEnvio;
+    }
   }
 
-  cadastrarEndereco(endereco: Endereco){
-    if(this.validacoes.verificarEndereco(Endereco)){
-      return alert("Dados não preenchidos corretamente");
-    }    
-    this.enderecos.push(endereco);
-    if(this.enderecos.length == 1){
-      this.enderecoPrincipal = this.enderecos[0]
+  cadastrarEndereco(endereco: Endereco) {
+    if (this.validacoes.verificarEndereco(endereco)) {
+      alert("Dados não preenchidos corretamente");
+    } else {
+      this.cadastros.cadastrarEndereco(endereco, this.storage.recuperarUsuario().codCliente).subscribe(
+        dados => this.enderecos.push(dados)
+      )
     }
     this.modalRef.hide();
   }
 
-  mudarEndereco(endereco: Endereco){
+  mudarEndereco(endereco: Endereco) {
     this.enderecoPrincipal = endereco;
     this.modalRef.hide();
   }
 
-  finalizarCompra(dadosPagamento){
-    if(this.enderecoPrincipal != null && dadosPagamento && this.formaEnvio != 0 && this.storage.recuperarCarrinho.length != 0){
-      console.log("Compra finalizada");
-    }else{
-      console.log("Preencha todos os dados corretamente")
+  validarCampos(template: TemplateRef<any>) {
+    if (this.enderecoPrincipal != null && this.formaEnvio != 0 && this.storage.recuperarCarrinho().length != 0) {
+      this.dadosDePagamento = true
+    } else {
+      this.abrirModal(template)
+    }
+  }
+
+  finalizarCompra(valido, template: TemplateRef<any>) {
+    if (valido) {
+      this.cadastros.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio, this.total).subscribe(
+        dados => {
+          if (dados != null) {
+            this.storage.removerCarrinho();
+            this.route.navigate(['/finalizar-compra'])
+          }
+        }
+      )
+    } else {
+      this.dadosDePagamento = false;
+      this.abrirModal(template);
     }
   }
 }

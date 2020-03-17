@@ -6,6 +6,15 @@
     margin-top: 23px;
     margin-bottom: 23px;
     margin-left: 10px;
-    width: 500px;
-    height: 600px;
+    width: 50vw;
+    height: 40vw;
+}
+
+.icone-proximo-carousel{
+    background-image: url("../../../../assets/images/seta-direita.svg");
+}
+
+.icone-anterior-carousel{
+    background-image: url("../../../../assets/images/seta-esquerda.svg");
+
 }

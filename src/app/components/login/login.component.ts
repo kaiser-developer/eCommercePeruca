@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
-import { Login } from "../../model/login";
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,33 +12,38 @@ import { Login } from "../../model/login";
 
 export class LoginComponent implements OnInit {
 
-  user: Login = new Login("gabriel@gmail.com", "12345678");
   formLogin;
   email: string;
-  password: string;
+  senha: string;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { }
 
   ngOnInit(): void {
     this.formLogin = this.fb.group({
       email: [this.email],
-      password: [this.password]
+      senha: [this.senha]
     });
+
+    if(this.storage.recuperarUsuario() != null){
+      this.route.navigate(["home"]);
+    }
   }
 
   login() {
-
     if (this.formLogin.status != "INVALID") {
-
-      if (this.formLogin.value.email == this.user.email && this.formLogin.value.password == this.user.senha) {
-
-        alert("Efetuado login!");
-
-      } else {
-        alert("Usuario não cadastrado!");
-      }
+      this.requisicoes.realizarLogin(this.formLogin.value).subscribe(
+        data => {
+          if(data != null){
+            this.storage.salvarUsuario(data);
+            this.route.navigate(["home"])
+          }else{
+            console.log(data);
+            alert("Usuario e/ou senha inválidos");
+          }
+        }
+      )
     } else {
-      alert("campos Invalidos");
+      alert("Campos invalidos, verifique os campos e tente novamente");
     }
   }
 }

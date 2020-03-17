@@ -1,10 +1,9 @@
-
-<app-nav-produto></app-nav-produto>
+<app-header></app-header>
 
 <div class="container-fluid">
     <div class="row d-flex">
-        <div class="col-6"><app-carrossel></app-carrossel></div>
-        <div class="col-6"><app-comprar></app-comprar></div>
+        <div class="col-6"><app-carrossel [idProduto]="id"></app-carrossel></div>
+        <div class="col-6"><app-comprar [idProduto]="id"></app-comprar></div>
     </div>
 </div>
 
