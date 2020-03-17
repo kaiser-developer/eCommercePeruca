@@ -28,6 +28,7 @@ import { LogoComponent } from './components/pagina-produto/logo/logo.component';
 import { CarrosselComponent } from './components/pagina-produto/carrossel/carrossel.component';
 import { NavProdutoComponent } from './components/pagina-produto/nav-produto/nav-produto.component';
 import {ComprarComponent } from './components/pagina-produto/comprar/comprar.component';
+import { InstitucionalComponent } from './components/institucional/institucional.component';
 
 
 
@@ -55,6 +56,7 @@ import {ComprarComponent } from './components/pagina-produto/comprar/comprar.com
     CarrosselComponent,
     NavProdutoComponent,
     ComprarComponent,
+    InstitucionalComponent,
     
    
   ],
