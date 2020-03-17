@@ -1,7 +1,4 @@
-<header>
-    <app-nav-checkout></app-nav-checkout>
-</header>
-
+<app-nav-checkout></app-nav-checkout>
 <main class="container">
     <form class="row dados center" id="checkout" method="POST">
         <div class="col-md-4">
@@ -29,9 +26,9 @@
                 <img src="../../../../assets/images/varejo.svg" alt="" srcset="" width="25" height="25">
                 <b class="p-4 font-weight-bolder">Resumo da compra</b>
             </div>
-            <app-carrinho></app-carrinho>
+            <app-carrinho [frete]="formaEnvio"></app-carrinho>
             <hr>
-            <div>
+            <div class="totalCheckout">
                 Total {{total.toLocaleString('pt-BR', formato)}}
             </div>
 

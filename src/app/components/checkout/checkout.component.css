@@ -14,3 +14,6 @@
     overflow-y: auto;
     cursor: pointer;
 }
+.totalCheckout{
+    font-size: 30px;
+}

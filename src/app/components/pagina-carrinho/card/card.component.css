@@ -1,0 +1,16 @@
+#card{
+    margin-top: 40px;
+    text-align: center;
+}
+
+#conteudoProduto{
+    margin-left: 10px;
+    justify-content: space-around;
+}
+
+#productTable {
+    height: 58vh;
+    overflow: auto;
+    margin-top: 40px;
+    margin-right: 5px;
+}

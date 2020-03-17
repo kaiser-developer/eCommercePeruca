@@ -31,6 +31,10 @@ import { HomeComponent } from "./components/home/home.component";
 import { CarroselHomeComponent } from "./components/home/carrosel-home/carrosel-home.component";
 import { InstitucionalComponent } from "./components/home/institucional/institucional.component";
 import { MaisVendidosComponent } from "./components/home/mais-vendidos/mais-vendidos.component";
+import { PaginaCarrinhoComponent } from './components/pagina-carrinho/pagina-carrinho.component';
+import { CardComponent } from './components/pagina-carrinho/card/card.component';
+import { CompraFinalizadaComponent } from './components/compra-finalizada/compra-finalizada.component';
+import { CentroComponent } from './components/compra-finalizada/centro/centro.component';
 
 
 @NgModule({
@@ -60,7 +64,10 @@ import { MaisVendidosComponent } from "./components/home/mais-vendidos/mais-vend
     HeaderComponent,
     QuemSomosComponent,
     ConteudoComponent,
-
+    PaginaCarrinhoComponent,
+    CardComponent,
+    CompraFinalizadaComponent,
+    CentroComponent,
   ],
   imports: [
     BrowserModule,

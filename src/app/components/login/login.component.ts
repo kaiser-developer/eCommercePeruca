@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
             this.storage.salvarUsuario(data);
             this.route.navigate(["home"])
           }else{
+            console.log(data);
             alert("Usuario e/ou senha inválidos");
           }
         }

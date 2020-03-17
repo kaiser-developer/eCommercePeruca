@@ -46,6 +46,7 @@ export class RequisicoesService {
 
   public realizarLogin(login: Login){
     let url = this.http.post<any>("http://localhost:8080/ecommerce/login-cliente", [login.email, login.senha]);
+    console.log(login);
     return url.pipe(map(
       dados => dados
     ));
@@ -55,6 +56,13 @@ export class RequisicoesService {
     let url = this.http.get<Produto>("http://localhost:8080/ecommerce/buscar-produto/" + id)
     return url.pipe(map(
       produto => produto
+    ))
+  }
+
+  public buscarEndereco(id){
+    let url = this.http.get<any>("http://localhost:8080/ecommerce/enderecos/" + id)
+    return url.pipe(map(
+      enderecos => enderecos
     ))
   }
 }
