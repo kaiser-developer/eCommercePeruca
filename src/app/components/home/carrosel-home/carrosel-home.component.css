@@ -12,3 +12,10 @@
 #carrosel {
     margin-top: 115px;
 }
+
+@media only screen and (max-width: 760px) {
+    
+    #carrosel {
+        margin-top: 150px;
+    }
+}

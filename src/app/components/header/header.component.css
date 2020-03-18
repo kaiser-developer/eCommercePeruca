@@ -89,6 +89,17 @@ nav.row{
     display: none;
 }
 
+#buscaResp {
+    position: relative;
+    left: -250px;
+}
+
+#imgLogo {
+    position: relative;
+    top: 0vh;
+    left: -17vw;
+    height: auto;
+}
 
 
 @media only screen and (max-width: 767px) {

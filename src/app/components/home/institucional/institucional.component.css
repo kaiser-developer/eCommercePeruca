@@ -3,3 +3,9 @@
     justify-content: center;
     width: 97vw;
 }
+
+#text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
