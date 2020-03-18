@@ -1,19 +1,96 @@
-#buscar {
-    margin-top: 0.5vw;
-    width: 30vw;
-}
+.sidebar {
+    height: 100%;
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color:dimgray; /* Black*/
+    background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.589),rgba(136, 161, 165, 0.479));
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  /* .openbtn:hover {
+    background-color: #444;
+  } */
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }   
+   
+   
+   #txtBusca{
+    float:left;
+    padding-left:10px;
+    font-style:italic;
+    border:black 1px solid;
+    border-radius: 10px;
+    height:36px;
+    width:230px;
+    }
+    #btnBusca{
+    background-color: transparent;
+    border: none;
+    }
+    #btnBusca:hover{
+    opacity: 0.4;
+    }
 
-#btn-buscar {
-    margin-top: 0.5vw !important;
-    margin-left: 0.3vw;
+.searchImg{
+    width: 0.8vw;
+    position: absolute;
+    left: 45%;
+    
 }
-
 nav.row{
     margin: 0;
 }
 
 .acessar {
     cursor: pointer;
+}
+
+.acessar-carrinho{
+    margin-right: 1.3vw;
 }
 
 @media only screen and (max-width: 767px) {
@@ -23,6 +100,7 @@ nav.row{
 
     .carrinho-login {
         position: absolute;
+        width: 0.6vw;
     }
 
     #div-pesquisa {
@@ -53,6 +131,18 @@ nav.row{
     cursor: pointer;
 }
 
-.icon-header{
-    width: 7vh;
+.quantidade-carrinho{
+    position: absolute;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.9);
+    top: 30px;
+    left: 25px;
+    border:solid 1px;
+    width: 3vh;
+    height: 4vh;
+    border-radius: 3vh;
+}
+
+.texto-quantidade-carrinho{
+    color: #fff;
 }

@@ -1,32 +1,39 @@
-<nav class="row nav-header">
-    <div class="col-md-2">
-        <a class="navbar-brand" href="#">
-            <img src="../../../assets/images/logoWig.png" alt="LogoPrincipal" width="200px">
-        </a>
-    </div>
-    <div class="d-flex justify-content-center align-items-center col-md-6" id="div-pesquisa">
-        <div class="row">
-            <div>
-                <input id="buscar" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-            </div>
-            <div>
-                <button id="btn-buscar" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
-            </div>
+<nav class="d-flex justify-content-between row nav-header fixed-top">
+    <div class="d-flex align-items-center col-md-4 col-xs-12" id="div-menu">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+            <a href="#">Produtos</a>
+            <a href="#">Contato</a>
+            <a href="#">Institucional</a>
+            <a href="#"></a>
+        </div>
+
+        <div id="main">
+            <button class="openbtn" (click)="openNav()">&#9776;</button>
         </div>
     </div>
-
-
-    <div class="d-flex justify-content-between align-items-center col-md-4 carrinho-login">
-
-        <div class="acessar" routerLink="/carrinho" data-display="static" aria-haspopup="true" aria-expanded="false">
-            <img src="../../../assets/images/carrinho-de-compras.png" class="icon-header">
-            Acessar carrinho
+    <div class="d-flex align-items-center justify-content-center col-md-4 col-xs-12">
+        <div class="row">
+            <a class="navbar-brand" href="#">
+                <img src="../../../assets/images/logoWig.png" alt="LogoPrincipal" width="200px">
+            </a>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-between col-md-4 col-xs-12 carrinho-login">
+        <form id="barra-de-pesquisa" class="form-inline my-2 my-lg-0">
+            <div id="divBusca">
+                <input type="text" id="txtBusca" placeholder="Pesquisar..." />
+                <button class="btn rounded"><img src="../../../assets/images/search.png" width="20px" id="btnBusca"
+                        alt="Buscar" /></button>
+            </div>
+        </form>
+        <div class="acessar-carrinho" routerLink="/carrinho" data-display="static" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="../../../assets/images/carrinho-de-compras.png" width="35px">
         </div>
         <div class="acessar dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true"
             aria-expanded="false">
-            <img src="../../../assets/images/conta.svg" class="icon-header">
-
-            Acessar conta
+            <img src="../../../assets/images/conta.svg" width="35px">
         </div>
         <div class="dropdown-menu dropdown-menu-right">
             <div [ngClass]="logado ? 'aparecer': 'esconder'">

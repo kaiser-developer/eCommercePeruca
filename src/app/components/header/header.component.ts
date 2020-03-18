@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 import { RequisicoesService } from "../../services/requisicoes.service";
@@ -16,8 +16,15 @@ export class HeaderComponent implements OnInit {
   senha: string;
   nome: string;
   logado: boolean;
+  carrinho;
+  qtdCarrinho: number = 0;
 
-  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { }
+  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) {
+    this.carrinho = storage.recuperarCarrinho();
+    if (this.carrinho != null) {
+      this.qtdCarrinho = this.carrinho.length;
+    }
+  }
 
   ngOnInit(): void {
     this.formLogin = this.fb.group({
@@ -42,13 +49,13 @@ export class HeaderComponent implements OnInit {
     if (this.formLogin.status != "INVALID") {
       this.requisicoes.realizarLogin(this.formLogin.value).subscribe(
         data => {
-          if(data != null){
+          if (data != null) {
             this.storage.salvarUsuario(data);
             this.verificar();
             alert("Login efetuado com sucesso")
             this.formLogin.reset();
             this.formLogin.value.senha = "";
-          }else{
+          } else {
             alert("Usuario e/ou senha inválidos");
           }
         }
@@ -63,5 +70,16 @@ export class HeaderComponent implements OnInit {
     this.storage.removerCarrinho();
     this.logado = false;
     this.route.navigate(['/login']);
+  }
+
+
+  openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+
+  closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
   }
 }
