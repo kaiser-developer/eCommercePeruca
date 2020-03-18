@@ -37,6 +37,7 @@ import { CardComponent } from './components/pagina-carrinho/card/card.component'
 import { CompraFinalizadaComponent } from './components/compra-finalizada/compra-finalizada.component';
 import { CentroComponent } from './components/compra-finalizada/centro/centro.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
+import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PaginaInstitucionalComponent } from './components/pagina-institucional/
     CardComponent,
     CompraFinalizadaComponent,
     CentroComponent,
-    PaginaInstitucionalComponent
+    PaginaInstitucionalComponent,
+    EscolhaPerucaComponent
     
   ],
   imports: [
