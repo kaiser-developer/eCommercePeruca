@@ -2,15 +2,17 @@
     "vlPedido": 200.5,
     "vlFrete": 25,
     "dsFormaPagto": "Credito",
-    "codEndereco": 1,
-    "codCliente": 2,
+    "endereco": {
+        "id": 1
+    },
+    "codCliente": 1,
     "itensPedido": [
         {
-            "codProduto": 2,
+            "codProduoto": 38,
             "quantidade": 1
         },
         {
-            "codProduto": 2,
+            "codProduoto": 39,
             "quantidade": 2
         }
     ]

@@ -23,6 +23,7 @@ import { QuemSomosComponent } from "./components/quem-somos/quem-somos.component
 import { ConteudoComponent } from "./components/quem-somos/conteudo/conteudo.component";
 import { DescricaoComponent } from "./components/quem-somos/descricao/descricao.component";
 import { ModalComponent } from "./components/quem-somos/modal/modal.component";
+import { NavbarComponent } from "./components/quem-somos/navbar/navbar.component";
 import { SobreComponent } from "./components/quem-somos/sobre/sobre.component";
 import { PaginaProdutoComponent } from "./components/pagina-produto/pagina-produto.component";
 import { CarrosselComponent } from "./components/pagina-produto/carrossel/carrossel.component";
@@ -35,6 +36,9 @@ import { PaginaCarrinhoComponent } from './components/pagina-carrinho/pagina-car
 import { CardComponent } from './components/pagina-carrinho/card/card.component';
 import { CompraFinalizadaComponent } from './components/compra-finalizada/compra-finalizada.component';
 import { CentroComponent } from './components/compra-finalizada/centro/centro.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { ProdutoComponent } from './components/catalogo/produto/produto.component';
+import { CategoriaComponent } from './components/catalogo/categoria/categoria.component';
 
 
 @NgModule({
@@ -49,6 +53,7 @@ import { CentroComponent } from './components/compra-finalizada/centro/centro.co
     ComprarComponent,
     DescricaoComponent,
     ModalComponent,
+    NavbarComponent,
     SobreComponent,
     LoginComponent,
     ContatoComponent,
@@ -68,6 +73,9 @@ import { CentroComponent } from './components/compra-finalizada/centro/centro.co
     CardComponent,
     CompraFinalizadaComponent,
     CentroComponent,
+    CatalogoComponent,
+    ProdutoComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

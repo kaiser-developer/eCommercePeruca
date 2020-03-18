@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Produto } from 'src/app/model/produto';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { Carrinho } from 'src/app/model/carrinho';
@@ -15,7 +15,6 @@ export class ComprarComponent implements OnChanges {
   produto: Produto;
   carrinho: Carrinho[] = [];
   compra: Carrinho = new Carrinho();
-  @Output() adicionadoNoCarrinho = new EventEmitter;
 
   constructor(private requisicoes: RequisicoesService, private storage: StorageService) { }
 
@@ -32,6 +31,7 @@ export class ComprarComponent implements OnChanges {
     this.carrinho = this.storage.recuperarCarrinho();
     this.compra.produto = this.produto;
     this.compra.quantidade = +qtd;
+    console.log(this.compra)
     if(this.carrinho != null){
       this.carrinho = this.carrinho.filter(
         item => item.produto.codProduto != this.produto.codProduto
@@ -43,7 +43,6 @@ export class ComprarComponent implements OnChanges {
     }
 
     this.storage.salvarCarrinho(this.carrinho);
-    this.adicionadoNoCarrinho.emit();
     alert("Item adicionado no carrinho");
   }
 }

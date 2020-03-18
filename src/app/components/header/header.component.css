@@ -10,55 +10,44 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  }
-  
-  .sidebar a {
+}
+
+.sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: rgb(0, 0, 0);
     display: block;
     transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
+}
+
+.sidebar a:hover {
     color: #f1f1f1;
-  }
-  
-  .sidebar .closebtn {
+}
+
+.sidebar .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  
-  .openbtn {
+}
+
+.openbtn {
     font-size: 20px;
     cursor: pointer;
     background-color: transparent;
     color: black;
     padding: 10px 15px;
     border: none;
-  }
-  
-  /* .openbtn:hover {
-    background-color: #444;
-  } */
-  
-  #main {
+}
+
+#main {
     transition: margin-left .5s;
     padding: 20px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }   
-   
-   
-   #txtBusca{
+}
+
+#txtBusca{
     float:left;
     padding-left:10px;
     font-style:italic;
@@ -66,14 +55,16 @@
     border-radius: 10px;
     height:36px;
     width:230px;
-    }
-    #btnBusca{
+}
+
+#btnBusca{
     background-color: transparent;
     border: none;
-    }
-    #btnBusca:hover{
+}
+
+#btnBusca:hover{
     opacity: 0.4;
-    }
+}
 
 .searchImg{
     width: 0.8vw;
@@ -93,20 +84,74 @@ nav.row{
     margin-right: 1.3vw;
 }
 
+#busca {
+    display: none;
+}
+
+#buscaResp {
+    position: relative;
+    left: -250px;
+}
+
+#imgLogo {
+    position: relative;
+    top: 0vh;
+    left: -17vw;
+    height: auto;
+}
+
+
 @media only screen and (max-width: 767px) {
     #buscar {
         width: 50vw !important;
     }
 
+    #buscaResp {
+        display: none;
+    }
+
+    #busca {
+        display: flex;
+        justify-content: center;
+    }
+    
+
     .carrinho-login {
         position: absolute;
+        right: 20vw;
+        top: 3vh;
         width: 0.6vw;
+    }
+
+    #imgLogo {
+        position: absolute;
+        top: 0vh;
+        right: 30vw;
+        width: auto;
     }
 
     #div-pesquisa {
         margin-top: 10px;
     }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    } 
+
+    #divbusca {
+        width: 100%
+    }
+
+    .openbtn {
+        z-index: 999;
+    }
 }
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}  
 
 @media only screen and (max-width: 285px){
     .carrinho-login {
@@ -129,20 +174,4 @@ nav.row{
 
 .pointer{
     cursor: pointer;
-}
-
-.quantidade-carrinho{
-    position: absolute;
-    text-align: center;
-    background-color: rgba(255, 0, 0, 0.9);
-    top: 30px;
-    left: 25px;
-    border:solid 1px;
-    width: 3vh;
-    height: 4vh;
-    border-radius: 3vh;
-}
-
-.texto-quantidade-carrinho{
-    color: #fff;
 }

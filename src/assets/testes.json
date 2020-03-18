@@ -1,0 +1,54 @@
+[{
+    "idProd":"01",
+    "nome":"Peruca Lisa Loira",
+    "codGrupo":"01",
+    "preco":"199,00"
+},
+{ "idProd":"02",
+    "nome":"Peruca Lisa Castanho",
+    "codGrupo":"01",
+    "preco":"179,00"
+},
+{
+    "idProd":"03",
+    "nome":"Peruca Lisa Ruiva",
+    "codGrupo":"01",
+    "preco":"189,00"
+},
+{
+    "idProd":"04",
+    "nome":"Peruca Lisa Azul",
+    "codGrupo":"02",
+    "preco":"229,00"
+},
+{
+    "idProd":"05",
+    "nome":"Peruca Cacheada Loira",
+    "codGrupo":"02",
+    "preco":"189,00"
+},
+{
+    "idProd":"06",
+    "nome":"Peruca Cacheada Castanho",
+    "codGrupo":"02",
+    "preco":"199,00"
+},
+{
+    "idProd":"07",
+    "nome":"Peruca Cacheada Ruiva",
+    "codGrupo":"02",
+    "preco":"209,00"
+},
+{
+    "idProd":"08",
+    "nome":"Peruca Cacheada Preta",
+    "codGrupo":"02",
+    "preco":"189,00"
+},
+{
+    "idProd":"09",
+    "nome":"Peruca Cacheada Rosa",
+    "codGrupo":"02",
+    "preco":"229,00"
+}
+]

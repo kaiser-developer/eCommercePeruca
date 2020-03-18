@@ -1,14 +1,12 @@
-[
-    {
-        "descCategoria": "Cacheado"
-    },
-    {
-        "descCategoria": "Liso"
-    },
-    {
-        "descCategoria": "Cosplay"
-    },
-    {
-        "descCategoria": "Crespo"
-    }
-]
+{
+    "descCategoria": "Cacheados"
+}
+{
+    "descCategoria": "Crespos"
+}
+{
+    "descCategoria": "Lisos"
+}
+{
+    "descCategoria": "Cosplay"
+}
