@@ -19,8 +19,6 @@ export class HeaderComponent implements OnInit {
   carrinho;
   qtdCarrinho: number = 0;
 
-  @Output() atualizar = this.atualizarCarrinho();
-
   constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) {
     this.carrinho = storage.recuperarCarrinho();
     if (this.carrinho != null) {
@@ -74,11 +72,14 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['/login']);
   }
 
-  atualizarCarrinho() {
-    console.log("TESTE")
-    this.carrinho = this.storage.recuperarCarrinho();
-    if (this.carrinho != null) {
-      this.qtdCarrinho = this.carrinho.length;
-    }
+
+  openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+
+  closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
   }
 }
