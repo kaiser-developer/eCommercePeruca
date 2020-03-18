@@ -5,7 +5,6 @@
 
 #btn-buscar {
     margin-top: 0.5vw !important;
-    margin-left: 0.3vw;
 }
 
 nav.row{
@@ -39,16 +38,4 @@ nav.row{
 .nav-header{
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.336) 0px 1px 2px;
-}
-
-.aparecer{
-    display: block;
-}
-
-.esconder{
-    display: none;
-}
-
-.pointer{
-    cursor: pointer;
 }

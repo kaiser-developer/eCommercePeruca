@@ -1,4 +1,4 @@
-[{
+{
     "descProduto": "Peruca branca",
     "categoria": {
         "codigo": 1
@@ -10,7 +10,7 @@
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/000%20-%20lateral.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/000%20-%20verso.jpg?raw=true"}
     ]
-},
+}
 {
     "descProduto": "Peruca loira",
     "categoria": {
@@ -23,7 +23,7 @@
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/001%20-%20lateral.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/001%20-%20verso.jpg?raw=true"}
     ]
-},
+}
 {
     "descProduto": "Peruca preta",
     "categoria": {
@@ -175,7 +175,7 @@
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/013-lateral.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/013-verso.jpg?raw=true"}
     ]
-},
+}
 {
     "descProduto": "Peruca preta - curta",
     "categoria": {
@@ -188,7 +188,7 @@
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/014%20lateral.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/014%20verso.jpg?raw=true"}
     ]
-},
+}
 {
     "descProduto": "Peruca loiro forte",
     "categoria": {
@@ -201,4 +201,4 @@
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/015-%20lateral.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/015-verso.jpg?raw=true"}
     ]
-}]
+}
