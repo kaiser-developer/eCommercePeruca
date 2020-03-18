@@ -44,4 +44,12 @@ export class CardComponent implements OnInit {
       this.total -= item.produto.valorProduto;
     }
   }
+
+  removerProduto(item){
+    this.total -= item.produto.valorProduto * item.quantidade;
+    this.carrinho = this.carrinho.filter(
+      produto => produto != item
+    )
+    this.storage.salvarCarrinho(this.carrinho);
+  }
 }

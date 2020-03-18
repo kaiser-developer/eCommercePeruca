@@ -14,3 +14,11 @@
     margin-top: 40px;
     margin-right: 5px;
 }
+
+.icon-lixeira{
+    width: 4vh;
+}
+
+.remover-produto{
+    cursor: pointer;
+}
