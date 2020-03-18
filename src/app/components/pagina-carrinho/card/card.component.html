@@ -1,4 +1,4 @@
-<div class="container-fluid mt-3 d-flex">
+<div class="container-fluid d-flex">
     <div id="productTable" class="row col-md-8 col-sm-12">
         <table class="table table-hover text-center p-3 overflow-auto">
             <thead id="headerTable" class="col-8">
@@ -6,6 +6,9 @@
                     <th scope="col">Produto</th>
                     <th scope="col">Qtd</th>
                     <th scope="col">Preço</th>
+                    <th scope="col">
+                        <img class="icon-lixeira" src="../../../../assets/images/lixeira_2.png" alt="remover item">
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +26,9 @@
                     </td>
                     <td>
                         <strong>R$ {{item.produto.valorProduto}}</strong>
+                    </td>
+                    <td class="remover-produto" (click)="removerProduto(item)">
+                        <img class="icon-lixeira" src="../../../../assets/images/remover-x_1.svg">
                     </td>
                 </tr>
             </tbody>
