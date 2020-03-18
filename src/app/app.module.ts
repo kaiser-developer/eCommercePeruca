@@ -39,6 +39,7 @@ import { CentroComponent } from './components/compra-finalizada/centro/centro.co
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +73,8 @@ import { EscolhaPerucaComponent } from './components/pagina-institucional/escolh
     CompraFinalizadaComponent,
     CentroComponent,
     PaginaInstitucionalComponent,
-    EscolhaPerucaComponent
+    EscolhaPerucaComponent,
+   
     
   ],
   imports: [
