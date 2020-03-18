@@ -38,6 +38,7 @@ import { CompraFinalizadaComponent } from './components/compra-finalizada/compra
 import { CentroComponent } from './components/compra-finalizada/centro/centro.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component';
+import { ComoDoarComponent } from './components/pagina-institucional/como-doar/como-doar.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { EscolhaPerucaComponent } from './components/pagina-institucional/escolh
     CentroComponent,
     PaginaInstitucionalComponent,
     EscolhaPerucaComponent,
+    ComoDoarComponent,
    
     
   ],
