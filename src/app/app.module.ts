@@ -39,6 +39,7 @@ import { CentroComponent } from './components/compra-finalizada/centro/centro.co
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component';
 import { ComoDoarComponent } from './components/pagina-institucional/como-doar/como-doar.component';
+import { CarrosselDoacaoComponent } from './components/pagina-institucional/carrossel-doacao/carrossel-doacao.component';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { ComoDoarComponent } from './components/pagina-institucional/como-doar/c
     PaginaInstitucionalComponent,
     EscolhaPerucaComponent,
     ComoDoarComponent,
+    CarrosselDoacaoComponent,
    
     
   ],
