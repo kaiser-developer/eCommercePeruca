@@ -1,5 +1,4 @@
 <nav class="d-flex justify-content-between row nav-header fixed-top">
-
     <div class="d-flex align-items-center col-md-4 col-xs-12" id="div-menu">
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
@@ -48,12 +47,10 @@
             aria-expanded="false">
             <img src="../../../assets/images/carrinho-de-compras.png" width="35px">
         </div>
-
         <div class="acessar dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true"
             aria-expanded="false">
             <img src="../../../assets/images/conta.svg" width="35px">
         </div>
-
         <div class="dropdown-menu dropdown-menu-right">
             <div [ngClass]="logado ? 'aparecer': 'esconder'">
                 <form class="px-4 py-3">

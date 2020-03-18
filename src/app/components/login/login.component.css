@@ -52,7 +52,12 @@ input.ng-valid {
 @media only screen and (max-width: 800px) {
 
     #fotoFixa {
-        width: 100vw;
+        width: 90vw;
         height: 50vh;
+    }
+
+    #LogoPrincipal {
+        display: flex;
+        justify-content: center;
     }
 }
