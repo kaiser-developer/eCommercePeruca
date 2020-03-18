@@ -42,5 +42,17 @@ ul a{
         padding: 0 3px;
         /* content: "-"; */
     }
+
+    #footerContent,
+    footer {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    div {
+        width: 100%;
+    }
     
 }
