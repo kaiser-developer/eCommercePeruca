@@ -39,6 +39,7 @@ import { CentroComponent } from './components/compra-finalizada/centro/centro.co
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ProdutoComponent } from './components/catalogo/produto/produto.component';
 import { CategoriaComponent } from './components/catalogo/categoria/categoria.component';
+import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { CategoriaComponent } from './components/catalogo/categoria/categoria.co
     CentroComponent,
     CatalogoComponent,
     ProdutoComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    FuncionariosComponent
   ],
   imports: [
     BrowserModule,

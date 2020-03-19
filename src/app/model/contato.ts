@@ -1,6 +1,8 @@
 export class Contato {
-    nome: string = '';
-    telefone: string = '';
-    email: string = '';
-    msg: string = '';
+    constructor(
+     public nome: string = '',
+     public telefone: string = '',
+     public email: string = '',
+     public msg: string = ''
+    ){}
 }
