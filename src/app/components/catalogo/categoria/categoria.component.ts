@@ -12,6 +12,8 @@ export class CategoriaComponent implements OnInit {
 
   categoriasVisiveis: Categoria[] = [];
 
+  @Output() categClick = new EventEmitter();
+
   constructor(private requisicoes: RequisicoesService) {
     this.requisicoes.getCategoria().subscribe(
       data => {
@@ -21,6 +23,12 @@ export class CategoriaComponent implements OnInit {
       }
     )
   }
+
+  filtrarProds(c: Categoria) {
+    this.categClick.emit(c);
+  }
+
+
 
 
   ngOnInit(): void {

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
-import { Produto } from 'src/app/model/produto';
 import { Categoria } from 'src/app/model/categoria';
+import { CategoriaComponent } from './categoria/categoria.component';
 
 
 @Component({
@@ -11,10 +11,14 @@ import { Categoria } from 'src/app/model/categoria';
 })
 export class CatalogoComponent implements OnInit {
 
-  listaProdutos: Produto[];
-  listaCateg: Categoria[];
+  @ViewChild('categoria') category: CategoriaComponent;
+  
 
-  constructor (private requisicoes: RequisicoesService) { }
+  constructor () { }
+
+  filtrarCategoria(categ: Categoria) {
+    this.category.filtrarProds(categ);
+  }
 
   ngOnInit() {
   }

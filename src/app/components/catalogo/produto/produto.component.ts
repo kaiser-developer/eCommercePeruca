@@ -14,7 +14,6 @@ export class ProdutoComponent implements OnInit {
 
   produtosVisiveis: Produto[] = [];
   produtosFiltrados: Produto[] = [];
-  category: Categoria[] = [];
 
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
     this.requisicoes.getProdutos().subscribe(
@@ -23,6 +22,13 @@ export class ProdutoComponent implements OnInit {
           this.produtosVisiveis.push(data[i]);
         }
       }
+    )
+  }
+
+  filtrarPorCateg(desc: Categoria) {
+    
+    this.produtosVisiveis = this.produtosFiltrados.filter(
+      produto => (produto.descricao == desc.descricao)
     )
   }
 
