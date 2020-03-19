@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   email: string;
   senha: string;
   nome: string;
+  sexo: string;
   logado: boolean;
 
   constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { }
@@ -22,7 +23,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.formLogin = this.fb.group({
       email: [this.email],
-      senha: [this.senha]
+      senha: [this.senha],
+      sexo : [this.sexo],
     });
 
     this.verificar();
@@ -35,6 +37,7 @@ export class HeaderComponent implements OnInit {
     } else {
       this.logado = true;
       this.nome = this.storage.nomeCliente();
+      this.sexo = this.storage.sexoCliente();
     }
   }
 

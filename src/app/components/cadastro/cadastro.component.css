@@ -19,7 +19,6 @@ body{
 }
 
 #fotoFixa{
-    background-image: url(/screens/images/tentativa2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 10px;
