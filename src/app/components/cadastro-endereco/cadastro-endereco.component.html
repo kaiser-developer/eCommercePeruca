@@ -1,4 +1,7 @@
-<form class="border border-top-0 mt-2 p-4" [formGroup]="formEndereco">
+<form class="border border-top-0 pb-2 pr-4 pl-4 modal-novo-endereco" [formGroup]="formEndereco">
+    <div class="modal-header d-flex justify-content-center mb-4">
+        <h5 class="text-center">Cadastrar novo endereço</h5>
+    </div>
     <div class="form-group">
         <label>Destinatario:</label>
         <input class="form-control" placeholder="Digite o nome do destinatario..." (keypress)="permitirLetras($event)" maxlength="35" formControlName="destinatario">

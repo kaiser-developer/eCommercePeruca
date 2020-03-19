@@ -1,31 +1,46 @@
 #desc {
-    font-size: 2em;
+    font-size: 1.5rem;
     text-emphasis: weight;
     background-color: rgb(218, 216, 216);
+    box-shadow: 1px 1px 10px rgb(99, 97, 97);
 }
-.card{
+.card,
+.cardPr{
     box-shadow: 1px 2px 4px rgb(197, 193, 193);
     background-color: rgb(219, 217, 217);
-    width: 19vw;
-    height: 400px;
+    width: auto;
+    height: auto;
 }
 
 #todos {
     display: flex;
     margin-top: 4px;
 }
-button {
-    width: 45%;
-}
-
-@media only screen and (max-width: 768px) {
-
-    #ultimoCard {
-    display: none;
-    }
-}
 
 .imagem-produto{
     height:17vw;
     width: 18.5vw;
+}
+
+#segundaParte {
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #segundaParte {
+        display: none;
+    }
+
+    .cardPr {
+        width: 40vw;
+    }
+
+    #desc {
+        text-align: center;
+    }
+
+    button {
+        width: 70%;
+    }
 }

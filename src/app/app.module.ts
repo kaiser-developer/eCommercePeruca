@@ -19,7 +19,6 @@ import { CarrinhoComponent } from './components/checkout/carrinho/carrinho.compo
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { InstitucionalComponent } from './components/home/institucional/institucional.component';
 import { QuemSomosComponent } from "./components/quem-somos/quem-somos.component";
 import { ConteudoComponent } from "./components/quem-somos/conteudo/conteudo.component";
 import { DescricaoComponent } from "./components/quem-somos/descricao/descricao.component";
@@ -31,22 +30,26 @@ import { CarrosselComponent } from "./components/pagina-produto/carrossel/carros
 import { ComprarComponent } from "./components/pagina-produto/comprar/comprar.component";
 import { HomeComponent } from "./components/home/home.component";
 import { CarroselHomeComponent } from "./components/home/carrosel-home/carrosel-home.component";
+import { InstitucionalComponent } from "./components/home/institucional/institucional.component";
 import { MaisVendidosComponent } from "./components/home/mais-vendidos/mais-vendidos.component";
 import { PaginaCarrinhoComponent } from './components/pagina-carrinho/pagina-carrinho.component';
 import { CardComponent } from './components/pagina-carrinho/card/card.component';
 import { CompraFinalizadaComponent } from './components/compra-finalizada/compra-finalizada.component';
 import { CentroComponent } from './components/compra-finalizada/centro/centro.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { ProdutoComponent } from './components/catalogo/produto/produto.component';
+import { CategoriaComponent } from './components/catalogo/categoria/categoria.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
-import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component';
 import { ComoDoarComponent } from './components/pagina-institucional/como-doar/como-doar.component';
+import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component'
 import { CarrosselDoacaoComponent } from './components/pagina-institucional/carrossel-doacao/carrossel-doacao.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CarroselHomeComponent,
+    InstitucionalComponent,
     MaisVendidosComponent,
     PaginaProdutoComponent,
     CarrosselComponent,
@@ -67,18 +70,19 @@ import { CarrosselDoacaoComponent } from './components/pagina-institucional/carr
     CadastroComponent,
     FooterComponent,
     HeaderComponent,
-    InstitucionalComponent,
     QuemSomosComponent,
     ConteudoComponent,
     PaginaCarrinhoComponent,
     CardComponent,
     CompraFinalizadaComponent,
     CentroComponent,
+    CatalogoComponent,
+    ProdutoComponent,
+    CategoriaComponent,
     PaginaInstitucionalComponent,
-    EscolhaPerucaComponent,
     ComoDoarComponent,
-    CarrosselDoacaoComponent,
-   
+    EscolhaPerucaComponent,
+    CarrosselDoacaoComponent
     
   ],
   imports: [

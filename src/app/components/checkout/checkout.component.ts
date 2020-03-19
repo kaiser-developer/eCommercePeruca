@@ -19,7 +19,7 @@ export class CheckoutComponent implements OnInit {
 
   modalRef: BsModalRef;
   enderecos;
-  enderecoPrincipal: Endereco = null;
+  enderecoPrincipal = null;
   validacoes: Validacoes = new Validacoes();
   formaEnvio: number = 0;
   total: number = 0;
@@ -47,9 +47,9 @@ export class CheckoutComponent implements OnInit {
         );
       });
     } else {
-      this.enderecos = [];
       this.route.navigate(["/home"])
     }
+    this.enderecos = [];
 
   }
 
@@ -73,7 +73,12 @@ export class CheckoutComponent implements OnInit {
       alert("Dados não preenchidos corretamente");
     } else {
       this.cadastros.cadastrarEndereco(endereco, this.storage.recuperarUsuario().codCliente).subscribe(
-        dados => this.enderecos.push(dados)
+        dados => {
+          if(this.enderecos.length == 0){
+            this.enderecoPrincipal = dados;
+          }
+          this.enderecos.push(dados)
+        }
       )
     }
     this.modalRef.hide();

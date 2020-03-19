@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from './components/login/login.component'
 import { CheckoutComponent } from "./components/checkout/checkout.component";
-import { QuemSomosComponent } from './components/quem-somos/quem-somos.component';
-import { PaginaProdutoComponent } from './components/pagina-produto/pagina-produto.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ContatoComponent } from "./components/contato/contato.component";
+import { QuemSomosComponent } from "./components/quem-somos/quem-somos.component";
+import { PaginaProdutoComponent } from "./components/pagina-produto/pagina-produto.component";
 import { HomeComponent } from './components/home/home.component';
 import { PaginaCarrinhoComponent } from "./components/pagina-carrinho/pagina-carrinho.component";
 import { CompraFinalizadaComponent } from "./components/compra-finalizada/compra-finalizada.component";
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 
 const routes: Routes = [
@@ -23,8 +24,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'carrinho', component: PaginaCarrinhoComponent },
   { path: 'finalizar-compra', component: CompraFinalizadaComponent},
-  { path: 'paginaInstitucional', component: PaginaInstitucionalComponent},
-
+  { path: 'catalogo', component: CatalogoComponent},
+  { path: 'pagina-institucional', component: PaginaInstitucionalComponent}
 ];
 
 @NgModule({

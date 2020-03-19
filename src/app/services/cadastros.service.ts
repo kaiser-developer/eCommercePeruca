@@ -11,10 +11,9 @@ import { Carrinho } from '../model/carrinho';
 const storage: StorageService = new StorageService();
 
 const enderecoBanco = (endereco, codCliente) =>{
-  console.log(endereco);
   return {
     "destinatario": endereco.destinatario,
-    "lougradouro": endereco.logradouro,
+    "logradouro": endereco.logradouro,
     "numero": endereco.numero,
     "bairro": endereco.bairro,
     "complemento": endereco.complemento,
@@ -58,7 +57,7 @@ export class CadastrosService {
   }
 
   public cadastrarEndereco(endereco: Endereco, codCliente){
-    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-endereco", enderecoBanco(endereco, codCliente));
+    let url = this.http.post("http://localhost:8080/ecommerce/cadastrar-endereco", enderecoBanco(endereco, codCliente));
     return url.pipe(map(
       dados => dados
     ))
