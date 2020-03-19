@@ -13,7 +13,7 @@ export class FuncionariosComponent implements OnInit {
   formFunc: FormGroup;
   validacoes: Validacoes = new Validacoes();
 
-  constructor(private formBuilder: FormBuilder, private route: Route) { }
+  constructor(private formBuilder: FormBuilder) { }
 
 
   ngOnInit(): void {
