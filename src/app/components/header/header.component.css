@@ -40,14 +40,14 @@
     color: black;
     padding: 10px 15px;
     border: none;
-  }
-  
-  #main {
+}
+
+#main {
     transition: margin-left .5s;
     padding: 20px;
-  }   
-   
-   #txtBusca{
+}
+
+.txtBusca{
     float:left;
     padding-left:10px;
     font-style:italic;
@@ -82,13 +82,24 @@ nav.row{
 
 .acessar-carrinho{
     margin-right: 1.3vw;
-    cursor: pointer;
 }
 
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-} 
+#busca {
+    display: none;
+}
+
+#buscaResp {
+    position: relative;
+    left: -250px;
+}
+
+#imgLogo {
+    position: relative;
+    top: 0vh;
+    left: -17vw;
+    height: auto;
+}
+
 
 @media only screen and (max-width: 767px) {
     #buscar {

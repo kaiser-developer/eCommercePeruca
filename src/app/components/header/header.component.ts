@@ -24,7 +24,11 @@ export class HeaderComponent implements OnChanges {
 
   constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { 
     this.formLogin = this.createForm(new Login("", ""));
-    this.quantidade = this.storage.recuperarCarrinho().length;
+    if(this.storage.recuperarCarrinho() != null){
+      this.quantidade = this.storage.recuperarCarrinho().length;
+    }else{
+      this.quantidade = 0;
+    }
   }
 
   private createForm(login: Login): FormGroup {
