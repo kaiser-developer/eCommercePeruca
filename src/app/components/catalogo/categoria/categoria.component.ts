@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from "src/app/model/categoria";
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
 
 @Component({
   selector: 'app-categoria',
@@ -8,16 +9,18 @@ import { Categoria } from "src/app/model/categoria";
 })
 export class CategoriaComponent implements OnInit {
 
-  constructor() { }
+  categoriasVisiveis: Categoria[] = [];
 
-categorias = [
-  new Categoria("lisos"),
-  new Categoria("cacheados"),
-  new Categoria("ondulados"),
-  new Categoria("cosplay"),
-  new Categoria("naturais"),
-  new Categoria("crespos")
-]
+  constructor(private requisicoes: RequisicoesService) {
+    // this.requisicoes.getCategoria().subscribe(
+    //   data => {
+    //     for ( let i = 0; i< 6; i++) {
+    //       this.categoriasVisiveis.push(data[i]);
+    //     }
+    //   }
+    // )
+  }
+
 
   ngOnInit(): void {
   }

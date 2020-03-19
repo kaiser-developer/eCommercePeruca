@@ -8,6 +8,7 @@ import { Cliente } from '../model/cliente';
 import { StorageService } from './storage.service';
 import { Login } from '../model/login';
 import { truncate } from 'fs';
+import { Categoria } from '../model/categoria';
 
 const storage: StorageService = new StorageService();
 
@@ -64,5 +65,14 @@ export class RequisicoesService {
     return url.pipe(map(
       enderecos => enderecos
     ))
+  }
+
+  getCategoria(){
+    let url = this.http.get<Categoria[]>(`http://localhost:8080/ecommerce/buscar-categorias`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
   }
 }

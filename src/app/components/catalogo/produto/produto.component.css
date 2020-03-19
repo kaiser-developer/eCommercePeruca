@@ -1,0 +1,36 @@
+.card {
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-top: 120px;
+    box-shadow: 1px 2px 4px rgb(197, 193, 193);
+    background-color: rgb(219, 217, 217);
+}
+
+.imagem-produto{
+    height:17vw;
+    width: 18.5vw;
+}
+
+#produtos {
+    flex-wrap: wrap;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    #produtos {
+        display: flex;
+        
+    }
+
+    .card {
+        display: block;
+        width: 90vh;
+    }
+
+    .imagem-produto{
+        height:70vw;
+        width: 80vw;
+    }
+}
