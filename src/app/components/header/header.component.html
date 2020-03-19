@@ -43,8 +43,11 @@
             </form>
         </div>
 
-        <div class="acessar-carrinho" routerLink="/carrinho" data-display="static" aria-haspopup="true"
+        <div class="acessar-carrinho pointer" routerLink="/carrinho" data-display="static" aria-haspopup="true"
             aria-expanded="false">
+            <div class="quantidade-itens-carrinho rounded-circle alert-dark text-center">
+                <span class="font-weight-bolder">{{quantidade}}</span>
+            </div>
             <img src="../../../assets/images/carrinho-de-compras.png" width="35px">
         </div>
         <div class="acessar dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true"

@@ -175,3 +175,11 @@ nav.row{
 .pointer{
     cursor: pointer;
 }
+
+.quantidade-itens-carrinho{
+    position: absolute;
+    width: 3.5vh;
+    height: 3.5vh;
+    margin-left: 23px;
+    margin-top: -1px;
+}

@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [atualizarQuantidade]="atualizarCarrinho" (atualizarCarrinho)="atualizar()"></app-header>
 <div class="carrinho">
-    <app-card></app-card>
+    <app-card (atualizarCarrinho)="atualizar()"></app-card>
 </div>

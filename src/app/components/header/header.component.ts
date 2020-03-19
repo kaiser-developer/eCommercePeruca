@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { RequisicoesService } from "../../services/requisicoes.service";
@@ -17,9 +17,13 @@ export class HeaderComponent implements OnChanges {
   senha: string;
   nome: string;
   logado: boolean;
+  quantidade: number;
+  @Input() atualizarQuantidade: boolean;
+  @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
   constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { 
     this.formLogin = this.createForm(new Login("", ""));
+    this.quantidade = this.storage.recuperarCarrinho().length;
   }
 
   private createForm(login: Login): FormGroup {
@@ -30,9 +34,13 @@ export class HeaderComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    this.formLogin = this.fb.group({
-      
-    });
+    if(this.atualizarQuantidade){
+      this.quantidade = this.storage.recuperarCarrinho().length;
+
+      setTimeout(() => {
+        this.atualizarCarrinho.emit();
+      })
+    }
 
     this.verificar();
   }
