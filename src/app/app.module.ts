@@ -86,7 +86,8 @@ import { ListaPedidosComponent } from './components/historico-pedidos/lista-pedi
     EscolhaPerucaComponent,
     CarrosselDoacaoComponent,
     HistoricoPedidosComponent,
-    ListaPedidosComponent
+    ListaPedidosComponent,
+    
     
   ],
   imports: [

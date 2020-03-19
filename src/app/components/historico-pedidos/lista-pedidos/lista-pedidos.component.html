@@ -23,6 +23,7 @@
                                 <li class='item' href="#">
                                     <p>Segundo Item da linha do tempo, pode incluir qualquer coisa aqui, desde imagens,
                                         a frames, é totalmente responsivo.</p>
+
                                 </li>
                                 <li class="ano">
                                     <p>Pedidos Entregues</p>
@@ -30,9 +31,9 @@
 
                                 <li class='item' href="#">
                                     <p><Strong>N° Pedido</Strong> </p>
-                                   </li>
+                                </li>
                                 <li class='item' href="#">
-                                <p>Segundo Item da linha do tempo, pode incluir qualquer coisa aqui, desde imagens,
+                                    <p>Segundo Item da linha do tempo, pode incluir qualquer coisa aqui, desde imagens,
                                         a frames, é totalmente responsivo.</p>
                                 </li>
 
@@ -50,9 +51,40 @@
                             </ul>
                             <hr>
                             <a class="row botao">
+                                <button class="entrega" type="button" class="btn btn-info" data-toggle="modal"
+                                    data-target="#modalExemplo">
+                                    Acompanhar Entrega
+                                </button>
                                 <button type="button" class="btn btn-danger">Cancelar Pedido</button>
-                                <button type="button" class="btn btn-info">Acompanhar Entrega</button>
                             </a>
+                            <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Detalhes da entrega:</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Fechar">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <strong>Data de entrega: 01/01/1999</strong>
+                                            <p>Michelle Santana de Jesus</p>
+                                            <p>Rua Alexandre Archipenko 219,</p>
+                                            <p>Vila Andrade - São Paulo, SP</p>
+                                            <p>CEP: 05729080</p>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-info"
+                                                data-dismiss="modal">Fechar</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

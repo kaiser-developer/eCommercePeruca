@@ -22,7 +22,19 @@ p{
     text-align: center;
     margin-top: 20px;
 }
+.entrega{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.modal-body{
+    border-right: grey;
+    text-align: start;
+    height: 10%;
+    border-right: black;
+   }
 
 @font-face {font-family : "'Abel'";font-style : normal;font-weight : 400;
     src : local('Abel'), local('Abel-Regular'), url(https://fonts.gstatic.com/s/abel/v6/N59kklKPso9WzbZH9jwJSg.ttf) format('truetype');}
