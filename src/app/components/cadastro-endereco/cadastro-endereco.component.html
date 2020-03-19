@@ -1,0 +1,46 @@
+<form class="border border-top-0 pb-2 pr-4 pl-4 modal-novo-endereco" [formGroup]="formEndereco">
+    <div class="modal-header d-flex justify-content-center mb-4">
+        <h5 class="text-center">Cadastrar novo endereço</h5>
+    </div>
+    <div class="form-group">
+        <label>Destinatario:</label>
+        <input class="form-control" placeholder="Digite o nome do destinatario..." (keypress)="permitirLetras($event)" maxlength="35" formControlName="destinatario">
+    </div>
+    <div class="form-group">
+        <label>CEP:</label>
+        <input class="form-control" placeholder="Digite seu CEP..." (keypress)="validarCep($event)" (keyup)="preencherEndereco()" formControlName="cep" maxlength="8">
+    </div>
+    <div class="form-group">
+        <label>Logradouro:</label>
+        <input class="form-control" type="text" placeholder="Endereço..." formControlName="logradouro">
+    </div>
+    <div class="form-group">
+        <label>Numero:</label>
+        <input class="form-control" type="number" placeholder="Digite o numero..." formControlName="numero">
+    </div>
+    <div class="form-group">
+        <label>Complemento:</label>
+        <input class="form-control" type="text" placeholder="Digite um complemento..."
+        formControlName="complemento">
+    </div>
+    <div class="form-group">
+        <label>Bairro:</label>
+        <input class="form-control" type="text" placeholder="Bairro..." formControlName="bairro" maxlength="30">
+    </div>
+    <div class="form-group row">
+        <div class="col-6">
+            <label>Cidade:</label>
+            <input class="form-control" (keypress)=permitirLetras($event) type="text" placeholder="Cidade..." formControlName="localidade">
+        </div>
+        <div class="col-6">
+            <label>Estado:</label>
+            <select class="form-control" name="estado" formControlName="uf">
+                <option value="" selected disabled>Estado</option>
+                <option *ngFor="let estado of estados" [value]="estado.sigla" >{{estado.nome}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" (click)="novoEndereco.emit(formEndereco.value)">Cadastrar endereço</button>
+    </div>
+</form>

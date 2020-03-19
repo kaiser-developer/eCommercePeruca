@@ -1,10 +1,47 @@
+import { Endereco } from './endereco';
+import { Cliente } from './cliente';
+import { Alertas } from './alertas';
 
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+export class Validacoes {
+    cancelarLetras(event: any) {
+        let evento = event;
+        let key = evento.keyCode || evento.which;
+        key = String.fromCharCode(key);
+        //let regex = /^[0-9.,]+$/;
+        let regex = /^[0-9]+$/;
+        if (!regex.test(key)) {
+            evento.returnValue = false;
+            if (evento.preventDefault) evento.preventDefault();
+        }
+    }
 
+    cancelarNumeros(event: any) {
+        let evento = event;
+        let key = evento.keyCode || evento.which;
+        key = String.fromCharCode(key);
+        //let regex = /^[0-9.,]+$/;
+        let regex = /^[a-z A-Z]+$/;
+        if (!regex.test(key)) {
+            evento.returnValue = false;
+            if (evento.preventDefault) evento.preventDefault();
+        }
+    }
 
+    verificarEndereco(endereco: Endereco) {
+        
+        return false;
+    }
 
-export class Validacoes {      
-     validarCpf(cpf) {
+    verificarDadosPagamento(dadosPagamento) {
+        if (dadosPagamento.numeroCartao.length == 16 && (dadosPagamento.dataValidade != null &&
+            dadosPagamento.dataValidade.length != 0) && dadosPagamento.cvv.length == 3 &&
+            dadosPagamento.nomeTitular.replace(/\ /g, '').length > 8 && this.validarCpf(dadosPagamento.cpf)){
+                return true;
+        }
+        return false;
+    }
+
+    validarCpf(cpf) {
         let soma;
         let resto;
         soma = 0;
@@ -24,28 +61,30 @@ export class Validacoes {
         if (resto != parseInt(cpf.substring(10, 11))) return false;
         return true;
     }
-     cancelarNumeros(event: any) {
-      let evento = event;
-      let key = evento.keyCode || evento.which;
-      key = String.fromCharCode(key);
-      //let regex = /^[0-9.,]+$/;
-      let regex = /^[a-z A-Z]+$/;
-      if (!regex.test(key)) {
-          evento.returnValue = false;
-          if (evento.preventDefault) evento.preventDefault();
-      }
-  }
-     cancelarLetras(event: any) {
-      let evento = event;
-      let key = evento.keyCode || evento.which;
-      key = String.fromCharCode(key);
-      //let regex = /^[0-9.,]+$/;
-      let regex = /^[0-9]+$/;
-      if (!regex.test(key)) {
-          evento.returnValue = false;
-          if (evento.preventDefault) evento.preventDefault();
-      }
-    }
-    
-}
 
+    validarSenha(senha: string){
+        if(senha.length > 8 && /\d/.test(senha) && /[a-z]/.test(senha)){
+            return true;
+        }
+        return false;
+    }
+
+    verificarDadosCliente(cliente: Cliente){
+        if(this.validarCpf(cliente.cpf) && cliente.email.replace(/\ /g, '').length > 12 &&
+        cliente.nome.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
+        cliente.telefone.length > 9){
+            return true;
+        }
+
+        if(!this.validarCpf(cliente.cpf)){
+            alert("O cpf digitado é invalido!")
+        }
+
+        let alerta = new Alertas();
+        alerta.alertaEmail(cliente.email);
+        alerta.alertaNome(cliente.nome);
+        alerta.alertaSenha(cliente.senha);
+        alerta.alertaTelefone(cliente.telefone);
+        return false;
+    }
+}

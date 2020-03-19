@@ -1,0 +1,17 @@
+#carrossel{
+    align-items: center;
+}
+
+#fotoFixa {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.icone-proximo-carousel{
+    background-image: url("../../../../assets/images/seta-direita.svg");
+}
+
+.icone-anterior-carousel{
+    background-image: url("../../../../assets/images/seta-esquerda.svg");
+
+}

@@ -1,0 +1,204 @@
+[{
+    "descProduto": "Peruca branca",
+    "categoria": {
+        "codigo": 1
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/000%20-%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/000%20-%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/000%20-%20verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca loira",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/001%20-%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/001%20-%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/001%20-%20verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca preta",
+    "categoria": {
+        "codigo": 1
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/002%20-%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/002%20-%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/002%20-%20verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca preta - cachos",
+    "categoria": {
+        "codigo": 1
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/003%20-%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/003%20-%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/003%20-%20verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca verde",
+    "categoria": {
+        "codigo": 4
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/004%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/004%20lateral.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca harley",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/004%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/004%20lateral.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca rosa",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/005-%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/005%20-%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/005-%20verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca verde",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/007%20(1).jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/007%20(2).jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/007%20(3).jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca loira - longa",
+    "categoria": {
+        "codigo": 1
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/008-frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/008-%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/008-verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca estilo",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/009-frente%20(2).jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/009-lateral.jpg"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/009-verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca ruiva - longa",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/009-frente%20(2).jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/010-lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/010-verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca fogo",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/011-%20frente.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca fogo - 2",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/012%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/012%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/012%20verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca loiro claro",
+    "categoria": {
+        "codigo": 1
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/013-frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/013-lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/013-verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca preta - curta",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/014%20frente.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/014%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/014%20verso.jpg?raw=true"}
+    ]
+},
+{
+    "descProduto": "Peruca loiro forte",
+    "categoria": {
+        "codigo": 3
+    },
+    "qtdProduto": 200,
+    "valorProduto": 149.99,
+    "imagens": [
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/015-%20frente%20(1).jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/015-%20lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/015-verso.jpg?raw=true"}
+    ]
+}]

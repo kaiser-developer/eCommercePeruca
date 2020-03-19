@@ -1,0 +1,23 @@
+.dados{
+    margin-top: 30px;
+}
+
+#nome-titular {
+    text-transform: uppercase;
+}
+
+.lista-enderecos {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 120px);
+    top: 10px;
+    overflow-y: auto;
+    cursor: pointer;
+}
+.totalCheckout{
+    font-size: 30px;
+}
+
+.modal-novo-endereco{
+    height: 100px;
+}

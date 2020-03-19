@@ -12,7 +12,8 @@ body{
 }
 
 #LogoPrincipal{
-    align-items: flex-end;
+    display: flex;
+    justify-content: center;
     margin-top: 40px;
     margin-left: 130px;
     width: 30vw;
@@ -28,24 +29,36 @@ body{
 }
 #form-signin{
     align-items: center;
-    margin-left: 120px;
+    padding: 10px;
+   
 }
 #fotoFixa{
     background-image: url(/screens/images/tentativa2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width:50vw;
+    margin: 10px;
+    width:40vw;
     height:95vh;
 }
 input {
     margin: 5px;
 }
 
+#productTable {
+    margin-top: 100px;
+}
+
 
 @media only screen and (max-width: 800px) {
 
     #fotoFixa {
-        width: 100vw;
+        width: 90vw;
         height: 50vh;
     }
+
+    #LogoPrincipal {
+        display: flex;
+        justify-content: center;
+    }
+
 }
