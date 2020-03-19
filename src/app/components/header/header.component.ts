@@ -16,6 +16,7 @@ export class HeaderComponent implements OnChanges {
   email: string;
   senha: string;
   nome: string;
+  sexo: string;
   logado: boolean;
   quantidade: number;
   @Input() atualizarQuantidade: boolean;
@@ -52,6 +53,7 @@ export class HeaderComponent implements OnChanges {
     } else {
       this.logado = true;
       this.nome = this.storage.nomeCliente();
+      this.sexo = this.storage.sexoCliente();
     }
   }
 

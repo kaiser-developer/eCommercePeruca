@@ -10,36 +10,44 @@ export class StorageService {
 
   constructor() { }
 
-  salvarCarrinho(carrinho){
+  salvarCarrinho(carrinho) {
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
   }
 
-  recuperarCarrinho(){
+  recuperarCarrinho() {
     return JSON.parse(localStorage.getItem('carrinho'));
   }
 
-  salvarUsuario(cliente: Cliente){
+  salvarUsuario(cliente: Cliente) {
     localStorage.setItem('cliente', JSON.stringify(cliente));
   }
 
-  nomeCliente():string{
+  nomeCliente(): string {
     let cliente = this.recuperarUsuario();
 
-    if(cliente != null){
+    if (cliente != null) {
       return cliente.nome;
     }
     return "";
   }
 
-  recuperarUsuario(){
+  sexoCliente(): string {
+    let cliente = this.recuperarUsuario();
+
+    if (cliente != null) {
+      return cliente.sexo;
+    }
+    return "";
+  }
+  recuperarUsuario() {
     return JSON.parse(localStorage.getItem('cliente'));
   }
 
-  removerUsuario(){
+  removerUsuario() {
     localStorage.removeItem('cliente');
   }
 
-  removerCarrinho(){
+  removerCarrinho() {
     localStorage.removeItem('carrinho');
   }
 }
