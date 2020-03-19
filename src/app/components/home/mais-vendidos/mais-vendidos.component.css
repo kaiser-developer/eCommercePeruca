@@ -21,18 +21,22 @@
     width: 18.5vw;
 }
 
-#segundaParte {
+#cardsHolder {
     display: flex;
 }
 
+
+
 @media only screen and (max-width: 768px) {
     
-    #segundaParte {
-        display: none;
+    #cardsHolder {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .cardPr {
-        width: 40vw;
+    .card {
+        width: 50vw;
     }
 
     #desc {

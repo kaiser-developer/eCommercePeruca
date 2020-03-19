@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Produto } from 'src/app/model/produto';
+import { Categoria } from 'src/app/model/categoria';
+
 
 @Component({
   selector: 'app-catalogo',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogoComponent implements OnInit {
 
-  constructor() { }
+  listaProdutos: Produto[];
+  listaCateg: Categoria[];
 
-  ngOnInit(): void {
+  constructor (private requisicoes: RequisicoesService) { }
+
+  ngOnInit() {
   }
 
 }

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Produto } from 'src/app/model/produto';
+import { Categoria } from 'src/app/model/categoria';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-produto',
@@ -11,6 +13,8 @@ import { Router } from '@angular/router';
 export class ProdutoComponent implements OnInit {
 
   produtosVisiveis: Produto[] = [];
+  produtosFiltrados: Produto[] = [];
+  category: Categoria[] = [];
 
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
     this.requisicoes.getProdutos().subscribe(
@@ -21,6 +25,7 @@ export class ProdutoComponent implements OnInit {
       }
     )
   }
+
 
   ngOnInit(): void {
   }

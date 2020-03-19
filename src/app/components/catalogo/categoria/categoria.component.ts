@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Categoria } from "src/app/model/categoria";
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Produto } from "src/app/model/produto";
 
 @Component({
   selector: 'app-categoria',
@@ -20,6 +21,7 @@ export class CategoriaComponent implements OnInit {
       }
     )
   }
+
 
   ngOnInit(): void {
   }

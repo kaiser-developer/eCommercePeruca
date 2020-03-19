@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient , HttpParams } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Endereco } from '../model/endereco';
 import { Uf } from '../model/uf';
@@ -76,5 +76,9 @@ export class RequisicoesService {
     )
   }
 
+
+  filtrarPorCateg() {
+
+  }
 
 }
