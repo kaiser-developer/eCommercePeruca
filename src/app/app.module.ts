@@ -43,6 +43,8 @@ import { PaginaInstitucionalComponent } from './components/pagina-institucional/
 import { ComoDoarComponent } from './components/pagina-institucional/como-doar/como-doar.component';
 import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component'
 import { CarrosselDoacaoComponent } from './components/pagina-institucional/carrossel-doacao/carrossel-doacao.component';
+import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component';
+import { ListaPedidosComponent } from './components/historico-pedidos/lista-pedidos/lista-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { CarrosselDoacaoComponent } from './components/pagina-institucional/carr
     PaginaInstitucionalComponent,
     ComoDoarComponent,
     EscolhaPerucaComponent,
-    CarrosselDoacaoComponent
+    CarrosselDoacaoComponent,
+    HistoricoPedidosComponent,
+    ListaPedidosComponent
     
   ],
   imports: [
