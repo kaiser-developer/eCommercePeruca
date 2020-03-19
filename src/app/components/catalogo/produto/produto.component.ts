@@ -15,7 +15,7 @@ export class ProdutoComponent implements OnInit {
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
     this.requisicoes.getProdutos().subscribe(
       data => {
-        for(let i =0; i < 12; i++){
+        for(let i =0; i < 16; i++){
           this.produtosVisiveis.push(data[i]);
         }
       }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Categoria } from "src/app/model/categoria";
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 
@@ -12,15 +12,14 @@ export class CategoriaComponent implements OnInit {
   categoriasVisiveis: Categoria[] = [];
 
   constructor(private requisicoes: RequisicoesService) {
-    // this.requisicoes.getCategoria().subscribe(
-    //   data => {
-    //     for ( let i = 0; i< 6; i++) {
-    //       this.categoriasVisiveis.push(data[i]);
-    //     }
-    //   }
-    // )
+    this.requisicoes.getCategoria().subscribe(
+      data => {
+        for ( let i = 0; i< 4; i++) {
+          this.categoriasVisiveis.push(data[i]);
+        }
+      }
+    )
   }
-
 
   ngOnInit(): void {
   }
