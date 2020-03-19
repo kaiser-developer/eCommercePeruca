@@ -11,6 +11,9 @@ import { HomeComponent } from './components/home/home.component';
 import { PaginaCarrinhoComponent } from "./components/pagina-carrinho/pagina-carrinho.component";
 import { CompraFinalizadaComponent } from "./components/compra-finalizada/compra-finalizada.component";
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
+import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component'
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -23,7 +26,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'carrinho', component: PaginaCarrinhoComponent },
   { path: 'finalizar-compra', component: CompraFinalizadaComponent},
-  { path: 'catalogo', component: CatalogoComponent}
+  { path: 'catalogo', component: CatalogoComponent},
+  { path: 'pagina-institucional', component: PaginaInstitucionalComponent},
+  { path: 'historico-pedidos', component: HistoricoPedidosComponent}
 ];
 
 @NgModule({

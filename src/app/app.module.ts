@@ -40,7 +40,12 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ProdutoComponent } from './components/catalogo/produto/produto.component';
 import { CategoriaComponent } from './components/catalogo/categoria/categoria.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
-
+import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
+import { ComoDoarComponent } from './components/pagina-institucional/como-doar/como-doar.component';
+import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component'
+import { CarrosselDoacaoComponent } from './components/pagina-institucional/carrossel-doacao/carrossel-doacao.component';
+import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component';
+import { ListaPedidosComponent } from './components/historico-pedidos/lista-pedidos/lista-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +82,15 @@ import { FuncionariosComponent } from './components/funcionarios/funcionarios.co
     CatalogoComponent,
     ProdutoComponent,
     CategoriaComponent,
-    FuncionariosComponent
+    FuncionariosComponent,
+    PaginaInstitucionalComponent,
+    ComoDoarComponent,
+    EscolhaPerucaComponent,
+    CarrosselDoacaoComponent,
+    HistoricoPedidosComponent,
+    ListaPedidosComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
