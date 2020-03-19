@@ -1,0 +1,8 @@
+#cards{
+    display: flex;
+    justify-content: center;
+    width: 97vw;
+    margin-left: 100px;
+    text-align: center;
+
+}

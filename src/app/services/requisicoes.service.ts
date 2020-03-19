@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient , HttpParams } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Endereco } from '../model/endereco';
 import { Uf } from '../model/uf';
@@ -8,6 +8,7 @@ import { Cliente } from '../model/cliente';
 import { StorageService } from './storage.service';
 import { Login } from '../model/login';
 import { truncate } from 'fs';
+import { Categoria } from '../model/categoria';
 
 const storage: StorageService = new StorageService();
 
@@ -65,4 +66,19 @@ export class RequisicoesService {
       enderecos => enderecos
     ))
   }
+
+  getCategoria(){
+    let url = this.http.get<Categoria[]>(`http://localhost:8080/ecommerce/buscar-categorias`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
+  }
+
+
+  filtrarPorCateg() {
+
+  }
+
 }

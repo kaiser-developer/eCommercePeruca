@@ -1,29 +1,52 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from "@angular/forms";
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { RequisicoesService } from "../../services/requisicoes.service";
 import { StorageService } from "../../services/storage.service";
+import { Login } from 'src/app/model/login';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnChanges {
 
-  formLogin;
+  formLogin: FormGroup;
   email: string;
   senha: string;
   nome: string;
+  sexo: string;
   logado: boolean;
+  quantidade: number;
+  @Input() atualizarQuantidade: boolean;
+  @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
-  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { }
+  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { 
+    this.formLogin = this.createForm(new Login("", ""));
+    this.verificar();
+    if(this.storage.recuperarCarrinho() != null){
+      this.quantidade = this.storage.recuperarCarrinho().length;
+    }else{
+      this.quantidade = 0;
+    }
+  }
 
-  ngOnInit(): void {
-    this.formLogin = this.fb.group({
-      email: [this.email],
-      senha: [this.senha]
-    });
+  private createForm(login: Login): FormGroup {
+    return new FormGroup({
+      email: new FormControl(login.email),
+      senha: new FormControl(login.senha)
+    })
+  }
+
+  ngOnChanges(): void {
+    if(this.atualizarQuantidade){
+      this.quantidade = this.storage.recuperarCarrinho().length;
+
+      setTimeout(() => {
+        this.atualizarCarrinho.emit();
+      })
+    }
 
     this.verificar();
   }
@@ -35,6 +58,7 @@ export class HeaderComponent implements OnInit {
     } else {
       this.logado = true;
       this.nome = this.storage.nomeCliente();
+      this.sexo = this.storage.sexoCliente();
     }
   }
 

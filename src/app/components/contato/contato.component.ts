@@ -3,11 +3,13 @@ import { Validacoes } from 'src/app/model/validacoes';
 import { ReactiveFormsModule } from "@angular/forms";
 import  {  FormBuilder,  FormGroup  }  from  '@angular/forms';
 import { Contato } from 'src/app/model/contato';
+
 @Component({
   selector: 'app-contato',
   templateUrl: './contato.component.html',
   styleUrls: ['./contato.component.css']
 })
+
 export class ContatoComponent implements OnInit {
   formContato: FormGroup;
   validacoes: Validacoes = new Validacoes;

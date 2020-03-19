@@ -1,6 +1,6 @@
 
-<div class="container d-flex">
-    <div *ngFor="let produto of produtosVisiveis" class="d-inline col-md-3 m-2">
+<div id="produtos" class="row container-fluid d-flex justify-content-center">
+    <div *ngFor="let produto of produtosVisiveis" class="d-flex col-md-3 col-xs-12">
         <div class="card">
             <div class="text-center">
                 <img [src]="produto.imagens[0].local" class="imagem-produto">
