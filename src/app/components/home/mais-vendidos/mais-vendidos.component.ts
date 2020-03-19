@@ -15,7 +15,7 @@ export class MaisVendidosComponent implements OnInit {
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
     this.requisicoes.getProdutos().subscribe(
       data => {
-        for(let i =0; i < 2; i++){
+        for(let i =0; i < 4; i++){
           this.produtosVisiveis.push(data[i]);
         }
       }

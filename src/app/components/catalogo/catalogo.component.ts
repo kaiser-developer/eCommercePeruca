@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Categoria } from 'src/app/model/categoria';
+import { CategoriaComponent } from './categoria/categoria.component';
+
 
 @Component({
   selector: 'app-catalogo',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogoComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('categoria') category: CategoriaComponent;
+  
 
-  ngOnInit(): void {
+  constructor () { }
+
+  filtrarCategoria(categ: Categoria) {
+    this.category.filtrarProds(categ);
+  }
+
+  ngOnInit() {
   }
 
 }

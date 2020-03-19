@@ -16,6 +16,7 @@ export class HeaderComponent implements OnChanges {
   email: string;
   senha: string;
   nome: string;
+  sexo: string;
   logado: boolean;
   quantidade: number;
   @Input() atualizarQuantidade: boolean;
@@ -23,7 +24,12 @@ export class HeaderComponent implements OnChanges {
 
   constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { 
     this.formLogin = this.createForm(new Login("", ""));
-    this.quantidade = this.storage.recuperarCarrinho().length;
+    this.verificar();
+    if(this.storage.recuperarCarrinho() != null){
+      this.quantidade = this.storage.recuperarCarrinho().length;
+    }else{
+      this.quantidade = 0;
+    }
   }
 
   private createForm(login: Login): FormGroup {
@@ -52,6 +58,7 @@ export class HeaderComponent implements OnChanges {
     } else {
       this.logado = true;
       this.nome = this.storage.nomeCliente();
+      this.sexo = this.storage.sexoCliente();
     }
   }
 
