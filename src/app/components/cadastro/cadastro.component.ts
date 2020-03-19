@@ -23,6 +23,7 @@ export class CadastroComponent implements OnInit {
   createForm(cliente: Cliente) {
     this.formCliente = this.formBuilder.group({
       nome: [cliente.nome],
+      sexo: [cliente.sexo],
       cpf: [cliente.cpf],
       telefone: [cliente.telefone],
       email: [cliente.email],
