@@ -1,3 +1,3 @@
 export class Categoria{
-    constructor(public descricao: string){}
+    constructor(public descricao: string, public codigo: number){}
 }

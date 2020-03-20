@@ -63,7 +63,7 @@ export class Validacoes {
     }
 
     validarSenha(senha: string){
-        if(senha.length > 8 && /\d/.test(senha) && /[a-z]/.test(senha)){
+        if(senha.length >= 8 && /\d/.test(senha) && /[a-z]/.test(senha)){
             return true;
         }
         return false;
