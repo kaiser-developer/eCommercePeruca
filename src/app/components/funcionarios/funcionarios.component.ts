@@ -16,9 +16,9 @@ export class FuncionariosComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.createFormFunc(new Funcionario());
+    this.createForm(new Funcionario());
   }
-  createFormFunc(funcionario: Funcionario){
+  createForm(funcionario: Funcionario){
     this.formFunc = this.formBuilder.group({
       nome: [funcionario.nome],
       matricula: [funcionario.matricula],
