@@ -1,5 +1,5 @@
 #card{
-    margin-top: 40px;
+    margin-top: 150px;
     text-align: center;
 }
 
@@ -11,6 +11,26 @@
 #productTable {
     height: 58vh;
     overflow: auto;
-    margin-top: 40px;
+    margin-top: 150px;
     margin-right: 5px;
+}
+
+.icon-lixeira{
+    width: 4vh;
+}
+
+.remover-produto{
+    cursor: pointer;
+}
+
+#carrinho {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #carrinho {
+        display: block;
+    }
 }

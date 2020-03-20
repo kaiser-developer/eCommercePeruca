@@ -44,7 +44,6 @@ body{
     padding: 10px;
    
 }
-
 input {
     background-color: rgba(250, 247, 249, 0.692);
 }
@@ -61,4 +60,10 @@ input {
         height: 50vh;
         padding: 0px;
     }
+
+    #LogoPrincipal {
+        display: flex;
+        justify-content: center;
+    }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Carrinho } from 'src/app/model/carrinho';
 import { StorageService } from 'src/app/services/storage.service';
 import { Produto } from 'src/app/model/produto';
@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
 
   carrinho: Carrinho[];
   total: number = 0;
+  @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
   constructor(private storage: StorageService, private requisicoes: RequisicoesService) { 
     this.carrinho = storage.recuperarCarrinho();
@@ -43,5 +44,16 @@ export class CardComponent implements OnInit {
       this.storage.salvarCarrinho(this.carrinho);
       this.total -= item.produto.valorProduto;
     }
+
+    this.atualizarCarrinho.emit();
+  }
+
+  removerProduto(item){
+    this.total -= item.produto.valorProduto * item.quantidade;
+    this.carrinho = this.carrinho.filter(
+      produto => produto != item
+    )
+    this.storage.salvarCarrinho(this.carrinho);
+    this.atualizarCarrinho.emit();
   }
 }

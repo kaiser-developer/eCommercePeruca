@@ -1,0 +1,10 @@
+#carro1 {
+    width: 97.5%;
+    margin-bottom: 10px; 
+}
+
+#demo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

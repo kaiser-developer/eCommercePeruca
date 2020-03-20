@@ -11,6 +11,7 @@ import { Produto } from 'src/app/model/produto';
 export class PaginaProdutoComponent implements OnInit {
 
   id;
+  atualizarCarrinho = false;
 
   constructor(private route: ActivatedRoute) { 
   }
@@ -19,4 +20,11 @@ export class PaginaProdutoComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
+  atualizar(){
+    if(this.atualizarCarrinho){
+      this.atualizarCarrinho = false;
+    }else{
+      this.atualizarCarrinho = true;
+    }
+  }
 }

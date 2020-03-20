@@ -1,0 +1,30 @@
+#imgfinal {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px black solid;
+}
+
+#textofinal {
+    position: relative;
+    bottom: 50%;
+}
+
+#obrigado {
+    font-size:25px;
+    text-align: center;
+}
+
+#confirmacao {
+    margin-top: 50px;
+    width: 50%;
+}
+
+
+button {
+    position: absolute;
+    right: 25%;
+    bottom: 47%
+}
