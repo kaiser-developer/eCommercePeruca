@@ -12,7 +12,7 @@ export class Alertas {
     }
 
     alertaSenha = (senha) => {
-        if (!(senha.length > 8 && /\d/.test(senha) && /[a-z]/.test(senha))) {
+        if (!(senha.length >= 8 && /\d/.test(senha) && /[a-z]/.test(senha))) {
             return alert("Digite uma senha válida!\nDeve conter 8 ou mais caracteres.\nDeve conter letras e números.");
         }
     }
