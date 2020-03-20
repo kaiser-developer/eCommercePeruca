@@ -102,6 +102,12 @@ export class CheckoutComponent implements OnInit {
       this.cadastros.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio, this.total).subscribe(
         dados => {
           if (dados != null) {
+            let cliente = this.storage.recuperarUsuario();
+            if(cliente.pedidos == null){
+              cliente.pedidos = [];
+            }
+            cliente.pedidos.push(dados);
+            this.storage.salvarUsuario(cliente);
             this.storage.removerCarrinho();
             this.route.navigate(['/finalizar-compra'])
           }

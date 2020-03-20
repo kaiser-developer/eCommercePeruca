@@ -36,8 +36,8 @@
         <div id="buscaResp">
             <form class="form-inline my-2 my-lg-0">
                 <div id="divBusca" class="col-xs-12">
-                    <input type="text" class="txtBusca" placeholder="Pesquisar..." />
-                    <button class="btn rounded"><img src="../../../assets/images/find.png" width="20px" id="btnBusca"
+                    <input type="text" class="txtBusca" placeholder="Pesquisar..." [(ngModel)]="filtro" name="filtro"/>
+                    <button class="btn rounded" (click)="buscar()"><img src="../../../assets/images/find.png" width="20px" id="btnBusca"
                             alt="Buscar" /></button>
                 </div>
             </form>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validacoes } from 'src/app/model/validacoes';
 import { ReactiveFormsModule } from "@angular/forms";
 import  {  FormBuilder,  FormGroup  }  from  '@angular/forms';
-import { Contato } from 'src/app/model/contato';
+import { Contato } from '../../model/contato';
 
 @Component({
   selector: 'app-contato',
