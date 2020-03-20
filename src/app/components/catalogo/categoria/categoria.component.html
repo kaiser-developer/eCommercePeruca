@@ -7,7 +7,7 @@
     
     <div class="collapse" id="navbarToggleExternalContent">
         <div class="p-1 d-flex">
-            <a *ngFor="let categoria of categoriasVisiveis" class="btn btn-light ml-4 mr-4">{{categoria.descricao}}</a>
+            <a *ngFor="let categoria of categoriasVisiveis" (click)="filtrarProds(categoria)" class="btn btn-light ml-4 mr-4">{{categoria.descricao}}</a>
         </div>
     </div>
     </nav>

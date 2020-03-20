@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, OnChanges, Input } from '@angular/core';
 import { Produto } from 'src/app/model/produto';
-import { Categoria } from 'src/app/model/categoria';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';

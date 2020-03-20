@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Categoria } from 'src/app/model/categoria';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,7 +9,6 @@ import { Categoria } from 'src/app/model/categoria';
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent implements OnInit {
-
 
   categoria: number = -1;
 

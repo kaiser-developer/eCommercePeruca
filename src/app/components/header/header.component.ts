@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { RequisicoesService } from "../../services/requisicoes.service";
 import { StorageService } from "../../services/storage.service";
 import { Login } from 'src/app/model/login';
@@ -19,10 +19,11 @@ export class HeaderComponent implements OnChanges {
   sexo: string;
   logado: boolean;
   quantidade: number;
+  filtro: string = "";
   @Input() atualizarQuantidade: boolean;
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
-  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { 
+  constructor(private routeFiltro: ActivatedRoute, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { 
     this.formLogin = this.createForm(new Login("", ""));
     this.verificar();
     if(this.storage.recuperarCarrinho() != null){
@@ -98,5 +99,10 @@ export class HeaderComponent implements OnChanges {
   closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+  }
+
+  buscar(){
+    this.filtro = this.filtro.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z ])/g, '').toLowerCase()
+    this.route.navigate(["/catalogo"], {queryParams:{filtro: this.filtro}});
   }
 }
