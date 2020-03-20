@@ -7,6 +7,11 @@
     margin-left: 10px;
 }
 
+.fotos{
+    width: 60vh;
+    height: 60vh;
+}
+
 .icone-proximo-carousel{
     background-image: url("../../../../assets/images/seta-direita.svg");
 }
@@ -14,4 +19,18 @@
 .icone-anterior-carousel{
     background-image: url("../../../../assets/images/seta-esquerda.svg");
 
+}
+
+@media screen and (max-width: 1140px) {
+    .fotos{
+        width: 50vh;
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .fotos{
+        width: 30vh;
+        height: 30vh;
+    }
 }

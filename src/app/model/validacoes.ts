@@ -63,7 +63,7 @@ export class Validacoes {
     }
 
     validarSenha(senha: string){
-        if(senha.length > 8 && /\d/.test(senha) && /[a-z]/.test(senha)){
+        if(senha.length >= 8 && /\d/.test(senha) && /[a-z]/.test(senha)){
             return true;
         }
         return false;
@@ -72,7 +72,7 @@ export class Validacoes {
     verificarDadosCliente(cliente: Cliente){
         if(this.validarCpf(cliente.cpf) && cliente.email.replace(/\ /g, '').length > 12 &&
         cliente.nome.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
-        cliente.telefone.length > 9){
+        cliente.telefone.length > 9 && cliente.sexo != null){
             return true;
         }
 
@@ -85,6 +85,7 @@ export class Validacoes {
         alerta.alertaNome(cliente.nome);
         alerta.alertaSenha(cliente.senha);
         alerta.alertaTelefone(cliente.telefone);
+        alerta.alertaSexo(cliente.sexo);
         return false;
     }
 }

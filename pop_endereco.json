@@ -1,52 +1,10 @@
-[
-    {
-        "destinatario": "Maria Tereza de Souza",
-        "cep": "06810060",
-        "logradouro": "Rua Piloto",
-        "numero": 33,
-        "complemento": null,
-        "bairro": "Jardim Castilho",
-        "cidade": "Embu das Artes",
-        "estado": "São Paulo"
-    },
-    {
-        "destinatario": "Fernando José de Andrade",
-        "cep": "05183280",
-        "logradouro": "Rua Aurélia Delorme",
-        "numero": 323,
-        "complemento": "Casa 3",
-        "bairro": "Vila Chica Luisa",
-        "cidade": "São Paulo",
-        "estado": "São Paulo"
-    },
-    {
-        "destinatario": "Salete Maria da Conceição",
-        "cep": "03907050",
-        "logradouro": "Rua Felipe Aureli",
-        "numero": 190,
-        "complemento": null,
-        "bairro": "Conjunto Habitacional Barreira Grande",
-        "cidade": "São Paulo",
-        "estado": "São Paulo"
-    },
-    {
-        "destinatario": "Antonio da Silva Santos",
-        "cep": "05450000",
-        "logradouro": "Rua Gregório Paes de Almeida",
-        "numero": 423,
-        "complemento": null,
-        "bairro": "Vila Madalena",
-        "cidade": "São Paulo",
-        "estado": "São Paulo"
-    },
-    {
-        "destinatario": "Valeria de Freitas Mascaranhas",
-        "cep": "06260100",
-        "logradouro": "Rua Maria Carvalho de Lima",
-        "numero": 1029,
-        "complemento": "Apto 12 Bloco A",
-        "bairro": "Helena Maria",
-        "cidade": "Osasco",
-        "estado": "São Paulo"
-    }
-]
+{
+    "destinatario": "Joãozinho Silva",
+    "lougradouro": "rua piloto",
+    "numero": 109,
+    "bairro": "Jardim Castilho",
+    "cidade": "Embu das Artes",
+    "estado": "SP",
+    "cep": "06810060",
+    "codCliente": 1
+}

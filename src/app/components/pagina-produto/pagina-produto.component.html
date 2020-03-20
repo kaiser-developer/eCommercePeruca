@@ -1,10 +1,8 @@
-<app-header></app-header>
+<app-header [atualizarQuantidade]="atualizarCarrinho" (atualizarCarrinho)="atualizar()"></app-header>
 
-<div class="container-fluid">
-    <div class="row d-flex">
-        <div class="col-6"><app-carrossel [idProduto]="id"></app-carrossel></div>
-        <div class="col-6"><app-comprar [idProduto]="id"></app-comprar></div>
-    </div>
+<div class="container-fluid row container-compra mb-3">
+        <div class="col-md-6 foto"><app-carrossel [idProduto]="id"></app-carrossel></div>
+        <div class="col-md-6"><app-comprar (atualizarCarrinho)="atualizar()" [idProduto]="id"></app-comprar></div>
 </div>
 
 <app-footer></app-footer>

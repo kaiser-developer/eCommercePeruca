@@ -1,4 +1,7 @@
 <app-header></app-header>
-<app-categoria></app-categoria>
-<app-produto></app-produto>
+<app-categoria (categClick)="filtrarCategoria($event)"></app-categoria>
+<div class="mb-2">
+    <app-produto [categoria]="categoria"></app-produto>
+</div>
+
 <app-footer></app-footer>

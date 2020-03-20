@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Categoria } from 'src/app/model/categoria';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-catalogo',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogoComponent implements OnInit {
 
-  constructor() { }
+  categoria: number = -1;
 
-  ngOnInit(): void {
+  constructor () { }
+
+  filtrarCategoria(categ: Categoria) {
+    this.categoria = categ.codigo;
+  }
+
+  ngOnInit() {
   }
 
 }

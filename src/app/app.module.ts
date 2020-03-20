@@ -39,6 +39,7 @@ import { CentroComponent } from './components/compra-finalizada/centro/centro.co
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { ProdutoComponent } from './components/catalogo/produto/produto.component';
 import { CategoriaComponent } from './components/catalogo/categoria/categoria.component';
+import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 import { ComoDoarComponent } from './components/pagina-institucional/como-doar/como-doar.component';
 import { EscolhaPerucaComponent } from './components/pagina-institucional/escolha-peruca/escolha-peruca.component'
@@ -82,6 +83,7 @@ import { MonteSuaPerucaComponent } from './components/monte-sua-peruca/monte-sua
     CatalogoComponent,
     ProdutoComponent,
     CategoriaComponent,
+    FuncionariosComponent,
     PaginaInstitucionalComponent,
     ComoDoarComponent,
     EscolhaPerucaComponent,

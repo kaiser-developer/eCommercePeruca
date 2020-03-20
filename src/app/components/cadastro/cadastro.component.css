@@ -12,14 +12,26 @@ body{
 }
 
 #LogoPrincipal{
-    display: flex;
-    justify-content: center;
     margin-top: 40px;
-    margin-left: 130px;
-    width: 30vw;
+    width: auto;
     height: 15vh;
 
 }
+
+#fotoFixa{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 10px;
+    padding: 0;
+    width:40vw;
+    height:95vh;
+}
+
+.cpf{
+    width: 160px;
+
+}
+
 .button{
     background-color:#006172;
     color: #fff;
@@ -32,28 +44,21 @@ body{
     padding: 10px;
    
 }
-#fotoFixa{
-    background-image: url(/screens/images/tentativa2.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 10px;
-    width:40vw;
-    height:95vh;
-}
 input {
-    margin: 5px;
+    background-color: rgba(250, 247, 249, 0.692);
 }
 
-#productTable {
-    margin-top: 100px;
-}
+.formgroup{
+    background: rgba(250, 247, 249, 0.692);
 
+}
 
 @media only screen and (max-width: 800px) {
 
     #fotoFixa {
         width: 90vw;
         height: 50vh;
+        padding: 0px;
     }
 
     #LogoPrincipal {

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaCarrinhoComponent implements OnInit {
 
+  atualizarCarrinho: boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  atualizar(){
+    this.atualizarCarrinho = !this.atualizarCarrinho;
+    console.log(this.atualizarCarrinho)
   }
 
 }
