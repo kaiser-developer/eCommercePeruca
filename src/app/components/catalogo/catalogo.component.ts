@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Categoria } from 'src/app/model/categoria';
 
 
 @Component({
@@ -8,9 +9,14 @@ import { Component, OnInit} from '@angular/core';
 })
 export class CatalogoComponent implements OnInit {
 
-  
+
+  categoria: number = -1;
 
   constructor () { }
+
+  filtrarCategoria(categ: Categoria) {
+    this.categoria = categ.codigo;
+  }
 
   ngOnInit() {
   }

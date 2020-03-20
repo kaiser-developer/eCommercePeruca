@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Categoria } from "src/app/model/categoria";
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 
@@ -8,20 +8,20 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
   styleUrls: ['./categoria.component.css']
 })
 export class CategoriaComponent implements OnInit {
-
+  
   categoriasVisiveis: Categoria[] = [];
 
+  @Output() categClick = new EventEmitter();
 
   constructor(private requisicoes: RequisicoesService) {
     this.requisicoes.getCategoria().subscribe(
-      data => {
-        for ( let i = 0; i< 4; i++) {
-          this.categoriasVisiveis.push(data[i]);
-        }
-      }
+      data => this.categoriasVisiveis = data
     )
   }
 
+  filtrarProds(c: Categoria) {
+    this.categClick.emit(c);
+  }
 
   ngOnInit(): void {
   }
