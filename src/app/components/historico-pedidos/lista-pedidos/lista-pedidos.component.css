@@ -1,40 +1,44 @@
+
+* {
+  text-align: center;
+}
+
 .container {
   background-color: #eee;
   color: #444;
- cursor: pointer;
- padding: 18px;
- width: 100%;
- text-align: left;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
   border-radius: 1px;
   outline: none;
- transition: 0.4s;
- align-items: center;
- margin-left: 250px;
+  transition: 0.4s;
+  align-items: center;
 }
 .botao{
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
 
 } 
 
 p{
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
 }
 .entrega{
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .modal-body{
-    border-right: grey;
-    text-align: start;
-    height: 10%;
-    border-right: black;
-   }
+  border-right: grey;
+  text-align: start;
+  height: 10%;
+  border-right: black;
+}
 
 @font-face {font-family : "'Abel'";font-style : normal;font-weight : 400;
     src : local('Abel'), local('Abel-Regular'), url(https://fonts.gstatic.com/s/abel/v6/N59kklKPso9WzbZH9jwJSg.ttf) format('truetype');}

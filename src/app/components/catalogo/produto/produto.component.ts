@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 export class ProdutoComponent implements OnInit {
 
   produtosVisiveis: Produto[] = [];
-  produtosFiltrados: Produto[] = [];
 
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
     this.requisicoes.getProdutos().subscribe(
@@ -25,12 +24,6 @@ export class ProdutoComponent implements OnInit {
     )
   }
 
-  filtrarPorCateg(desc: Categoria) {
-    
-    this.produtosVisiveis = this.produtosFiltrados.filter(
-      produto => (produto.descricao == desc.descricao)
-    )
-  }
 
 
   ngOnInit(): void {
