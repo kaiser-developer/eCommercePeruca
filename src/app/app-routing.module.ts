@@ -13,6 +13,7 @@ import { CompraFinalizadaComponent } from "./components/compra-finalizada/compra
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component'
+import { MonteSuaPerucaComponent } from './components/monte-sua-peruca/monte-sua-peruca.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'finalizar-compra', component: CompraFinalizadaComponent},
   { path: 'catalogo', component: CatalogoComponent},
   { path: 'pagina-institucional', component: PaginaInstitucionalComponent},
-  { path: 'historico-pedidos', component: HistoricoPedidosComponent}
+  { path: 'historico-pedidos', component: HistoricoPedidosComponent},
+  { path: 'monte-sua-peruca', component: MonteSuaPerucaComponent}
 ];
 
 @NgModule({

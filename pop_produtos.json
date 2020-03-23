@@ -54,7 +54,7 @@
     ]
 },
 {
-    "descProduto": "Peruca Vermelha",
+    "descProduto": "Peruca vermelha",
     "categoria": {
         "codigo": 4
     },
@@ -138,7 +138,7 @@
     "valorProduto": 149.99,
     "imagens": [
         {"local": "https://raw.githubusercontent.com/kaiser-developer/eCommercePeruca/dev/src/assets/images/produtos%20-%20perucas/010-frente.jpg?raw=true"},
-        {"local": "https://raw.githubusercontent.com/kaiser-developer/eCommercePeruca/dev/src/assets/images/produtos%20-%20perucas/010-lateral.jpg?raw=true"},
+        {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/010-lateral.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/010-verso.jpg?raw=true"}
     ]
 },
