@@ -46,7 +46,7 @@ import { EscolhaPerucaComponent } from './components/pagina-institucional/escolh
 import { CarrosselDoacaoComponent } from './components/pagina-institucional/carrossel-doacao/carrossel-doacao.component';
 import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component';
 import { ListaPedidosComponent } from './components/historico-pedidos/lista-pedidos/lista-pedidos.component';
-import { MonteSuaPerucaComponent } from './components/monte-sua-peruca/monte-sua-peruca.component';
+
 
 @NgModule({
   declarations: [
@@ -90,7 +90,7 @@ import { MonteSuaPerucaComponent } from './components/monte-sua-peruca/monte-sua
     CarrosselDoacaoComponent,
     HistoricoPedidosComponent,
     ListaPedidosComponent,
-    MonteSuaPerucaComponent,
+   
     
     
   ],
