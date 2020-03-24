@@ -13,7 +13,7 @@ import { CompraFinalizadaComponent } from "./components/compra-finalizada/compra
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component'
-
+import { FuncionariosComponent } from "./components/funcionarios/funcionarios.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'finalizar-compra', component: CompraFinalizadaComponent},
   { path: 'catalogo', component: CatalogoComponent},
   { path: 'pagina-institucional', component: PaginaInstitucionalComponent},
-  { path: 'historico-pedidos', component: HistoricoPedidosComponent}
+  { path: 'historico-pedidos', component: HistoricoPedidosComponent},
+  { path: 'funcionario', component: FuncionariosComponent}
 ];
 
 @NgModule({

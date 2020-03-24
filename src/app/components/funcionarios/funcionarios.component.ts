@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Validacoes } from 'src/app/model/validacoes';
 import { Funcionario } from 'src/app/model/funcionario';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { StorageService } from 'src/app/services/storage.service';
+
 
 @Component({
   selector: 'app-funcionarios',
@@ -11,27 +14,39 @@ import { Funcionario } from 'src/app/model/funcionario';
 export class FuncionariosComponent implements OnInit {
   formFunc: FormGroup;
   validacoes: Validacoes = new Validacoes();
+  matricula: string;
+  senha: string;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private requisicoes: RequisicoesService, private storage: StorageService) { }
 
 
   ngOnInit(): void {
     this.createForm(new Funcionario());
   }
-  createForm(funcionario: Funcionario){
+  createForm(funcionario: Funcionario) {
     this.formFunc = this.formBuilder.group({
-      nome: [funcionario.nome],
-      matricula: [funcionario.matricula],
-      senha: [funcionario.senha]
+      matricula: [this.matricula],
+      senha: [this.senha]
     })
   }
-  
-  permitirLetrasFunc(evento: any){
+
+  permitirLetrasFunc(evento: any) {
     this.validacoes.cancelarNumeros(evento);
   }
-  permitirNumerosFunc(evento: any){
+  permitirNumerosFunc(evento: any) {
     this.validacoes.cancelarLetras(evento);
   }
-  
 
+  entrar() {
+    this.requisicoes.loginFunc(this.formFunc.value).subscribe(
+      funcionario => {
+        if (funcionario != null) {
+          this.storage.salvarFunc(funcionario);
+          alert("Login correto");
+        } else {
+          alert("Funcionario nao cadastro!");
+        }
+      }
+    )
+  }
 }

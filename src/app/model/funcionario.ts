@@ -1,7 +1,7 @@
 export class Funcionario {
     constructor(
-        public nome?: string,
         public matricula?: string,
+        public nome?: string,
         public senha?: string
     ){}
 }
