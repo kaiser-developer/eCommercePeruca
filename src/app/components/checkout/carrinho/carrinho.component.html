@@ -23,4 +23,24 @@
     <div class="d-flex flex-row-reverse">
         <h5 class="p-2">Frete {{frete.toLocaleString('pt-BR', formato)}}</h5>
     </div>
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary" (click)="abrirModal(modalCupom)">Ative o cupom</button>
+        <h5 class="p-2" *ngIf="cupomAtivo == null">Cupom {{valorCupom.toLocaleString('pt-BR', formato)}}</h5>
+        <h5 class="p-2" *ngIf="cupomAtivo != null">Cupom {{cupomAtivo.desconto.toLocaleString('pt-BR', formato)}}</h5>
+    </div>
 </div>
+
+<ng-template #modalCupom>
+    <div class="modal-header">
+        <h5 class="modal-title pull-left">Digite um cupom válido</h5>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div *ngFor="let cupom of cupons" [class]="cupom.ativo ? 'mostrar' : 'ocultar'" (click)="adicionarCupom(cupom)">
+        <h5>{{cupom.nome}}</h5>
+        <span>Desconto {{cupom.desconto}}%</span>
+        <span>Total do desconto {{(subTotal * (cupom.desconto)).toLocaleString('pt-BR', formato)}}</span>
+        <hr>
+    </div>
+</ng-template>
