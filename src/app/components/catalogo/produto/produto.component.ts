@@ -1,8 +1,7 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, OnChanges, Input } from '@angular/core';
 import { Produto } from 'src/app/model/produto';
-import { Categoria } from 'src/app/model/categoria';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -10,30 +9,36 @@ import { map } from 'rxjs/operators';
   templateUrl: './produto.component.html',
   styleUrls: ['./produto.component.css']
 })
-export class ProdutoComponent implements OnInit {
+export class ProdutoComponent implements OnChanges {
 
-  produtosVisiveis: Produto[] = [];
+  produtos: Produto[] = [];
   produtosFiltrados: Produto[] = [];
+  @Input() categoria: number;
+  @Input() filtro: string;
 
-  constructor(private requisicoes: RequisicoesService, private route: Router) { 
+  constructor(private requisicoes: RequisicoesService, private route: Router, private routeFiltro: ActivatedRoute) { 
     this.requisicoes.getProdutos().subscribe(
       data => {
-        for(let i =0; i < 16; i++){
-          this.produtosVisiveis.push(data[i]);
-        }
+        this.produtos = data
+        this.produtosFiltrados = this.produtos;
+        this.routeFiltro.queryParams.subscribe(parametros => {
+          if(parametros["filtro"]){
+            this.filtro = parametros["filtro"];
+            this.produtosFiltrados = this.produtos.filter(produto => {
+              let descricao = produto.descricao.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z ])/g, '').toLowerCase();
+              return descricao.includes(this.filtro) || this.filtro == ""
+            })
+          }
+        })
       }
     )
   }
 
-  filtrarPorCateg(desc: Categoria) {
-    
-    this.produtosVisiveis = this.produtosFiltrados.filter(
-      produto => (produto.descricao == desc.descricao)
+
+  ngOnChanges(): void {
+    this.produtosFiltrados = this.produtos.filter(
+      produto => (produto.categoria.codigo == this.categoria)
     )
-  }
-
-
-  ngOnInit(): void {
   }
 
   abrirPaginaProduto(id: number){

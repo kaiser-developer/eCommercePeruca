@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Categoria } from "src/app/model/categoria";
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
-import { Produto } from "src/app/model/produto";
 
 @Component({
   selector: 'app-categoria',
@@ -16,20 +15,13 @@ export class CategoriaComponent implements OnInit {
 
   constructor(private requisicoes: RequisicoesService) {
     this.requisicoes.getCategoria().subscribe(
-      data => {
-        for ( let i = 0; i< 4; i++) {
-          this.categoriasVisiveis.push(data[i]);
-        }
-      }
+      data => this.categoriasVisiveis = data
     )
   }
 
   filtrarProds(c: Categoria) {
     this.categClick.emit(c);
   }
-
-
-
 
   ngOnInit(): void {
   }
