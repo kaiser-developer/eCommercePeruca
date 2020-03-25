@@ -6,3 +6,15 @@
     width: 20px;
     height: 20px;
 }
+
+.ocultar{
+    display: none;
+}
+
+.mostrar{
+    cursor: pointer;
+}
+
+.row{
+    margin: 10px 0px !important;
+}
