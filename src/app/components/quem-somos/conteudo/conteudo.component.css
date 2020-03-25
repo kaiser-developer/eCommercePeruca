@@ -3,11 +3,21 @@
       position: relative;
       justify-content: center;
       margin: 10px, 10px,10px,10px;
-  }
+}
 
-  #cards {
-     margin: 20px;
-     padding: 10px;
-     display: flex;
-     justify-content: space-between;
-  }
+#cards {
+   margin: 20px;
+   padding: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+
+#apresentacao{
+   transition: transform .2s;
+}
+
+#apresentacao:hover {
+   -ms-transform: scale(1.2); /* IE 9 */
+   -webkit-transform: scale(1.2); /* Safari 3-8 */
+   transform: scale(1.2); 
+}
