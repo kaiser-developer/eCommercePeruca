@@ -53,7 +53,7 @@ export class RequisicoesService {
   }
 
   public loginFunc(funcionario: Funcionario) {
-    let url = this.http.post<any>("http://localhost:8080/ecommerce/login-funcionario", { funcionario });
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/login-funcionario",funcionario);
     console.log(funcionario)
     return url.pipe(map(
       dados => dados
