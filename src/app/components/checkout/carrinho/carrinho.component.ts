@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
 import { Carrinho } from 'src/app/model/carrinho';
 import { Cupom } from 'src/app/model/cupom';
@@ -21,6 +21,7 @@ export class CarrinhoComponent implements OnInit {
   formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' };
   @Input() frete: number = 0;
   modalRef: BsModalRef;
+  @Output() enviarCupom = new EventEmitter;
 
   constructor(private storage: StorageService, private modalService: BsModalService, private requisicoes: RequisicoesService) { 
     this.carrinho = this.storage.recuperarCarrinho();
@@ -48,5 +49,10 @@ export class CarrinhoComponent implements OnInit {
 
   adicionarCupom(cupom){
     this.cupomAtivo = cupom;
+  }
+
+  mandarCupom(cupom){
+    this.modalRef.hide();
+    this.enviarCupom.emit(cupom);
   }
 }

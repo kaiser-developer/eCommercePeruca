@@ -26,7 +26,7 @@
     <div class="d-flex justify-content-between">
         <button class="btn btn-primary" (click)="abrirModal(modalCupom)">Ative o cupom</button>
         <h5 class="p-2" *ngIf="cupomAtivo == null">Cupom {{valorCupom.toLocaleString('pt-BR', formato)}}</h5>
-        <h5 class="p-2" *ngIf="cupomAtivo != null">Cupom {{cupomAtivo.desconto.toLocaleString('pt-BR', formato)}}</h5>
+        <h5 class="p-2" *ngIf="cupomAtivo != null">Cupom {{(subTotal * (cupomAtivo.desconto / -100)).toLocaleString('pt-BR', formato)}}</h5>
     </div>
 </div>
 
@@ -37,10 +37,12 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div *ngFor="let cupom of cupons" [class]="cupom.ativo ? 'mostrar' : 'ocultar'" (click)="adicionarCupom(cupom)">
+    <div *ngFor="let cupom of cupons" (click)="mandarCupom(cupom)"  class="alert alert-success" [class]="cupom.ativo ? 'mostrar' : 'ocultar'" (click)="adicionarCupom(cupom)">
         <h5>{{cupom.nome}}</h5>
-        <span>Desconto {{cupom.desconto}}%</span>
-        <span>Total do desconto {{(subTotal * (cupom.desconto)).toLocaleString('pt-BR', formato)}}</span>
-        <hr>
+        <span>Desconto {{cupom.desconto}}%</span><br>
+        <span>Total do desconto {{(subTotal * (cupom.desconto / 100)).toLocaleString('pt-BR', formato)}}</span>
+        <div class="d-flex justify-content-end">
+            <img src="../../../../assets/images/desconto.svg" alt="" width="40px">
+        </div>
     </div>
 </ng-template>

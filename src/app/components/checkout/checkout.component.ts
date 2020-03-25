@@ -8,6 +8,7 @@ import { Produto } from 'src/app/model/produto';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 import { Router } from '@angular/router';
+import { Cupom } from 'src/app/model/cupom';
 
 @Component({
   selector: 'app-checkout',
@@ -27,6 +28,8 @@ export class CheckoutComponent implements OnInit {
   formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
   carrinho: Carrinho[];
   user;
+  subTotal: number = 0;
+  cupomAtivo: Cupom = null;
 
   constructor(private requisicoes: RequisicoesService, private modalService: BsModalService, private storage: StorageService, private cadastros: CadastrosService, private route: Router) {
 
@@ -46,6 +49,7 @@ export class CheckoutComponent implements OnInit {
           }
         );
       });
+      this.subTotal = this.total;
     } else {
       this.route.navigate(["/home"])
     }
@@ -65,6 +69,15 @@ export class CheckoutComponent implements OnInit {
       this.total -= this.formaEnvio;
       this.formaEnvio = envio;
       this.total += this.formaEnvio;
+    }
+  }
+
+  receberCupom(cupom){
+    if(cupom != this.cupomAtivo){
+      if(this.cupomAtivo != null)
+        this.total += this.subTotal * (this.cupomAtivo.desconto / 100);
+      this.cupomAtivo = cupom;
+      this.total -= this.subTotal * (this.cupomAtivo.desconto / 100)
     }
   }
 
@@ -99,7 +112,7 @@ export class CheckoutComponent implements OnInit {
 
   finalizarCompra(valido, template: TemplateRef<any>) {
     if (valido) {
-      this.cadastros.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio, this.total).subscribe(
+      this.cadastros.cadastrarCompra(this.enderecoPrincipal, this.formaEnvio, this.total, this.cupomAtivo).subscribe(
         dados => {
           if (dados != null) {
             let cliente = this.storage.recuperarUsuario();

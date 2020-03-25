@@ -14,3 +14,7 @@
 .mostrar{
     cursor: pointer;
 }
+
+.row{
+    margin: 10px 0px !important;
+}
