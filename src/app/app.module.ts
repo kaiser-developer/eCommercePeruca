@@ -46,7 +46,7 @@ import { EscolhaPerucaComponent } from './components/pagina-institucional/escolh
 import { CarrosselDoacaoComponent } from './components/pagina-institucional/carrossel-doacao/carrossel-doacao.component';
 import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component';
 import { ListaPedidosComponent } from './components/historico-pedidos/lista-pedidos/lista-pedidos.component';
-
+import { CheckoutDoacaoComponent } from './components/checkout-doacao/checkout-doacao.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +90,9 @@ import { ListaPedidosComponent } from './components/historico-pedidos/lista-pedi
     CarrosselDoacaoComponent,
     HistoricoPedidosComponent,
     ListaPedidosComponent,
-   
+    CheckoutDoacaoComponent,
+  
+    
     
     
   ],
