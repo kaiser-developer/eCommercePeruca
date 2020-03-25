@@ -1,0 +1,6 @@
+#warnings {
+    width: 100vw;
+    height: 60vh;
+    border: 1px solid black;
+    overflow: auto;
+}
