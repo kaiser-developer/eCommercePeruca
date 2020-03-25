@@ -4,11 +4,10 @@ import { map } from "rxjs/operators";
 import { Endereco } from '../model/endereco';
 import { Uf } from '../model/uf';
 import { Produto } from '../model/produto';
-import { Cliente } from '../model/cliente';
 import { StorageService } from './storage.service';
 import { Login } from '../model/login';
-import { truncate } from 'fs';
 import { Categoria } from '../model/categoria';
+import { Cupom } from '../model/cupom';
 
 const storage: StorageService = new StorageService();
 
@@ -76,9 +75,13 @@ export class RequisicoesService {
     )
   }
 
-
-  filtrarPorCateg() {
-
+  public getCupons(){
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-todos-cupons`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
   }
 
 }

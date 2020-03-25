@@ -7,6 +7,7 @@ import { map } from "rxjs/operators";
 import { Compra } from '../model/compra';
 import { Item } from '../model/Item';
 import { Carrinho } from '../model/carrinho';
+import { Cupom } from '../model/cupom';
 
 const storage: StorageService = new StorageService();
 
@@ -33,7 +34,7 @@ export class CadastrosService {
 
   constructor(private http: HttpClient) { }
 
-  public cadastrarCompra(endereco, frete: number, total: number){
+  public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom){
     let compra: Compra = new Compra();
     console.log(endereco, frete, storage.recuperarCarrinho(), storage.recuperarUsuario())
     compra.codCliente = endereco.codCliente;
@@ -42,6 +43,7 @@ export class CadastrosService {
     compra.vlFrete = frete;
     compra.vlPedido = total;
     compra.itensPedido = [];
+    compra.cupom = cupom;
     let carrinho: Carrinho [] = storage.recuperarCarrinho();
     carrinho.forEach(peruca => {
       let item: Item = new Item();

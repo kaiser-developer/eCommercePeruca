@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Categoria } from "src/app/model/categoria";
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 
@@ -8,7 +8,7 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
   styleUrls: ['./categoria.component.css']
 })
 export class CategoriaComponent implements OnInit {
-
+  
   categoriasVisiveis: Categoria[] = [];
 
   @Output() categClick = new EventEmitter();
