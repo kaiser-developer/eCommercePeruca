@@ -26,7 +26,8 @@
                 <img src="../../../../assets/images/varejo.svg" alt="" srcset="" width="25" height="25">
                 <b class="p-4 font-weight-bolder">Resumo da compra</b>
             </div>
-            <app-carrinho [frete]="formaEnvio"></app-carrinho>
+            <app-carrinho [frete]="formaEnvio" 
+            (enviarCupom)="receberCupom($event)"></app-carrinho>
             <hr>
             <div class="totalCheckout">
                 Total {{total.toLocaleString('pt-BR', formato)}}
@@ -71,6 +72,6 @@
     </div>
 </ng-template>
 
-<div class="footer">
+<div class="footer mt-4">
     <app-footer></app-footer>
 </div>
