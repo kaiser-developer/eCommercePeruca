@@ -23,8 +23,8 @@ export class StorageService {
     localStorage.setItem('cliente', JSON.stringify(cliente));
   }
 
-  salvarFunc(funcionario: Funcionario){
-    localStorage.setItem('funcionario',JSON.stringify(funcionario));
+  salvarFunc(funcionario: Funcionario) {
+    localStorage.setItem('funcionario', JSON.stringify(funcionario));
   }
 
   nomeCliente(): string {
@@ -46,6 +46,14 @@ export class StorageService {
   }
   recuperarUsuario() {
     return JSON.parse(localStorage.getItem('cliente'));
+  }
+
+  recuperarFuncionario() {
+    return JSON.parse(localStorage.getItem('funcionario'));
+  }
+
+  removerFuncionario() {
+    localStorage.removeItem('funcionario');
   }
 
   removerUsuario() {

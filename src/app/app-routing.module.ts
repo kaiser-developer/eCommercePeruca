@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'pagina-institucional', component: PaginaInstitucionalComponent},
   { path: 'historico-pedidos', component: HistoricoPedidosComponent},
   { path: 'funcionario', component: FuncionariosComponent},
-  { path:  'pg-relatorios', component: PaginaRelatoriosComponent},
+  { path: 'pg-relatorios', component: PaginaRelatoriosComponent},
   { path: 'reclamacoes' , component: ReclamacoesComponent},
   { path: 'relatorios' , component: RelatoriosComponent},
   { path: 'cupons' , component: CuponsComponent},

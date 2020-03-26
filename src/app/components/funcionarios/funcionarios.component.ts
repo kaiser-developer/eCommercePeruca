@@ -4,7 +4,6 @@ import { Validacoes } from 'src/app/model/validacoes';
 import { Funcionario } from 'src/app/model/funcionario';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { StorageService } from 'src/app/services/storage.service';
-import {  } from "src/app/app-routing.module";
 import { Router } from '@angular/router';
 
 
@@ -24,6 +23,10 @@ export class FuncionariosComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm(new Funcionario());
+
+    if (this.storage.recuperarFuncionario() != null) {
+      this.route.navigate(["pg-relatorios"]);
+    }
   }
   createForm(funcionario: Funcionario) {
     this.formFunc = this.formBuilder.group({
@@ -45,7 +48,7 @@ export class FuncionariosComponent implements OnInit {
         if (funcionario != null) {
           this.storage.salvarFunc(funcionario);
           this.formFunc.reset();
-          this.route.navigate(["home"])
+          this.route.navigate(["pg-relatorios"])
           alert("Login correto");
         } else {
           alert("Funcionario nao cadastro!");
