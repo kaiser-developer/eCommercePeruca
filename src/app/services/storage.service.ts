@@ -45,7 +45,9 @@ export class StorageService {
     return "";
   }
   recuperarUsuario() {
-    let cliente = atob(localStorage.getItem('cliente'))
+    let cliente = localStorage.getItem('cliente');
+    if(cliente != null)
+      cliente = atob(cliente);
     return JSON.parse(cliente);
   }
 
