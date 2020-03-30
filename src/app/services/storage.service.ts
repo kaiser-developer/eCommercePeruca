@@ -48,6 +48,7 @@ export class StorageService {
     let cliente = localStorage.getItem('cliente');
     if(cliente != null)
       cliente = atob(cliente);
+      console.log(cliente);
     return JSON.parse(cliente);
   }
 
