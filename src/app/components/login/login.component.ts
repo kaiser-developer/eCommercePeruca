@@ -16,7 +16,10 @@ export class LoginComponent implements OnInit {
   email: string;
   senha: string;
 
-  constructor(private fb: FormBuilder, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { }
+  constructor(private fb: FormBuilder,
+    private requisicoes: RequisicoesService,
+    private route: Router,
+    private storage: StorageService) { }
 
   ngOnInit(): void {
     this.formLogin = this.fb.group({
@@ -24,7 +27,7 @@ export class LoginComponent implements OnInit {
       senha: [this.senha]
     });
 
-    if(this.storage.recuperarUsuario() != null){
+    if (this.storage.recuperarUsuario() != null) {
       this.route.navigate(["home"]);
     }
   }
@@ -33,13 +36,11 @@ export class LoginComponent implements OnInit {
     if (this.formLogin.status != "INVALID") {
       this.requisicoes.realizarLogin(this.formLogin.value).subscribe(
         data => {
-          if(data != null){
-            this.storage.salvarUsuario(data);
-            this.route.navigate(["home"])
-          }else{
-            console.log(data);
-            alert("Usuario e/ou senha inválidos");
-          }
+          this.storage.salvarUsuario(data);
+          this.route.navigate(["home"])
+        },
+        error => {
+          alert("Usuario e/ou senha inválidos");
         }
       )
     } else {

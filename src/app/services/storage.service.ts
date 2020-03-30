@@ -20,7 +20,7 @@ export class StorageService {
   }
 
   salvarUsuario(cliente: Cliente) {
-    localStorage.setItem('cliente', JSON.stringify(cliente));
+    localStorage.setItem('cliente', btoa(JSON.stringify(cliente)));
   }
 
   salvarFunc(funcionario: Funcionario) {
@@ -45,7 +45,8 @@ export class StorageService {
     return "";
   }
   recuperarUsuario() {
-    return JSON.parse(localStorage.getItem('cliente'));
+    let cliente = atob(localStorage.getItem('cliente'))
+    return JSON.parse(cliente);
   }
 
   recuperarFuncionario() {

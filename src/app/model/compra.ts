@@ -1,4 +1,5 @@
 import { Item } from './Item';
+import { Cupom } from './cupom';
 
 export class Compra {
     codEndereco: number;
@@ -7,4 +8,6 @@ export class Compra {
     dsFormaPagto: string;
     codCliente: number;
     itensPedido: Item[];
+    cupom: Cupom;
+    dtPedido?: Date
 }

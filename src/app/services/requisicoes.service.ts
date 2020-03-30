@@ -7,6 +7,8 @@ import { Produto } from '../model/produto';
 import { StorageService } from './storage.service';
 import { Login } from '../model/login';
 import { Categoria } from '../model/categoria';
+import { Cupom } from '../model/cupom';
+import { Compra } from '../model/compra';
 import { Funcionario } from "../model/funcionario";
 
 const storage: StorageService = new StorageService();
@@ -46,9 +48,10 @@ export class RequisicoesService {
 
   public realizarLogin(login: Login) {
     let url = this.http.post<any>("http://localhost:8080/ecommerce/login-cliente", [login.email, login.senha]);
-    console.log(login);
     return url.pipe(map(
-      dados => dados
+      dados => {
+        return dados
+      }
     ));
   }
 
@@ -83,9 +86,23 @@ export class RequisicoesService {
     )
   }
 
+  public getCupons(){
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-todos-cupons`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
+  }
 
-  filtrarPorCateg() {
-
+  public getPedidos(){
+    let idCliente = storage.recuperarUsuario().codCliente;
+    let url = this.http.get<Compra[]>(`http://localhost:8080/ecommerce/buscar-pedidos/${idCliente}`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
   }
 
 }
