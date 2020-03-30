@@ -9,4 +9,5 @@ export class Compra {
     codCliente: number;
     itensPedido: Item[];
     cupom: Cupom;
+    dtPedido?: Date
 }

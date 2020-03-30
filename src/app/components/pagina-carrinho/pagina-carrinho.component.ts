@@ -16,7 +16,6 @@ export class PaginaCarrinhoComponent implements OnInit {
 
   atualizar(){
     this.atualizarCarrinho = !this.atualizarCarrinho;
-    console.log(this.atualizarCarrinho)
   }
 
 }
