@@ -1,0 +1,65 @@
+<app-header></app-header>
+<form id="formulario-checkout" class="row">
+    <div class="col-md-7">
+        <header class="p-3 mb-2 bg-info text-light">
+            <select class="form-control formgroup" placeholder="local" name="local-doacao" required
+                [(ngModel)]="escolhido" (ngModelChange)="mudarLocal()">
+                <option selected disabled>Local</option>
+                <option value=0>{{locais[0].nome}}</option>
+                <option value=1>{{locais[1].nome}}</option>
+                <option value=2>{{locais[2].nome}}</option>
+            </select>
+        </header>
+        <div>
+
+            <iframe #iframe width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""
+                aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <header class="p-3 mb-2 bg-info text-light">
+            Pagamento
+
+        </header>
+
+        <div class="form-group">
+            <div class="col-12">
+                <label for="cartaousuario">Número do Cartão</label>
+                <input id="cartaoVali" class="form-control" (keypress)="permitirNumeros($event)" type="text"
+                    name="cartaousuarioo" placeholder="Digite N° cartão">
+            </div>
+            <div class="form-row p-3">
+                <div class="col-6">
+                    <label for="dataValidade">Data Validade</label>
+                    <input type="text" class="form-control" placeholder="00/00">
+                </div>
+                <div class="col-6" id="col">
+                    <label for="CodSegurança">CVV</label>
+                    <input type="text" class="form-control" placeholder="CVV">
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <label for="nomeTitular">Nome Titular</label>
+                <input class="form-control" type="text" name="nomeUsuario" (keypress)="permitirLetras($event)"
+                    placeholder="Nome Titular">
+            </div>
+
+            <div class="col-12">
+                <label for="cpfCliente">CPF Titular</label>
+                <input id="cpfCliente" class="form-control" (keypress)="permitirNumeros($event)" type="text"
+                    name="cpfCliente" placeholder="CPF Titular">
+            </div>
+
+            <div class="pt-3 d-flex flex-row-reverse">
+                <a class="btn" href="#">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#compraFinalizada">
+                        Finalizar Doação</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</form>
+<app-footer></app-footer>

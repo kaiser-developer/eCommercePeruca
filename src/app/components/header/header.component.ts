@@ -23,12 +23,12 @@ export class HeaderComponent implements OnChanges {
   @Input() atualizarQuantidade: boolean;
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
-  constructor(private routeFiltro: ActivatedRoute, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) { 
+  constructor(private routeFiltro: ActivatedRoute, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) {
     this.formLogin = this.createForm(new Login("", ""));
     this.verificar();
-    if(this.storage.recuperarCarrinho() != null){
+    if (this.storage.recuperarCarrinho() != null) {
       this.quantidade = this.storage.recuperarCarrinho().length;
-    }else{
+    } else {
       this.quantidade = 0;
     }
   }
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    if(this.atualizarQuantidade){
+    if (this.atualizarQuantidade) {
       this.quantidade = this.storage.recuperarCarrinho().length;
 
       setTimeout(() => {
@@ -67,13 +67,13 @@ export class HeaderComponent implements OnChanges {
     if (this.formLogin.status != "INVALID") {
       this.requisicoes.realizarLogin(this.formLogin.value).subscribe(
         data => {
-          if(data != null){
+          if (data != null) {
             this.storage.salvarUsuario(data);
             this.verificar();
             alert("Login efetuado com sucesso")
             this.formLogin.reset();
             this.formLogin.value.senha = "";
-          }else{
+          } else {
             alert("Usuario e/ou senha inválidos");
           }
         }
@@ -101,8 +101,8 @@ export class HeaderComponent implements OnChanges {
     document.getElementById("main").style.marginLeft = "0";
   }
 
-  buscar(){
+  buscar() {
     this.filtro = this.filtro.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z ])/g, '').toLowerCase()
-    this.route.navigate(["/catalogo"], {queryParams:{filtro: this.filtro}});
+    this.route.navigate(["/catalogo"], { queryParams: { filtro: this.filtro } });
   }
 }

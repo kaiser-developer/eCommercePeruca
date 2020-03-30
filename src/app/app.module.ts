@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxMaskModule } from 'ngx-mask';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -46,12 +47,14 @@ import { EscolhaPerucaComponent } from './components/pagina-institucional/escolh
 import { CarrosselDoacaoComponent } from './components/pagina-institucional/carrossel-doacao/carrossel-doacao.component';
 import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component';
 import { ListaPedidosComponent } from './components/historico-pedidos/lista-pedidos/lista-pedidos.component';
+import { CheckoutDoacaoComponent } from './components/checkout-doacao/checkout-doacao.component';
 import { PaginaRelatoriosComponent } from './components/pagina-relatorios/pagina-relatorios.component';
 import { CuponsComponent } from './components/pagina-relatorios/cupons/cupons.component';
 import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque.component';
 import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes/reclamacoes.component';
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relatorios/nav-relatorios.component';
+
 
 @NgModule({
   declarations: [
@@ -95,12 +98,14 @@ import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relat
     CarrosselDoacaoComponent,
     HistoricoPedidosComponent,
     ListaPedidosComponent,
+    CheckoutDoacaoComponent,
     PaginaRelatoriosComponent,
     CuponsComponent,
     EstoqueComponent,
     ReclamacoesComponent,
     RelatoriosComponent,
     NavRelatoriosComponent,
+    
     
     
   ],
@@ -110,7 +115,8 @@ import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relat
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

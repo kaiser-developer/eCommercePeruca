@@ -10,46 +10,21 @@
             <div id="collapse1" class="panel-collapse collapse in">
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
+                        <div class="panel-heading" *ngFor="let pedido of pedidos">
                             <ul class="linha-do-tempo">
                                 <div class="marcador"></div>
                                 <li class="ano">
-                                    <p>Pedidos Realizados</p>
-                                </li>
-
-                                <li class='item' href="#">
-                                    <p><Strong>N° Pedido</Strong> </p>
+                                    <p>{{pedido.status.descricao}}</p>
                                 </li>
                                 <li class='item' href="#">
-                                    <p>Segundo Item da linha do tempo, pode incluir qualquer coisa aqui, desde imagens,
-                                        a frames, é totalmente responsivo.</p>
-
-                                </li>
-                                <li class="ano">
-                                    <p>Pedidos Entregues</p>
-                                </li>
-
-                                <li class='item' href="#">
-                                    <p><Strong>N° Pedido</Strong> </p>
+                                    <p><Strong>N° Pedido {{pedido.codPedido}}</Strong> </p>
+                                    <p><strong>Realizado em: {{pedido.dtPedido | date:"dd/MM/yyyy"}}</strong></p>
                                 </li>
                                 <li class='item' href="#">
-                                    <p>Segundo Item da linha do tempo, pode incluir qualquer coisa aqui, desde imagens,
-                                        a frames, é totalmente responsivo.</p>
-                                </li>
-
-                                <li class="ano">
-                                    <p>Pedidos Cancelados</p>
-                                </li>
-
-                                <li class='item' href="#">
-                                    <p><Strong>N° Pedido</Strong> </p>
-                                </li>
-                                <li class='item' href="#">
-                                    <p>Segundo Item da linha do tempo, pode incluir qualquer coisa aqui, desde imagens,
-                                        a frames, é totalmente responsivo.</p>
+                                    <p><strong>Total: {{pedido.vlPedido.toLocaleString('pt-BR', formato)}}</strong></p>
+                                    <p *ngIf="pedido.status.cod_status != 2 && pedido.status.cod_status != 3"><strong>Previsão de entrega: {{dataEntrega(pedido) | date:"dd/MM/yyyy"}} </strong></p>
                                 </li>
                             </ul>
-                            <hr>
                             <a class="row botao">
                                 <button class="entrega" type="button" class="btn btn-info" data-toggle="modal"
                                     data-target="#modalExemplo">
@@ -57,34 +32,7 @@
                                 </button>
                                 <button type="button" class="btn btn-danger">Cancelar Pedido</button>
                             </a>
-                            <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Detalhes da entrega:</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Fechar">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <strong>Data de entrega: 01/01/1999</strong>
-                                            <p>Michelle Santana de Jesus</p>
-                                            <p>Rua Alexandre Archipenko 219,</p>
-                                            <p>Vila Andrade - São Paulo, SP</p>
-                                            <p>CEP: 05729080</p>
-
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-info"
-                                                data-dismiss="modal">Fechar</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -92,3 +40,4 @@
         </div>
     </div>
 </div>
+
