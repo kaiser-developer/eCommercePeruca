@@ -54,6 +54,7 @@ import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relatorios/nav-relatorios.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -103,6 +104,7 @@ import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relat
     ReclamacoesComponent,
     RelatoriosComponent,
     NavRelatoriosComponent,
+    
     
     
   ],
