@@ -1,0 +1,31 @@
+#LogoPrincipal{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#form-loginFunc{
+    width: 340px ;
+    margin: 50px auto;
+}
+
+@media only screen and (max-width: 380px){
+
+    #form-loginFunc{    
+        width: 340px auto;
+        
+        
+    }
+    
+    
+}
+@media only screen and (max-width: 320px){
+
+    #form-loginFunc{    
+        width: auto;
+        
+        
+    }
+    
+    
+}
