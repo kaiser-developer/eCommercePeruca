@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Carrinho } from '../model/carrinho';
 import { Produto } from '../model/produto';
 import { Cliente } from '../model/cliente';
+import { Funcionario } from '../model/funcionario';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class StorageService {
 
   salvarUsuario(cliente: Cliente) {
     localStorage.setItem('cliente', btoa(JSON.stringify(cliente)));
+  }
+
+  salvarFunc(funcionario: Funcionario){
+    localStorage.setItem('funcionario',JSON.stringify(funcionario));
   }
 
   nomeCliente(): string {
