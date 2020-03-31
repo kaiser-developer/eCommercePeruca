@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class MaisVendidosComponent implements OnInit {
 
   produtosVisiveis: Produto[] = [];
+  formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
 
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
     this.requisicoes.getProdutos().subscribe(
