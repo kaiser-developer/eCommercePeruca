@@ -69,7 +69,7 @@
                 </form>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" routerLink="/historico-pedidos">Meus Pedidos</a>
-                <a class="dropdown-item" (click)="deslogarCliente()">Sair</a>
+                <a class="dropdown-item pointer" (click)="deslogarCliente()">Sair</a>
             </div>
             <div [ngClass]="!logado ? 'aparecer': 'esconder'">
                 <form class="px-4 py-3 " (ngSubmit)="login()" [formGroup]="formLogin">

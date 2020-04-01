@@ -35,11 +35,11 @@ export class CardComponent implements OnInit {
       this.carrinho = this.carrinho.filter( produto => produto != item);
       this.storage.salvarCarrinho(this.carrinho);
       this.total -= item.produto.valorProduto;
-    }else if(item.quantidade < 6 && valor > 0){
+    }else if(valor > 0 && item.quantidade < 6){
       item.quantidade++;
       this.storage.salvarCarrinho(this.carrinho);
       this.total += item.produto.valorProduto;
-    }else{
+    }else if(valor < 0){
       item.quantidade--;
       this.storage.salvarCarrinho(this.carrinho);
       this.total -= item.produto.valorProduto;

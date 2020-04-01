@@ -8,9 +8,12 @@
             </div>
             <app-endereco *ngIf="enderecos.length != 0" [endereco]="enderecoPrincipal"></app-endereco>
             <div *ngIf="enderecos.length == 0" class="text-center mt-2 mb-3">
+                <div class="alert alert-warning m-2 p-1">
+                    <h5 class="text-center">Cadastre um endereço para prosseguir com as compras...</h5>
+                </div>
                 <button class="btn btn-success" (click)="abrirModal(novoEndereco)">Cadastrar novo endereço</button>
             </div>
-            <a class="btn btn-primary text-light mt-2" (click)="abrirModal(listaEnderecos)">Alterar endereço</a>
+            <a class="btn btn-primary text-light mt-2" *ngIf="enderecos.length != 0" (click)="abrirModal(listaEnderecos)">Alterar endereço</a>
             <app-forma-envio (enviarFormaDeEnvio)="receberFormaDeEnvio($event)"></app-forma-envio>
         </div>
         <div class="col-md-4">
