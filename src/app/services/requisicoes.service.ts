@@ -106,7 +106,7 @@ export class RequisicoesService {
   }
 
   public cancelarPedido(codigoPedido:number){
-    let url = this.http.patch<Compra>(`http://localhost:8080/ecommerce/cancelar-pedido/${codigoPedido}`, "");
+    let url = this.http.patch<Compra>(`http://localhost:8080/ecommerce/cancelar-pedido/${codigoPedido}`, null);
     return url.pipe(
       map(
         data => data
@@ -114,4 +114,12 @@ export class RequisicoesService {
     )
   }
 
+  public endereco(codigoEndereco: number){
+    let url = this.http.get<any>("http://localhost:8080/ecommerce/endereco/" + codigoEndereco)
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
+  }
 }
