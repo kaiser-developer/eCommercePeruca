@@ -28,7 +28,7 @@
                             </ul>
                             <a class="row botao">
                                 <button class="entrega" type="button" class="btn btn-info" data-toggle="modal"
-                                    data-target="#modalExemplo">
+                                    data-target="#modalExemplo" (click)="abrirModalDetalhes(detalhesPedidos, pedido)">
                                     Detalhes do pedido
                                 </button>
                                 <button type="button" (click)="abrirModal(cancelarPedido, pedido)" class="btn btn-danger" *ngIf="pedido.status.cod_status != 35 && pedido.status.cod_status != 34">Cancelar Pedido</button>
@@ -49,9 +49,17 @@
         <span> Deseja realmente cancelar seu pedido? </span>
         <div class="text-center mt-2 mb-3">
             <button class="btn btn-danger" (click)="cancelarPedidoFuncao()">Sim</button>
-            <button class="btn btn-success">Não</button>
+            <button class="btn btn-success" (click)="modalRef.hide();">Não</button>
         </div>
     </div>
 </ng-template>
 
-
+<ng-template #detalhesPedidos>
+    <div class="detalhes-pedido">
+        <div class="card ng-scope text-center sticky-top">
+            <h5 class="card-header">Pedido nº {{detPedido.codPedido}}</h5>
+        </div>
+        <app-detalhes-pedido [pedido]="detPedido"></app-detalhes-pedido>
+        <app-endereco [endereco]="enderecoPedido"></app-endereco>
+    </div>
+</ng-template>

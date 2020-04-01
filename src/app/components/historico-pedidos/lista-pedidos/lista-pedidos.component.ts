@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Compra } from 'src/app/model/compra';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal/';
+import { Endereco } from 'src/app/model/endereco';
 
 @Component({
   selector: 'app-lista-pedidos',
@@ -14,6 +15,8 @@ export class ListaPedidosComponent implements OnInit {
   formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
   modalRef: BsModalRef;
   cancPedido: Compra;
+  enderecoPedido;
+  detPedido: Compra;
 
   constructor(private requisicoes: RequisicoesService, private modalService: BsModalService) { 
     requisicoes.getPedidos().subscribe(
@@ -45,6 +48,14 @@ export class ListaPedidosComponent implements OnInit {
     this.cancPedido = pedido;
   }
 
+  abrirModalDetalhes(template: TemplateRef<any>, pedido: Compra) {
+    this.requisicoes.endereco(pedido.codEndereco).subscribe(
+      endereco => this.enderecoPedido = endereco
+    )
+    this.detPedido = pedido;
+    setTimeout(() => { this.modalRef = this.modalService.show(template)}, 500);
+  }
+
   cancelarPedidoFuncao(){
     this.requisicoes.cancelarPedido(this.cancPedido.codPedido).subscribe(
       dados => {
@@ -52,5 +63,7 @@ export class ListaPedidosComponent implements OnInit {
         this.pedidos[posPedido] = dados;
       }
     );
+    
+    this.modalRef.hide();
   }
 }

@@ -95,3 +95,12 @@ p{
       overflow-y: auto;
       cursor: pointer;
   }
+
+  .detalhes-pedido {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    top: 10px;
+    overflow-y: auto;
+    cursor: pointer;
+}
