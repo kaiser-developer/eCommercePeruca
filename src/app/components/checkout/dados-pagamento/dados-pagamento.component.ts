@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, } from '@angular/forms';
 import { DadosPagamento } from 'src/app/model/dados-pagamento';
 import { Validacoes } from 'src/app/model/validacoes';
@@ -38,7 +38,7 @@ export class DadosPagamentoComponent implements OnChanges {
     this.formPagamento = this.createForm(new DadosPagamento("", "", "", "", "", ""))
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['validarDadosPagamento'].currentValue) {
@@ -83,6 +83,4 @@ export class DadosPagamentoComponent implements OnChanges {
       })
     }
   }
-
-
 }
