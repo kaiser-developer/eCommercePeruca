@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Compra } from 'src/app/model/compra';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal/';
 
 @Component({
   selector: 'app-lista-pedidos',
@@ -11,8 +12,10 @@ export class ListaPedidosComponent implements OnInit {
 
   pedidos: Compra[] = [];
   formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
+  modalRef: BsModalRef;
+  cancPedido: Compra;
 
-  constructor(private requisicoes: RequisicoesService) { 
+  constructor(private requisicoes: RequisicoesService, private modalService: BsModalService) { 
     requisicoes.getPedidos().subscribe(
       dados => {
         this.pedidos = dados;
@@ -35,5 +38,19 @@ export class ListaPedidosComponent implements OnInit {
     if(pedido.vlFrete == 30)
       dataEntrega.setDate(dataEntrega.getDate() + 3);
     return dataEntrega;
+  }
+
+  abrirModal(template: TemplateRef<any>, pedido: Compra) {
+    this.modalRef = this.modalService.show(template)
+    this.cancPedido = pedido;
+  }
+
+  cancelarPedidoFuncao(){
+    this.requisicoes.cancelarPedido(this.cancPedido.codPedido).subscribe(
+      dados => {
+        let posPedido = this.pedidos.indexOf(this.cancPedido);
+        this.pedidos[posPedido] = dados;
+      }
+    );
   }
 }
