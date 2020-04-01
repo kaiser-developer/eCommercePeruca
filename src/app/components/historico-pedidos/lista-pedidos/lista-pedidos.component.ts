@@ -10,6 +10,7 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
 export class ListaPedidosComponent implements OnInit {
 
   pedidos: Compra[] = [];
+  formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
 
   constructor(private requisicoes: RequisicoesService) { 
     requisicoes.getPedidos().subscribe(

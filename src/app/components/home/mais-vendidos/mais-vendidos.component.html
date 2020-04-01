@@ -13,7 +13,7 @@
                 
                 <h5>{{produto.descricao}}</h5>
                 <p class="card-text"> {{produto.categoria.descricao}} <br>
-                    R$ {{produto.valorProduto}} <br>
+                    {{produto.valorProduto.toLocaleString('pt-BR', formato)}} <br>
                 </p>
                 <a (click)="abrirPaginaProduto(produto.codProduto)" class="btn btn-dark btn-block text-white">Comprar</a>
             </div>

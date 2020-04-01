@@ -13,6 +13,7 @@ import { CompraFinalizadaComponent } from "./components/compra-finalizada/compra
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { PaginaInstitucionalComponent } from './components/pagina-institucional/pagina-institucional.component';
 import { HistoricoPedidosComponent } from './components/historico-pedidos/historico-pedidos.component'
+import { CheckoutDoacaoComponent} from './components/checkout-doacao/checkout-doacao.component'
 import { FuncionariosComponent } from "./components/funcionarios/funcionarios.component";
 import { PaginaRelatoriosComponent } from './components/pagina-relatorios/pagina-relatorios.component';
 import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes/reclamacoes.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'catalogo', component: CatalogoComponent},
   { path: 'pagina-institucional', component: PaginaInstitucionalComponent},
   { path: 'historico-pedidos', component: HistoricoPedidosComponent},
+  { path: 'checkout-doacao', component: CheckoutDoacaoComponent},
   { path: 'funcionario', component: FuncionariosComponent},
   { path: 'pg-relatorios', component: PaginaRelatoriosComponent},
   { path: 'reclamacoes' , component: ReclamacoesComponent},
