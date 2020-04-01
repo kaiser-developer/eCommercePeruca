@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
 import { Locais } from 'src/app/model/locais';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Validacoes } from 'src/app/model/validacoes';
+import { DadosPagamento } from 'src/app/model/dados-pagamento';
 
 @Component({
   selector: 'app-checkout-doacao',
@@ -9,7 +11,21 @@ import { Validacoes } from 'src/app/model/validacoes';
   styleUrls: ['./checkout-doacao.component.css']
 })
 export class CheckoutDoacaoComponent implements AfterViewInit {
-  validacoes: Validacoes = new Validacoes();
+  dataAtual: Date = new Date();
+  data: string;
+  formPagamento: FormGroup;
+  validacoes: Validacoes;
+
+  private createForm(dadosPagamento: DadosPagamento): FormGroup {
+    return new FormGroup({
+      numeroCartao: new FormControl(dadosPagamento.numeroCartao),
+      mesValidade: new FormControl(dadosPagamento.mesValidade),
+      anoValidade: new FormControl(dadosPagamento.anoValidade),
+      cvv: new FormControl(dadosPagamento.cvv),
+      nomeTitular: new FormControl(dadosPagamento.nomeTitular),
+      cpf: new FormControl(dadosPagamento.cpf)
+    })
+  }
 
   @ViewChild('iframe') iframe: ElementRef;
 
@@ -20,9 +36,14 @@ export class CheckoutDoacaoComponent implements AfterViewInit {
   localEscolhido;
 
 
-
-  constructor(sanitizer: DomSanitizer) { 
+  dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  anos = this.anoValidade();
+  constructor(sanitizer: DomSanitizer, private fb: FormBuilder) {
     this.localEscolhido = this.locais[this.escolhido];
+    this.validacoes = new Validacoes();
+    this.data = `${this.dataAtual.getFullYear()}-`;
+    this.data += this.dataAtual.getMonth() < 9 ? `0${(this.dataAtual.getMonth() + 1)}` : `${(this.dataAtual.getMonth() + 1)}`
+    this.formPagamento = this.createForm(new DadosPagamento("", "", "", "", "", ""))
 
   }
 
@@ -30,20 +51,36 @@ export class CheckoutDoacaoComponent implements AfterViewInit {
     this.iframe.nativeElement.setAttribute('src', this.localEscolhido.link);
   }
 
-  mudarLocal(){
+  mudarLocal() {
     this.localEscolhido = this.locais[this.escolhido];
     this.iframe.nativeElement.setAttribute('src', this.localEscolhido.link);
   }
-  
+
   permitirNumeros(evento: any) {
     this.validacoes.cancelarLetras(evento);
-    }
+  }
 
   permitirLetras(evento: any) {
     this.validacoes.cancelarNumeros(evento);
   }
 
+  anoValidade() {
 
-
-
+    let anos: Array<number> = [];
+    let anoAtual: Date = new Date();
+    for (let i = 0; i <= 20; i++) {
+      anos.push(anoAtual.getFullYear() + i);
+    } return anos;
+  }
+  verificarValidade() {
+    let data = new Date();
+    if (this.formPagamento.value.anoValidade == data.getFullYear() &&
+      this.formPagamento.value.mesValidade <= (data.getMonth() + 1) &&
+      this.formPagamento.value.anoValidade != "" &&
+      this.formPagamento.value.mesValidade != "") {
+      this.formPagamento.patchValue({
+        mesValidade: data.getMonth() + 2
+      })
+    }
+  }
 }
