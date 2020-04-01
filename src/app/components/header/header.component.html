@@ -68,6 +68,7 @@
                     </div>
                 </form>
                 <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/historico-pedidos">Meus Pedidos</a>
                 <a class="dropdown-item" (click)="deslogarCliente()">Sair</a>
             </div>
             <div [ngClass]="!logado ? 'aparecer': 'esconder'">
