@@ -22,15 +22,16 @@
                                 </li>
                                 <li class='item' href="#">
                                     <p><strong>Total: {{pedido.vlPedido.toLocaleString('pt-BR', formato)}}</strong></p>
-                                    <p *ngIf="pedido.status.cod_status != 2 && pedido.status.cod_status != 3"><strong>Previsão de entrega: {{dataEntrega(pedido) | date:"dd/MM/yyyy"}} </strong></p>
+                                    <p *ngIf="pedido.status.cod_status != 35 && pedido.status.cod_status != 34"><strong>Previsão de entrega: {{dataEntrega(pedido) | date:"dd/MM/yyyy"}} </strong></p>
+                                    <p *ngIf="pedido.status.cod_status == 35"><strong>Produto entregue em: {{pedido.dataEntrega | date:"dd/MM/yyyy"}} </strong></p>
                                 </li>
                             </ul>
                             <a class="row botao">
-                                <button class="entrega ml-2" type="button" class="btn btn-info" data-toggle="modal"
+                                <button class="entrega" type="button" class="btn btn-info" data-toggle="modal"
                                     data-target="#modalExemplo">
-                                    Acompanhar Entrega
+                                    Detalhes do pedido
                                 </button>
-                                <button type="button" class="btn btn-danger">Cancelar Pedido</button>
+                                <button type="button" (click)="abrirModal(cancelarPedido, pedido)" class="btn btn-danger" *ngIf="pedido.status.cod_status != 35 && pedido.status.cod_status != 34">Cancelar Pedido</button>
                             </a>
                             <hr>
                         </div>
@@ -40,4 +41,17 @@
         </div>
     </div>
 </div>
+<ng-template #cancelarPedido>
+    <div class="cancelar-pedido d-flex flex-column">
+        <div class="card ng-scope text-center sticky-top">
+            <h5 class="card-header">Cancelar Pedido</h5>
+        </div>
+        <span> Deseja realmente cancelar seu pedido? </span>
+        <div class="text-center mt-2 mb-3">
+            <button class="btn btn-danger" (click)="cancelarPedidoFuncao()">Sim</button>
+            <button class="btn btn-success">Não</button>
+        </div>
+    </div>
+</ng-template>
+
 

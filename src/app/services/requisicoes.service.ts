@@ -105,4 +105,13 @@ export class RequisicoesService {
     )
   }
 
+  public cancelarPedido(codigoPedido:number){
+    let url = this.http.patch<Compra>(`http://localhost:8080/ecommerce/cancelar-pedido/${codigoPedido}`, "");
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
+  }
+
 }

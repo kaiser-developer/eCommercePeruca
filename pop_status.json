@@ -1,3 +1,15 @@
 {
 	"descricao": "Compra Aprovada"
 }
+{
+	"descricao": "Aguardando pagamento"
+}
+{
+	"descricao": "Compra cancelada"
+}
+{
+	"descricao": "Pedido Entregue"
+}
+{
+	"descricao": "Pedido em transito"
+}
