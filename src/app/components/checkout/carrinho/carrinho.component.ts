@@ -55,4 +55,8 @@ export class CarrinhoComponent implements OnInit {
     this.modalRef.hide();
     this.enviarCupom.emit(cupom);
   }
+
+  ativarCupom(event){
+    
+  }
 }
