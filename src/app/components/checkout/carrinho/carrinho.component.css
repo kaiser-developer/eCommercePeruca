@@ -18,3 +18,23 @@
 .row{
     margin: 10px 0px !important;
 }
+
+.boxCupom {
+    width: 60%;
+    box-shadow: darkgreen 1px 1px 5px;
+    align-self: center;
+    height: 130px;
+}
+
+.boxCupom:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); 
+    background-color: rgba(130, 212, 130, 0.842);
+}
+
+#desc {
+    position: absolute;
+    top: 0px;
+    right: 20%;
+}

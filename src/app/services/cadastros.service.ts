@@ -66,7 +66,7 @@ export class CadastrosService {
   }
 
   public cadastrarUsuario(cliente: Cliente){
-    let url = this.http.post<any>("http://localhost:8080/ecommerce/criar-cliente", cliente);
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-cliente", cliente);
     return url.pipe(map(
       dados => dados
     ));

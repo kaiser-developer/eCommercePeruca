@@ -54,6 +54,7 @@ import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque
 import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes/reclamacoes.component';
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relatorios/nav-relatorios.component';
+import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes-pedido/detalhes-pedido.component';
 
 
 @NgModule({
@@ -105,6 +106,7 @@ import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relat
     ReclamacoesComponent,
     RelatoriosComponent,
     NavRelatoriosComponent,
+    DetalhesPedidoComponent,
     
     
     
