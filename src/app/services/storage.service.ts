@@ -53,7 +53,10 @@ export class StorageService {
   }
 
   recuperarFuncionario() {
-    return JSON.parse(localStorage.getItem('funcionario'));
+    let funcionario = localStorage.getItem('funcionario');
+    if(funcionario != null)
+    funcionario = atob(funcionario);
+    return JSON.parse(funcionario);
   }
 
   removerFuncionario() {

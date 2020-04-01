@@ -28,15 +28,15 @@ export class Validacoes {
     }
 
     verificarEndereco(endereco: Endereco) {
-        
+
         return false;
     }
 
     verificarDadosPagamento(dadosPagamento) {
-        if (dadosPagamento.numeroCartao.length == 16 && (dadosPagamento.dataValidade != null &&
-            dadosPagamento.dataValidade.length != 0) && dadosPagamento.cvv.length == 3 &&
-            dadosPagamento.nomeTitular.replace(/\ /g, '').length > 8 && this.validarCpf(dadosPagamento.cpf)){
-                return true;
+        if (dadosPagamento.numeroCartao.length == 16 && (dadosPagamento.mesValidade != "" &&
+            dadosPagamento.anoValidade != "") && dadosPagamento.cvv.length == 3 &&
+            dadosPagamento.nomeTitular.replace(/\ /g, '').length > 8 && this.validarCpf(dadosPagamento.cpf)) {
+            return true;
         }
         return false;
     }
@@ -62,21 +62,21 @@ export class Validacoes {
         return true;
     }
 
-    validarSenha(senha: string){
-        if(senha.length >= 8 && /\d/.test(senha) && /[a-z]/.test(senha)){
+    validarSenha(senha: string) {
+        if (senha.length >= 8 && /\d/.test(senha) && /[a-z]/.test(senha)) {
             return true;
         }
         return false;
     }
 
-    verificarDadosCliente(cliente: Cliente){
-        if(this.validarCpf(cliente.cpf) && cliente.email.replace(/\ /g, '').length > 12 &&
-        cliente.nome.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
-        cliente.telefone.length > 9 && cliente.sexo != null){
+    verificarDadosCliente(cliente: Cliente) {
+        if (this.validarCpf(cliente.cpf) && cliente.email.replace(/\ /g, '').length > 12 &&
+            cliente.nome.replace(/\ /g, '').length > 8 && this.validarSenha(cliente.senha) &&
+            cliente.telefone.length > 9 && cliente.sexo != null) {
             return true;
         }
 
-        if(!this.validarCpf(cliente.cpf)){
+        if (!this.validarCpf(cliente.cpf)) {
             alert("O cpf digitado é invalido!")
         }
 
