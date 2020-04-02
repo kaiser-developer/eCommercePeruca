@@ -17,10 +17,13 @@ export class CadastroComponent implements OnInit {
   segundaSenha: string = "";
 
 
-  constructor(private formBuilder: FormBuilder, private route: Router, private cadastro: CadastrosService, private storage: StorageService) { }
-  ngOnInit() { this.createForm(new Cliente()); }
+  constructor(private formBuilder: FormBuilder, private route: Router, private cadastro: CadastrosService, private storage: StorageService) { 
+    
+  }
+  
+  ngOnInit() { this.createForm(new Cliente("", "", "", "", "", "", null), ""); }
 
-  createForm(cliente: Cliente) {
+  createForm(cliente: Cliente, segundaSenha) {
     this.formCliente = this.formBuilder.group({
       nome: [cliente.nome],
       sexo: [cliente.sexo],
@@ -28,7 +31,7 @@ export class CadastroComponent implements OnInit {
       telefone: [cliente.telefone],
       email: [cliente.email],
       senha: [cliente.senha],
-      segundaSenha: ''
+      segundaSenha: segundaSenha
     });
 
     if (this.storage.recuperarUsuario() != null) {
