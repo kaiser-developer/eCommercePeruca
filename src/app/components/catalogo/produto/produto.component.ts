@@ -21,6 +21,7 @@ export class ProdutoComponent implements OnChanges {
       data => {
         this.produtos = data
         this.produtosFiltrados = this.produtos;
+        
         this.routeFiltro.queryParams.subscribe(parametros => {
           if(parametros["filtro"]){
             this.filtro = parametros["filtro"];
