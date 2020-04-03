@@ -22,8 +22,8 @@
                                 </li>
                                 <li class='item' href="#">
                                     <p><strong>Total: {{pedido.vlPedido.toLocaleString('pt-BR', formato)}}</strong></p>
-                                    <p *ngIf="pedido.status.cod_status != 35 && pedido.status.cod_status != 34"><strong>Previsão de entrega: {{dataEntrega(pedido) | date:"dd/MM/yyyy"}} </strong></p>
-                                    <p *ngIf="pedido.status.cod_status == 35"><strong>Produto entregue em: {{pedido.dataEntrega | date:"dd/MM/yyyy"}} </strong></p>
+                                    <p *ngIf="pedido.status.cod_status != 4 && pedido.status.cod_status != 3"><strong>Previsão de entrega: {{dataEntrega(pedido) | date:"dd/MM/yyyy"}} </strong></p>
+                                    <p *ngIf="pedido.status.cod_status == 4"><strong>Produto entregue em: {{pedido.dataEntrega | date:"dd/MM/yyyy"}} </strong></p>
                                 </li>
                             </ul>
                             <a class="row botao">
@@ -31,7 +31,7 @@
                                     data-target="#modalExemplo" (click)="abrirModalDetalhes(detalhesPedidos, pedido)">
                                     Detalhes do pedido
                                 </button>
-                                <button type="button" (click)="abrirModal(cancelarPedido, pedido)" class="btn btn-danger" *ngIf="pedido.status.cod_status != 35 && pedido.status.cod_status != 34">Cancelar Pedido</button>
+                                <button type="button" (click)="abrirModal(cancelarPedido, pedido)" class="btn btn-danger" *ngIf="pedido.status.cod_status != 4 && pedido.status.cod_status != 3">Cancelar Pedido</button>
                             </a>
                             <hr>
                         </div>
