@@ -3,10 +3,10 @@
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
             <a href="#" routerLink="/home">Home</a>
-            <a href="#" routerLink="/catalogo?filtro">Produtos</a>
-            <a href="#" routerLink="/contato">Contato</a>
+            <a href="#" routerLink="/catalogo">Produtos</a>
             <a href="#" routerLink="/pagina-institucional">Institucional</a>
-            <a href="#"></a>
+            <a href="#" routerLink="/quem-somos">Quem Somos</a>
+            <a href="#" routerLink="/contato">Contato</a>
         </div>
 
         <div id="main">
@@ -69,7 +69,7 @@
                 </form>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" routerLink="/historico-pedidos">Meus Pedidos</a>
-                <a class="dropdown-item" (click)="deslogarCliente()">Sair</a>
+                <a class="dropdown-item pointer" (click)="deslogarCliente()">Sair</a>
             </div>
             <div [ngClass]="!logado ? 'aparecer': 'esconder'">
                 <form class="px-4 py-3 " (ngSubmit)="login()" [formGroup]="formLogin">
