@@ -3,11 +3,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                        Acompanhe seus pedidos</a>
+                    Acompanhe seus pedidos
                 </h4>
             </div>
-            <div id="collapse1" class="panel-collapse collapse in">
+            <div >
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading" *ngFor="let pedido of pedidos">
@@ -46,6 +45,9 @@
         <div class="card ng-scope text-center sticky-top">
             <h5 class="card-header">Cancelar Pedido</h5>
         </div>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
         <span> Deseja realmente cancelar seu pedido? </span>
         <div class="text-center mt-2 mb-3">
             <button class="btn btn-danger" (click)="cancelarPedidoFuncao()">Sim</button>
@@ -56,8 +58,11 @@
 
 <ng-template #detalhesPedidos>
     <div class="detalhes-pedido">
-        <div class="card ng-scope text-center sticky-top">
-            <h5 class="card-header">Pedido nº {{detPedido.codPedido}}</h5>
+        <div class="modal-header">
+            <h5 >Pedido nº {{detPedido.codPedido}}</h5>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <app-detalhes-pedido [pedido]="detPedido"></app-detalhes-pedido>
         <app-endereco [endereco]="enderecoPedido"></app-endereco>
