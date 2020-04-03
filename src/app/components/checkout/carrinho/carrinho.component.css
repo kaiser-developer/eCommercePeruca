@@ -7,6 +7,11 @@
     height: 20px;
 }
 
+.productTable {
+    height: 20vh;
+    overflow: auto;
+}
+
 .ocultar{
     display: none;
 }

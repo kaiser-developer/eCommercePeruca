@@ -26,7 +26,7 @@
         <h5 class="card-header">Detalhes do pedido</h5>
         <div class="card-body">
             <dd class="ng-binding ng-scope">Realizado em: {{pedido.dtPedido | date:"dd/MM/yyyy"}}</dd>
-            <dd class="ng-binding ng-scope" *ngIf="pedido.dataEntrega == null && pedido.status.cod_status != 34">Entrega prevista: {{dataEntrega | date:"dd/MM/yyyy"}}</dd>
+            <dd class="ng-binding ng-scope" *ngIf="pedido.dataEntrega == null && pedido.status.cod_status != 3">Entrega prevista: {{dataEntrega | date:"dd/MM/yyyy"}}</dd>
             <dd class="ng-binding ng-scope" *ngIf="pedido.dataEntrega != null">Entregue em: {{pedido.dataEntrega | date:"dd/MM/yyyy"}}</dd>
             <dd class="ng-binding ng-scope">Valor do frete: {{pedido.vlFrete.toLocaleString('pt-BR', formato)}}</dd>
             <dd class="ng-binding ng-scope" *ngIf="pedido.cupom != null">Cupom de desconto: {{(desconto * (pedido.cupom.desconto / 100)).toLocaleString('pt-BR', formato)}}</dd>
