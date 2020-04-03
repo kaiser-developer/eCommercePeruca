@@ -4,21 +4,17 @@
             <img id="fotoFixa" src="../../../assets/images/imagem-show.jpg" alt="Imagem principal">
         </div>
         <div class="col">
-            <div id="login">
-            </div>
-            <header id="LogoPrincipal">
+            <header id="LogoPrincipal" class="d-flex justify-content-center">
                 <a href="/home"><img src="../../../assets/images/logoWig.png" alt="LogoPrincipal" width="350px"></a>
             </header>
-           
             <form id="form-signin" (ngSubmit)="login()" [formGroup]="formLogin">
-                <img class="mb-4" src="#" alt="" width="40" height="30">
                 <h1 class="h3 mb-3 font-weight-normal text-center">Faça seu login</h1>
 
-                <label  for="inputEmail">Endereço de email:</label>
-                <input type="email" class="form-control mb-2" placeholder="Seu email" required minlength="15" maxlength="35" autofocus=""
-                    formControlName="email">
+                
+                <input type="email" class="form-control mb-2" placeholder="Seu email" required minlength="15"
+                    maxlength="35" autofocus="" formControlName="email">
 
-                <label for="inputPassword">Senha:</label>
+              
                 <input type="password" class="form-control" placeholder="Senha" required minlength="8" maxlength="12"
                     formControlName="senha">
 

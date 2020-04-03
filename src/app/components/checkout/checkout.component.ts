@@ -51,7 +51,8 @@ export class CheckoutComponent implements OnInit {
       });
       this.subTotal = this.total;
     } else {
-      this.route.navigate(["/home"])
+      alert("Você não esta logado ou não possui cadastro");
+      this.route.navigate(["/cadastre-se"]);
     }
     this.enderecos = [];
 
@@ -72,9 +73,9 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
-  receberCupom(cupom){
-    if(cupom != this.cupomAtivo){
-      if(this.cupomAtivo != null)
+  receberCupom(cupom) {
+    if (cupom != this.cupomAtivo) {
+      if (this.cupomAtivo != null)
         this.total += this.subTotal * (this.cupomAtivo.desconto / 100);
       this.cupomAtivo = cupom;
       this.total -= this.subTotal * (this.cupomAtivo.desconto / 100)
@@ -87,7 +88,7 @@ export class CheckoutComponent implements OnInit {
     } else {
       this.cadastros.cadastrarEndereco(endereco, this.storage.recuperarUsuario().codCliente).subscribe(
         dados => {
-          if(this.enderecos.length == 0){
+          if (this.enderecos.length == 0) {
             this.enderecoPrincipal = dados;
           }
           this.enderecos.push(dados)
@@ -116,7 +117,7 @@ export class CheckoutComponent implements OnInit {
         dados => {
           if (dados != null) {
             let cliente = this.storage.recuperarUsuario();
-            if(cliente.pedidos == null){
+            if (cliente.pedidos == null) {
               cliente.pedidos = [];
             }
             cliente.pedidos.push(dados);

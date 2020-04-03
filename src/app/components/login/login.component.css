@@ -14,8 +14,7 @@ body{
 }
 #LogoPrincipal{
     align-items: center;
-    margin-top: 40px;
-    margin-left: 80px;
+    margin: 50px auto;
 
 }
 .button{
@@ -26,11 +25,11 @@ body{
     cursor: pointer;
 }
 #form-signin{
+    width: 340px;
+    margin: 50px auto;
     align-items: center;
-     padding: 40px;
 }
 #fotoFixa{
-    background-image: url(/screens/images/tentativa2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 10px;
