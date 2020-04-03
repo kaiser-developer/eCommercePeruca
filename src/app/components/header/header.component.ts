@@ -23,7 +23,7 @@ export class HeaderComponent implements OnChanges {
   @Input() atualizarQuantidade: boolean;
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
-  constructor(private routeFiltro: ActivatedRoute, private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) {
+  constructor(private requisicoes: RequisicoesService, private route: Router, private storage: StorageService) {
     this.formLogin = this.createForm(new Login("", ""));
     this.verificar();
     if (this.storage.recuperarCarrinho() != null) {
@@ -64,7 +64,7 @@ export class HeaderComponent implements OnChanges {
   }
 
   login() {
-    if (this.formLogin.status != "INVALID") {
+    if (this.formLogin.value.email != "" && this.formLogin.value.senha != "") {
       this.requisicoes.realizarLogin(this.formLogin.value).subscribe(
         data => {
           if (data != null) {
@@ -76,6 +76,8 @@ export class HeaderComponent implements OnChanges {
           } else {
             alert("Usuario e/ou senha inválidos");
           }
+        }, error => {
+          alert("Usuario e/ou senha inválidos");
         }
       )
     } else {
