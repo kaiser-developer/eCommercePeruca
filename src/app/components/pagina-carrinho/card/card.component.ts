@@ -11,7 +11,7 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
 })
 export class CardComponent implements OnInit {
 
-  carrinho: Carrinho[];
+  carrinho: Carrinho[] = [];
   total: number = 0;
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
