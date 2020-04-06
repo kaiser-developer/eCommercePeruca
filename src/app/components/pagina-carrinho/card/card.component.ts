@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Carrinho } from 'src/app/model/carrinho';
 import { StorageService } from 'src/app/services/storage.service';
-import { Produto } from 'src/app/model/produto';
-import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -15,7 +14,7 @@ export class CardComponent implements OnInit {
   total: number = 0;
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
 
-  constructor(private storage: StorageService, private requisicoes: RequisicoesService) { 
+  constructor(private storage: StorageService, private route:Router) { 
     this.carrinho = storage.recuperarCarrinho();
 
     if(this.carrinho){
@@ -55,5 +54,15 @@ export class CardComponent implements OnInit {
     )
     this.storage.salvarCarrinho(this.carrinho);
     this.atualizarCarrinho.emit();
+  }
+
+
+  irCheckout(){
+    if(this.carrinho){
+      this.route.navigate(["/checkout"])
+    }else{
+      this.route.navigate(["/catalogo"])
+      alert("Para continuar, escolha um produto!")
+    }
   }
 }

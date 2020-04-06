@@ -1,7 +1,7 @@
 <form class="border border-top-0 mt-2 p-4" [formGroup]="formPagamento">
     <div class="form-group">
         <label>Numero do cartão:</label>
-        <input class="form-control" type="text" placeholder="Digite o numero do cartão..."
+        <input class="form-control" type="text" placeholder="0000 0000 0000 0000"
             (keypress)="permitirNumeros($event)" maxlength="19" formControlName="numeroCartao"
             mask="0000 0000 0000 0000">
     </div>
@@ -25,18 +25,18 @@
         </div>
         <div class="col-3">
             <label>CVV:</label>
-            <input class="form-control" type="text" placeholder="..." (keypress)="permitirNumeros($event)" maxlength="3"
+            <input class="form-control" type="text" placeholder="000" (keypress)="permitirNumeros($event)" maxlength="3"
                 formControlName="cvv">
         </div>
     </div>
     <div class="form-group">
-        <label>Nome titular:</label>
-        <input class="form-control" type="text" placeholder="Digite um complemento..." maxlength="20"
+        <label>Nome do titular:</label>
+        <input class="form-control" type="text" placeholder="Nome do Titular" maxlength="20"
             (keypress)="permitirLetras($event)" formControlName="nomeTitular">
     </div>
     <div class="form-group">
         <label>CPF do titular:</label>
-        <input class="form-control" type="text" placeholder="Digite o CPF do titular..."
+        <input class="form-control" type="text" placeholder="CPF do Titular"
             (keypress)="permitirNumeros($event)" maxlength="14" formControlName="cpf" required mask="000.000.000-99">
     </div>
 </form>

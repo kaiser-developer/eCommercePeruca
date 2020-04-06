@@ -4,7 +4,7 @@
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
             <a href="#" routerLink="/home">Home</a>
             <a href="#" routerLink="/catalogo">Produtos</a>
-            <a href="#" routerLink="/pagina-institucional">Institucional</a>
+            <a href="#" routerLink="/pagina-institucional">Doação</a>
             <a href="#" routerLink="/quem-somos">Quem Somos</a>
             <a href="#" routerLink="/contato">Contato</a>
         </div>
@@ -22,22 +22,11 @@
         </div>
     </div>
 
-    <div id="busca">
-        <form class="form-inline my-2 my-lg-0">
-            <div id="divBusca" class="col-xs-12">
-                <input type="text" class="txtBusca" placeholder="Pesquisar..." />
-                <button class="btn rounded"><img src="../../../assets/images/find.png" width="20px" id="btnBusca"
-                        alt="Buscar" /></button>
-            </div>
-        </form>
-    </div>
-
-
     <div class="d-flex align-items-center justify-content-between col-md-4 col-xs-12 carrinho-login">
         <div id="buscaResp">
             <form class="form-inline my-2 my-lg-0">
                 <div id="divBusca" class="col-xs-12">
-                    <input type="text" class="txtBusca" placeholder="Pesquisar..." [(ngModel)]="filtro" name="filtro"/>
+                    <input type="text" class="txtBusca" placeholder="Pesquisar" [(ngModel)]="filtro" name="filtro"/>
                     <button class="btn rounded" (click)="buscar()"><img src="../../../assets/images/find.png" width="20px" id="btnBusca"
                             alt="Buscar" /></button>
                 </div>
@@ -76,7 +65,7 @@
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Endereço de email:</label>
                         <input type="email" class="form-control" formControlName="email"
-                            placeholder="email@exemplo.com">
+                            placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Senha:</label>
