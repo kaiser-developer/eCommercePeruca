@@ -12,6 +12,9 @@
                 </tr>
             </thead>
             <tbody>
+                <div *ngIf="carrinho == null" class="alert alert-success m-2 p-1">
+                    <h5 class="text-center">Você não selecionou nenhum produto até o momento!</h5>
+                </div>
                 <tr *ngFor="let item of carrinho">
                     <td id="conteudoProduto" class="d-flex">
                         <img class="peruca" [src]="item.produto.imagens[0].local"
