@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: inline-block;
+    align-items: center;
+ 
+       
+}
+#LogoPrincipal{
+    align-items: center;
+    margin: 50px auto;
+
+}
+.button{
+    background-color:#006172;
+    color: #fff;
+    border: none;
+    height: 31px;
+    cursor: pointer;
+}
+#form-signin{
+    width: 340px;
+    margin: 50px auto;
+    align-items: center;
+}
+#fotoFixa{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 10px;
+    width:40vw;
+    height:95vh;
+}
+label {
+    padding: 2px;
+}
+
+input.ng-invalid {
+    box-shadow:red;
+}
+input.ng-valid {
+    background-color:lightgreen;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+    #fotoFixa {
+        width: 90vw;
+        height: 50vh;
+    }
+
+    #LogoPrincipal {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.ativo{
+    display: block;
+}
+
+.inativo{
+    display: none;
+}

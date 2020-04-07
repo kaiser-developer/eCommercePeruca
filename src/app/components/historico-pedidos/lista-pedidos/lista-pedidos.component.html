@@ -31,6 +31,7 @@
                                     Detalhes do pedido
                                 </button>
                                 <button type="button" (click)="abrirModal(cancelarPedido, pedido)" class="btn btn-danger" *ngIf="pedido.status.cod_status != 4 && pedido.status.cod_status != 3">Cancelar Pedido</button>
+                                <button type="button" class="btn btn-success" (click)="refazerPedido(pedido)">Refazer pedido</button>
                             </a>
                             <hr>
                         </div>

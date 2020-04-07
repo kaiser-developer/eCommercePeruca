@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CatalogoComponent implements OnInit {
 
-  categoria: number = -1;
+  categoria: number = 0;
 
   constructor () { }
 
