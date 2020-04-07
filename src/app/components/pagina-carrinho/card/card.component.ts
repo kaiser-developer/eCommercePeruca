@@ -58,7 +58,7 @@ export class CardComponent implements OnInit {
 
 
   irCheckout(){
-    if(this.carrinho){
+    if(this.carrinho.length > 0){
       this.route.navigate(["/checkout"])
     }else{
       this.route.navigate(["/catalogo"])

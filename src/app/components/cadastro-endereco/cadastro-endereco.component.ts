@@ -30,7 +30,7 @@ export class CadastroEnderecoComponent implements OnInit {
     })
   }
 
-  constructor(private http: RequisicoesService) { 
+  constructor(private http: RequisicoesService) {
     this.formEndereco = this.createForm(new Endereco("", "", null, "", "", "", ""));
     this.http.getEstados().subscribe(dados => {
       this.estados = dados;
@@ -38,16 +38,16 @@ export class CadastroEnderecoComponent implements OnInit {
     this.validacoes = new Validacoes();
   }
 
-  validarCep(evento: any){
+  validarCep(evento: any) {
     this.validacoes.cancelarLetras(evento)
   }
 
-  permitirLetras(evento: any){
+  permitirLetras(evento: any) {
     this.validacoes.cancelarNumeros(evento)
   }
 
-  preencherEndereco(){
-    if(this.formEndereco.value.cep.length == 8){
+  preencherEndereco() {
+    if (this.formEndereco.value.cep.length == 8) {
       this.http.getEnderecoViaCep(this.formEndereco.value.cep).subscribe(
         dados => {
           this.formEndereco.patchValue({

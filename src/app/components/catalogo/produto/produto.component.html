@@ -1,6 +1,5 @@
 <div id="produtos" class="container d-flex justify-content-center">
-    <div *ngFor="let produto of produtosFiltrados" 
-        class="d-flex col-md-3 col-xs-12">
+    <div *ngFor="let produto of produtosFiltrados" class="d-flex col-md-3 col-xs-12">
         <div class="card">
             <div class="text-center">
                 <img [src]="produto.imagens[0].local" class="imagem-produto">
@@ -9,7 +8,7 @@
 
                 <h5>{{produto.descricao}}</h5>
                 <p class="card-text"> {{produto.categoria.descricao}} <br>
-                    R$ {{produto.valorProduto}} <br>
+                    R$ {{produto.valorProduto | mask: 'separator':','}} <br>
                 </p>
                 <a (click)="abrirPaginaProduto(produto.codProduto)" class="btn btn-dark text-white">Comprar</a>
             </div>
