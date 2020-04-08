@@ -1,10 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService, ModalBackdropComponent } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Endereco } from 'src/app/model/endereco';
 import { Validacoes } from 'src/app/model/validacoes';
 import { StorageService } from 'src/app/services/storage.service';
 import { Carrinho } from 'src/app/model/carrinho';
-import { Produto } from 'src/app/model/produto';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 import { Router } from '@angular/router';

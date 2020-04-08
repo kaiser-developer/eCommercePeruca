@@ -5,7 +5,7 @@
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color:rgba(173, 170, 177, 0.671); /* Black*/
+    background-color:#adaab1ab; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -65,12 +65,22 @@
 #btnBusca:hover{
     opacity: 0.4;
 }
+#btnBusca:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
 
 .searchImg{
     width: 0.8vw;
     position: absolute;
     left: 45%;
     
+}
+.searchImg:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
 }
 nav.row{
     margin: 0;
@@ -82,6 +92,11 @@ nav.row{
 
 .acessar-carrinho{
     margin-right: 1.3vw;
+}
+.acessar-carrinho:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
 }
 
 #busca {

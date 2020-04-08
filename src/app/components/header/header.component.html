@@ -26,9 +26,9 @@
         <div id="buscaResp">
             <form class="form-inline my-2 my-lg-0">
                 <div id="divBusca" class="col-xs-12">
-                    <input type="text" class="txtBusca" placeholder="Pesquisar" [(ngModel)]="filtro" name="filtro"/>
-                    <button class="btn rounded" (click)="buscar()"><img src="../../../assets/images/find.png" width="20px" id="btnBusca"
-                            alt="Buscar" /></button>
+                    <input type="text" class="txtBusca" placeholder="Pesquisar" [(ngModel)]="filtro" name="filtro" />
+                    <button class="btn rounded" (click)="buscar()"><img src="../../../assets/images/find.png"
+                            width="20px" id="btnBusca" alt="Buscar" /></button>
                 </div>
             </form>
         </div>
@@ -64,8 +64,7 @@
                 <form class="px-4 py-3 " (ngSubmit)="login()" [formGroup]="formLogin">
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Endereço de email:</label>
-                        <input type="email" class="form-control" formControlName="email"
-                            placeholder="Email">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Senha:</label>

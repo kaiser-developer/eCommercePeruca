@@ -11,15 +11,18 @@ import { Router } from '@angular/router';
 export class CardComponent implements OnInit {
 
   carrinho: Carrinho[] = [];
+  user;
   total: number = 0;
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
+  formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
 
-  constructor(private storage: StorageService, private route:Router) { 
+
+  constructor(private storage: StorageService, private route: Router) {
     this.carrinho = storage.recuperarCarrinho();
-
-    if(this.carrinho){
+    this.user = storage.recuperarUsuario();
+    if (this.carrinho) {
       this.carrinho.forEach(
-        item =>{
+        item => {
           this.total += (item.produto.valorProduto * item.quantidade);
         }
       )
@@ -29,16 +32,16 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mudarQuantidade(valor, item){
-    if(item.quantidade == 1 && valor < 0){
-      this.carrinho = this.carrinho.filter( produto => produto != item);
+  mudarQuantidade(valor, item) {
+    if (item.quantidade == 1 && valor < 0) {
+      this.carrinho = this.carrinho.filter(produto => produto != item);
       this.storage.salvarCarrinho(this.carrinho);
       this.total -= item.produto.valorProduto;
-    }else if(valor > 0 && item.quantidade < 6){
+    } else if (valor > 0 && item.quantidade < 6) {
       item.quantidade++;
       this.storage.salvarCarrinho(this.carrinho);
       this.total += item.produto.valorProduto;
-    }else if(valor < 0){
+    } else if (valor < 0) {
       item.quantidade--;
       this.storage.salvarCarrinho(this.carrinho);
       this.total -= item.produto.valorProduto;
@@ -47,7 +50,7 @@ export class CardComponent implements OnInit {
     this.atualizarCarrinho.emit();
   }
 
-  removerProduto(item){
+  removerProduto(item) {
     this.total -= item.produto.valorProduto * item.quantidade;
     this.carrinho = this.carrinho.filter(
       produto => produto != item
@@ -57,10 +60,10 @@ export class CardComponent implements OnInit {
   }
 
 
-  irCheckout(){
-    if(this.carrinho.length > 0){
+  irCheckout() {
+    if (this.carrinho.length > 0) {
       this.route.navigate(["/checkout"])
-    }else{
+    } else {
       this.route.navigate(["/catalogo"])
       alert("Para continuar, escolha um produto!")
     }

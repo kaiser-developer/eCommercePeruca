@@ -8,7 +8,7 @@
 
                 <h5>{{produto.descricao}}</h5>
                 <p class="card-text"> {{produto.categoria.descricao}} <br>
-                    R$ {{produto.valorProduto | mask: 'separator':','}} <br>
+                    {{produto.valorProduto.toLocaleString('pt-BR', formato)}} <br>
                 </p>
                 <a (click)="abrirPaginaProduto(produto.codProduto)" class="btn btn-dark text-white">Comprar</a>
             </div>
