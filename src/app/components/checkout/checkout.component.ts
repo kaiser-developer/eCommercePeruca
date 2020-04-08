@@ -59,6 +59,13 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    setInterval(()=>{
+      this.carrinho = this.storage.recuperarCarrinho();
+      this.total = 0;
+      this.carrinho.forEach(item => {
+        this.total += (item.produto.valorProduto * item.quantidade);
+      });
+    }, 10)
   }
 
   abrirModal(template: TemplateRef<any>) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, OnChanges } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
 import { Carrinho } from 'src/app/model/carrinho';
 import { Cupom } from 'src/app/model/cupom';
@@ -10,7 +10,7 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
   templateUrl: './carrinho.component.html',
   styleUrls: ['./carrinho.component.css']
 })
-export class CarrinhoComponent implements OnInit {
+export class CarrinhoComponent implements OnChanges {
 
   carrinho: Carrinho[] = [];
   subTotal: number = 0;
@@ -40,7 +40,18 @@ export class CarrinhoComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    setInterval(() =>{
+      this.carrinho = this.storage.recuperarCarrinho();
+      if(this.carrinho != null){
+        this.subTotal = 0;
+        this.carrinho.forEach(item => {
+          this.subTotal += item.quantidade * item.produto.valorProduto;
+        })
+      }else{
+        this.carrinho = [];
+      }
+    }, 10)
   }
 
   abrirModal(template: TemplateRef<any>){

@@ -80,8 +80,8 @@ export class ListaPedidosComponent implements OnInit {
         this.carrinho.push(new Carrinho(produto, item.quantidade));
         this.storage.salvarCarrinho(this.carrinho);
       })
-      
-      this.route.navigate(['\checkout']);
     });
+      
+    this.route.navigate(['\checkout']);
   }
 }
