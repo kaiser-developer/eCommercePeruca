@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col">
+            <img id="fotoFixa" src="../../../assets/images/imagem-show.jpg" alt="Imagem principal">
+        </div>
+        <div class="col">
+            <header id="LogoPrincipal" class="d-flex justify-content-center">
+                <a href="/home"><img src="../../../assets/images/logoWig.png" alt="LogoPrincipal" width="350px"></a>
+            </header>
+            <form id="form-signin" [formGroup]="formRecuperarSenha">
+                <h1 class="h3 mb-3 font-weight-normal text-center">Recupere sua senha</h1>
+
+                
+                <input type="email" class="form-control mb-2" placeholder="Seu email" required minlength="15"
+                    maxlength="35" formControlName="email">
+
+                <input type="text" class="form-control mb-2" placeholder="Código de redefinição" required minlength="8" maxlength="8" [class]="botaoRecuperarClicado? 'ativo': 'inativo'" formControlName="codigoRedefinicao">
+
+                <input type="password" class="form-control mb-2" placeholder="Nova senha" minlength="8" required [class]="botaoRecuperarClicado? 'ativo': 'inativo'" formControlName="senha">
+
+                <input type="password" class="form-control mb-2" placeholder="Confirme a nova senha" minlength="8" required [class]="botaoRecuperarClicado? 'ativo': 'inativo'" formControlName="confSenha">
+
+                <button class="btn btn-info btn-block" (click)="enviarCodigo()" [class]="botaoRecuperarClicado? 'inativo': 'ativo'">Recuperar</button>
+
+                <button class="btn btn-success btn-block" [class]="botaoRecuperarClicado? 'ativo': 'inativo'" (click)="alterarSenha()">Redefinir senha</button>
+                <div>
+                    <a routerLink="/login" id="cadastro">Retornar ao login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

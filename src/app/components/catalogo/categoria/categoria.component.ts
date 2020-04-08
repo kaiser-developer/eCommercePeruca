@@ -15,7 +15,10 @@ export class CategoriaComponent implements OnInit {
 
   constructor(private requisicoes: RequisicoesService) {
     this.requisicoes.getCategoria().subscribe(
-      data => this.categoriasVisiveis = data
+      data => {
+        this.categoriasVisiveis = data
+        this.categoriasVisiveis.push(new Categoria("todos", 0));
+      }
     )
   }
 
