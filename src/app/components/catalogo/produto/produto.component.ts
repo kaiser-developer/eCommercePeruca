@@ -14,6 +14,7 @@ export class ProdutoComponent implements OnChanges {
   produtosFiltrados: Produto[] = [];
   @Input() categoria: number;
   @Input() filtro: string;
+  formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
   ordenacao = "1";
 
   constructor(private requisicoes: RequisicoesService,
@@ -23,9 +24,9 @@ export class ProdutoComponent implements OnChanges {
       data => {
         this.produtos = data
         this.produtosFiltrados = this.produtos;
-        
+
         this.routeFiltro.queryParams.subscribe(parametros => {
-          if(parametros["filtro"]){
+          if (parametros["filtro"]) {
             this.filtro = parametros["filtro"];
             this.produtosFiltrados = this.produtos.filter(produto => {
               let descricao = produto.descricao.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z ])/g, '').toLowerCase();
@@ -44,7 +45,7 @@ export class ProdutoComponent implements OnChanges {
     )
   }
 
-  abrirPaginaProduto(id: number){
+  abrirPaginaProduto(id: number) {
     this.route.navigate(['produto/' + id]);
   }
 

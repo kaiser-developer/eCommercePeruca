@@ -66,8 +66,4 @@ export class CarrinhoComponent implements OnChanges {
     this.modalRef.hide();
     this.enviarCupom.emit(cupom);
   }
-
-  ativarCupom(event){
-    
-  }
 }
