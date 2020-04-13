@@ -8,30 +8,15 @@ body{
 
 .container{
     display: inline-block;
-    text-align: center;
+    align-items: center;
+ 
+       
 }
-
 #LogoPrincipal{
-    margin-top: 40px;
-    width: auto;
-    height: 15vh;
+    align-items: center;
+    margin: 50px auto;
 
 }
-
-#fotoFixa{
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 10px;
-    padding: 0;
-    width:40vw;
-    height:95vh;
-}
-
-.cpf{
-    width: 160px;
-
-}
-
 .button{
     background-color:#006172;
     color: #fff;
@@ -40,27 +25,46 @@ body{
     cursor: pointer;
 }
 #form-signin{
+    width: 340px;
+    margin: 50px auto;
     align-items: center;
-    padding: 10px;
-   
+}
+#fotoFixa{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 10px;
+    width:40vw;
+    height:95vh;
+}
+label {
+    padding: 2px;
 }
 
-.formgroup{
-    background: rgba(250, 247, 249, 0.692);
-
+input.ng-invalid {
+    box-shadow:red;
 }
+input.ng-valid {
+    background-color:lightgreen;
+}
+
 
 @media only screen and (max-width: 800px) {
 
     #fotoFixa {
         width: 90vw;
         height: 50vh;
-        padding: 0px;
     }
 
     #LogoPrincipal {
         display: flex;
         justify-content: center;
     }
+}
 
+.ativo{
+    display: block;
+}
+
+.inativo{
+    display: none;
 }

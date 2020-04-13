@@ -14,7 +14,7 @@
                 <tr *ngFor="let item of produtos">
                     <th><img [src]="item.produto.imagens[0].local" width="20px"></th>
                     <td scope="row">{{item.produto.descricao}}</td>
-                    <td>R$ {{item.produto.valorProduto}}</td>
+                    <td> {{item.produto.valorProduto.toLocaleString('pt-BR', formato)}}</td>
                     <td>
                         {{item.quantidade}}
                     </td>

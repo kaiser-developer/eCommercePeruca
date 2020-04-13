@@ -23,6 +23,20 @@
     width: 4vh;
 }
 
+#btnMenosMais{
+    background-color: transparent;
+    border: none;
+}
+#btnMenosMais:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
+
+#iconBtn{
+    width: 4vh;
+}
+
 .remover-produto{
     cursor: pointer;
 }

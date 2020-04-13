@@ -3,6 +3,9 @@ import { Compra } from 'src/app/model/compra';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal/';
 import { Endereco } from 'src/app/model/endereco';
+import { Carrinho } from 'src/app/model/carrinho';
+import { StorageService } from 'src/app/services/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-pedidos',
@@ -17,8 +20,12 @@ export class ListaPedidosComponent implements OnInit {
   cancPedido: Compra;
   enderecoPedido;
   detPedido: Compra;
+  carrinho: Carrinho[] = [];
 
-  constructor(private requisicoes: RequisicoesService, private modalService: BsModalService) { 
+  constructor(private requisicoes: RequisicoesService,
+              private modalService: BsModalService,
+              private storage: StorageService,
+              private route: Router) { 
     requisicoes.getPedidos().subscribe(
       dados => {
         this.pedidos = dados;
@@ -65,5 +72,16 @@ export class ListaPedidosComponent implements OnInit {
     );
     
     this.modalRef.hide();
+  }
+
+  refazerPedido(pedido){
+    pedido.itens.forEach(item => {
+      this.requisicoes.buscarProduto(item.codProduto).subscribe(produto => {
+        this.carrinho.push(new Carrinho(produto, item.quantidade));
+        this.storage.salvarCarrinho(this.carrinho);
+      })
+      
+      this.route.navigate(['\checkout']);
+    });
   }
 }

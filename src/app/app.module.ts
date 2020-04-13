@@ -55,6 +55,8 @@ import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relatorios/nav-relatorios.component';
 import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes-pedido/detalhes-pedido.component';
+import { FinalizarDoacaoComponent } from './components/checkout-doacao/finalizar-doacao/finalizar-doacao.component';
+import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 
 
 @NgModule({
@@ -107,6 +109,8 @@ import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes
     RelatoriosComponent,
     NavRelatoriosComponent,
     DetalhesPedidoComponent,
+    FinalizarDoacaoComponent,
+    RecuperarSenhaComponent,
     
     
     

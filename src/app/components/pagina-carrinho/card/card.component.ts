@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Carrinho } from 'src/app/model/carrinho';
 import { StorageService } from 'src/app/services/storage.service';
-import { Produto } from 'src/app/model/produto';
-import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -11,16 +10,19 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
 })
 export class CardComponent implements OnInit {
 
-  carrinho: Carrinho[];
+  carrinho: Carrinho[] = [];
+  user;
   total: number = 0;
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
+  formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
 
-  constructor(private storage: StorageService, private requisicoes: RequisicoesService) { 
+
+  constructor(private storage: StorageService, private route: Router) {
     this.carrinho = storage.recuperarCarrinho();
-
-    if(this.carrinho){
+    this.user = storage.recuperarUsuario();
+    if (this.carrinho) {
       this.carrinho.forEach(
-        item =>{
+        item => {
           this.total += (item.produto.valorProduto * item.quantidade);
         }
       )
@@ -30,16 +32,16 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mudarQuantidade(valor, item){
-    if(item.quantidade == 1 && valor < 0){
-      this.carrinho = this.carrinho.filter( produto => produto != item);
+  mudarQuantidade(valor, item) {
+    if (item.quantidade == 1 && valor < 0) {
+      this.carrinho = this.carrinho.filter(produto => produto != item);
       this.storage.salvarCarrinho(this.carrinho);
       this.total -= item.produto.valorProduto;
-    }else if(valor > 0 && item.quantidade < 6){
+    } else if (valor > 0 && item.quantidade < 6) {
       item.quantidade++;
       this.storage.salvarCarrinho(this.carrinho);
       this.total += item.produto.valorProduto;
-    }else if(valor < 0){
+    } else if (valor < 0) {
       item.quantidade--;
       this.storage.salvarCarrinho(this.carrinho);
       this.total -= item.produto.valorProduto;
@@ -48,12 +50,22 @@ export class CardComponent implements OnInit {
     this.atualizarCarrinho.emit();
   }
 
-  removerProduto(item){
+  removerProduto(item) {
     this.total -= item.produto.valorProduto * item.quantidade;
     this.carrinho = this.carrinho.filter(
       produto => produto != item
     )
     this.storage.salvarCarrinho(this.carrinho);
     this.atualizarCarrinho.emit();
+  }
+
+
+  irCheckout() {
+    if (this.carrinho.length > 0) {
+      this.route.navigate(["/checkout"])
+    } else {
+      this.route.navigate(["/catalogo"])
+      alert("Para continuar, escolha um produto!")
+    }
   }
 }

@@ -5,27 +5,31 @@
                 <tr>
                     <th scope="col">Produto</th>
                     <th scope="col">Qtd</th>
-                    <th scope="col">Preço</th>
+                    <th scope="col">Preço Uni.</th>
                     <th scope="col">
                         <img class="icon-lixeira" src="../../../../assets/images/lixeira_2.png" alt="remover item">
                     </th>
                 </tr>
             </thead>
             <tbody>
+                <div *ngIf="carrinho == null" class="alert alert-success m-2 p-1">
+                    <h5 class="text-center">Você não selecionou nenhum produto até o momento!</h5>
+                </div>
                 <tr *ngFor="let item of carrinho">
                     <td id="conteudoProduto" class="d-flex">
-                        <img class="peruca" [src]="item.produto.imagens[0].local"
-                            width="50px" alt="produto">
+                        <img class="peruca" [src]="item.produto.imagens[0].local" width="50px" alt="produto">
                         <p>{{item.produto.descricao}}</p>
                     </td>
 
                     <td>
-                        <button (click)="mudarQuantidade(-1, item)">-</button>
+                        <button id="btnMenosMais" (click)="mudarQuantidade(-1, item)"><img
+                                src="../../../../assets/images/menos.png" id="iconBtn" alt="Menos"></button>
                         {{item.quantidade}}
-                        <button (click)="mudarQuantidade(1, item)">+</button>
+                        <button id="btnMenosMais" (click)="mudarQuantidade(1, item)"><img
+                                src="../../../../assets/images/mais.png" id="iconBtn" alt="Mais"></button>
                     </td>
                     <td>
-                        <strong>R$ {{item.produto.valorProduto}}</strong>
+                        <strong>{{item.produto.valorProduto.toLocaleString('pt-BR', formato)}}</strong>
                     </td>
                     <td class="remover-produto" (click)="removerProduto(item)">
                         <img class="icon-lixeira" src="../../../../assets/images/remover-x_1.svg">
@@ -44,8 +48,8 @@
 
             <hr>
             <strong>TOTAL:</strong>
-            <p>R$ {{total}}</p>
-            <button routerLink="/checkout" class="btn btn-success btn-block">Continuar</button>
+            <p>{{total.toLocaleString('pt-BR', formato)}}</p>
+            <button (click)="irCheckout()" class="btn btn-success btn-block">Continuar</button>
         </div>
     </div>
 </div>

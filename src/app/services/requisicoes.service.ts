@@ -10,6 +10,7 @@ import { Categoria } from '../model/categoria';
 import { Cupom } from '../model/cupom';
 import { Compra } from '../model/compra';
 import { Funcionario } from "../model/funcionario";
+import { Cliente } from '../model/cliente';
 
 const storage: StorageService = new StorageService();
 
@@ -119,6 +120,24 @@ export class RequisicoesService {
     return url.pipe(
       map(
         data => data
+      )
+    )
+  }
+
+  public enviarCodigoRedefinicao(email: String){
+    let url = this.http.patch<any>("http://localhost:8080/ecommerce/enviar-codigo/", [email])
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public redefinirSenha(email: string, codigo: string, senha: string){
+    let url = this.http.patch<Cliente>("http://localhost:8080/ecommerce/redefinir-senha", [email, codigo, senha])
+    return url.pipe(
+      map(
+        dados => dados
       )
     )
   }

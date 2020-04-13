@@ -20,6 +20,7 @@ import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { CuponsComponent } from './components/pagina-relatorios/cupons/cupons.component';
 import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque.component';
+import { RecuperarSenhaComponent } from "./components/recuperar-senha/recuperar-senha.component";
 
 
 const routes: Routes = [
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: 'reclamacoes' , component: ReclamacoesComponent},
   { path: 'relatorios' , component: RelatoriosComponent},
   { path: 'cupons' , component: CuponsComponent},
-  { path: 'estoque' , component: EstoqueComponent}
+  { path: 'estoque' , component: EstoqueComponent},
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent}
 ];
 
 @NgModule({
