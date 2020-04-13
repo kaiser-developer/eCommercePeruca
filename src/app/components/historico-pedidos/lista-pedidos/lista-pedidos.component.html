@@ -6,8 +6,14 @@
                     Acompanhe seus pedidos
                 </h4>
             </div>
-            <div >
+            <div>
                 <div class="panel-group" id="accordion">
+                    <div class="d-flex justify-content-center" *ngIf="pedidos.length == 0">
+                        <div id="alertPedidos" class="alert alert-primary">
+                            <h5>Você ainda não fez nenhum pedido!</h5>
+                            <strong><a routerLink="/catalogo">Compre agora!</a></strong>
+                        </div>
+                    </div>
                     <div class="panel panel-default">
                         <div class="panel-heading" *ngFor="let pedido of pedidos">
                             <ul class="linha-do-tempo">
@@ -30,7 +36,7 @@
                                     data-target="#modalExemplo" (click)="abrirModalDetalhes(detalhesPedidos, pedido)">
                                     Detalhes do pedido
                                 </button>
-                                <button type="button" (click)="abrirModal(cancelarPedido, pedido)" class="btn btn-danger" *ngIf="pedido.status.cod_status != 4 && pedido.status.cod_status != 3">Cancelar Pedido</button>
+                                <button type="button" (click)="abrirModal(cancelarPedido, pedido)" class="btn btn-danger mr-1 ml-1" *ngIf="pedido.status.cod_status != 4 && pedido.status.cod_status != 3">Cancelar Pedido</button>
                                 <button type="button" class="btn btn-success" (click)="refazerPedido(pedido)">Refazer pedido</button>
                             </a>
                             <hr>
@@ -46,7 +52,7 @@
         <div class="card ng-scope text-center sticky-top">
             <h5 class="card-header">Cancelar Pedido</h5>
         </div>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <button id="fecharModal" type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
             <span aria-hidden="true">&times;</span>
         </button>
         <span> Deseja realmente cancelar seu pedido? </span>

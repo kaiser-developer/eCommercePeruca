@@ -8,6 +8,8 @@ import { Compra } from '../model/compra';
 import { Item } from '../model/Item';
 import { Carrinho } from '../model/carrinho';
 import { Cupom } from '../model/cupom';
+import { Locais } from '../model/locais';
+import { Doacao } from '../model/doacao';
 
 const storage: StorageService = new StorageService();
 
@@ -53,6 +55,18 @@ export class CadastrosService {
     })
 
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-pedido", compra);
+    return url.pipe(map(
+      dados => dados
+    ))
+  }
+
+  public cadastrarDoacao(locais: Locais, vlDoacao: number){
+    let doacao: Doacao = new Doacao()
+    console.log(locais, vlDoacao, storage.recuperarCarrinho(), storage.recuperarUsuario())
+    doacao.dsFormaPagto = "credito";
+    doacao.vlDoacao = 49,90;
+    doacao.localDoacao = "local Escolhido"
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-doacao", doacao);
     return url.pipe(map(
       dados => dados
     ))

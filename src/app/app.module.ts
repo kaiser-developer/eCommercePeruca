@@ -57,6 +57,7 @@ import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relat
 import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes-pedido/detalhes-pedido.component';
 import { FinalizarDoacaoComponent } from './components/checkout-doacao/finalizar-doacao/finalizar-doacao.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
+import { CarrinhoDoacaoComponent } from './components/checkout-doacao/carrinho-doacao/carrinho-doacao.component';
 
 
 @NgModule({
@@ -111,7 +112,7 @@ import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-
     DetalhesPedidoComponent,
     FinalizarDoacaoComponent,
     RecuperarSenhaComponent,
-    
+    CarrinhoDoacaoComponent
     
     
   ],
