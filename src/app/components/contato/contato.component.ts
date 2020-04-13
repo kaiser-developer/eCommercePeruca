@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Validacoes } from 'src/app/model/validacoes';
-import { ReactiveFormsModule } from "@angular/forms";
 import  {  FormBuilder,  FormGroup  }  from  '@angular/forms';
-import { Contato } from '../../model/contato';
+import { FaleConosco } from 'src/app/model/faleConosco';
+import { CadastrosService } from 'src/app/services/cadastros.service';
+import { StorageService } from 'src/app/services/storage.service';
+
 
 @Component({
   selector: 'app-contato',
@@ -11,24 +13,33 @@ import { Contato } from '../../model/contato';
 })
 
 export class ContatoComponent implements OnInit {
-  formContato: FormGroup;
+  formFaleConosco: FormGroup;
   validacoes: Validacoes = new Validacoes;
+  
 
-  constructor(private formBuilder: FormBuilder) { }
+
+  constructor(private formBuilder: FormBuilder, private cadastro: CadastrosService, private storage: StorageService) { }
 
   ngOnInit(): void {
-    this.createForm(new Contato());
-   }
-   createForm(contato: Contato){
-     this.formContato = this.formBuilder.group({
-       nome: [contato.nome],
-       telefone: [contato.telefone],
-       email: [contato.email],
-       msg: [contato.msg]
+    this.createForm(new FaleConosco());
+     }
+   
+   createForm(faleConosco: FaleConosco){
+     this.formFaleConosco = this.formBuilder.group({
+       nomeCompleto: [faleConosco.nomeCompleto],
+       telefone: [faleConosco.telefone],
+       email: [faleConosco.email],
+       mensagem: [faleConosco.mensagem],
+       assuntoMensagem: [faleConosco.assuntoMensagem],      
      })
    }
+
     onSubmit(){
-      this.createForm(new Contato());
+      this.cadastro.faleConosco(this.formFaleConosco.value).subscribe(
+        data => {this.formFaleConosco = data;
+        })
+      this.createForm(new FaleConosco());
+
     }
 
     permitirLetrasCont(evento: any) {

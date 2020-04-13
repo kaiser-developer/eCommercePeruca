@@ -8,6 +8,7 @@ import { Compra } from '../model/compra';
 import { Item } from '../model/Item';
 import { Carrinho } from '../model/carrinho';
 import { Cupom } from '../model/cupom';
+import { FaleConosco } from '../model/faleConosco';
 
 const storage: StorageService = new StorageService();
 
@@ -69,6 +70,12 @@ export class CadastrosService {
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-cliente", cliente);
     return url.pipe(map(
       dados => dados
+    ));
+  }
+  public faleConosco(faleConosco: FaleConosco){
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-fale-conosco", faleConosco);
+    return url.pipe(map(
+    dados => dados
     ));
   }
 }

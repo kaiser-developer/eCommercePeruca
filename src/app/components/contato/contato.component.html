@@ -3,7 +3,7 @@
 <div id="form1" class="d-flex justify-content-center centro">
   <div class="container-fluid row ">
     <div class="col-md-6">
-      <form id="formulario" [formGroup]="formContato" (ngSubmit)="onSubmit()">
+      <form id="formulario" [formGroup]="formFaleConosco" (ngSubmit)="onSubmit()">
 
         <div id="texto">
           <div class="p-2">
@@ -18,7 +18,7 @@
             <div class="form-group">
               <label for="nomeUsuário">Nome Completo:</label>
               <input id="nome" class="form-control" (keypress)="permitirLetrasCont($event)" type="text" id="validationTextarea" name="nomeUsuario"
-              formControlName="nome" placeholder="Nome completo" required>
+              formControlName="nomeCompleto" placeholder="Nome completo" required>
             </div>
 
             <div class="form-group">
@@ -33,16 +33,16 @@
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Escreva sua Mensagem </label>
-              <textarea class="form-control" id="validationTextarea" formControlName="msg" placeholder="Escreva aqui sua mensagem"
+              <textarea class="form-control" id="validationTextarea" formControlName="mensagem" placeholder="Escreva aqui sua mensagem"
                 required> Escreva sua Mensagem</textarea>
             </div>
             <div class="form-group">
               <label for="assunto">Assunto da mensagem :</label>
-              <select id="assunto" class="custom-select" required>
-                <option value="">Selecione Mensagem</option>
-                <option value="1"> Contato</option>
-                <option value="2"> Trabalhe conosco</option>
-                <option value="3"> Reclamações e sugestões</option>
+              <select id="assunto" formControlName="assuntoMensagem" class="custom-select" required>
+                <option value="" selected disabled hidden>Selecione Mensagem</option>
+                <option value="contato"> Contato</option>
+                <option value="Trabalhe conosco"> Trabalhe conosco</option>
+                <option value="Reclamações e sugestões"> Reclamações e sugestões</option>
               </select>
               <div class="invalid-feedback"></div>
             </div>
