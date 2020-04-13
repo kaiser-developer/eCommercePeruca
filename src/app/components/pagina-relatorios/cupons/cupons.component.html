@@ -1,8 +1,23 @@
 <app-nav-relatorios></app-nav-relatorios>
 
 <div class="container-fluid">
-    <h1>Cupons de Desconto</h1>
-    <div id="content" class="container">
-        <strong>os cupons aqui.</strong>
+  <h1>Cupons de Desconto</h1>
+  <div id="content" class="container">
+
+    <div *ngFor="let cupom of cupons">
+      <div class="border border-success bg-light">
+        <h5>{{cupom.nome}}</h5>
+        <p>{{cupom.Desconto}}</p>
+        <p>{{cupom.ativo}}</p>
+        <hr>
+        <label for="Ativar">Ativar este cupom ?</label>
+        <select class="form-group" name="Ativar">
+          <option selected disabled>Escolha</option>
+          <option>Ativar</option>
+          <option>Desativar</option>
+        </select>
+      </div>
+
     </div>
+  </div>
 </div>
