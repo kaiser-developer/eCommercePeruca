@@ -11,11 +11,10 @@
         <p>{{cupom.ativo}}</p>
         <hr>
         <label for="Ativar">Ativar este cupom ?</label>
-        <select class="form-group" name="Ativar">
-          <option selected disabled>Escolha</option>
-          <option>Ativar</option>
-          <option>Desativar</option>
-        </select>
+        <div class="form-group" name="Ativar">
+          <button (click)="ativarCupom()">Ativar</button>
+          <button (click)="desativarCupom()">Desativar</button>
+        </div>
       </div>
 
     </div>
