@@ -8,6 +8,7 @@ import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 import { Router } from '@angular/router';
 import { Cupom } from 'src/app/model/cupom';
+import { timeInterval } from 'rxjs/operators';
 
 @Component({
   selector: 'app-checkout',
@@ -18,7 +19,7 @@ import { Cupom } from 'src/app/model/cupom';
 export class CheckoutComponent implements OnInit {
 
   modalRef: BsModalRef;
-  enderecos;
+  enderecos = [];
   enderecoPrincipal = null;
   validacoes: Validacoes = new Validacoes();
   formaEnvio: number = 0;
@@ -30,40 +31,47 @@ export class CheckoutComponent implements OnInit {
   subTotal: number = 0;
   cupomAtivo: Cupom = null;
 
-  constructor(private requisicoes: RequisicoesService, private modalService: BsModalService, private storage: StorageService, private cadastros: CadastrosService, private route: Router) {
+  constructor(private requisicoes: RequisicoesService,
+              private modalService: BsModalService,
+              private storage: StorageService,
+              private cadastros: CadastrosService,
+              private route: Router) {
 
+    this.atualizar();
+    this.requisicoes.buscarEndereco(this.user.codCliente).subscribe(
+      dados => {
+        this.enderecos = dados
+
+        if (this.enderecos.length > 0) {
+          this.enderecoPrincipal = this.enderecos[0];
+        }
+      }
+    );
+  }
+
+  atualizar(){
     this.carrinho = this.storage.recuperarCarrinho();
     this.user = this.storage.recuperarUsuario();
-    if (this.carrinho != null && this.carrinho.length != 0 && this.user != null) {
-      this.carrinho.forEach(item => {
-        this.total += (item.produto.valorProduto * item.quantidade);
-
-        this.requisicoes.buscarEndereco(this.user.codCliente).subscribe(
-          dados => {
-            this.enderecos = dados
-
-            if (this.enderecos.length > 0) {
-              this.enderecoPrincipal = this.enderecos[0];
-            }
-          }
-        );
-      });
-      this.subTotal = this.total;
+    this.total = 0;
+    if(this.user != null){
+      if (this.carrinho != null && this.carrinho.length != 0) {
+        this.carrinho.forEach(item => {
+          this.total += (item.produto.valorProduto * item.quantidade);
+        });
+        this.total += this.formaEnvio;
+        this.subTotal = this.total;
+      }
     } else {
       alert("Você não esta logado ou não possui cadastro");
       this.route.navigate(["/cadastre-se"]);
     }
-    this.enderecos = [];
-
+      if (this.cupomAtivo != null)
+        this.total -= this.subTotal * (this.cupomAtivo.desconto / 100);
   }
 
   ngOnInit(): void {
-    setInterval(()=>{
-      this.carrinho = this.storage.recuperarCarrinho();
-      this.total = 0;
-      this.carrinho.forEach(item => {
-        this.total += (item.produto.valorProduto * item.quantidade);
-      });
+    setInterval(() =>{
+      this.atualizar();
     }, 10)
   }
 

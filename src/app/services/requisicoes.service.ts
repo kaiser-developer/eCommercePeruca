@@ -47,6 +47,13 @@ export class RequisicoesService {
     ));
   }
 
+  getProdutosMaisVendidos() {
+    let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/mais-vendidos");
+    return url.pipe(map(
+      valores => valores
+    ));
+  }
+
   public realizarLogin(login: Login) {
     let url = this.http.post<any>("http://localhost:8080/ecommerce/login-cliente", [login.email, login.senha]);
     return url.pipe(map(

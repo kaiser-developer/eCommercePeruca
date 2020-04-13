@@ -1,11 +1,11 @@
 {
-	"descricao": "Compra Aprovada"
+	"descricao": "Pedido Realizado"
 }
 {
-	"descricao": "Aguardando pagamento"
+	"descricao": "Pagamento aprovado"
 }
 {
-	"descricao": "Compra cancelada"
+	"descricao": "Pedido cancelada"
 }
 {
 	"descricao": "Pedido Entregue"

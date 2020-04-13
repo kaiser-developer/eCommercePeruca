@@ -5,7 +5,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal/';
 import { Endereco } from 'src/app/model/endereco';
 import { Carrinho } from 'src/app/model/carrinho';
 import { StorageService } from 'src/app/services/storage.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lista-pedidos',
@@ -25,7 +25,8 @@ export class ListaPedidosComponent implements OnInit {
   constructor(private requisicoes: RequisicoesService,
               private modalService: BsModalService,
               private storage: StorageService,
-              private route: Router) { 
+              private route: Router,
+              private routeActived: ActivatedRoute) { 
     requisicoes.getPedidos().subscribe(
       dados => {
         this.pedidos = dados;
@@ -81,7 +82,6 @@ export class ListaPedidosComponent implements OnInit {
         this.storage.salvarCarrinho(this.carrinho);
       })
     });
-      
-    this.route.navigate(['\checkout']);
+    this.route.navigate(['/checkout']);
   }
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from 'ngx-mask';
+import { NbThemeModule, NbStepperModule } from "@nebular/theme";
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -57,6 +58,8 @@ import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relat
 import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes-pedido/detalhes-pedido.component';
 import { FinalizarDoacaoComponent } from './components/checkout-doacao/finalizar-doacao/finalizar-doacao.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
+import { ProgressoPedidoComponent } from './components/historico-pedidos/progresso-pedido/progresso-pedido.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -111,6 +114,7 @@ import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-
     DetalhesPedidoComponent,
     FinalizarDoacaoComponent,
     RecuperarSenhaComponent,
+    ProgressoPedidoComponent,
     
     
     
@@ -122,7 +126,10 @@ import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-
     ReactiveFormsModule,
     HttpClientModule,
     ModalModule.forRoot(),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot(),
+    NbStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
