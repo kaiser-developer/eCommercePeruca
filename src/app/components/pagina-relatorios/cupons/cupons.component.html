@@ -7,13 +7,13 @@
     <div *ngFor="let cupom of cupons">
       <div class="border border-success bg-light">
         <h5>{{cupom.nome}}</h5>
-        <p>{{cupom.Desconto}}</p>
+        <p>{{cupom.desconto}}%</p>
         <p>{{cupom.ativo}}</p>
         <hr>
-        <label for="Ativar">Ativar este cupom ?</label>
-        <div class="form-group" name="Ativar">
-          <button (click)="ativarCupom()">Ativar</button>
-          <button (click)="desativarCupom()">Desativar</button>
+        <h6>Ativar este cupom?</h6>
+        <div class="btn-group d-inline-block" width="100%">
+          <button type="button" class="btn btn-primary" (click)="ativarCupom()">Ativar</button>
+          <button type="button" class="btn btn-danger" (click)="desativarCupom()">Desativar</button>
         </div>
       </div>
 
