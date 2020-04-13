@@ -141,4 +141,12 @@ export class RequisicoesService {
       )
     )
   }
+  public deletarProduto(codProduto: Produto){
+    let url = this.http.delete<Produto>(`http://localhost:8080/ecommerce/deletar-produto/${codProduto}`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
+  }
 }
