@@ -114,6 +114,7 @@ import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-
     
     
     
+    
   ],
   imports: [
     BrowserModule,

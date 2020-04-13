@@ -8,6 +8,7 @@ import { Compra } from '../model/compra';
 import { Item } from '../model/Item';
 import { Carrinho } from '../model/carrinho';
 import { Cupom } from '../model/cupom';
+import { Produto } from '../model/produto';
 
 const storage: StorageService = new StorageService();
 
@@ -70,5 +71,11 @@ export class CadastrosService {
     return url.pipe(map(
       dados => dados
     ));
+  }
+  public cadastrarProduto(produto: Produto){
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-produto", produto);
+    return url.pipe(map(
+      dados => dados
+    ))
   }
 }

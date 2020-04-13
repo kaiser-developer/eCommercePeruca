@@ -56,4 +56,5 @@ export class FuncionariosComponent implements OnInit {
       }
     )
   }
+  
 }
