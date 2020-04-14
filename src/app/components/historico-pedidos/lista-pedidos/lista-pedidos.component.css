@@ -51,6 +51,10 @@ p{
   border-right: black;
 }
 
+.progresso-pedido{
+  margin-top: -50px;
+}
+
 @font-face {font-family : "'Abel'";font-style : normal;font-weight : 400;
     src : local('Abel'), local('Abel-Regular'), url(https://fonts.gstatic.com/s/abel/v6/N59kklKPso9WzbZH9jwJSg.ttf) format('truetype');}
     body {background-color:rgb(239, 212, 38);font-family : "'Abel'";}

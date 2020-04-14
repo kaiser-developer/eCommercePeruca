@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from 'ngx-mask';
+import { NbThemeModule, NbStepperModule } from "@nebular/theme";
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -58,6 +59,9 @@ import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes
 import { FinalizarDoacaoComponent } from './components/checkout-doacao/finalizar-doacao/finalizar-doacao.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { CarrinhoDoacaoComponent } from './components/checkout-doacao/carrinho-doacao/carrinho-doacao.component';
+import { ProgressoPedidoComponent } from './components/historico-pedidos/progresso-pedido/progresso-pedido.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
 
 
 @NgModule({
@@ -112,7 +116,10 @@ import { CarrinhoDoacaoComponent } from './components/checkout-doacao/carrinho-d
     DetalhesPedidoComponent,
     FinalizarDoacaoComponent,
     RecuperarSenhaComponent,
-    CarrinhoDoacaoComponent
+    CarrinhoDoacaoComponent,
+    ProgressoPedidoComponent,
+    ProdutosRecomendadosComponent,
+    
     
     
   ],
@@ -123,7 +130,10 @@ import { CarrinhoDoacaoComponent } from './components/checkout-doacao/carrinho-d
     ReactiveFormsModule,
     HttpClientModule,
     ModalModule.forRoot(),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot(),
+    NbStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
