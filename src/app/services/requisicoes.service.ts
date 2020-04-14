@@ -20,7 +20,7 @@ const storage: StorageService = new StorageService();
 
 export class RequisicoesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cupom :Cupom) { }
 
   getEnderecoViaCep(cep: string) {
     let url = this.http.get<Endereco>(`https://viacep.com.br/ws/${cep}/json/`);
@@ -90,6 +90,15 @@ export class RequisicoesService {
   public getCupons() {
     let idCliente = storage.recuperarUsuario().codCliente;
     let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/filtrar-cupons/${idCliente}`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
+  }
+
+  public atualizarCupom(){
+    let url = this.http.patch<Cupom[]>(`http://localhost:8080/ecommerce/atualizar-cupom/${idCupom}`,this.cupom);
     return url.pipe(
       map(
         data => data
