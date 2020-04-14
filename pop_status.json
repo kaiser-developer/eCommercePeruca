@@ -8,8 +8,8 @@
 	"descricao": "Pedido cancelada"
 }
 {
-	"descricao": "Pedido Entregue"
+	"descricao": "Pedido em transito"
 }
 {
-	"descricao": "Pedido em transito"
+	"descricao": "Pedido Entregue"
 }

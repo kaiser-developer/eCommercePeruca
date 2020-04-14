@@ -95,7 +95,8 @@ export class RequisicoesService {
   }
 
   public getCupons(){
-    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-todos-cupons`);
+    let idCliente = storage.recuperarUsuario().codCliente;
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-cupons-cliente/${idCliente}`);
     return url.pipe(
       map(
         data => data
@@ -142,6 +143,24 @@ export class RequisicoesService {
 
   public redefinirSenha(email: string, codigo: string, senha: string){
     let url = this.http.patch<Cliente>("http://localhost:8080/ecommerce/redefinir-senha", [email, codigo, senha])
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public produtosRecomendados(codProduto: number){
+    let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/recomendados/" + codProduto)
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public produtosCategoria(codProduto:number, categoria: number){
+    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}/${categoria}`)
     return url.pipe(
       map(
         dados => dados

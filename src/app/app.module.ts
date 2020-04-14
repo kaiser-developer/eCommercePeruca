@@ -60,6 +60,7 @@ import { FinalizarDoacaoComponent } from './components/checkout-doacao/finalizar
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { ProgressoPedidoComponent } from './components/historico-pedidos/progresso-pedido/progresso-pedido.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
 
 
 @NgModule({
@@ -115,6 +116,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FinalizarDoacaoComponent,
     RecuperarSenhaComponent,
     ProgressoPedidoComponent,
+    ProdutosRecomendadosComponent,
     
     
     
