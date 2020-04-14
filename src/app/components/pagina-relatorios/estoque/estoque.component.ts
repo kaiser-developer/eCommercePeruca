@@ -4,6 +4,7 @@ import { Produto } from 'src/app/model/produto';
 import { Validacoes } from 'src/app/model/validacoes';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
 
 @Component({
   selector: 'app-estoque',
@@ -14,7 +15,9 @@ export class EstoqueComponent implements OnInit {
   formCadProd: FormGroup;
   validacoes: Validacoes = new Validacoes();
 
-  constructor(private formBuilder: FormBuilder, private cadastro: CadastrosService, private storage: StorageService) { }
+   
+
+  constructor(private formBuilder: FormBuilder, private cadastro: CadastrosService, private requisicoes: RequisicoesService) { }
 
   ngOnInit(): void { this.createForm(new Produto)}
     createForm(produto: Produto){
@@ -39,7 +42,9 @@ export class EstoqueComponent implements OnInit {
       }
     )
     console.log(this.formCadProd);
-    
+  }
+  deletarProduto(codProduto: Produto){
+    this.requisicoes.deletarProduto(codProduto)
   }
   
 }

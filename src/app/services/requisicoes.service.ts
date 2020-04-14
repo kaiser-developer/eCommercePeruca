@@ -47,6 +47,13 @@ export class RequisicoesService {
     ));
   }
 
+  getProdutosMaisVendidos() {
+    let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/mais-vendidos");
+    return url.pipe(map(
+      valores => valores
+    ));
+  }
+
   public realizarLogin(login: Login) {
     let url = this.http.post<any>("http://localhost:8080/ecommerce/login-cliente", [login.email, login.senha]);
     return url.pipe(map(
@@ -88,7 +95,8 @@ export class RequisicoesService {
   }
 
   public getCupons(){
-    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-todos-cupons`);
+    let idCliente = storage.recuperarUsuario().codCliente;
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-cupons-cliente/${idCliente}`);
     return url.pipe(
       map(
         data => data
@@ -141,11 +149,29 @@ export class RequisicoesService {
       )
     )
   }
+<<<<<<< HEAD
   public deletarProduto(codProduto: Produto){
     let url = this.http.delete<Produto>(`http://localhost:8080/ecommerce/deletar-produto/${codProduto}`);
     return url.pipe(
       map(
         data => data
+=======
+
+  public produtosRecomendados(codProduto: number){
+    let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/recomendados/" + codProduto)
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public produtosCategoria(codProduto:number, categoria: number){
+    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}/${categoria}`)
+    return url.pipe(
+      map(
+        dados => dados
+>>>>>>> 2c9f4f9a803fd6f43d4abb7bc98e4a45764c8a2d
       )
     )
   }

@@ -9,6 +9,10 @@
     width: 100%;
 }
 
+.img-thumbnail{
+    width: 100vw;
+}
+
 #carrosel {
     margin-top: 115px;
 }

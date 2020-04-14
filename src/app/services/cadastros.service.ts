@@ -37,7 +37,6 @@ export class CadastrosService {
 
   public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom){
     let compra: Compra = new Compra();
-    console.log(endereco, frete, storage.recuperarCarrinho(), storage.recuperarUsuario())
     compra.codCliente = endereco.codCliente;
     compra.codEndereco = endereco.codEndereco;
     compra.dsFormaPagto = "credito";
@@ -76,6 +75,6 @@ export class CadastrosService {
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-produto", produto);
     return url.pipe(map(
       dados => dados
-    ))
+    ));
   }
 }

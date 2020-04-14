@@ -14,12 +14,8 @@ export class MaisVendidosComponent implements OnInit {
   formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
 
   constructor(private requisicoes: RequisicoesService, private route: Router) { 
-    this.requisicoes.getProdutos().subscribe(
-      data => {
-        for(let i =0; i < 4; i++){
-          this.produtosVisiveis.push(data[i]);
-        }
-      }
+    this.requisicoes.getProdutosMaisVendidos().subscribe(
+      data => this.produtosVisiveis = data
     )
   }
 

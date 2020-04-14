@@ -11,7 +11,7 @@
             <tbody>
                 <tr *ngFor="let item of carrinho">
                     <th scope="row">{{item.produto.descricao}}</th>
-                    <th>R$ {{item.produto.valorProduto}}</th>
+                    <th>{{item.produto.valorProduto.toLocaleString('pt-BR', formato)}}</th>
                     <th>
                         {{item.quantidade}}
                     </th>

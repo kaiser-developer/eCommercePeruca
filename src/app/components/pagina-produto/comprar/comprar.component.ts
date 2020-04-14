@@ -16,6 +16,8 @@ export class ComprarComponent implements OnChanges {
   carrinho: Carrinho[] = [];
   compra: Carrinho = new Carrinho();
   @Output() atualizarCarrinho: EventEmitter<any> = new EventEmitter();
+  formato = { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' };
+
 
   constructor(private requisicoes: RequisicoesService, private storage: StorageService) { }
 
@@ -24,20 +26,20 @@ export class ComprarComponent implements OnChanges {
       dados => {
         this.produto = dados
       }
-      
+
     )
   }
 
-  adicionarNoCarrinho(qtd){
+  adicionarNoCarrinho(qtd) {
     this.carrinho = this.storage.recuperarCarrinho();
     this.compra.produto = this.produto;
     this.compra.quantidade = +qtd;
-    if(this.carrinho != null){
+    if (this.carrinho != null) {
       this.carrinho = this.carrinho.filter(
         item => item.produto.codProduto != this.produto.codProduto
       )
       this.carrinho.push(this.compra);
-    }else{
+    } else {
       this.carrinho = [];
       this.carrinho.push(this.compra);
     }

@@ -25,7 +25,7 @@ import { RecuperarSenhaComponent } from "./components/recuperar-senha/recuperar-
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'checkout', component: CheckoutComponent},
+  { path: 'checkout', component: CheckoutComponent, runGuardsAndResolvers: 'always'},
   { path: 'login', component: LoginComponent },
   { path: 'cadastre-se', component: CadastroComponent},
   { path: 'contato', component: ContatoComponent },
@@ -51,7 +51,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   exports: [RouterModule]
 })
