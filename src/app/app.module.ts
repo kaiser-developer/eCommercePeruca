@@ -4,9 +4,10 @@ import { NgxMaskModule } from 'ngx-mask';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { NbThemeModule, NbStepperModule } from "@nebular/theme";
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ClarityModule } from '@clr/angular';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,9 +16,9 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DadosPagamentoComponent } from './components/checkout/dados-pagamento/dados-pagamento.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
 import { NavCheckoutComponent } from './components/checkout/nav-checkout/nav-checkout.component';
 import { CadastroEnderecoComponent } from './components/cadastro-endereco/cadastro-endereco.component';
 import { EnderecoComponent } from './components/checkout/endereco/endereco.component';
@@ -141,7 +142,6 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     MatSidenavModule,
     InputSwitchModule,
     NbStepperModule,
-    ClarityModule,
     TableModule,
     DialogModule
   ],
