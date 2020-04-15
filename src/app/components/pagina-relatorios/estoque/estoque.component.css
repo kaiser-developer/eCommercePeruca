@@ -1,0 +1,14 @@
+#storage {
+    width: 100vw;
+    height: 60vh;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+.ui-table-globalfilter-container {
+    float: right;    
+}
+
+.editar{
+    cursor: pointer;
+}
