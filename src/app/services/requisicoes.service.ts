@@ -96,7 +96,7 @@ export class RequisicoesService {
 
   public getCupons(){
     let idCliente = storage.recuperarUsuario().codCliente;
-    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-cupons-cliente/${idCliente}`);
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/filtrar-cupons/${idCliente}`);
     return url.pipe(
       map(
         data => data
@@ -159,8 +159,8 @@ export class RequisicoesService {
     )
   }
 
-  public produtosCategoria(codProduto:number, categoria: number){
-    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}/${categoria}`)
+  public produtosCategoria(codProduto:number){
+    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}`)
     return url.pipe(
       map(
         dados => dados

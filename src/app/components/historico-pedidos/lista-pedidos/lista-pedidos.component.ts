@@ -25,8 +25,7 @@ export class ListaPedidosComponent implements OnInit {
   constructor(private requisicoes: RequisicoesService,
     private modalService: BsModalService,
     private storage: StorageService,
-    private route: Router,
-    private routeActived: ActivatedRoute) {
+    private route: Router) {
     requisicoes.getPedidos().subscribe(
       dados => {
         this.pedidos = dados;

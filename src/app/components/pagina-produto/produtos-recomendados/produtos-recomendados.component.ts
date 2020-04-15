@@ -21,10 +21,10 @@ export class ProdutosRecomendadosComponent implements OnChanges {
     this.requisicoes.produtosRecomendados(this.idProduto).subscribe(
       dados => {
         this.produtos = dados
-        this.requisicoes.produtosCategoria(this.idProduto, this.produtos[0].categoria.codigo).subscribe(
-          data => this.produtosCategoria = data
-        )
       }
+    )
+    this.requisicoes.produtosCategoria(this.idProduto).subscribe(
+      data => this.produtosCategoria = data
     )
   }
 

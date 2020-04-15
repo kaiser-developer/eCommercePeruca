@@ -4,3 +4,11 @@
     border: 1px solid black;
     overflow: auto;
 }
+
+.ui-table-globalfilter-container {
+    float: right;    
+}
+
+.editar{
+    cursor: pointer;
+}
