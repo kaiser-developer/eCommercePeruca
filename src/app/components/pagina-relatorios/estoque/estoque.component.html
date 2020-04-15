@@ -3,5 +3,31 @@
     <h1>Estoque</h1>
     <div id="storage" class="container">
         <strong>Tabelas de Estoque</strong>
+        <h5 class="modal-title pull-left">CUPONS</h5><br>
+        <div class="row">
+            <div class="card-deck ml-2">
+                <div class="card boxCupom" *ngFor="let cupom of cupons">
+                    <div class="card-body">
+                        <h5 class="card-title">{{cupom.nome}}</h5>
+                        <p class="card-text">Desconto:{{cupom.desconto}}%</p>
+                        <input type="checkbox" clrToggle />
+                        <a href="#" class="card-link">{{cupom.ativo}}</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
+
+
+<!-- <ng-template #modalCupom>
+    <div class="modal-header">
+        <h5 class="modal-title pull-left">CUPONS</h5><br>
+        <div *ngFor="let cupom of cupons" class="boxCupom alert alert-success mb-3 mt-2 p-1">
+            <h5>Nome: {{cupom.nome}}</h5>
+            <span>Desconto: {{cupom.desconto}}</span><br>
+            <span>Ativo: {{cupom.ativo}}</span>
+        </div>
+    </div>
+</ng-template> -->

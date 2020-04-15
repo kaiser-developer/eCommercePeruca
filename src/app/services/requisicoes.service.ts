@@ -20,7 +20,7 @@ const storage: StorageService = new StorageService();
 
 export class RequisicoesService {
 
-  constructor(private http: HttpClient, private cupom :Cupom) { }
+  constructor(private http: HttpClient) { }
 
   getEnderecoViaCep(cep: string) {
     let url = this.http.get<Endereco>(`https://viacep.com.br/ws/${cep}/json/`);
@@ -42,6 +42,13 @@ export class RequisicoesService {
 
   getProdutos() {
     let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produto");
+    return url.pipe(map(
+      valores => valores
+    ));
+  }
+
+  getProdutosMaisVendidos() {
+    let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/mais-vendidos");
     return url.pipe(map(
       valores => valores
     ));
@@ -87,6 +94,15 @@ export class RequisicoesService {
     )
   }
 
+  public todosCupons(){
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-todos-cupons`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    ) 
+  }
+
   public getCupons() {
     let idCliente = storage.recuperarUsuario().codCliente;
     let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/filtrar-cupons/${idCliente}`);
@@ -97,14 +113,10 @@ export class RequisicoesService {
     )
   }
 
-  public atualizarCupom(){
-    let url = this.http.patch<Cupom[]>(`http://localhost:8080/ecommerce/atualizar-cupom/${idCupom}`,this.cupom);
-    return url.pipe(
-      map(
-        data => data
-      )
-    )
+  public atualizarCupom(codigoCupom: number) {
+    let url = this.http.patch<Cupom[]>(`http://localhost:8080/ecommerce/atualizar-cupom/${codigoCupom}`, null);
   }
+
 
   public getPedidos() {
     let idCliente = storage.recuperarUsuario().codCliente;
@@ -145,6 +157,24 @@ export class RequisicoesService {
 
   public redefinirSenha(email: string, codigo: string, senha: string) {
     let url = this.http.patch<Cliente>("http://localhost:8080/ecommerce/redefinir-senha", [email, codigo, senha])
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public produtosRecomendados(codProduto: number) {
+    let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/recomendados/" + codProduto)
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public produtosCategoria(codProduto: number, categoria: number) {
+    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}/${categoria}`)
     return url.pipe(
       map(
         dados => dados

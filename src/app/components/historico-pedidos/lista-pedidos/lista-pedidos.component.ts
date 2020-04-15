@@ -5,7 +5,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal/';
 import { Endereco } from 'src/app/model/endereco';
 import { Carrinho } from 'src/app/model/carrinho';
 import { StorageService } from 'src/app/services/storage.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-lista-pedidos',
@@ -23,14 +23,15 @@ export class ListaPedidosComponent implements OnInit {
   carrinho: Carrinho[] = [];
 
   constructor(private requisicoes: RequisicoesService,
-              private modalService: BsModalService,
-              private storage: StorageService,
-              private route: Router) { 
+    private modalService: BsModalService,
+    private storage: StorageService,
+    private route: Router,
+    private routeActived: ActivatedRoute) {
     requisicoes.getPedidos().subscribe(
       dados => {
         this.pedidos = dados;
       },
-      error =>{
+      error => {
         alert("Erro ao acessar pedidos");
       }
     )
@@ -39,13 +40,13 @@ export class ListaPedidosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  dataEntrega(pedido: Compra){
+  dataEntrega(pedido: Compra) {
     let dataEntrega = new Date(pedido.dtPedido);
-    if(pedido.vlFrete == 10)
+    if (pedido.vlFrete == 10)
       dataEntrega.setDate(dataEntrega.getDate() + 15);
-    if(pedido.vlFrete == 20)
+    if (pedido.vlFrete == 20)
       dataEntrega.setDate(dataEntrega.getDate() + 7);
-    if(pedido.vlFrete == 30)
+    if (pedido.vlFrete == 30)
       dataEntrega.setDate(dataEntrega.getDate() + 3);
     return dataEntrega;
   }
@@ -60,28 +61,37 @@ export class ListaPedidosComponent implements OnInit {
       endereco => this.enderecoPedido = endereco
     )
     this.detPedido = pedido;
-    setTimeout(() => { this.modalRef = this.modalService.show(template)}, 500);
+    setTimeout(() => { this.modalRef = this.modalService.show(template) }, 500);
   }
 
-  cancelarPedidoFuncao(){
+  cancelarPedidoFuncao() {
     this.requisicoes.cancelarPedido(this.cancPedido.codPedido).subscribe(
       dados => {
         let posPedido = this.pedidos.indexOf(this.cancPedido);
         this.pedidos[posPedido] = dados;
       }
     );
-    
+
     this.modalRef.hide();
   }
 
-  refazerPedido(pedido){
+  refazerPedido(pedido) {
     pedido.itens.forEach(item => {
       this.requisicoes.buscarProduto(item.codProduto).subscribe(produto => {
         this.carrinho.push(new Carrinho(produto, item.quantidade));
         this.storage.salvarCarrinho(this.carrinho);
       })
-      
-      this.route.navigate(['\checkout']);
     });
+    this.route.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    }
+
+    this.route.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.route.navigated = false;
+        window.scrollTo(0, 0);
+      }
+    });
+    this.route.navigate(['/checkout']);
   }
 }

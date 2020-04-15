@@ -4,3 +4,8 @@
     border: 1px solid black;
     overflow: auto;
 }
+
+.boxCupom {
+    width: 18rem;
+    align-self: center;
+}

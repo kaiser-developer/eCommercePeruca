@@ -19,7 +19,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 154.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/001%20-%20frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/001%20-%20lateral.jpg?raw=true"},
@@ -33,7 +33,7 @@
         "codigo": 1
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 159.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/002%20-%20frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/002%20-%20lateral.jpg?raw=true"},
@@ -47,7 +47,7 @@
         "codigo": 1
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 164.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/003%20-%20frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/003%20-%20lateral.jpg?raw=true"},
@@ -60,7 +60,7 @@
         "codigo": 4
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 169.99,
     "imagens": [
         {"local": "https://raw.githubusercontent.com/kaiser-developer/eCommercePeruca/dev/src/assets/images/produtos%20-%20perucas/017%20-%20frente.jpg?raw=true"},
         {"local": "https://raw.githubusercontent.com/kaiser-developer/eCommercePeruca/dev/src/assets/images/produtos%20-%20perucas/descrições%20de%20uso%20015.jpg?raw=true"}
@@ -72,7 +72,7 @@
         "codigo": 4
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 174.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/004%20frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/004%20lateral.jpg?raw=true"}
@@ -84,7 +84,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 179.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/005-%20frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/005%20-%20lateral.jpg?raw=true"},
@@ -97,7 +97,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 184.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/007%20(1).jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/007%20(2).jpg?raw=true"},
@@ -110,7 +110,7 @@
         "codigo": 1
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 189.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/008-frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/008-%20lateral.jpg?raw=true"},
@@ -123,7 +123,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 194.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/009-frente%20(2).jpg?raw=true"},
         {"local": "https://raw.githubusercontent.com/kaiser-developer/eCommercePeruca/dev/src/assets/images/produtos%20-%20perucas/009-lateral.jpg?raw=true"},
@@ -136,7 +136,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 199.99,
     "imagens": [
         {"local": "https://raw.githubusercontent.com/kaiser-developer/eCommercePeruca/dev/src/assets/images/produtos%20-%20perucas/010-frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/010-lateral.jpg?raw=true"},
@@ -149,7 +149,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 204.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/011-%20frente.jpg?raw=true"},
         {"local": "https://raw.githubusercontent.com/kaiser-developer/eCommercePeruca/dev/src/assets/images/produtos%20-%20perucas/011%20detalhes.jpg?raw=true"}
@@ -161,7 +161,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 209.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/012%20frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/012%20lateral.jpg?raw=true"},
@@ -174,7 +174,7 @@
         "codigo": 1
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 214.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/013-frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/013-lateral.jpg?raw=true"},
@@ -187,7 +187,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 219.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/014%20frente.jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/014%20lateral.jpg?raw=true"},
@@ -200,7 +200,7 @@
         "codigo": 3
     },
     "qtdProduto": 200,
-    "valorProduto": 149.99,
+    "valorProduto": 224.99,
     "imagens": [
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/015-%20frente%20(1).jpg?raw=true"},
         {"local": "https://github.com/kaiser-developer/eCommercePeruca/blob/dev/src/assets/images/produtos%20-%20perucas/015-%20lateral.jpg?raw=true"},
