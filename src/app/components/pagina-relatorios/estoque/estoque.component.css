@@ -5,6 +5,10 @@
     overflow: auto;
 }
 
-.ocultar {
-    display: none;
+.ui-table-globalfilter-container {
+    float: right;    
+}
+
+.editar{
+    cursor: pointer;
 }

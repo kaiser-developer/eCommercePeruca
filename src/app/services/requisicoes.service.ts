@@ -11,6 +11,7 @@ import { Cupom } from '../model/cupom';
 import { Compra } from '../model/compra';
 import { Funcionario } from "../model/funcionario";
 import { Cliente } from '../model/cliente';
+import { StatusFaleConosco } from '../model/statusFaleConosco';
 
 const storage: StorageService = new StorageService();
 
@@ -64,7 +65,7 @@ export class RequisicoesService {
   }
 
   public loginFunc(funcionario: Funcionario) {
-    let url = this.http.post<any>("http://localhost:8080/ecommerce/login-funcionario",funcionario);
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/login-funcionario", funcionario);
     console.log(funcionario)
     return url.pipe(map(
       dados => dados
@@ -94,9 +95,18 @@ export class RequisicoesService {
     )
   }
 
-  public getCupons(){
+  public todosCupons(){
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-todos-cupons`);
+    return url.pipe(
+      map(
+        data => data
+      )
+    ) 
+  }
+
+  public getCupons() {
     let idCliente = storage.recuperarUsuario().codCliente;
-    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/buscar-cupons-cliente/${idCliente}`);
+    let url = this.http.get<Cupom[]>(`http://localhost:8080/ecommerce/filtrar-cupons/${idCliente}`);
     return url.pipe(
       map(
         data => data
@@ -104,7 +114,17 @@ export class RequisicoesService {
     )
   }
 
-  public getPedidos(){
+  public atualizarCupom(codigoCupom: number, cupom: Cupom) {
+    let url = this.http.patch<Cupom>(`http://localhost:8080/ecommerce/atualizar-cupom/${codigoCupom}`, cupom);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
+  }
+
+
+  public getPedidos() {
     let idCliente = storage.recuperarUsuario().codCliente;
     let url = this.http.get<Compra[]>(`http://localhost:8080/ecommerce/buscar-pedidos/${idCliente}`);
     return url.pipe(
@@ -114,7 +134,7 @@ export class RequisicoesService {
     )
   }
 
-  public cancelarPedido(codigoPedido:number){
+  public cancelarPedido(codigoPedido: number) {
     let url = this.http.patch<Compra>(`http://localhost:8080/ecommerce/cancelar-pedido/${codigoPedido}`, null);
     return url.pipe(
       map(
@@ -123,7 +143,7 @@ export class RequisicoesService {
     )
   }
 
-  public endereco(codigoEndereco: number){
+  public endereco(codigoEndereco: number) {
     let url = this.http.get<any>("http://localhost:8080/ecommerce/endereco/" + codigoEndereco)
     return url.pipe(
       map(
@@ -132,7 +152,7 @@ export class RequisicoesService {
     )
   }
 
-  public enviarCodigoRedefinicao(email: String){
+  public enviarCodigoRedefinicao(email: String) {
     let url = this.http.patch<any>("http://localhost:8080/ecommerce/enviar-codigo/", [email])
     return url.pipe(
       map(
@@ -141,7 +161,7 @@ export class RequisicoesService {
     )
   }
 
-  public redefinirSenha(email: string, codigo: string, senha: string){
+  public redefinirSenha(email: string, codigo: string, senha: string) {
     let url = this.http.patch<Cliente>("http://localhost:8080/ecommerce/redefinir-senha", [email, codigo, senha])
     return url.pipe(
       map(
@@ -158,7 +178,7 @@ export class RequisicoesService {
       )
     }
 
-  public produtosRecomendados(codProduto: number){
+  public produtosRecomendados(codProduto: number) {
     let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/recomendados/" + codProduto)
     return url.pipe(
       map(
@@ -167,8 +187,17 @@ export class RequisicoesService {
     )
   }
 
-  public produtosCategoria(codProduto:number, categoria: number){
-    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}/${categoria}`)
+  public produtosCategoria(codProduto:number){
+    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}`)
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public statusFL(){
+    let url = this.http.get<StatusFaleConosco[]>(`http://localhost:8080/ecommerce/buscar-statusFL/`)
     return url.pipe(
       map(
         dados => dados

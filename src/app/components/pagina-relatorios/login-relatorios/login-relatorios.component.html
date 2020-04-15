@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="col-6">
+        <img src="../../../../assets/images/logo.png" width="75px">
+        
+        <div id="outraParte" class="col-6">
+            <form id="form-signin">
+                <h1 class="h3 mb-6 font-weight-normal text-center">Retaguarda Wig's House</h1>
+
+                <input type="email" class="form-control mb-2" placeholder="Nome.Matrícula" required minlength="15"
+                    maxlength="35" autofocus="" formControlName="matricula">
+
+                <input type="password" class="form-control" placeholder="Senha" required minlength="8" maxlength="12"
+                    formControlName="senha">
+
+                <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
+
+                <div>
+                    <a routerLink="/recuperar-senha" id="cadastro">Esqueceu sua senha?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

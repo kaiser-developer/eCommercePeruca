@@ -8,8 +8,7 @@ import { Compra } from '../model/compra';
 import { Item } from '../model/Item';
 import { Carrinho } from '../model/carrinho';
 import { Cupom } from '../model/cupom';
-import { ProdutoApi } from '../model/produto-api';
-import { Imagem } from '../model/Imagem';
+import { FaleConosco } from '../model/faleConosco';
 
 const storage: StorageService = new StorageService();
 
@@ -91,12 +90,11 @@ export class CadastrosService {
       dados => dados
     ));
   }
-  public cadastrarProduto(produto: ProdutoApi, imagens: File[]){
-    produto.imagens = [];
-    produto.imagens.push(new Imagem("../Users/DRAraujo/Desktop/eCommercePeruca/src/assets/images/000 - frente"))
-    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-produto", produto);
+  public faleConosco(faleConosco: FaleConosco){
+    faleConosco.codCliente = storage.recuperarUsuario().codCliente
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-fale-conosco", faleConosco);
     return url.pipe(map(
-      dados => dados
+    dados => dados
     ));
   }
 }
