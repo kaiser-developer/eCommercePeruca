@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div id="storage" class="container">
+        <h5 class="modal-title pull-left">CUPONS</h5><br>
+        <div class="row">
+            <div class="card-deck ml-2">
+                <div class="card boxCupom" *ngFor="let cupom of cupons">
+                    <div class="card-body">
+                        <h5 class="card-title">{{cupom.nome}}</h5>
+                        <p class="card-text">Desconto:{{cupom.desconto}}%</p>
+                        <p-inputSwitch [(ngModel)]="cupom.ativo" (click)="ativarCupom(cupom)"> {{cupom.ativo}}
+                        </p-inputSwitch>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

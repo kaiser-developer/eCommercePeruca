@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from 'ngx-mask';
+import {InputSwitchModule} from 'primeng/inputswitch';
 import { NbThemeModule, NbStepperModule } from "@nebular/theme";
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { ClarityModule } from '@clr/angular';
+import {TableModule} from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -134,7 +138,12 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     BrowserAnimationsModule,
     NbThemeModule.forRoot(),
     NbStepperModule,
-    MatSidenavModule
+    MatSidenavModule,
+    InputSwitchModule,
+    NbStepperModule,
+    ClarityModule,
+    TableModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
