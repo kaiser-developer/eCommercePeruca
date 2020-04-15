@@ -1,18 +1,19 @@
 <div class="container-fluid">
-    <div class="col-6">
-        <img src="../../../../assets/images/logo.png" width="75px">
+    <div id="logo" class="col-6">
+        <img src="../../../../assets/images/logoWig.png" width="400px">
         
-        <div id="outraParte" class="col-6">
+        <div id="formulario" class="col-6">
             <form id="form-signin">
-                <h1 class="h3 mb-6 font-weight-normal text-center">Retaguarda Wig's House</h1>
+                <h6 class="h3 mb-6 font-weight-normal text-center">Retaguarda</h6>
+                <p>Use seu ID da empresa para entrar.</p>
 
-                <input type="email" class="form-control mb-2" placeholder="Nome.Matrícula" required minlength="15"
+                <input type="email" class="form-control mb-2" placeholder="Matrícula" required minlength="15"
                     maxlength="35" autofocus="" formControlName="matricula">
 
                 <input type="password" class="form-control" placeholder="Senha" required minlength="8" maxlength="12"
-                    formControlName="senha">
-
-                <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
+                    formControlName="senha">                
+                    <br>
+                <button class="btn btn-lg btn-success btn-block" routerLink="/pg-relatorios" type="submit">Entrar</button>
 
                 <div>
                     <a routerLink="/recuperar-senha" id="cadastro">Esqueceu sua senha?</a>
