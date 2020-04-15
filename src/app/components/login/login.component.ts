@@ -12,6 +12,7 @@ import { StorageService } from 'src/app/services/storage.service';
 
 export class LoginComponent implements OnInit {
 
+
   formLogin;
   email: string;
   senha: string;
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private requisicoes: RequisicoesService,
     private route: Router,
-    private storage: StorageService) { }
+    private storage: StorageService) {}
 
   ngOnInit(): void {
     this.formLogin = this.fb.group({
