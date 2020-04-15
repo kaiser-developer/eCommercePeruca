@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Endereco } from '../model/endereco';
 import { StorageService } from './storage.service';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Cliente } from '../model/cliente';
 import { map } from "rxjs/operators";
 import { Compra } from '../model/compra';
 import { Item } from '../model/Item';
 import { Carrinho } from '../model/carrinho';
 import { Cupom } from '../model/cupom';
-import { Produto } from '../model/produto';
+import { ProdutoApi } from '../model/produto-api';
+import { Imagem } from '../model/Imagem';
 
 const storage: StorageService = new StorageService();
 
@@ -32,8 +33,27 @@ const enderecoBanco = (endereco, codCliente) =>{
 
   
 export class CadastrosService {
+  private images:object[] = [];
+  private url: string = 'https://api.imgur.com/3/image';
+  private clientId: string = 'b8c58d3c3d1dd47';
+  imageLink:any;
 
   constructor(private http: HttpClient) { }
+
+  public cadastrarImagem(imageFile){
+    let formData = new FormData();
+    formData.append('image', imageFile, "teste");
+ 
+    let header = new HttpHeaders({
+      "authorization": 'Client-ID '+this.clientId
+    });
+   
+    return this.http.post<any>(this.url, formData, {headers:header}).pipe(
+      map(
+        data => data
+      )
+    );
+  }
 
   public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom){
     let compra: Compra = new Compra();
@@ -71,7 +91,15 @@ export class CadastrosService {
       dados => dados
     ));
   }
-  public cadastrarProduto(produto: Produto){
+  public cadastrarProduto(produto: ProdutoApi, imagens: File[]){
+    imagens.forEach(imagem => {
+      this.cadastrarImagem(imagem).subscribe(
+        data => {
+          let imagem = new Imagem(data);
+          produto.imagens.push(imagem);
+        }
+      )
+    });
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-produto", produto);
     return url.pipe(map(
       dados => dados
