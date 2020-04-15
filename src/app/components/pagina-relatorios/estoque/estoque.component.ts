@@ -13,13 +13,13 @@ export class EstoqueComponent implements OnInit {
 
   cupons: Cupom[] = [];
   modalRef: BsModalRef;
+  checked: boolean;
 
   constructor(private modalService: BsModalService, private requisicoes: RequisicoesService) {
 
     this.requisicoes.todosCupons().subscribe(
       data => {
         this.cupons = data;
-        console.log(this.cupons)
       }
     )
   }
@@ -30,5 +30,15 @@ export class EstoqueComponent implements OnInit {
 
   abrirModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+  }
+
+  ativarCupom(cupom: Cupom) {
+    this.requisicoes.atualizarCupom(cupom.codCupom, cupom).subscribe(
+      cupomApi => {
+        alert("Cupom alterado com sucesso!");
+      }, error => {
+        alert("Erro ao alterar cupom!");
+      }
+    )
   }
 }

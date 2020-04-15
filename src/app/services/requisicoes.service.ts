@@ -113,8 +113,13 @@ export class RequisicoesService {
     )
   }
 
-  public atualizarCupom(codigoCupom: number) {
-    let url = this.http.patch<Cupom[]>(`http://localhost:8080/ecommerce/atualizar-cupom/${codigoCupom}`, null);
+  public atualizarCupom(codigoCupom: number, cupom: Cupom) {
+    let url = this.http.patch<Cupom>(`http://localhost:8080/ecommerce/atualizar-cupom/${codigoCupom}`, cupom);
+    return url.pipe(
+      map(
+        data => data
+      )
+    )
   }
 
 
