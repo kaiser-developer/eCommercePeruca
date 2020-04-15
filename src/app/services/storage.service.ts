@@ -70,7 +70,5 @@ export class StorageService {
   removerCarrinho() {
     localStorage.removeItem('carrinho');
   }
-  salvarProduto(produto: Produto) {
-    localStorage.setItem('produto', JSON.stringify(produto));
-  }
+ 
 }

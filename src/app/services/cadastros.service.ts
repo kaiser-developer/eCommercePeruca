@@ -92,14 +92,8 @@ export class CadastrosService {
     ));
   }
   public cadastrarProduto(produto: ProdutoApi, imagens: File[]){
-    imagens.forEach(imagem => {
-      this.cadastrarImagem(imagem).subscribe(
-        data => {
-          let imagem = new Imagem(data);
-          produto.imagens.push(imagem);
-        }
-      )
-    });
+    produto.imagens = [];
+    produto.imagens.push(new Imagem("../Users/DRAraujo/Desktop/eCommercePeruca/src/assets/images/000 - frente"))
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-produto", produto);
     return url.pipe(map(
       dados => dados
