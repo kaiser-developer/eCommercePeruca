@@ -1,21 +1,46 @@
-<app-nav-relatorios></app-nav-relatorios>
-<div class="container-fluid">
-    <h1>Estoque</h1>
-    <div id="storage" class="container">
-        <strong>Tabelas de Estoque</strong>
-        <h5 class="modal-title pull-left">CUPONS</h5><br>
-        <div class="row">
-            <div class="card-deck ml-2">
-                <div class="card boxCupom" *ngFor="let cupom of cupons">
-                    <div class="card-body">
-                        <h5 class="card-title">{{cupom.nome}}</h5>
-                        <p class="card-text">Desconto:{{cupom.desconto}}%</p>
-                        <p-inputSwitch [(ngModel)]="cupom.ativo" (click)="ativarCupom(cupom)"> {{cupom.ativo}}
-                        </p-inputSwitch>
-                    </div>
-                </div>
+<p-table #dt [columns]="cols" [value]="produtos" [paginator]="true" [rows]="10" [filterDelay]="0" [globalFilterFields]="['codProduto','descricao']">
+    <ng-template pTemplate="caption">
+        Lista de Produtos
+        <div class="ui-table-globalfilter-container">
+            <input type="text" pInputText placeholder="O que procura?" (input)="dt.filterGlobal($event.target.value, 'contains')">
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="codProduto">Código<p-sortIcon field="codProduto"></p-sortIcon></th>
+            <th>Produto</th>
+            <th pSortableColumn="descricao">Nome<p-sortIcon field="descricao"></p-sortIcon></th>
+            <th pSortableColumn="valorProduto">Preço uni.<p-sortIcon field="valorProduto"></p-sortIcon></th>
+            <th pSortableColumn="categoria.descricao">Categoria<p-sortIcon field="categoria.descricao"></p-sortIcon></th>
+            <th pSortableColumn="qtdProduto">Quantidade<p-sortIcon field="qtdProduto"></p-sortIcon></th>
+            <th>Editar</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-produtos>
+        <tr class="ui-selectable-row">
+            <td class="text-center">{{produtos.codProduto}}</td>
+            <td class="text-center"><img src="{{produtos.imagens[0].local}}" width="30px"></td>
+            <td class="text-center">{{produtos.descricao}}</td>
+            <td class="text-center">{{produtos.valorProduto}}</td>
+            <td class="text-center">{{produtos.categoria.descricao}}</td>
+            <td class="text-center">{{produtos.qtdProduto}}</td>
+            <td class="text-center">
+                <img class="editar" src="../../../../assets/images/edit.svg" alt="" width="20px" (click)="abrirModal(editarProduto, produtos)">
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
 
-            </div>
+<ng-template #editarProduto>
+    <div class="editarProduto">
+        <div class="modal-header">
+            <h5 >Código do produto nº {{produtoEditar.codProduto}}</h5>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div>
+            teste
         </div>
     </div>
-</div>
+</ng-template>

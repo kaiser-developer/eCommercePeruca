@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from 'ngx-mask';
 import {InputSwitchModule} from 'primeng/inputswitch';
-import { NbThemeModule } from "@nebular/theme";
+import { NbThemeModule, NbStepperModule } from "@nebular/theme";
+import { ClarityModule } from '@clr/angular';
+import {TableModule} from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -133,6 +136,10 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
     BrowserAnimationsModule,
     NbThemeModule.forRoot(),
     InputSwitchModule,
+    NbStepperModule,
+    ClarityModule,
+    TableModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

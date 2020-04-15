@@ -5,7 +5,10 @@
     overflow: auto;
 }
 
-.boxCupom {
-    width: 18rem;
-    align-self: center;
+.ui-table-globalfilter-container {
+    float: right;    
+}
+
+.editar{
+    cursor: pointer;
 }

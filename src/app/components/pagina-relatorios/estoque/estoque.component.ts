@@ -1,8 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Cupom } from "src/app/model/cupom";
+import { Produto } from 'src/app/model/produto';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { RequisicoesService } from "src/app/services/requisicoes.service";
-
 
 @Component({
   selector: 'app-estoque',
@@ -11,34 +10,36 @@ import { RequisicoesService } from "src/app/services/requisicoes.service";
 })
 export class EstoqueComponent implements OnInit {
 
-  cupons: Cupom[] = [];
+  produtos: any[] = [];
+  first: number = 0;
+  cols: any[];
+  display: boolean = false;
+  produtoEditar: Produto;
   modalRef: BsModalRef;
-  checked: boolean;
 
-  constructor(private modalService: BsModalService, private requisicoes: RequisicoesService) {
-
-    this.requisicoes.todosCupons().subscribe(
-      data => {
-        this.cupons = data;
-      }
-    )
-  }
+  constructor(private requisicoes: RequisicoesService,
+    private modalService: BsModalService) { }
 
   ngOnInit(): void {
-  }
-
-
-  abrirModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
-
-  ativarCupom(cupom: Cupom) {
-    this.requisicoes.atualizarCupom(cupom.codCupom, cupom).subscribe(
-      cupomApi => {
-        alert("Cupom alterado com sucesso!");
-      }, error => {
-        alert("Erro ao alterar cupom!");
+    this.requisicoes.getProdutos().subscribe(
+      data => {
+        this.produtos = data
       }
     )
+
+    this.cols = [
+      { field: 'imagem', header: 'Produto' },
+      { field: 'codProduto', header: 'Código' },
+      { field: 'descricao', header: 'Nome' },
+      { field: 'valorProduto', header: 'Preço' },
+      { field: 'categoria', header: 'Categoria' },
+      { field: 'qtdProduto', header: 'Quantidade' }
+    ];
+  }
+
+  abrirModal(template: TemplateRef<any>, produto: Produto) {
+    this.produtoEditar = produto;
+    console.log(this.produtoEditar);
+    this.modalRef = this.modalService.show(template)
   }
 }

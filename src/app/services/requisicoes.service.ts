@@ -178,8 +178,8 @@ export class RequisicoesService {
     )
   }
 
-  public produtosCategoria(codProduto: number, categoria: number) {
-    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}/${categoria}`)
+  public produtosCategoria(codProduto:number){
+    let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}`)
     return url.pipe(
       map(
         dados => dados
