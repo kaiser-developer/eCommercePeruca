@@ -4,6 +4,8 @@ import  {  FormBuilder,  FormGroup  }  from  '@angular/forms';
 import { FaleConosco } from 'src/app/model/faleConosco';
 import { CadastrosService } from 'src/app/services/cadastros.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { StatusFaleConosco } from 'src/app/model/statusFaleConosco';
 
 
 @Component({
@@ -15,13 +17,23 @@ import { StorageService } from 'src/app/services/storage.service';
 export class ContatoComponent implements OnInit {
   formFaleConosco: FormGroup;
   validacoes: Validacoes = new Validacoes;
+  status: StatusFaleConosco[] = []
   
 
 
-  constructor(private formBuilder: FormBuilder, private cadastro: CadastrosService, private storage: StorageService) { }
+  constructor(private formBuilder: FormBuilder, 
+    private cadastro: CadastrosService, 
+    private storage: StorageService,
+    private requisicao: RequisicoesService) {}
 
   ngOnInit(): void {
-    this.createForm(new FaleConosco());
+    this.createForm(new FaleConosco("", "","","", null));
+    this.requisicao.statusFL().subscribe(
+      data => {
+        this.status = data
+      }
+
+    )
      }
    
    createForm(faleConosco: FaleConosco){
@@ -30,17 +42,23 @@ export class ContatoComponent implements OnInit {
        telefone: [faleConosco.telefone],
        email: [faleConosco.email],
        mensagem: [faleConosco.mensagem],
-       assuntoMensagem: [faleConosco.assuntoMensagem],      
+       statusFL: [faleConosco.statusFL],      
      })
    }
 
     onSubmit(){
       this.cadastro.faleConosco(this.formFaleConosco.value).subscribe(
-        data => {this.formFaleConosco = data;
+        data => {
+          if(data.codFaleConosco != null){
+            this.formFaleConosco.reset();
+            return alert("Mensagem enviada com sucesso!");          
+          }
+        }, error =>{
+          alert("Mensagem não enviada.")
         })
-      this.createForm(new FaleConosco());
-
     }
+
+
 
     permitirLetrasCont(evento: any) {
       this.validacoes.cancelarNumeros(evento);

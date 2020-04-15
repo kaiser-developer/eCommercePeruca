@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from 'ngx-mask';
 import { NbThemeModule, NbStepperModule } from "@nebular/theme";
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -61,7 +62,7 @@ import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-
 import { ProgressoPedidoComponent } from './components/historico-pedidos/progresso-pedido/progresso-pedido.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
-
+import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
     RecuperarSenhaComponent,
     ProgressoPedidoComponent,
     ProdutosRecomendadosComponent,
-    
+    LoginRelatoriosComponent,
+        
     
     
   ],
@@ -131,7 +133,8 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
     NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
     NbThemeModule.forRoot(),
-    NbStepperModule
+    NbStepperModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

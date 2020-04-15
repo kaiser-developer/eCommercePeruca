@@ -72,6 +72,7 @@ export class CadastrosService {
     ));
   }
   public faleConosco(faleConosco: FaleConosco){
+    faleConosco.codCliente = storage.recuperarUsuario().codCliente
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-fale-conosco", faleConosco);
     return url.pipe(map(
     dados => dados

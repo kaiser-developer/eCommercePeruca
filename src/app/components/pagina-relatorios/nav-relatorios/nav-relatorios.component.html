@@ -1,7 +1,52 @@
-<button routerLink='/cupons' class="Tabs">Cupons</button>
-<button routerLink='/estoque' class="Tabs">Estoque</button>
-<button routerLink='/pg-relatorios' id="homebtn" class="Tabs">Home</button>
-<button routerLink='/reclamacoes' class="Tabs">Reclamações</button>
-<button routerLink='/relatorios' class="Tabs">Relatorios</button>
+<div class="main-container">
+    <header class="header header-6">
+        <img src="../../../../assets/images/gear.png" width="40px">
+           Menu Admnistrativo
+      <button class="btn btn-danger" routerLink="/login-relatorio">Sair</button>
+    </header>
+    <div id="estrutura" class="content-container">
+        <div class="clr-row">
+            <div class="clr-col-4">
+                <nav class="sidenav">
+                    <section class="sidenav-content">
+                        <table >
+                            <br>
+                            <a href="..." class="nav-link active">
+                                <img src="../../../../assets/images/icone.png" width="35px">
+                                Dashboard
+                            </a>
+                            <hr>
+                            <a href="..." class="nav-link active" routerLink="/home">
+                                <img src="../../../../assets/images/product.png" width="35px">
+                                Cadastro de produtos
+                            </a>
+                            <hr>
+                            <a href="..." class="nav-link" routerLink="/home">
+                                <img src="../../../../assets/images/coupon.png" width="35px">
+                                Cadastro de cupom
+                            </a>
+                            <hr>
 
-<button id="sair" class="btn btn-danger btn-block mt-2" type="button" (click)="deslogar()">Deslogar</button>
+                            <a href="..." class="nav-link" routerLink="/home">
+                                <img src="../../../../assets/images/contact-us.png" width="35px">
+                                Painel Fale Conosco
+                                
+                            </a>
+                            <hr>
+                            <a href="..." class="nav-link" routerLink="/home">
+                                <img src="../../../../assets/images/stock.png" width="35px">
+                               Gerenciar estoque
+                            </a>
+                            <hr>                   
+                            <a href="..." class="nav-link" routerLink="/home">
+                                <img src="../../../../assets/images/growth.png" width="35px">
+                                Relatórios
+                            </a>
+                            <hr>
+                        </table>                
+                    </section>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

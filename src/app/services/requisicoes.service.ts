@@ -11,6 +11,7 @@ import { Cupom } from '../model/cupom';
 import { Compra } from '../model/compra';
 import { Funcionario } from "../model/funcionario";
 import { Cliente } from '../model/cliente';
+import { StatusFaleConosco } from '../model/statusFaleConosco';
 
 const storage: StorageService = new StorageService();
 
@@ -161,6 +162,15 @@ export class RequisicoesService {
 
   public produtosCategoria(codProduto:number, categoria: number){
     let url = this.http.get<Produto[]>(`http://localhost:8080/ecommerce/buscar-produtos/categoria/${codProduto}/${categoria}`)
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
+
+  public statusFL(){
+    let url = this.http.get<StatusFaleConosco[]>(`http://localhost:8080/ecommerce/buscar-statusFL/`)
     return url.pipe(
       map(
         dados => dados

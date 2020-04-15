@@ -38,11 +38,9 @@
             </div>
             <div class="form-group">
               <label for="assunto">Assunto da mensagem :</label>
-              <select id="assunto" formControlName="assuntoMensagem" class="custom-select" required>
-                <option value="" selected disabled hidden>Selecione Mensagem</option>
-                <option value="contato"> Contato</option>
-                <option value="Trabalhe conosco"> Trabalhe conosco</option>
-                <option value="Reclamações e sugestões"> Reclamações e sugestões</option>
+              <select id="assunto" formControlName="statusFL" class="custom-select" required>
+                <option value="null" selected disabled hidden>Selecione Mensagem</option>
+                <option *ngFor="let s of status" [ngValue]="s">{{s.status}}</option>
               </select>
               <div class="invalid-feedback"></div>
             </div>
