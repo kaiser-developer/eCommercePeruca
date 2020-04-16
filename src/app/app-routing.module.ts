@@ -21,6 +21,7 @@ import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/r
 import { CuponsComponent } from './components/pagina-relatorios/cupons/cupons.component';
 import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque.component';
 import { RecuperarSenhaComponent } from "./components/recuperar-senha/recuperar-senha.component";
+import { LoginRelatoriosComponent} from "./components/pagina-relatorios/login-relatorios/login-relatorios.component"
 
 
 const routes: Routes = [
@@ -44,7 +45,8 @@ const routes: Routes = [
   { path: 'relatorios' , component: RelatoriosComponent},
   { path: 'cupons' , component: CuponsComponent},
   { path: 'estoque' , component: EstoqueComponent},
-  { path: 'recuperar-senha', component: RecuperarSenhaComponent}
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent},
+  {path: 'login-relatorio', component: LoginRelatoriosComponent}
 ];
 
 @NgModule({

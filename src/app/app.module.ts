@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxMaskModule } from 'ngx-mask';
-import {InputSwitchModule} from 'primeng/inputswitch';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { NbThemeModule, NbStepperModule } from "@nebular/theme";
-import { ClarityModule } from '@clr/angular';
-import {TableModule} from 'primeng/table';
-import {DialogModule} from 'primeng/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -14,9 +16,9 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DadosPagamentoComponent } from './components/checkout/dados-pagamento/dados-pagamento.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
 import { NavCheckoutComponent } from './components/checkout/nav-checkout/nav-checkout.component';
 import { CadastroEnderecoComponent } from './components/cadastro-endereco/cadastro-endereco.component';
 import { EnderecoComponent } from './components/checkout/endereco/endereco.component';
@@ -66,7 +68,7 @@ import { CarrinhoDoacaoComponent } from './components/checkout-doacao/carrinho-d
 import { ProgressoPedidoComponent } from './components/historico-pedidos/progresso-pedido/progresso-pedido.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
-
+import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 
 @NgModule({
   declarations: [
@@ -123,9 +125,10 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
     CarrinhoDoacaoComponent,
     ProgressoPedidoComponent,
     ProdutosRecomendadosComponent,
-    
-    
-    
+    LoginRelatoriosComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -137,9 +140,10 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
     NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
     NbThemeModule.forRoot(),
+    NbStepperModule,
+    MatSidenavModule,
     InputSwitchModule,
     NbStepperModule,
-    ClarityModule,
     TableModule,
     DialogModule
   ],
