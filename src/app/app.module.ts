@@ -11,6 +11,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ToastModule} from 'primeng/toast';
 import {ChartModule} from 'primeng/chart'
+import { NgxSpinnerModule } from "ngx-spinner";
+import {ButtonModule} from 'primeng/button';
 
 
 import { AppComponent } from './app.component';
@@ -19,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DadosPagamentoComponent } from './components/checkout/dados-pagamento/dados-pagamento.component';
@@ -75,6 +77,7 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
 import { ResumoDashboardComponent } from './components/pagina-relatorios/resumo-dashboard/resumo-dashboard.component';
+import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque/cadastro-produto/cadastro-produto.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +137,7 @@ import { ResumoDashboardComponent } from './components/pagina-relatorios/resumo-
     LoginRelatoriosComponent,
     MenuRelatoriosComponent,
     ResumoDashboardComponent,
+    CadastroProdutoComponent
 
 
 
@@ -157,7 +161,10 @@ import { ResumoDashboardComponent } from './components/pagina-relatorios/resumo-
     InputTextModule,
     CheckboxModule,
     ToastModule,
-    ChartModule
+    ChartModule,
+    FileUploadModule,
+    NgxSpinnerModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div id="storage" class="container">
+        <form class="col formulario" [formGroup]=" formCadProd" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="descProduto" placeholder="Nome do produto"
+                    required>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control col-md-5" formControlName="qtdProduto" placeholder="Quantidade"
+                    required>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control col-md-6" formControlName="valorProduto"
+                    placeholder="Valor do produto" required>
+            </div>
+            <div class="form-group">
+                <select class="form-control col-md-6" name="categoria" formControlName="categoria">
+                    <option value="null" selected disabled>Escolha uma Categoria</option>
+                    <option *ngFor="let cat of categorias" [ngValue]="cat">{{cat.descricao}} </option>
+                </select>
+            </div>
+            <p-fileUpload name="demo[]" customUpload="true" accept="image/*" chooseLabel="Add" cancelLabel="Cancelar" (uploadHandler)="uploadImagens($event)" multiple="multiple">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="imagensUpload.length">
+                        <li *ngFor="let file of imagensUpload">{{file.name}} - {{file.size}} bytes</li>
+                    </ul>
+                </ng-template>
+            </p-fileUpload>
+            <div class="text-center mt-3">
+                <button class="btn btn-info btn-block mb-3" id="btn-cadastrar">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<ngx-spinner>
+    <p style="font-size: 20px; color: white">Aguarde o upload...</p>
+</ngx-spinner>

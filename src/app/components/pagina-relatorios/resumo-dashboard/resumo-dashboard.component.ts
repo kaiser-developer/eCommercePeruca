@@ -39,39 +39,75 @@ export class ResumoDashboardComponent implements OnInit {
     )
 
       this.dataProd = {
-        labels: ['Cadastrados', 'Vendidos', 'Em Falta'],
+        labels: ['Resumo: Produtos'],
         datasets: [
           {
-            label: 'Resumo: Produtos',
-            backgroundColor: '#42A5F5',
+            label: 'Produtos Cadastrados',
+            backgroundColor: '#28a745',
             borderColor: '#1E88E5',
-            data: [32,20,24]
+            data: [3]
+          },
+          {
+            label: 'Vendidos',
+            backgroundColor: '#6f42c1',
+            borderColor: '#1E88E5',
+            data: [3]
+          },
+          {
+            label: 'Em Falta',
+            backgroundColor: '#2f97c3',
+            borderColor: '#1E88E5',
+            data: [3]
           }
         ]
       }
     
     
       this.dataPed = {
-        labels: ['Feitos', 'Concluídos', 'Cancelados'],
+        labels: ['Resumo: Pedidos'],
         datasets: [
           {
-            label: 'Resumo: Pedidos',
+            label: 'Concluídos',
+            backgroundColor: '#28a745',
+            borderColor: '#1E88E5',
+            data: [3]
+          },
+          {
+            label: 'Entregues',
             backgroundColor: '#6f42c1',
             borderColor: '#1E88E5',
-            data: [231,312,270]
+            data: [3]
+          },
+          {
+            label: 'Cancelados',
+            backgroundColor: '#2f97c3',
+            borderColor: '#1E88E5',
+            data: [3]
           }
         ]
       }
     
     
       this.dataCupons = {
-        labels: ['Cadastrados', 'Ativos', 'Usos'],
+        labels: ['Resumo: Cupons'],
         datasets: [
           {
-            label: 'Resumo: Cupons',
+            label: 'Cupons Cadastrados',
             backgroundColor: '#28a745',
             borderColor: '#1E88E5',
-            data: [6,4,3]
+            data: [3]
+          },
+          {
+            label: 'Ativos',
+            backgroundColor: '#6f42c1',
+            borderColor: '#1E88E5',
+            data: [3]
+          },
+          {
+            label: 'Usos',
+            backgroundColor: '#2f97c3',
+            borderColor: '#1E88E5',
+            data: [3]
           }
         ]
       }

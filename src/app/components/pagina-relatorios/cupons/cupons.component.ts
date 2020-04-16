@@ -59,9 +59,9 @@ export class CuponsComponent {
   ativarCupom(cupom: Cupom) {
     this.requisicoes.atualizarCupom(cupom.codCupom, cupom).subscribe(
       cupomApi => {
-        alert("Cupom alterado com sucesso!");
+        this.showSucessAlter();
       }, error => {
-        alert("Erro ao alterar cupom!");
+        this.showErrorAlter();
       }
     )
   }
@@ -88,8 +88,14 @@ export class CuponsComponent {
   }
 
   showSuccess() {
-    this.messageService.add({ severity: 'success', summary: 'Success Message', detail: 'O cupom foi cadastrado com sucesso.' });
+    this.messageService.add({ severity: 'success', summary: 'Cadastro', detail: 'O cupom foi cadastrado com sucesso.' });
   }
 
+  showSucessAlter() {
+    this.messageService.add({ severity: 'info', summary: 'Alteração', detail: 'Cupom alterado com sucesso!' });
+  }
 
+  showErrorAlter() {
+    this.messageService.add({ severity: 'error', summary: 'Alteração', detail: 'Erro ao alterar cupom!' });
+  }
 }

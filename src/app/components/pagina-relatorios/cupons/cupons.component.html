@@ -24,7 +24,7 @@
                 <tr>
                     <td class="text-center">{{cupons.codCupom}}</td>
                     <td class="text-center">{{cupons.nome}}</td>
-                    <td class="text-center">{{cupons.desconto}}</td>
+                    <td class="text-center">{{cupons.desconto}}%</td>
                     <td>
                         <p-inputSwitch [(ngModel)]='cupons.ativo' (click)="ativarCupom(cupons)">
                         </p-inputSwitch>
@@ -32,9 +32,9 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary" let-rowData>
-                <div style="text-align:left">
-                    <button type="button" pButton icon="pi pi-plus" (click)="showDialogToAdd()"
-                        label="Add">Adicionar</button>
+                <div id="divAddCupom">
+                    <button pButton type="button" icon="pi pi-plus" label="Adicionar"
+                        (click)="showDialogToAdd()"></button>
                 </div>
             </ng-template>
         </p-table>
@@ -62,7 +62,7 @@
     </div>
     <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
-            <button type="button" pButton icon="pi pi-check" (click)="cadastrarCupom()" label="Save">Cadastrar</button>
+            <button type="button" pButton (click)="cadastrarCupom()" label="Cadastrar"></button>
         </div>
     </p-footer>
 </p-dialog>

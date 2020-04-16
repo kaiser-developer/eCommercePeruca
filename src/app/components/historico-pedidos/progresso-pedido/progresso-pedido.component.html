@@ -3,25 +3,25 @@
   <div class="mdl-card__supporting-text">
 
     <div class="mdl-stepper-horizontal-alternative">
-      <div class="mdl-stepper-step" [class]="statusAtual[0] ? 'active-step step-done':'cancel-step step-editable'">
+      <div class="mdl-stepper-step" [class]="statusPedido[0] ? 'active-step step-done':'cancel-step step-editable'">
         <div class="mdl-stepper-circle"><span>X</span></div>
-        <div class="mdl-stepper-title">{{statusAtual[0]? 'Pedido Realizado' : 'Pedido Cancelado'}}</div>
+        <div class="mdl-stepper-title">{{statusPedido[0]? 'Pedido Realizado' : 'Pedido Cancelado'}}</div>
         <div class="mdl-stepper-bar-left"></div>
         <div class="mdl-stepper-bar-right"></div>
       </div>
-      <div class="mdl-stepper-step step-done" [class]="statusAtual[1] ? 'active-step':''">
+      <div class="mdl-stepper-step step-done" [class]="statusPedido[1] ? 'active-step':''">
         <div class="mdl-stepper-circle"><span>2</span></div>
         <div class="mdl-stepper-title">Pagamento aprovado</div>
         <div class="mdl-stepper-bar-left"></div>
         <div class="mdl-stepper-bar-right"></div>
       </div>
-      <div class="mdl-stepper-step step-done" [class]="statusAtual[1] ? 'active-step':''">
+      <div class="mdl-stepper-step step-done" [class]="statusPedido[2] ? 'active-step':''">
         <div class="mdl-stepper-circle"><span>3</span></div>
         <div class="mdl-stepper-title">Pedido em transito</div>
         <div class="mdl-stepper-bar-left"></div>
         <div class="mdl-stepper-bar-right"></div>
       </div>
-      <div class="mdl-stepper-step step-done" [class]="statusAtual[1] ? 'active-step':''">
+      <div class="mdl-stepper-step step-done" [class]="statusPedido[3] ? 'active-step':''">
         <div class="mdl-stepper-circle"><span>4</span></div>
         <div class="mdl-stepper-title">Pedido Entregue</div>
         <div class="mdl-stepper-optional"></div>
