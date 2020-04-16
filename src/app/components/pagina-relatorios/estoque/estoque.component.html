@@ -3,11 +3,11 @@
     <div class="col-md-2 p-0">
         <app-menu-relatorios></app-menu-relatorios>
     </div>
-    <div class="col-md-10 p-0">
+    <div class="col-md-9">
         <p-table #dt [columns]="cols" [value]="produtos" [paginator]="true" [rows]="10" [filterDelay]="0"
             [globalFilterFields]="['codProduto','descricao']">
             <ng-template pTemplate="caption">
-                Lista de Produtos
+                Gerenciamento de estoque
                 <div class="ui-table-globalfilter-container">
                     <input type="text" pInputText placeholder="O que procura?"
                         (input)="dt.filterGlobal($event.target.value, 'contains')">
