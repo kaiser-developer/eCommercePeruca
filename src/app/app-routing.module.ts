@@ -21,7 +21,7 @@ import { CuponsComponent } from './components/pagina-relatorios/cupons/cupons.co
 import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque.component';
 import { RecuperarSenhaComponent } from "./components/recuperar-senha/recuperar-senha.component";
 import { LoginRelatoriosComponent} from "./components/pagina-relatorios/login-relatorios/login-relatorios.component";
-import { RelatorioFaleConoscoComponent} from './components/pagina-relatorios/relatorio-fale-conosco/relatorio-fale-conosco.component'
+import { PainelFaleConoscoComponent } from './components/pagina-relatorios/painel-fale-conosco/painel-fale-conosco.component';
 
 
 const routes: Routes = [
@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'estoque' , component: EstoqueComponent},
   { path: 'recuperar-senha', component: RecuperarSenhaComponent},
   {path: 'login-relatorio', component: LoginRelatoriosComponent},
-  {path: 'relatorio-fale-conosco', component: RelatorioFaleConoscoComponent},
+  {path: 'painel-fale-conosco', component: PainelFaleConoscoComponent},
 
 ];
 
