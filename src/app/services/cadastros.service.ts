@@ -39,26 +39,7 @@ export class CadastrosService {
 
   constructor(private http: HttpClient) { }
 
-<<<<<<< HEAD
-  public cadastrarImagem(imageFile){
-    let formData = new FormData();
-    formData.append('image', imageFile, "teste");
- 
-    let header = new HttpHeaders({
-      "authorization": 'Client-ID '+this.clientId
-    });
-   
-    return this.http.post<any>(this.url, formData, {headers:header}).pipe(
-      map(
-        data => data
-      )
-    );
-  }
-
-  public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom){
-=======
   public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom) {
->>>>>>> 84da5a7c18a51e3523cc0d2b2d78e3007caf1181
     let compra: Compra = new Compra();
     compra.codCliente = endereco.codCliente;
     compra.codEndereco = endereco.codEndereco;
