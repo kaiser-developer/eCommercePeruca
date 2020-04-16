@@ -169,6 +169,14 @@ export class RequisicoesService {
       )
     )
   }
+  public deletarProduto(produto: Produto){
+    let url = this.http.delete<Produto>(`http://localhost:8080/ecommerce/deletar-produto/${produto.codProduto}`);
+    return url.pipe(
+      map(
+        data => data
+        )
+      )
+    }
 
   public produtosRecomendados(codProduto: number) {
     let url = this.http.get<Produto[]>("http://localhost:8080/ecommerce/buscar-produtos/recomendados/" + codProduto)

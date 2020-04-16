@@ -3,6 +3,7 @@ import { Carrinho } from '../model/carrinho';
 import { Produto } from '../model/produto';
 import { Cliente } from '../model/cliente';
 import { Funcionario } from '../model/funcionario';
+import { ProdutoApi } from '../model/produto-api';
 
 @Injectable({
   providedIn: 'root'
@@ -69,4 +70,5 @@ export class StorageService {
   removerCarrinho() {
     localStorage.removeItem('carrinho');
   }
+ 
 }

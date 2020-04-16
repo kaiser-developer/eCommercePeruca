@@ -1,7 +1,10 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild, ElementRef } from '@angular/core';
 import { Produto } from 'src/app/model/produto';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Validacoes } from 'src/app/model/validacoes';
+import { FormGroup } from '@angular/forms';
+import { Categoria } from 'src/app/model/categoria';
 
 @Component({
   selector: 'app-estoque',
@@ -9,6 +12,13 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./estoque.component.css']
 })
 export class EstoqueComponent implements OnInit {
+  formCadProd: FormGroup;
+  validacoes: Validacoes = new Validacoes();
+  produto: Produto;
+  categorias: Categoria[];
+  imagensUpload: File[] = [];
+  @ViewChild("imagem")
+  inputImagem: ElementRef;
 
   produtos: any[] = [];
   first: number = 0;

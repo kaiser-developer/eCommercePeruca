@@ -48,4 +48,6 @@ export class ComprarComponent implements OnChanges {
     this.atualizarCarrinho.emit();
     alert("Item adicionado no carrinho");
   }
+  
+  
 }
