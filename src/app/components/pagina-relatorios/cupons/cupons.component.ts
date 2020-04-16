@@ -1,12 +1,17 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cupom } from 'src/app/model/cupom';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 import { RequisicoesService } from 'src/app/services/requisicoes.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { CadastrosService } from 'src/app/services/cadastros.service';
+import { MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-cupons',
   templateUrl: './cupons.component.html',
-  styleUrls: ['./cupons.component.css']
+  styleUrls: ['./cupons.component.css'],
+  providers: [MessageService]
 })
 export class CuponsComponent {
   
@@ -17,8 +22,16 @@ export class CuponsComponent {
   cupons: Cupom[] = [];
   modalRef: BsModalRef;
   checked: boolean;
+  cols: any[];
+  cupom: Cupom;
+  displayDialog: boolean;
+  formCupom: FormGroup;
 
-  constructor(private modalService: BsModalService, private requisicoes: RequisicoesService) {
+
+  constructor(private formBuilder: FormBuilder,
+    private requisicoes: RequisicoesService,
+    private cadastro: CadastrosService,
+    private messageService: MessageService) {
 
     this.requisicoes.todosCupons().subscribe(
       data => {
@@ -36,8 +49,11 @@ export class CuponsComponent {
     }
   }
 
-  abrirModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  createForm(cupom: Cupom) {
+    this.formCupom = this.formBuilder.group({
+      nome: [cupom.nome],
+      desconto: [cupom.desconto]
+    });
   }
 
   ativarCupom(cupom: Cupom) {
@@ -49,5 +65,31 @@ export class CuponsComponent {
       }
     )
   }
+
+  onRowSelect(event) {
+
+  }
+
+  showDialogToAdd() {
+    this.cupom = new Cupom(null, null, null, null);
+    this.displayDialog = true;
+
+  }
+
+  cadastrarCupom() {
+    this.cadastro.addCupom(this.cupom).subscribe(
+      cupom => {
+        this.cupons.push(cupom);
+        this.showSuccess();
+        this.displayDialog = false;
+
+      }
+    )
+  }
+
+  showSuccess() {
+    this.messageService.add({ severity: 'success', summary: 'Success Message', detail: 'O cupom foi cadastrado com sucesso.' });
+  }
+
 
 }
