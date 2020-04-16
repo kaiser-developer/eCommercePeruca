@@ -31,6 +31,7 @@
     "angular-confirm": "^2.0.0-alpha.2",
     "bootstrap": "^4.4.1",
     "bs-stepper": "^1.7.0",
+    "chart.js": "^2.9.3",
     "eva-icons": "^1.1.2",
     "imgur": "^0.3.1",
     "jquery": "^3.4.1",

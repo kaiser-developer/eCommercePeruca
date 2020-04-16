@@ -10,6 +10,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import {InputTextModule} from 'primeng/inputtext';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ToastModule} from 'primeng/toast';
+import {ChartModule} from 'primeng/chart'
 
 
 import { AppComponent } from './app.component';
@@ -73,6 +74,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
+import { ResumoDashboardComponent } from './components/pagina-relatorios/resumo-dashboard/resumo-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -131,6 +133,7 @@ import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-rel
     ProdutosRecomendadosComponent,
     LoginRelatoriosComponent,
     MenuRelatoriosComponent,
+    ResumoDashboardComponent,
 
 
 
@@ -153,7 +156,8 @@ import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-rel
     DialogModule,
     InputTextModule,
     CheckboxModule,
-    ToastModule
+    ToastModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
