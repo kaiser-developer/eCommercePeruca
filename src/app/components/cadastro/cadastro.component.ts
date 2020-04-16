@@ -17,10 +17,10 @@ export class CadastroComponent implements OnInit {
   segundaSenha: string = "";
 
 
-  constructor(private formBuilder: FormBuilder, private route: Router, private cadastro: CadastrosService, private storage: StorageService) { 
-    
+  constructor(private formBuilder: FormBuilder, private route: Router, private cadastro: CadastrosService, private storage: StorageService) {
+
   }
-  
+
   ngOnInit() { this.createForm(new Cliente("", "", "", "", "", "", null), ""); }
 
   createForm(cliente: Cliente, segundaSenha) {
@@ -43,11 +43,11 @@ export class CadastroComponent implements OnInit {
     if (this.verificarSenhasIguais() && this.validacoes.verificarDadosCliente(this.formCliente.value)) {
       this.cadastro.cadastrarUsuario(this.formCliente.value).subscribe(
         data => {
-          if(data == 1){
+          if (data == 1) {
             alert("Esse email já está vinculado a um cadastro!")
-          }else if(data == 2){
+          } else if (data == 2) {
             alert("Esse CPF já está vinculado a um cadastro!")
-          }else{
+          } else {
             this.storage.salvarUsuario(data);
             this.route.navigate(['home']);
           }
