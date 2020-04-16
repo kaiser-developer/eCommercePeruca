@@ -8,6 +8,7 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import {ToastModule} from 'primeng/toast';
+import {ButtonModule} from 'primeng/button';
 
 
 import { AppComponent } from './app.component';
@@ -148,6 +149,7 @@ import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-rel
     TableModule,
     DialogModule,
     ToastModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
