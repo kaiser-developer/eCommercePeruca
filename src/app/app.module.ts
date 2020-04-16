@@ -7,6 +7,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {InputTextModule} from 'primeng/inputtext';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 import { AppComponent } from './app.component';
@@ -145,7 +147,9 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     InputSwitchModule,
     NbStepperModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    InputTextModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
