@@ -9,6 +9,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import {ToastModule} from 'primeng/toast';
 import { NgxSpinnerModule } from "ngx-spinner";
+import {ButtonModule} from 'primeng/button';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -151,7 +153,8 @@ import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque
     DialogModule,
     ToastModule,
     FileUploadModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
