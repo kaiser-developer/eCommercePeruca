@@ -9,6 +9,8 @@ import { Item } from '../model/Item';
 import { Carrinho } from '../model/carrinho';
 import { Cupom } from '../model/cupom';
 import { FaleConosco } from '../model/faleConosco';
+import { ProdutoApi } from '../model/produto-api';
+import { Imagem } from '../model/Imagem';
 
 const storage: StorageService = new StorageService();
 
@@ -38,6 +40,22 @@ export class CadastrosService {
   imageLink:any;
 
   constructor(private http: HttpClient) { }
+
+  public async cadastrarImagem(imageFile): Promise<any>{
+    let formData = new FormData();
+    let teste;
+    formData.append('image', imageFile, "teste");
+ 
+    let header = new HttpHeaders({
+      "authorization": 'Client-ID '+this.clientId
+    });
+   
+    await this.http.post<any>(this.url, formData, {headers:header}).toPromise().then(
+      data => teste = data
+    )
+
+    return teste;
+  }
 
   public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom) {
     let compra: Compra = new Compra();
@@ -90,5 +108,14 @@ export class CadastrosService {
         dados => dados
       )
     );
+  }
+
+  public cadastrarProduto(produto: ProdutoApi, imagens: Imagem[]){
+    produto.imagens = imagens
+    console.log(produto);
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-produto", produto);
+    return url.pipe(map(
+      dados => dados
+    ));
   }
 }

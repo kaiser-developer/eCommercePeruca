@@ -8,7 +8,7 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import {ToastModule} from 'primeng/toast';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DadosPagamentoComponent } from './components/checkout/dados-pagamento/dados-pagamento.component';
@@ -150,6 +150,8 @@ import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque
     TableModule,
     DialogModule,
     ToastModule,
+    FileUploadModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

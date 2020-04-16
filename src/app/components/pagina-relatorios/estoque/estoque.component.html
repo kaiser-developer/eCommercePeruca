@@ -35,29 +35,28 @@
                     <td class="text-center">{{produtos.codProduto}}</td>
                     <td class="text-center"><img src="{{produtos.imagens[0].local}}" width="30px"></td>
                     <td class="text-center">{{produtos.descricao}}</td>
-                    <td class="text-center">{{produtos.valorProduto}}</td>
+                    <td class="text-center">{{produtos.valorProduto.toLocaleString('pt-BR', formato)}}</td>
                     <td class="text-center">{{produtos.categoria.descricao}}</td>
                     <td class="text-center">{{produtos.qtdProduto}}</td>
                     <td class="text-center">
                         <img class="editar" src="../../../../assets/images/edit.svg" alt="" width="20px"
-                            (click)="abrirModal(editarProduto, produtos)">
+                            >
                     </td>
                 </tr>
+            </ng-template>
+            <ng-template pTemplate="summary" let-rowData>
+                <div style="text-align:left">
+                    <button type="button" pButton icon="pi pi-plus" (click)="showDialogToAdd()"
+                        label="Adicionar produto"></button>
+                </div>
             </ng-template>
         </p-table>
     </div>
 </div>
 
-<ng-template #editarProduto>
-    <div class="editarProduto">
-        <div class="modal-header">
-            <h5>Código do produto nº {{produtoEditar.codProduto}}</h5>
-            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div>
-            teste
-        </div>
-    </div>
-</ng-template>
+<p-dialog header="Adicionar produto" [(visible)]="displayDialog" [focusOnShow]="false" [responsive]="true"
+    showEffect="fade" [modal]="true" [style]="{width: '500px'}">
+    <app-cadastro-produto (produtoCadastrado)="receberProduto($event)"></app-cadastro-produto>
+</p-dialog>
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
