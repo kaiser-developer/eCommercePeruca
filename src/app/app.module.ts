@@ -58,7 +58,6 @@ import { CheckoutDoacaoComponent } from './components/checkout-doacao/checkout-d
 import { PaginaRelatoriosComponent } from './components/pagina-relatorios/pagina-relatorios.component';
 import { CuponsComponent } from './components/pagina-relatorios/cupons/cupons.component';
 import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque.component';
-import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes/reclamacoes.component';
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relatorios/nav-relatorios.component';
 import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes-pedido/detalhes-pedido.component';
@@ -68,6 +67,8 @@ import { ProgressoPedidoComponent } from './components/historico-pedidos/progres
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
+import { RelatorioFaleConoscoComponent } from './components/pagina-relatorios/relatorio-fale-conosco/relatorio-fale-conosco.component';
+
 
 @NgModule({
   declarations: [
@@ -115,7 +116,6 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     PaginaRelatoriosComponent,
     CuponsComponent,
     EstoqueComponent,
-    ReclamacoesComponent,
     RelatoriosComponent,
     NavRelatoriosComponent,
     DetalhesPedidoComponent,
@@ -124,6 +124,8 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     ProgressoPedidoComponent,
     ProdutosRecomendadosComponent,
     LoginRelatoriosComponent,
+    RelatorioFaleConoscoComponent,
+    
 
 
 

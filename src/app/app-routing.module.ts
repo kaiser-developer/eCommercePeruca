@@ -16,12 +16,12 @@ import { HistoricoPedidosComponent } from './components/historico-pedidos/histor
 import { CheckoutDoacaoComponent} from './components/checkout-doacao/checkout-doacao.component'
 import { FuncionariosComponent } from "./components/funcionarios/funcionarios.component";
 import { PaginaRelatoriosComponent } from './components/pagina-relatorios/pagina-relatorios.component';
-import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes/reclamacoes.component';
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { CuponsComponent } from './components/pagina-relatorios/cupons/cupons.component';
 import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque.component';
 import { RecuperarSenhaComponent } from "./components/recuperar-senha/recuperar-senha.component";
-import { LoginRelatoriosComponent} from "./components/pagina-relatorios/login-relatorios/login-relatorios.component"
+import { LoginRelatoriosComponent} from "./components/pagina-relatorios/login-relatorios/login-relatorios.component";
+import { RelatorioFaleConoscoComponent} from './components/pagina-relatorios/relatorio-fale-conosco/relatorio-fale-conosco.component'
 
 
 const routes: Routes = [
@@ -41,12 +41,13 @@ const routes: Routes = [
   { path: 'checkout-doacao', component: CheckoutDoacaoComponent},
   { path: 'funcionario', component: FuncionariosComponent},
   { path: 'pg-relatorios', component: PaginaRelatoriosComponent},
-  { path: 'reclamacoes' , component: ReclamacoesComponent},
   { path: 'relatorios' , component: RelatoriosComponent},
   { path: 'cupons' , component: CuponsComponent},
   { path: 'estoque' , component: EstoqueComponent},
   { path: 'recuperar-senha', component: RecuperarSenhaComponent},
-  {path: 'login-relatorio', component: LoginRelatoriosComponent}
+  {path: 'login-relatorio', component: LoginRelatoriosComponent},
+  {path: 'relatorio-fale-conosco', component: RelatorioFaleConoscoComponent},
+
 ];
 
 @NgModule({

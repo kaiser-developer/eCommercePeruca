@@ -12,6 +12,7 @@ import { Compra } from '../model/compra';
 import { Funcionario } from "../model/funcionario";
 import { Cliente } from '../model/cliente';
 import { StatusFaleConosco } from '../model/statusFaleConosco';
+import {LoginFunc} from '../model/login-func'
 
 const storage: StorageService = new StorageService();
 
