@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {ToastModule} from 'primeng/toast';
 
 
 import { AppComponent } from './app.component';
@@ -143,7 +144,8 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     InputSwitchModule,
     NbStepperModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
