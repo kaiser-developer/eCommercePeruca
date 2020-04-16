@@ -1,53 +1,45 @@
-<!-- <div class="container-fluid">
-    <div id="storage" class="container">
-        <h5 class="modal-title pull-left">CUPONS</h5><br>
-        <div class="row">
-            <div class="card-deck ml-2">
-                <div class="card boxCupom" *ngFor="let cupom of cupons">
-                    <div class="card-body">
-                        <h5 class="card-title">{{cupom.nome}}</h5>
-                        <p class="card-text">Desconto:{{cupom.desconto}}%</p>
-                        <p-inputSwitch [(ngModel)]="cupom.ativo" (click)="ativarCupom(cupom)"> {{cupom.ativo}}
+<app-nav-relatorios></app-nav-relatorios>
+<div class="row">
+    <app-menu-relatorios></app-menu-relatorios>
+    <div class="col-md-10">
+
+        <p-table [value]="cupons" selectionMode="single" (onRowSelect)="onRowSelect($event)" [paginator]="true"
+            [rows]="15">
+            <ng-template pTemplate="caption">
+                Lista de Cupons
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="codCupom">Codigo<p-sortIcon field="codCupom"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="nome">Nome<p-sortIcon field="nome"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="desconto">Desconto<p-sortIcon field="desconto"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="ativo">Ativar/Desativar<p-sortIcon field="ativo"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-cupons>
+                <tr>
+                    <td class="text-center">{{cupons.codCupom}}</td>
+                    <td class="text-center">{{cupons.nome}}</td>
+                    <td class="text-center">{{cupons.desconto}}</td>
+                    <td>
+                        <p-inputSwitch [(ngModel)]='cupons.ativo' (click)="ativarCupom(cupons)">
                         </p-inputSwitch>
-                    </div>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary" let-rowData>
+                <div style="text-align:left">
+                    <button type="button" pButton icon="pi pi-plus" (click)="showDialogToAdd()"
+                        label="Add">Adicionar</button>
                 </div>
-            </div>
-        </div>
+            </ng-template>
+        </p-table>
     </div>
-</div> -->
-<p-table [value]="cupons" selectionMode="single" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
-    <ng-template pTemplate="caption">
-        Lista de Cupons
-    </ng-template>
-    <ng-template pTemplate="header">
-        <tr>
-            <th pSortableColumn="codCupom">Codigo<p-sortIcon field="codCupom"></p-sortIcon>
-            </th>
-            <th pSortableColumn="nome">Nome<p-sortIcon field="nome"></p-sortIcon>
-            </th>
-            <th pSortableColumn="desconto">Desconto<p-sortIcon field="desconto"></p-sortIcon>
-            </th>
-            <th pSortableColumn="ativo">Ativar/Desativar<p-sortIcon field="ativo"></p-sortIcon>
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-cupons>
-        <tr>
-            <td class="text-center">{{cupons.codCupom}}</td>
-            <td class="text-center">{{cupons.nome}}</td>
-            <td class="text-center">{{cupons.desconto}}</td>
-            <td>
-                <p-inputSwitch [(ngModel)]='cupons.ativo' (click)="ativarCupom(cupons)">
-                </p-inputSwitch>
-            </td>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="summary" let-rowData>
-        <div style="text-align:left">
-            <button type="button" pButton icon="pi pi-plus" (click)="showDialogToAdd()" label="Add">Adicionar</button>
-        </div>
-    </ng-template>
-</p-table>
+</div>
 <p-dialog header="Adicionar Cupom" [(visible)]="displayDialog" [focusOnShow]="false" [responsive]="true"
     showEffect="fade" [modal]="true" [style]="{width: '300px'}">
     <div class="ui-g ui-fluid" *ngIf="cupom">
