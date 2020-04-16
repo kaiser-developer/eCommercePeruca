@@ -70,6 +70,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
+import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque/cadastro-produto/cadastro-produto.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-rel
     ProdutosRecomendadosComponent,
     LoginRelatoriosComponent,
     MenuRelatoriosComponent,
+    CadastroProdutoComponent
 
 
 
