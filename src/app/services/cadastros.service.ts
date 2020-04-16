@@ -12,7 +12,7 @@ import { FaleConosco } from '../model/faleConosco';
 
 const storage: StorageService = new StorageService();
 
-const enderecoBanco = (endereco, codCliente) =>{
+const enderecoBanco = (endereco, codCliente) => {
   return {
     "destinatario": endereco.destinatario,
     "logradouro": endereco.logradouro,
@@ -22,7 +22,7 @@ const enderecoBanco = (endereco, codCliente) =>{
     "cidade": endereco.localidade,
     "estado": endereco.uf,
     "cep": endereco.cep,
-    "codCliente":codCliente
+    "codCliente": codCliente
   }
 }
 
@@ -30,7 +30,7 @@ const enderecoBanco = (endereco, codCliente) =>{
   providedIn: 'root'
 })
 
-  
+
 export class CadastrosService {
   private images:object[] = [];
   private url: string = 'https://api.imgur.com/3/image';
@@ -39,6 +39,7 @@ export class CadastrosService {
 
   constructor(private http: HttpClient) { }
 
+<<<<<<< HEAD
   public cadastrarImagem(imageFile){
     let formData = new FormData();
     formData.append('image', imageFile, "teste");
@@ -55,6 +56,9 @@ export class CadastrosService {
   }
 
   public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom){
+=======
+  public cadastrarCompra(endereco, frete: number, total: number, cupom: Cupom) {
+>>>>>>> 84da5a7c18a51e3523cc0d2b2d78e3007caf1181
     let compra: Compra = new Compra();
     compra.codCliente = endereco.codCliente;
     compra.codEndereco = endereco.codEndereco;
@@ -63,7 +67,7 @@ export class CadastrosService {
     compra.vlPedido = total;
     compra.itensPedido = [];
     compra.cupom = cupom;
-    let carrinho: Carrinho [] = storage.recuperarCarrinho();
+    let carrinho: Carrinho[] = storage.recuperarCarrinho();
     carrinho.forEach(peruca => {
       let item: Item = new Item();
       item.codProduto = peruca.produto.codProduto;
@@ -77,24 +81,33 @@ export class CadastrosService {
     ))
   }
 
-  public cadastrarEndereco(endereco: Endereco, codCliente){
+  public cadastrarEndereco(endereco: Endereco, codCliente) {
     let url = this.http.post("http://localhost:8080/ecommerce/cadastrar-endereco", enderecoBanco(endereco, codCliente));
     return url.pipe(map(
       dados => dados
     ))
   }
 
-  public cadastrarUsuario(cliente: Cliente){
+  public cadastrarUsuario(cliente: Cliente) {
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-cliente", cliente);
     return url.pipe(map(
       dados => dados
     ));
   }
-  public faleConosco(faleConosco: FaleConosco){
+  public faleConosco(faleConosco: FaleConosco) {
     faleConosco.codCliente = storage.recuperarUsuario().codCliente
     let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-fale-conosco", faleConosco);
     return url.pipe(map(
-    dados => dados
+      dados => dados
     ));
+  }
+
+  public addCupom(cupom: Cupom) {
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/cadastrar-cupom", cupom);
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    );
   }
 }

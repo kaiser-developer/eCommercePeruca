@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {ToastModule} from 'primeng/toast';
 
 
 import { AppComponent } from './app.component';
@@ -68,6 +69,7 @@ import { ProgressoPedidoComponent } from './components/historico-pedidos/progres
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
+import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
 
 @NgModule({
   declarations: [
@@ -124,6 +126,7 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     ProgressoPedidoComponent,
     ProdutosRecomendadosComponent,
     LoginRelatoriosComponent,
+    MenuRelatoriosComponent,
 
 
 
@@ -143,7 +146,8 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
     InputSwitchModule,
     NbStepperModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
