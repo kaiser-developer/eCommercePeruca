@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Endereco } from '../model/endereco';
 import { StorageService } from './storage.service';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Cliente } from '../model/cliente';
 import { map } from "rxjs/operators";
 import { Compra } from '../model/compra';
@@ -32,6 +32,10 @@ const enderecoBanco = (endereco, codCliente) => {
 
 
 export class CadastrosService {
+  private images:object[] = [];
+  private url: string = 'https://api.imgur.com/3/image';
+  private clientId: string = 'b8c58d3c3d1dd47';
+  imageLink:any;
 
   constructor(private http: HttpClient) { }
 
