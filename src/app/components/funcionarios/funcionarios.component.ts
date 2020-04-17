@@ -25,7 +25,7 @@ export class FuncionariosComponent implements OnInit {
     this.createForm(new Funcionario());
 
     if (this.storage.recuperarFuncionario() != null) {
-      this.route.navigate(["pg-relatorios"]);
+      this.route.navigate(["login-relatorio"]);
     }
   }
   createForm(funcionario: Funcionario) {
@@ -48,7 +48,7 @@ export class FuncionariosComponent implements OnInit {
         if (funcionario != null) {
           this.storage.salvarFunc(funcionario);
           this.formFunc.reset();
-          this.route.navigate(["pg-relatorios"])
+          this.route.navigate(["login-relatorio"])
           alert("Login correto");
         } else {
           alert("Funcionario nao cadastro!");
