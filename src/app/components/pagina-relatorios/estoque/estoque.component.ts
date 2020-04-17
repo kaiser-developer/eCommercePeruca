@@ -6,6 +6,7 @@ import { Validacoes } from 'src/app/model/validacoes';
 import { FormGroup } from '@angular/forms';
 import { Categoria } from 'src/app/model/categoria';
 import { MessageService } from 'primeng/api';
+import { ProdutoApi } from 'src/app/model/produto-api';
 
 @Component({
   selector: 'app-estoque',
@@ -18,18 +19,16 @@ export class EstoqueComponent implements OnInit {
   validacoes: Validacoes = new Validacoes();
   produto: Produto;
   categorias: Categoria[];
-  imagensUpload: File[] = [];
-  @ViewChild("imagem")
-  inputImagem: ElementRef;
+  produtoAlt: ProdutoApi = new ProdutoApi();
+  
   formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' };
 
   produtos: any[] = [];
   first: number = 0;
   cols: any[];
   display: boolean = false;
-  produtoEditar: Produto;
-  modalRef: BsModalRef;
   displayDialog: boolean;
+  displayDialogAlt: boolean;
 
   constructor(private requisicoes: RequisicoesService,
     private modalService: BsModalService,
@@ -52,16 +51,21 @@ export class EstoqueComponent implements OnInit {
     ];
   }
 
-  abrirModal(template: TemplateRef<any>, produto: Produto) {
-    this.produtoEditar = produto;
-    console.log(this.produtoEditar);
-    this.modalRef = this.modalService.show(template)
-  }
-
   showDialogToAdd() {
     this.displayDialog = true;
   }
-
+  showDialogToAlt(produto){
+    this.produtoAlt = produto;
+    this.displayDialogAlt = true;
+    }
+  
+  receberProdutoAlterado(produto){
+    let index = this.produtos.indexOf(this.produtoAlt);
+    this.produtos[index] = produto;
+    this.displayDialogAlt = false;
+    this.showSuccessAlt();
+  }
+  
   receberProduto(produto){
     this.produtos.push(produto);
     this.displayDialog = false;
@@ -71,4 +75,8 @@ export class EstoqueComponent implements OnInit {
   showSuccess() {
     this.messageService.add({ severity: 'success', summary: 'Cadastro realizado', detail: 'O produto foi cadastrado com sucesso.' });
   }
+  showSuccessAlt() {
+    this.messageService.add({ severity: 'info', summary: 'Produto atualizado', detail: 'O produto foi atualizado com sucesso.' });
+  }
+ 
 }

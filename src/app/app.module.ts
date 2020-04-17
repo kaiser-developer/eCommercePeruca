@@ -73,6 +73,7 @@ import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-r
 import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
 import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque/cadastro-produto/cadastro-produto.component';
 import { PainelFaleConoscoComponent } from './components/pagina-relatorios/painel-fale-conosco/painel-fale-conosco.component';
+import { AlterarProdutoComponent } from './components/pagina-relatorios/estoque/alterar-produto/alterar-produto.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +131,11 @@ import { PainelFaleConoscoComponent } from './components/pagina-relatorios/paine
     LoginRelatoriosComponent,
     MenuRelatoriosComponent,
     CadastroProdutoComponent,
-    PainelFaleConoscoComponent
+    PainelFaleConoscoComponent,
+    AlterarProdutoComponent
+
+
+
   ],
   imports: [
     BrowserModule,

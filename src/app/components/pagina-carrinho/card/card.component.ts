@@ -70,7 +70,7 @@ export class CardComponent implements OnInit {
         alert("Para continuar, escolha um produto!")
       }
     } else {
-      alert("Você não esta logado")
+      alert("Você não esta logado");
     }
   }
 }

@@ -15,7 +15,7 @@
               <th class="text-center">E-mail</th>
               <th class="text-center">Mensagem</th>
               <th class="text-center">Assunto da Mensagem</th>
-              <th class="text-center">Resposta da mensagem</th>
+              <th class="text-center">Respondida</th>
             </tr>
           </thead>
           <tbody>
@@ -25,16 +25,8 @@
               <td class="pt-3-half" contenteditable="true">{{mensagem.email}}</td>
               <td class="pt-3-half" contenteditable="true">{{mensagem.mensagem}}</td>
               <td class="pt-3-half" contenteditable="true">{{mensagem.statusFL.status}}</td>
-              <td class="pt-3-half">
-                <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
-                      aria-hidden="true"></i></a></span>
-                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
-                      aria-hidden="true"></i></a></span>
-              </td>
-              <td>
-                <span class="table-remove"><button type="button"
-                    class="btn btn-success btn-rounded btn-sm my-0">Responder</button></span>
-              </td>
+              <td class="pt-3-half" *ngIf="!mensagem.respondido">Não</td>
+              <td class="pt-3-half" *ngIf="mensagem.respondido">Sim</td>
             </tr>
           </tbody>
         </table>
