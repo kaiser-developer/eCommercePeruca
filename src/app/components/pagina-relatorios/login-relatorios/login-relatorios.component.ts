@@ -32,7 +32,7 @@ export class LoginRelatoriosComponent implements OnInit {
   }
 
   login() {
-    if (this.formFunc.status != "INVALID") {
+    if (true) {
       this.requisicoes.loginFunc(this.formFunc.value).subscribe(
         funcionario => {
           if (funcionario != null) {

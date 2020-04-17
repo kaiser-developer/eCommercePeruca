@@ -25,7 +25,7 @@ export class StorageService {
   }
 
   salvarFunc(funcionario: Funcionario) {
-    localStorage.setItem('funcionario', JSON.stringify(funcionario));
+    localStorage.setItem('funcionario', btoa(JSON.stringify(funcionario)));
   }
 
   nomeCliente(): string {
