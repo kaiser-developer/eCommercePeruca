@@ -13,7 +13,11 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./cupons.component.css'],
   providers: [MessageService]
 })
-export class CuponsComponent implements OnInit {
+export class CuponsComponent {
+  
+  
+  Desativar: false
+  
 
   cupons: Cupom[] = [];
   modalRef: BsModalRef;
@@ -36,7 +40,14 @@ export class CuponsComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void { this.createForm(new Cupom(null, null, "", null)); }
+  desativarCupom() {
+    let desativar = false;
+    for(let i = 0;i < this.cupons.length;i++) {
+      if(this.cupons[i].ativo == true) {
+        return this.cupons[i].ativo = desativar;
+      }
+    }
+  }
 
   createForm(cupom: Cupom) {
     this.formCupom = this.formBuilder.group({

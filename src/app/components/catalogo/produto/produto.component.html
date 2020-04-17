@@ -1,7 +1,7 @@
 <div class="container d-flex justify-content-end">
         <label>Ordenar por:</label>
         <select (change)="ordenarPor()" [(ngModel)]="ordenacao">
-            <option value="1">Padrão</option>
+            <option value="1" disabled selected>Padrão</option>
             <option value="2">Menor preço</option>
             <option value="3">Maior preço</option>
             <option value="4">A - Z</option>

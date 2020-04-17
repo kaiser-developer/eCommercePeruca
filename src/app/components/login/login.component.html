@@ -10,17 +10,20 @@
             <form id="form-signin" (ngSubmit)="login()" [formGroup]="formLogin">
                 <h1 class="h3 mb-3 font-weight-normal text-center">Faça seu login</h1>
 
-                
-                <input type="email" class="form-control mb-2" placeholder="Email" required minlength="15"
+                <span class="ui-float-label">
+                    <input id="Email" type="email" pInputText class="form-control mb-3" required minlength="15"
                     maxlength="35" autofocus="" formControlName="email">
-
-              
-                <input type="password" class="form-control" placeholder="Senha" required minlength="8" maxlength="12"
+                    <label for="Email">Email</label>
+                </span>
+                <span class="ui-float-label">
+                <input id="senha" type="password" class="form-control mt-1" required minlength="8" maxlength="12"
                     formControlName="senha">
+                    <label for="senha">Senha</label>
+                </span>
 
-                <div class="checkbox mb-3">
+                <div class="checkbox mb-3 mt-1">
                     <label>
-                        <input type="checkbox" value="remember-me"> Lembre de mim
+                        <p-checkbox type="checkbox" value="remember-me"></p-checkbox> Lembre de mim
                     </label>
                 </div>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>

@@ -7,7 +7,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {InputTextModule} from 'primeng/inputtext';
+import {CheckboxModule} from 'primeng/checkbox';
 import {ToastModule} from 'primeng/toast';
+import {ChartModule} from 'primeng/chart'
 import { NgxSpinnerModule } from "ngx-spinner";
 import {ButtonModule} from 'primeng/button';
 
@@ -66,11 +69,13 @@ import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relat
 import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes-pedido/detalhes-pedido.component';
 import { FinalizarDoacaoComponent } from './components/checkout-doacao/finalizar-doacao/finalizar-doacao.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
+import { CarrinhoDoacaoComponent } from './components/checkout-doacao/carrinho-doacao/carrinho-doacao.component';
 import { ProgressoPedidoComponent } from './components/historico-pedidos/progresso-pedido/progresso-pedido.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutosRecomendadosComponent } from './components/pagina-produto/produtos-recomendados/produtos-recomendados.component';
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
+import { ResumoDashboardComponent } from './components/pagina-relatorios/resumo-dashboard/resumo-dashboard.component';
 import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque/cadastro-produto/cadastro-produto.component';
 import { PainelFaleConoscoComponent } from './components/pagina-relatorios/painel-fale-conosco/painel-fale-conosco.component';
 import { AlterarProdutoComponent } from './components/pagina-relatorios/estoque/alterar-produto/alterar-produto.component';
@@ -126,14 +131,15 @@ import { AlterarProdutoComponent } from './components/pagina-relatorios/estoque/
     DetalhesPedidoComponent,
     FinalizarDoacaoComponent,
     RecuperarSenhaComponent,
+    CarrinhoDoacaoComponent,
     ProgressoPedidoComponent,
     ProdutosRecomendadosComponent,
     LoginRelatoriosComponent,
     MenuRelatoriosComponent,
     CadastroProdutoComponent,
     PainelFaleConoscoComponent,
-    AlterarProdutoComponent
-
+    AlterarProdutoComponent,
+    ResumoDashboardComponent
 
 
   ],
@@ -153,7 +159,10 @@ import { AlterarProdutoComponent } from './components/pagina-relatorios/estoque/
     NbStepperModule,
     TableModule,
     DialogModule,
+    InputTextModule,
+    CheckboxModule,
     ToastModule,
+    ChartModule,
     FileUploadModule,
     NgxSpinnerModule,
     ButtonModule

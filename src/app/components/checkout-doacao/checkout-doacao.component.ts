@@ -1,9 +1,13 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, TemplateRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
 import { Locais } from 'src/app/model/locais';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Validacoes } from 'src/app/model/validacoes';
 import { DadosPagamento } from 'src/app/model/dados-pagamento';
+import { CadastrosService } from 'src/app/services/cadastros.service';
+import { StorageService } from 'src/app/services/storage.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-checkout-doacao',
@@ -15,6 +19,8 @@ export class CheckoutDoacaoComponent implements AfterViewInit {
   data: string;
   formPagamento: FormGroup;
   validacoes: Validacoes;
+  dadosDePagamento: boolean = false;
+  vlDoacao: 49.90;
 
   private createForm(dadosPagamento: DadosPagamento): FormGroup {
     return new FormGroup({
@@ -38,7 +44,7 @@ export class CheckoutDoacaoComponent implements AfterViewInit {
 
   dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   anos = this.anoValidade();
-  constructor(sanitizer: DomSanitizer, private fb: FormBuilder) {
+  constructor(sanitizer: DomSanitizer, private fb: FormBuilder,private cadastros: CadastrosService, private storage: StorageService, private route: Router) {
     this.localEscolhido = this.locais[this.escolhido];
     this.validacoes = new Validacoes();
     this.data = `${this.dataAtual.getFullYear()}-`;
@@ -83,4 +89,26 @@ export class CheckoutDoacaoComponent implements AfterViewInit {
       })
     }
   }
+
+  finalizarDoacao(valido) {
+    if (valido) {
+      this.cadastros.cadastrarDoacao(this.localEscolhido, this.vlDoacao).subscribe(
+        dados => {
+          if(dados != null){
+            let cliente = this.storage.recuperarUsuario();
+            if(cliente.doacao == null){
+              cliente.doacao = []
+            }
+            cliente.doacao.push(dados)
+            this.storage.salvarUsuario
+            this.route.navigate(['/finalizar-compra'])
+          }
+          console.log(dados)
+        }
+      )
+    } else {
+      console.log("erro na requisição")
+    }
+  }
+  
 }

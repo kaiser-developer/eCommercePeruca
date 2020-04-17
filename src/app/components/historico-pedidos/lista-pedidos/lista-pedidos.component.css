@@ -3,6 +3,17 @@
   text-align: center;
 }
 
+#alertPedidos {
+  width: 50%;
+}
+
+#fecharModal {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  z-index: 9999;
+}
+
 .container {
   background-color: #eee;
   color: #444;
