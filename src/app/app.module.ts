@@ -61,7 +61,6 @@ import { CheckoutDoacaoComponent } from './components/checkout-doacao/checkout-d
 import { PaginaRelatoriosComponent } from './components/pagina-relatorios/pagina-relatorios.component';
 import { CuponsComponent } from './components/pagina-relatorios/cupons/cupons.component';
 import { EstoqueComponent } from './components/pagina-relatorios/estoque/estoque.component';
-import { ReclamacoesComponent } from './components/pagina-relatorios/reclamacoes/reclamacoes.component';
 import { RelatoriosComponent } from './components/pagina-relatorios/relatorios/relatorios.component';
 import { NavRelatoriosComponent } from './components/pagina-relatorios/nav-relatorios/nav-relatorios.component';
 import { DetalhesPedidoComponent } from './components/historico-pedidos/detalhes-pedido/detalhes-pedido.component';
@@ -73,6 +72,7 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
 import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque/cadastro-produto/cadastro-produto.component';
+import { PainelFaleConoscoComponent } from './components/pagina-relatorios/painel-fale-conosco/painel-fale-conosco.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +120,6 @@ import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque
     PaginaRelatoriosComponent,
     CuponsComponent,
     EstoqueComponent,
-    ReclamacoesComponent,
     RelatoriosComponent,
     NavRelatoriosComponent,
     DetalhesPedidoComponent,
@@ -130,10 +129,8 @@ import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque
     ProdutosRecomendadosComponent,
     LoginRelatoriosComponent,
     MenuRelatoriosComponent,
-    CadastroProdutoComponent
-
-
-
+    CadastroProdutoComponent,
+    PainelFaleConoscoComponent
   ],
   imports: [
     BrowserModule,

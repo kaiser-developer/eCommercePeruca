@@ -61,11 +61,16 @@ export class CardComponent implements OnInit {
 
 
   irCheckout() {
-    if (this.carrinho.length > 0) {
-      this.route.navigate(["/checkout"])
+    this.user = this.storage.recuperarUsuario();
+    if (this.user != null) {
+      if (this.carrinho.length > 0) {
+        this.route.navigate(["/checkout"])
+      } else {
+        this.route.navigate(["/catalogo"])
+        alert("Para continuar, escolha um produto!")
+      }
     } else {
-      this.route.navigate(["/catalogo"])
-      alert("Para continuar, escolha um produto!")
+      alert("Você não esta logado")
     }
   }
 }

@@ -12,6 +12,8 @@ import { Compra } from '../model/compra';
 import { Funcionario } from "../model/funcionario";
 import { Cliente } from '../model/cliente';
 import { StatusFaleConosco } from '../model/statusFaleConosco';
+import {LoginFunc} from '../model/login-func'
+import { FaleConosco } from '../model/faleConosco';
 
 const storage: StorageService = new StorageService();
 
@@ -65,10 +67,11 @@ export class RequisicoesService {
   }
 
   public loginFunc(funcionario: Funcionario) {
-    let url = this.http.post<any>("http://localhost:8080/ecommerce/login-funcionario", funcionario);
-    console.log(funcionario)
+    let url = this.http.post<any>("http://localhost:8080/ecommerce/login-funcionario", [funcionario.matricula,funcionario.senha]);
     return url.pipe(map(
-      dados => dados
+      dados => {
+        return dados
+      }
     ));
   }
 
@@ -204,4 +207,14 @@ export class RequisicoesService {
       )
     )
   }
+
+  public buscarMensagens(){
+    let url = this.http.get<FaleConosco[]>(`http://localhost:8080/ecommerce/buscar-fale-conosco/`)
+    return url.pipe(
+      map(
+        dados => dados
+      )
+    )
+  }
 }
+

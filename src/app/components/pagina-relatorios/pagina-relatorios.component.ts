@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
@@ -8,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaRelatoriosComponent implements OnInit {
 
-  constructor() { }
+  funcionario;
+
+  constructor(private storage: StorageService) { 
+    this.funcionario = this.storage.recuperarFuncionario();
+    console.log(this.funcionario)
+  }
 
   ngOnInit(): void {
     
