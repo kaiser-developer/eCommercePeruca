@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FaleConosco } from 'src/app/model/faleConosco';
+import { RequisicoesService } from 'src/app/services/requisicoes.service';
 
 @Component({
   selector: 'app-painel-fale-conosco',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PainelFaleConoscoComponent implements OnInit {
 
-  constructor() { }
+  mensagens: FaleConosco[] =[];
+
+  constructor(private requisicoes: RequisicoesService) { }
 
   ngOnInit(): void {
+    this.requisicoes.buscarMensagens().subscribe(
+      dados => {
+        this.mensagens = dados;
+      }
+    )
   }
 
 }
