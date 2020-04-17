@@ -73,6 +73,7 @@ import { ProdutosRecomendadosComponent } from './components/pagina-produto/produ
 import { LoginRelatoriosComponent } from './components/pagina-relatorios/login-relatorios/login-relatorios.component';
 import { MenuRelatoriosComponent } from './components/pagina-relatorios/menu-relatorios/menu-relatorios.component';
 import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque/cadastro-produto/cadastro-produto.component';
+import { AlterarProdutoComponent } from './components/pagina-relatorios/estoque/alterar-produto/alterar-produto.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +131,8 @@ import { CadastroProdutoComponent } from './components/pagina-relatorios/estoque
     ProdutosRecomendadosComponent,
     LoginRelatoriosComponent,
     MenuRelatoriosComponent,
-    CadastroProdutoComponent
+    CadastroProdutoComponent,
+    AlterarProdutoComponent
 
 
 

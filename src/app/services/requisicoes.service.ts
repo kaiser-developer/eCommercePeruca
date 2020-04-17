@@ -12,6 +12,7 @@ import { Compra } from '../model/compra';
 import { Funcionario } from "../model/funcionario";
 import { Cliente } from '../model/cliente';
 import { StatusFaleConosco } from '../model/statusFaleConosco';
+import { ProdutoApi } from '../model/produto-api';
 
 const storage: StorageService = new StorageService();
 
@@ -204,4 +205,12 @@ export class RequisicoesService {
       )
     )
   }
+  public alterarProduto(produto: ProdutoApi){
+    let url = this.http.patch<ProdutoApi>(`http://localhost:8080/ecommerce/atualizar-produto/`, produto)
+    return url.pipe(
+      map(
+        data => data
+        )
+      )
+    }
 }
